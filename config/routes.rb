@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users
   resources :musics
+  resources :gallery
   resources :videos, only: [:index, :new, :create]
   resources :video_uploads, only: [:new, :create]
   get '/auth/:provider/callback', to: 'sessions#create'
