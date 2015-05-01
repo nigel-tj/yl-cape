@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'music/index'
+
   devise_for :users
   resources :users
   resources :videos, only: [:index, :new, :create]
@@ -6,5 +8,5 @@ Rails.application.routes.draw do
   get '/auth/:provider/callback', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy', as: :logout
 
-  root to: 'vistors#index'
+  root to: 'visitors#index'
 end
