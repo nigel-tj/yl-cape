@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'gallery/index'
+
   get 'music/index'
   get 'gallery/index'
 
