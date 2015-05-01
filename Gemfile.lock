@@ -299,11 +299,14 @@ GEM
       sprockets-rails (>= 2.0, < 4.0)
     xpath (2.0.0)
       nokogiri (~> 1.3)
+    yt (0.13.12)
+      activesupport
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  autoprefixer-rails
   better_errors
   binding_of_caller
   bootstrap-sass
@@ -342,3 +345,4 @@ DEPENDENCIES
   turbolinks
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
+  yt (~> 0.13.7)

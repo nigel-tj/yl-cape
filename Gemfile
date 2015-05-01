@@ -45,3 +45,5 @@ end
 group :production do
   gem 'rails_12factor'
 end
+gem 'yt', '~> 0.13.7'
+gem 'autoprefixer-rails'
