@@ -37,6 +37,7 @@ group :development do
   gem 'rails_best_practices'
   gem 'rails_apps_pages'
 end
+gem 'haml-rails'
 gem 'minitest-rails'
 group :test do
   gem 'minitest-reporters'
