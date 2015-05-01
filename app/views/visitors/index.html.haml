@@ -33,14 +33,11 @@
 
 .col-lg-4.front-content-blocks.clearfix
   %h1 Facebook
-  / <div class="btn-group" data-toggle="buttons">
-    /
-        <button type="button" title="facebook" class="btn btn-info active" style="background-image: url(/images/facebook.png);background-r\
-										      epeat: no-repeat;width: 100%;"></button>
-	  /
-	    <button type="button" title="twitter" class="btn btn-info" style="background-image: url(/images/twitter.png);background-repeat: no\
-									          \-repeat; width: 100%;"></button>
-	      / </div>
+  btn-group{"data-toggle" => "buttons"}
+      %button.btn.btn-info.active{:style => "background-image: url(/images/facebook.png);background-repeat: no-repeat;width: 100%;", :title => "facebook", :type => "button"}
+      %button.btn.btn-info{:style => "background-image: url(/images/twitter.png);background-repeat: no  -repeat; width: 100%;", :title => "twitter", :type => "button"}
+  
+    
   #facebook{:style => "vertical-align: middle;"}
     .fb-like-box{"data-height" => "300", "data-href" => "https://www.facebook.com/TheRedCupVillage", :style => "background-color:#fff;"}>
     \\
