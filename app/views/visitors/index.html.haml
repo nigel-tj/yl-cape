@@ -4,16 +4,21 @@
       / Indicators
       %ol.carousel-indicators
         %li.active{"data-slide-to" => "0", "data-target" => "#carousel-example-generic"}
-     
+        %li{"data-slide-to" => "1", "data-target" => "#carousel-example-generic"}
+        %li{"data-slide-to" => "2", "data-target" => "#carousel-example-generic"}
       / Wrapper for slides
       .carousel-inner
         .item.active
           %img.img-responsive{:alt => "...", :src => "https://fbcdn-sphotos-c-a.akamaihd.net/hphotos-ak-xfa1/v/t1.0-9/1621794_1577603245856248_3626243330691755428_n.png?oh=3979b62a5450c3cfe33a011fb02c7207&oe=55D4EA93&__gda__=1439771301_ed5561b2c67ff335e5c32abd9db02c51"}/
-          
-        
+          .carousel-caption
+            %h2 Heading
+        .item
+          %img.img-responsive{:alt => "...", :src => "https://scontent-ams.xx.fbcdn.net/hphotos-xpa1/v/t1.0-9/10917427_969106739800966_4098654471679543292_n.jpg?oh=5ae034bedcfeffff32affbc0abd9baa7&oe=55E12ABD"}
+            %h2 Heading
         .item
           %img.img-responsive{:alt => "...", :src => "https://fbcdn-sphotos-b-a.akamaihd.net/hphotos-ak-xtp1/v/t1.0-9/11062820_1592740147675891_4758577231455459716_n.jpg?oh=8db2ecac68a7160709b8feb4bcc05326&oe=55CBDE6B&__gda__=1439433293_54c5e939b1c26f75a9a50e3322faa71d"}/
-          
+          .carousel-caption
+            %h2 Heading
       / Controls
       %a.left.carousel-control{"data-slide" => "prev", :href => "#carousel-example-generic"}
         %span.glyphicon.glyphicon-chevron-left
@@ -23,10 +28,9 @@
 %h3 Welcome
 %p A cup nor speaks or talks but is artistic features allows different people and cultures of the community to interact, celebrate good times with old and new friends and family while learning, living and enjoying yourself. Founded in 2013, Red Village is college lifestyle Brand which is built around a community of vibrant youth inclusive of artists, fashion designers, photographers, Villagers. Together supporting, empowering  and exposes the youth to a lifestyle of friendship, building new relations, supporting you favorite brands, music and discovering more to life as well.
 
-.col-sm-12.clearfix
-  .col-lg-8.clearfix
+.col-sm-8
+  .col-lg-8.center.clearfix
     %h1 Instagram
     / INSTANSIVE WIDGET
     %script{:src => "//instansive.com/widget/js/instansive.js"}
     %iframe#instansive_452837b3af.instansive-widget{:allowtransparency => "t_ue", :name => "instansive_452837b3af", :scrolling => "no", :src => "//instansive.com/widgets/452837b3af91b33df1578fd12d7332dd7c727480.html", :style => "width: 100%; border: 0;overflow: hidden; height:500px;"}
-
