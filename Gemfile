@@ -49,3 +49,5 @@ group :production do
 end
 gem 'yt', '~> 0.13.7'
 gem 'autoprefixer-rails'
+gem 'rails-observers'
+gem 'omniauth-google-oauth2'
