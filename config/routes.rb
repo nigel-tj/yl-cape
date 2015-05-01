@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get 'music/index'
-  get 'visitors/gallery'
+  get 'gallery/index'
 
   devise_for :users
   resources :users
