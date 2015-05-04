@@ -31,8 +31,19 @@
   
     
     .col-lg-7.clearfix
-      %h1.center Instagram
-      / INSTANSIVE WIDGET
-      %script{:src => "//instansive.com/widget/js/instansive.js"}
-      %iframe#instansive_452837b3af.instansive-widget{:allowtransparency => "t_ue", :name => "instansive_452837b3af", :scrolling => "no", :src => "//instansive.com/widgets/452837b3af91b33df1578fd12d7332dd7c727480.html", :style => "width: 100%; border: 0;overflow: hidden; height:500px;"}
+      %h1.center Twitter Feed 
+      @tweet.each do |tweet|
+        .col-md-10.col-sm-10
+          .panel.panel-default
+            .panel-body
+              %header.text-left
+                .comment-post
+                  %p tweet 
+                
+      
+      
+      // %h1.center Instagram Feed
+      // / INSTANSIVE WIDGET
+      // %script{:src => "//instansive.com/widget/js/instansive.js"}
+      // %iframe#instansive_452837b3af.instansive-widget{:allowtransparency => "t_ue", :name => "instansive_452837b3af", :scrolling => "no", :src => "//instansive.com/widgets/452837b3af91b33df1578fd12d7332dd7c727480.html", :style => "width: 100%; border: 0;overflow: hidden; height:500px;"}
    

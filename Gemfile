@@ -38,6 +38,7 @@ group :development do
   gem 'rails_apps_pages'
 end
 gem 'haml-rails'
+gem 'twitter'
 gem 'minitest-rails'
 group :test do
   gem 'minitest-reporters'
