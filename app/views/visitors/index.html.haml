@@ -38,7 +38,11 @@
           %header.text-left
             .comment-post
               %ul 
-                -@tweet.each do |tweet|
+                - @tweets.each do |tweet|
+                  %li= link_to tweet.text , "https://www.twitter.com/#{tweet.user.screen_name}"
+                 
+                
+              
              
             
       
