@@ -32,19 +32,16 @@
     
     .col-lg-7.clearfix
       %h1.center Twitter Feed 
-     
-      .panel.panel-default
-        .panel-body
-          %header.text-left
-            .comment-post
-              %ul 
-                - @tweets.each do |tweet|
-                  %li= link_to tweet.text , "https://www.twitter.com/#{tweet.user.screen_name}"
-                 
-                
-              
-             
+      - @tweet.each do |tweet|
+      .panel-body
+        %header
+          .comment-user 
+            %i.fa.fa-user tweet.user.screen_name
             
+        .comment-post
+          %p tweet.text
+        
+      
       
       
       // %h1.center Instagram Feed
