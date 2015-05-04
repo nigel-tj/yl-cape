@@ -32,14 +32,13 @@
     
     .col-lg-7.clearfix
       %h1.center Twitter Feed 
-      
-        
-      .panel.panel-default
-        .panel-body
-          %header.text-left
-            .comment-post
-              %p @tweet.each 
-            
+      @tweet.each do |tweet|
+        .panel.panel-default
+          .panel-body
+            %header.text-left
+              .comment-post
+                %p tweet.text
+              
       
       
       // %h1.center Instagram Feed
