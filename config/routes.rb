@@ -8,8 +8,8 @@ Rails.application.routes.draw do
   resources :users
   resources :musics
   resources :gallery
-  resources :videos, only: [:index, :new, :create]
-  resources :video_uploads, only: [:new, :create]
+  resources :videos
+  resources :video_uploads
   get '/auth/:provider/callback', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy', as: :logout
 

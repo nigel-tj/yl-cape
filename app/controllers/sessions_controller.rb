@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
     flash[:success] = "Welcome, #{user.name}"
     redirect_to root_url
   end
-  
+
   def destroy
     session[:user_id] = nil
     flash[:success] = "Goodbye!"
