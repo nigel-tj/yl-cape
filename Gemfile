@@ -50,8 +50,10 @@ group :production do
   gem 'pg'
   gem 'rails_12factor'
 end
+
 gem 'yt', '~> 0.13.7'
 gem 'autoprefixer-rails'
 gem 'rails-observers'
 gem 'omniauth-google-oauth2'
 gem 'active_type', '0.3.1'
+gem 'jruby-openssl'
