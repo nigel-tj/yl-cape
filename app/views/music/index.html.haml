@@ -1,5 +1,5 @@
 
 .col-sm-12
 //   %iframe{:frameborder => "0", :height => "355", :scrollbars => "no", :scrolling => "no", :src => "http://www.audiomack.com/embed4-playlist/nigel-30/redvillage", :width => "100%"}
-- @tracks.each do |track|
-    %p =  track.permalink_url
+- @client.get(’/tracks’, :limit => 10, :order => 'hotness’).each do |track|
+= track.permalink_url
