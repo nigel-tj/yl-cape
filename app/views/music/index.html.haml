@@ -2,24 +2,13 @@
 .col-sm-12
 
 //   %iframe{:frameborder => "0", :height => "355", :scrollbars => "no", :scrolling => "no", :src => "http://www.audiomack.com/embed4-playlist/nigel-30/redvillage", :width => "100%"}
-// - @client.get('/tracks', :limit => 10, :order => 'hotness').each do |track|
-//     %iframe{:frameborder => "no", :height => "450", :scrolling => "no", :src => "https://w.soundcloud.com/player/?url=#{track.permalink_url}&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&visual=true", :width => "100%"}
-//     // = track.permalink_url
-%iframe#sc-widget{:frameborder => "no", :height => "166", :scrolling => "no", :src => "https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F1848538&show_artwork=true", :width => "100%"}
-%script{:src => "https://w.soundcloud.com/player/api.js", :type => "text/javascript"}
-:javascript
-  (function(){
-    var widgetIframe = document.getElementById('sc-widget'),
-        widget       = SC.Widget(widgetIframe),
-        newSoundUrl = 'http://api.soundcloud.com/tracks/13692671';
-
-    widget.bind(SC.Widget.Events.READY, function() {
-      // load new widget
-      widget.bind(SC.Widget.Events.FINISH, function() {
-        widget.load(newSoundUrl, {
-          show_artwork: false
-        });
-      });
-    });
-
-  }());
+- @client.get('/tracks', :limit => 10, :order => 'hotness').each do |track|
+    
+    // = track.permalink_url
+    
+    %script{:src => "//w.soundcloud.com/player/api.js"}
+    .player
+      %span.info
+      .waveform
+      .position
+    %iframe.sc-widget{:src => "//w.soundcloud.com/player/?url=#{track.permalink_url}"}
