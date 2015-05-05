@@ -22,6 +22,7 @@ gem 'simple_form'
 gem 'high_voltage'
 gem 'devise'
 gem 'pundit'
+gem 'soundcloud'
 group :development do
   gem 'guard-bundler'
   gem 'guard-minitest'
