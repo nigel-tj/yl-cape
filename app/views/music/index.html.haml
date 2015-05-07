@@ -6,7 +6,7 @@
     #putTheWidgetHere
     %script{:type => "text/JavaScript"}
       :cdata
-        SC.oEmbed("http://soundcloud.com/forss/sets/soulhack", {color: "ff0066"},  document.getElementById("putTheWidgetHere"));
+        SC.oEmbed("#{track.permalink_url}", {color: "ff0066"},  document.getElementById("putTheWidgetHere"));
             
     // = track.permalink_url
     
