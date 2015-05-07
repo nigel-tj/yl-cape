@@ -30,3 +30,8 @@
       %h3 A cup nor speaks or talks but is artistic features allows different people and cultures of the community to interact, celebrate good times with old and new friends and family while learning, living and enjoying yourself. Founded in 2013, Red Village is college lifestyle Brand which is built around a community of vibrant youth inclusive of artists, fashion designers, photographers, Villagers. Together supporting, empowering  and exposes the youth to a lifestyle of friendship, building new relations, supporting you favorite brands, music and discovering more to life as well.
     
    
+    .col-lg-5
+      %section#tweets
+        %ul
+          - @tweets.each do |tweet|
+            %li= link_to tweet.text, "https://www.twitter.com/#{tweet.user.screen_name}"
