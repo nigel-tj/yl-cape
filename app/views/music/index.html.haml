@@ -5,7 +5,7 @@
 - @client.get('/tracks', :limit => 10, :order => 'hotness').each do |track|
     #putTheWidgetHere
     %script{:type => "text/JavaScript"}
-      :cdata
+        :cdata
         SC.oEmbed("#{track.permalink_url}", {color: "ff0066"},  document.getElementById("putTheWidgetHere"));
             
     // = track.permalink_url
