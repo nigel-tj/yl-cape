@@ -3,7 +3,7 @@
     #carousel-example-generic.carousel.slide{"data-ride" => "carousel"}
       / Indicators
       %ol.carousel-indicators
-       %li.active{"data-slide-to" => "0", "data-target" => "#carousel-example-generic"}
+        %li.active{"data-slide-to" => "0", "data-target" => "#carousel-example-generic"}
         %li{"data-slide-to" => "1", "data-target" => "#carousel-example-generic"}
         %li{"data-slide-to" => "2", "data-target" => "#carousel-example-generic"}
       / Wrapper for slides
@@ -14,7 +14,6 @@
           %img.img-responsive.img-rounded{:alt => "...", :src => "https://fbcdn-sphotos-h-a.akamaihd.net/hphotos-ak-xpf1/v/t35.0-12/11243979_908093612586967_46059184_o.jpg?oh=4b2a6af9dcd67b2793075af4f5ddf6de&oe=5555899B&__gda__=1431667846_84364974d27ccefde9a3590cf82060c3"}/
         .item
           %img.img-responsive.img-rounded{:alt => "...", :src => "https://fbcdn-sphotos-b-a.akamaihd.net/hphotos-ak-xtp1/v/t1.0-9/11062820_1592740147675891_4758577231455459716_n.jpg?oh=8db2ecac68a7160709b8feb4bcc05326&oe=55CBDE6B&__gda__=1439433293_54c5e939b1c26f75a9a50e3322faa71d"}/
-         
       / Controls
       %a.left.carousel-control{"data-slide" => "prev", :href => "#carousel-example-generic"}
         %span.glyphicon.glyphicon-chevron-left
@@ -32,4 +31,4 @@
       %section#tweets
         %ul
           - @tweets.each do |tweet|
-            %li= link_to tweet.text, "https://www.twitter.com/#{tweet.user.screen_name}"
+          %li= link_to tweet.text, "https://www.twitter.com/#{tweet.user.screen_name}"
