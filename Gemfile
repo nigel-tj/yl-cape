@@ -22,7 +22,10 @@ gem 'simple_form'
 gem 'high_voltage'
 gem 'devise'
 gem 'pundit'
-gem 'soundcloud'
+gem "erb2haml", :group => :development
+group :assets do
+  gem 'soundcloud-custom-player-rails'
+end
 group :development do
   gem 'guard-bundler'
   gem 'guard-minitest'
@@ -56,4 +59,5 @@ gem 'autoprefixer-rails'
 gem 'rails-observers'
 gem 'omniauth-google-oauth2'
 gem 'active_type', '0.3.1'
+gem 'rails-gallery'
 
