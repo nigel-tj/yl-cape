@@ -1,0 +1,25 @@
+body {
+/*css for full size background image*/
+  background: url(http://www.ballastmedia.com/wp-content/uploads/RedBackground.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  
+  height: 100%;
+  background-color: white;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 1px 3px rgba(0,0,0,.5);
+  overflow:auto;  
+ 
+}
+.rg-image-wrapper{
+  position:relative;
+  padding:20px 30px;
+  background:transparent url(../images/black.png) repeat top left;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  min-height:20px;
+}
