@@ -23,6 +23,7 @@ gem 'high_voltage'
 gem 'devise'
 gem 'pundit'
 gem "erb2haml", :group => :development
+gem 'soundcloud'
 group :assets do
   gem 'soundcloud-custom-player-rails'
 end
