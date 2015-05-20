@@ -7,16 +7,19 @@
       .row
         - group.each do |video|
           - if video
+            // .col-md-4
+            //   .yt_video.thumbnail
+            //     = link_to image_tag("https://img.youtube.com/vi/#{video.uid}/mqdefault.jpg", alt: video.title, |
+            //       class: 'img-rounded'), "https://www.youtube.com/watch?v=#{video.uid}", target: '_blank'      |
+            //     .caption
+            //       %h5= video.title
+            //       %p
+            //         Published at #{video.published_at.strftime('%-d %B %Y %H:%M:%S')}
+            //       %p
+            //         %span.glyphicon.glyphicon.glyphicon-thumbs-up
+            //         = video.likes
+            //         %span.glyphicon.glyphicon.glyphicon-thumbs-down
+            //         = video.dislikes
             .col-md-4
-              .yt_video.thumbnail
-                = link_to image_tag("https://img.youtube.com/vi/#{video.uid}/mqdefault.jpg", alt: video.title, |
-                  class: 'img-rounded'), "https://www.youtube.com/watch?v=#{video.uid}", target: '_blank'      |
-                .caption
-                  %h5= video.title
-                  %p
-                    Published at #{video.published_at.strftime('%-d %B %Y %H:%M:%S')}
-                  %p
-                    %span.glyphicon.glyphicon.glyphicon-thumbs-up
-                    = video.likes
-                    %span.glyphicon.glyphicon.glyphicon-thumbs-down
-                    = video.dislikes
+              .iframe 
+                %iframe{:allowfullscreen => "", :height => "315", :src => "https://www.youtube.com/watch?v=#{video.uid}", :width => "560"}

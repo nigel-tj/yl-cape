@@ -1,13 +1,13 @@
-.col-sm-12
-  %a.sc-player{:href => "http://soundcloud.com/matas/hobnotropic"} My new dub track
-  //   %iframe{:frameborder => "0", :height => "355", :scrollbars => "no", :scrolling => "no", :src => "http://www.audiomack.com/embed4-playlist/nigel-30/redvillage", :width => "100%"}
-  - @client.get('/tracks', :limit => 10, :order => 'hotness').each do |track|
-    #putTheWidgetHere
-    %script{:type => "text/JavaScript"}
-      :cdata
-        SC.oEmbed("#{track.permalink_url}", {color: "ff0066"},  document.getElementById("putTheWidgetHere"));
+// .col-sm-12
+//   %a.sc-player{:href => "http://soundcloud.com/matas/hobnotropic"} My new dub track
+//   //   %iframe{:frameborder => "0", :height => "355", :scrollbars => "no", :scrolling => "no", :src => "http://www.audiomack.com/embed4-playlist/nigel-30/redvillage", :width => "100%"}
+//   - @client.get('/tracks', :limit => 10, :order => 'hotness').each do |track|
+//     #putTheWidgetHere
+//     %script{:type => "text/JavaScript"}
+//       :cdata
+//         SC.oEmbed("#{track.permalink_url}", {color: "ff0066"},  document.getElementById("putTheWidgetHere"));
 
-    // = track.permalink_url
+//     // = track.permalink_url
 
     // %script{:src => "//w.soundcloud.com/player/api.js"}
     // .player
