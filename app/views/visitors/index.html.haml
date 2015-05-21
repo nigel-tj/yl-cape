@@ -55,10 +55,12 @@
             %a{ :href => "#section3"}Gallery
           %li 
             %a{ :href => "#section4"} Video
+          %li 
+            %a{ :href => "#section6"} Social
           %li
-            %a{:href => "#section5"} Location
+            %a{:href => "#section7"} Location
           %li
-            %a{:href => "#section6"} Contact
+            %a{:href => "#section8"} Contact
       / /.nav-collapse
     / /.container
   / /.navbar
@@ -68,11 +70,15 @@
     .col-sm-10.col-sm-offset-1
       .page-header.text-center
         %h1 Since 2014
+  
       %p.lead.text-center
-        We are Redcupvillage we supply redcups, we party with Redcups, we have crazy concepts, We throw parties, we play dope music and we love quality and style
-      %hr/
+        A cup nor speaks or talks but is artistic features allows different people and cultures of the community to interact, celebrate good times with old and new friends and family while learning, living and enjoying yourself. Founded in 2014, Red Village is college lifestyle Brand which is built around a community of vibrant youth inclusive of artists, fashion designers, photographers, Villagers. Together supporting, empowering  and exposes the youth to a lifestyle of friendship, building new relations, supporting you favorite brands, music and discovering more to life as well.
+      %hr
       %p.lead.text-center
-        A cup nor speaks or talks but is artistic features allows different people and cultures of the community to interact, celebrate good times with old and new friends and family while learning, living and enjoying yourself. Founded in 2013, Red Village is college lifestyle Brand which is built around a community of vibrant youth inclusive of artists, fashion designers, photographers, Villagers. Together supporting, empowering  and exposes the youth to a lifestyle of friendship, building new relations, supporting you favorite brands, music and discovering more to life as well.
+        In short we are Redcupvillage , we supply redcups, we party with Redcups, we have crazy concepts, We throw parties, we play dope music and we love quality and style
+        
+       
+      
       .divider
   .divider
   // %section.bg-1
@@ -82,6 +88,8 @@
     .col-sm-10.col-sm-offset-1
       %h1  Latest News
       %hr/
+      - @tweets.each do |tweet|
+        "{tweet.user.screen_name}: #{tweet.text}"
       
       %hr/
       .divider
@@ -96,7 +104,12 @@
 
     .container
       .row
-        %h1 Editors Choice
+        .col-sm-4.col-xs-6
+          %h1 Editors Choice
+          
+          
+      .row
+        
         .col-sm-4.col-xs-6
           .panel.panel-default
             .panel-thumbnail
@@ -140,19 +153,20 @@
       / /row
     / /container
   #section4.divider
-    .row
-      .col-sm-10.col-sm-offset-1
-        %h1  Latest Videos
-        %hr/
-        - @videos.each do |video|
-          %iframe{:allowfullscreen => "", :height => "315", :src => "//www.youtube.com/embed/#{video.uid}", :width => "560"}
+
+  .row
+    .col-sm-10.col-sm-offset-1
+      %h1  Latest Videos
+      %hr/
+      - @videos.each do |video|
+        %iframe{:allowfullscreen => "", :height => "315", :src => "//www.youtube.com/embed/#{video.uid}", :width => "560"}
 
           
             
         
         %hr/
         .divider
-  #section5.divider
+  #section7.divider
   .row
     .col-md-8.col-md-offset-1
   .row
@@ -163,7 +177,7 @@
     .col-sm-8
     .col-sm-3.pull-right
       %address
-        The Firm, Inc.
+        RedVillage Head quaters
         %br/
         %span#map-input
           1500 Main Street
@@ -176,7 +190,7 @@
         %br/
         %a{:href => "mailto:#"} first.last@example.com
   / /row
-  #section6.divider
+  #section8.divider
   .row
     %hr/
     .col-sm-9.col-sm-offset-1
