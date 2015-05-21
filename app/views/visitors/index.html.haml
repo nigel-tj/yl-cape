@@ -1,9 +1,7 @@
 
 #wrap
   %header.masthead
-    /
-      Carousel
-      \==================================================
+   
     #myCarousel.carousel.slide
       / Indicators
       %ol.carousel-indicators
@@ -95,70 +93,65 @@
   //     %h2{:style => "padding:20px;background-color:rgba(5,5,5,.8)"} Clients &amp; Partners
   #section3.divider
   .bg-4
+
     .container
       .row
-        .col-sm-4.col-xs-6
-          .panel.panel-default
-            .panel-thumbnail
-              %a{:href => "#", :title => "Renovations"}
-                %img.img-responsive{:src => "//placehold.it/600x400/444/F8F8F8"}/
-            .panel-body
-              %p Renovations
-              %p
-          / /panel
-        / /col
-        .col-sm-4.col-xs-6
-          .panel.panel-default
-            .panel-thumbnail
-              %a{:href => "#", :title => "Academic Institutions"}
-                %img.img-responsive{:src => "//placehold.it/600x400/454545/FFF"}/
-            .panel-body
-              %p Academic Institutions
-              %p
-          / /panel
-        / /col
-        .col-sm-4.col-xs-6
-          .panel.panel-default
-            .panel-thumbnail
-              %a{:href => "#", :title => "Interiors"}
-                %img.img-responsive{:src => "//placehold.it/600x400/555/F2F2F2"}/
-            .panel-body
-              %p Interiors
-              %p
-          / /panel
-        / /col
-        .col-sm-4.col-xs-6
-          .panel.panel-default
-            .panel-thumbnail
-              %a{:href => "#", :title => "New Construction"}
-                %img.img-responsive{:src => "//placehold.it/600x400/555/FFF"}/
-            .panel-body
-              %p New Construction
-              %p
-          / /panel
-        / /col
+        %h1 Editors Choice
         .col-sm-4.col-xs-6
           .panel.panel-default
             .panel-thumbnail
               %a{:href => "#", :title => "Site Planning"}
-                %img.img-responsive{:src => "//placehold.it/600x400/555/EEE"}/
-            .panel-body
-              %p Site Planning
-              %p
+                %img.img-responsive{:src => "https://scontent-ams3-1.xx.fbcdn.net/hphotos-xpf1/v/t1.0-9/11053167_1604053419877897_4271620908030845314_n.png?oh=fdd033c31b8e3d5002ea9c71d4e14375&oe=55F82812"}/
+            
+        .col-sm-4.col-xs-6
+          .panel.panel-default
+            .panel-thumbnail
+              %a{:href => "#", :title => "Site Planning"}
+                %img.img-responsive{:src => "https://fbcdn-sphotos-b-a.akamaihd.net/hphotos-ak-xat1/v/t1.0-9/11109688_1604053446544561_8783059344517438553_n.png?oh=b91394e79515bf43b6a30c274b650f35&oe=55FA99F3&__gda__=1439600891_5163aff10774a890dde3f373683ca846"}/
+            
+        .col-sm-4.col-xs-6
+          .panel.panel-default
+            .panel-thumbnail
+              %a{:href => "#", :title => "Site Planning"}
+                %img.img-responsive{:src => "https://fbcdn-sphotos-c-a.akamaihd.net/hphotos-ak-xap1/v/t1.0-9/11206066_1604053599877879_4125429101700712535_n.png?oh=76bca0b3c26bc930d13f9bc5912cafb8&oe=55CC5B9F&__gda__=1442672294_1391519a2a6bc63201390d3af0b7358c"}/
+            
+        .col-sm-4.col-xs-6
+          .panel.panel-default
+            .panel-thumbnail
+              %a{:href => "#", :title => "Site Planning"}
+                %img.img-responsive{:src => "https://scontent-ams3-1.xx.fbcdn.net/hphotos-xpt1/v/t1.0-9/11181751_1604053729877866_3623749449707804115_n.png?oh=cb3b2e68736c8e9b27843d38bd13af1b&oe=55CC6689"}/
+            
+        .col-sm-4.col-xs-6
+          .panel.panel-default
+            .panel-thumbnail
+              %a{:href => "#", :title => "Site Planning"}
+                %img.img-responsive{:src => "https://fbcdn-sphotos-e-a.akamaihd.net/hphotos-ak-xap1/v/t1.0-9/11227381_1604053589877880_6512094378973021628_n.png?oh=5664f672bc9ad4e42126262981ec8e15&oe=56064FEA&__gda__=1442610643_af00f60732e2969c072f81edf3f6dc72"}/
+            
           / /panel
         / /col
         .col-sm-4.col-xs-6
           .panel.panel-default
             .panel-thumbnail
               %a{:href => "#", :title => "Churches"}
-                %img.img-responsive{:src => "//placehold.it/600x400/666/F4F4F4"}/
-            .panel-body
-              %p Churches
-              %p
+                %img.img-responsive{:src => "https://fbcdn-sphotos-b-a.akamaihd.net/hphotos-ak-xtp1/v/t1.0-9/11062545_1602687206681185_2698414695455276719_n.png?oh=c56c98b80b552a48d622ba1c944d0dcb&oe=55CE6B3E&__gda__=1438874136_a73f102b658234e81a59bdc1f9899f27"}/
+            
           / /panel
         / /col
       / /row
     / /container
+  #section4.divider
+    .row
+      .col-sm-10.col-sm-offset-1
+        %h1  Latest Videos
+        %hr/
+        - @videos.each do |video|
+          %iframe{:allowfullscreen => "", :height => "315", :src => "//www.youtube.com/embed/#{video.uid}", :width => "560"}
+
+          
+            
+        
+        %hr/
+        .divider
   #section5.divider
   .row
     .col-md-8.col-md-offset-1
