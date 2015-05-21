@@ -89,7 +89,22 @@
       %h1  Latest News
       %hr/
       - @tweets.each do |tweet|
-        "{tweet.user.screen_name}: #{tweet.text}"
+        ": "
+        .container
+        
+          .row
+            
+            .col-sm-5
+              .panel.panel-default
+                .panel-heading
+                  %strong #{tweet.user.screen_name}
+                  
+                .panel-body
+                  %p #{tweet.text}
+                / /panel-body
+              / /panel panel-default
+            / /col-sm-5
+   
       
       %hr/
       .divider
