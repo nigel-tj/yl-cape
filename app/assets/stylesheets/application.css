@@ -11,11 +11,7 @@
  * file per style scope.
  *
  *
- *= require gallery/responsive/elastislide
- *= require gallery/responsive
- *= require gallery/slideshow
- *= require gallery/galleria/classic
- *= require gallery/touch_touch
+ *
  *= require_tree .
  *= require_self
  */
