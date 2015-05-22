@@ -11,8 +11,11 @@
 // about supported directives.
 //
 //= require jquery
+//= require scripts
+//= require pongstagrm.am
 //= require jquery_ujs
 //= require bootstrap-sprockets
-//= require scripts
+
+
 
 //= require_tree .
