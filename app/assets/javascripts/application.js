@@ -12,8 +12,7 @@
 //
 //= require jquery
 //= require scripts
-//= require pongstagr.am
-//= require gallery
+
 //= require jquery_ujs
 //= require bootstrap-sprockets
 
