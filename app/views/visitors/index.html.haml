@@ -94,12 +94,13 @@
           .row
             
             %section#pinBoot
-              %article.white-panel
-                
-                %h4
-                  %a{:href => "https://twitter.com/#{tweet.user.screen_name}"} #{tweet.user.screen_name}
-                %p
-                  #{tweet.text}
+              .col-sm-10.col-md-12
+                %article.white-panel
+                  
+                  %h4
+                    %a{:href => "https://twitter.com/#{tweet.user.screen_name}"} #{tweet.user.screen_name}
+                  %p= tweet.text
+                    #{tweet.text}
               
             %br/
             %br/
