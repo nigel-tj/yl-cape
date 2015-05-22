@@ -104,8 +104,21 @@
                 / /panel-body
               / /panel panel-default
             / /col-sm-5
-   
-      
+            #collapseOne.panel-collapse.collapse
+              .panel-body
+                %ul.chat
+                  %li.left.clearfix
+                    %span.chat-img.pull-left
+                      %img.img-circle{:alt => "User Avatar", :src => "http://placehold.it/50/55C1E7/fff&text=U"}/
+                    .chat-body.clearfix
+                      .header
+                        %strong.primary-font #{tweet.user.screen_name}
+                        
+                      %p
+                        #{tweet.text}
+                        
+                  
+                
       %hr/
       .divider
     / /col
