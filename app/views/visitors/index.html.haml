@@ -92,22 +92,19 @@
       %hr/
       
       - @tweets.each do |tweet|
-        
         .container
           .row
-            .col-sm-6.col-md-4
-              .thumbnail
-                
-                .caption
-                  %h3 #{tweet.user.screen_name}
-                    
-                     
-                  %p #{tweet.text}
-                     
-                  %p
-                    %a.btn.btn-primary{:href => "https://twitter.com/#{tweet.user.screen_name}", :role => "button"} Check It Out
-                    %a.btn.btn-default{:href => "#", :role => "button"} View More
-          
+            - @tweets.each do |tweet|
+              .col-sm-6.col-md-4
+                .thumbnail
+                  .caption
+                    %h3 #{tweet.user.screen_name}
+                    %p #{tweet.text}
+                    %p
+                      %a.btn.btn-primary{:href => "https://twitter.com/#{tweet.user.screen_name}", :role => "button"} Check Me Out 
+                      %a.btn.btn-default{:href => "#" , :role => "button"} View More
+        
+        
          
                     
               
