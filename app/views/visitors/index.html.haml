@@ -91,34 +91,19 @@
       - @tweets.each do |tweet|
         
         .container
-        
           .row
             
-            // .col-sm-3
-            //   .panel.panel-default
-            //     .panel-heading
-            //       %strong #{tweet.user.screen_name}
-                  
-            //     .panel-body
-            //       %p #{tweet.text}
-                / /panel-body
-              / /panel panel-default
-            / /col-sm-5
-            #collapseOne.panel-collapse.collapse
-              .panel-body
-                %ul.chat
-                  %li.left.clearfix
-                    %span.chat-img.pull-left
-                      %img.img-circle{:alt => "User Avatar", :src => "http://placehold.it/50/55C1E7/fff&text=U"}/
-                    .chat-body.clearfix
-                      .header
-                        %strong.primary-font #{tweet.user.screen_name}
-                        
-                      %p= link_to "#{tweet.text}" , "www.twitter.com/tweet.user"
-                        #{tweet.text}
-                        
-                  
-                
+            %section#pinBoot
+              %article.white-panel
+                // %img{:alt => "", :src => "http://i.imgur.com/sDLIAZD.png"}/
+                %h4
+                  %a{:href => "#"} tweet.user.screen_name
+                %p
+                  tweet.text
+              
+            %br/
+            %br/
+      
       %hr/
       .divider
     / /col
