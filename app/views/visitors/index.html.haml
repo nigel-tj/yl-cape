@@ -40,15 +40,15 @@
         %span.glyphicon.glyphicon-chevron-right
     / /.carousel
   / Fixed navbar
-  #nav.navbar.navbar-custom.navbar-inverse.nav-justified.navbar-fixed-top
+  #nav.navbar.navbar-custom.navbar-inverse.navbar-static-top
     .container
-      .navbar-header.navbar-nav
+      .navbar-header
         %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
           %span.icon-bar
           %span.icon-bar
           %span.icon-bar
       .collapse.navbar-collapse
-        %ul.nav.navbar-nav
+        %ul.nav.navbar-nav.nav-justified
           %li
             %a{:href => "#section1"} Redvillage
           %li
@@ -172,16 +172,13 @@
       / /row
     / /container
   #section4.divider
-.container
 
   .row
-    %h1  Latest Videos
-    %hr
-    .container
-      .row
-        - @videos.each do |video|
-          .col-sm-10.col-sm-offset-1
-            %iframe{:allowfullscreen => "", :height => "315", :src => "//www.youtube.com/embed/#{video.uid}", :width => "560"}
+    .col-sm-10.col-sm-offset-1
+      %h1  Latest Videos
+      %hr/
+      - @videos.each do |video|
+        %iframe{:allowfullscreen => "", :height => "315", :src => "//www.youtube.com/embed/#{video.uid}", :width => "560"}
 
           
             
@@ -254,7 +251,8 @@
 //   / /container
 // / /wrap
 // // #footer
-// //  
+// //   .container
+// //     %p.text-muted Copyright ©2014 ACME, Inc.
 %ul.nav.pull-right.scroll-top
   %li
     %a{:href => "#", :title => "Scroll to top"}
@@ -278,6 +276,6 @@
 %script{:src => "//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"}
 
 %script{:src => "http://maps.googleapis.com/maps/api/js?sensor=false&extension=.js&output=embed"}
-// %script{:src => "js/scripts.js"}
+
 
 
