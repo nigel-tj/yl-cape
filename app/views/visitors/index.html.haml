@@ -99,10 +99,11 @@
               .thumbnail
                 
                 .caption
-                  %h3
-                     #{tweet.user.screen_name}
-                  %p
-                     #{tweet.text}
+                  %h3 #{tweet.user.screen_name}
+                    
+                     
+                  %p #{tweet.text}
+                     
                   %p
                     %a.btn.btn-primary{:href => "https://twitter.com/#{tweet.user.screen_name}", :role => "button"} Check It Out
                     %a.btn.btn-default{:href => "#", :role => "button"} View More
