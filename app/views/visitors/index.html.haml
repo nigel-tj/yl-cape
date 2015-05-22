@@ -40,15 +40,15 @@
         %span.glyphicon.glyphicon-chevron-right
     / /.carousel
   / Fixed navbar
-  #nav.navbar.navbar-custom.navbar-inverse
+  #nav.navbar.navbar-custom.navbar-inverse.nav-justified.navbar-fixed-top
     .container
-      .navbar-header.navbar-nav.nav-justified.navbar-fixed-top
+      .navbar-header.navbar-nav
         %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
           %span.icon-bar
           %span.icon-bar
           %span.icon-bar
       .collapse.navbar-collapse
-        %ul
+        %ul.nav.navbar-nav
           %li
             %a{:href => "#section1"} Redvillage
           %li
