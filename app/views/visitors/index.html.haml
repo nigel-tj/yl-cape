@@ -94,13 +94,13 @@
         
           .row
             
-            .col-sm-3
-              .panel.panel-default
-                .panel-heading
-                  %strong #{tweet.user.screen_name}
+            // .col-sm-3
+            //   .panel.panel-default
+            //     .panel-heading
+            //       %strong #{tweet.user.screen_name}
                   
-                .panel-body
-                  %p #{tweet.text}
+            //     .panel-body
+            //       %p #{tweet.text}
                 / /panel-body
               / /panel panel-default
             / /col-sm-5
@@ -114,7 +114,7 @@
                       .header
                         %strong.primary-font #{tweet.user.screen_name}
                         
-                      %p
+                      %p= link_to "#{tweet.text}" , "www.twitter.com/tweet.user"
                         #{tweet.text}
                         
                   
