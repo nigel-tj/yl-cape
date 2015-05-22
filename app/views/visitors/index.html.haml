@@ -88,18 +88,29 @@
     .col-sm-10.col-sm-offset-1
       %h1  Latest News
       %hr/
+      
       - @tweets.each do |tweet|
         
         .container
           .row
-            
-            %section#pinBoot
-              .col-sm-10.col-md-12
-                %article.white-panel
-                  
-                  %h4
-                    %a{:href => "https://twitter.com/#{tweet.user.screen_name}"} #{tweet.user.screen_name}
+            .col-sm-6.col-md-4
+              .thumbnail
+                
+                .caption
+                  %h3= tweet.user.screen_name
                   %p= tweet.text
+                  %p
+                    %a.btn.btn-primary{:href => "https://twitter.com/#{tweet.user.screen_name}", :role => "button"} Check It Out
+                    %a.btn.btn-default{:href => "#", :role => "button"} View More
+          // .row
+            
+          //   %section#pinBoot
+          //     .col-sm-10.col-md-12
+          //       %article.white-panel
+                  
+          //         %h4
+          //           %a{:href => "https://twitter.com/#{tweet.user.screen_name}"} #{tweet.user.screen_name}
+          //         %p= tweet.text
                     
               
             %br/
