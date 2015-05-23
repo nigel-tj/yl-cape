@@ -10,7 +10,7 @@
           .col-md-12
             - @videos.each do |video|
               .col-md-6.embed-responsive.embed-responsive-4by3.thumbnail
-                %iframe.embed-responsive-item{:allowfullscreen => "",  :src => "//www.youtube.com/embed/#{video.uid}"}
-              %br
+                %iframe.embed-responsive-item{:allowfullscreen => "", :height => "315", :src => "//www.youtube.com/embed/#{video.uid}"}
+                %br
      
 .divider
