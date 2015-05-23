@@ -1,30 +1,33 @@
-%header.masthead
- 
-  #myCarousel.carousel.slide
-    / Indicators
-    %ol.carousel-indicators
-      %li.active{"data-slide-to" => "0", "data-target" => "#myCarousel"}
-      %li{"data-slide-to" => "1", "data-target" => "#myCarousel"}
-      %li{"data-slide-to" => "2", "data-target" => "#myCarousel"}
-    .carousel-inner
-      .item.active
-        %img.img-responsive{:src => "https://fbcdn-sphotos-d-a.akamaihd.net/hphotos-ak-xpt1/v/t1.0-9/11222791_100995980239636_7649291936747245066_n.jpg?oh=6c5025ac0da76bb1eccdc0e607567474&oe=56048285&__gda__=1439039617_e14795aa3b2a9a306a0a82afccc669ec"}/
-        
-      .item
-        %img.img-responsive{:src => "https://fbcdn-sphotos-g-a.akamaihd.net/hphotos-ak-xat1/v/t1.0-9/11222791_100995970239637_2147948643914984918_n.jpg?oh=b9b89b2524195ead996839759aca97f2&oe=55F8165B&__gda__=1439332996_926e12d0ecf91bce98599d788131bad0"}/
-        
-      .item
-        %img.img-responsive{:src => "https://fbcdn-sphotos-e-a.akamaihd.net/hphotos-ak-xat1/v/t1.0-9/11222791_100995973572970_9121557526687885445_n.jpg?oh=2b5e61ad9413b14457d231a9e8c696f1&oe=5607E5FD&__gda__=1439037986_be84af7f455f7c3a1eabc6393b01db50"}/
-        
-      .item
-        %img.img-responsive{:src => "https://scontent-ams2-1.xx.fbcdn.net/hphotos-xpa1/v/t1.0-9/11231685_100995740239660_3897933186335868178_n.jpg?oh=4771422f0bc7d2885ed0efe830ce29cb&oe=560D3AE7"}
-      .item
-        %img.img-responsive{:src => "https://scontent-ams2-1.xx.fbcdn.net/hphotos-xap1/v/t1.0-9/11231685_100995733572994_679620403549190789_n.jpg?oh=4ad447ef93fc84eaf6a84bb57b006aa3&oe=55CAC172"}//
+
+#myCarousel.carousel.slide
+  / Indicators
+  %ol.carousel-indicators
+    %li.active{"data-slide-to" => "0", "data-target" => "#myCarousel"}
+    %li{"data-slide-to" => "1", "data-target" => "#myCarousel"}
+    %li{"data-slide-to" => "2", "data-target" => "#myCarousel"}
+  .carousel-inner
+    .item.active
+      %img.img-responsive{:src => "https://fbcdn-sphotos-d-a.akamaihd.net/hphotos-ak-xpt1/v/t1.0-9/11222791_100995980239636_7649291936747245066_n.jpg?oh=6c5025ac0da76bb1eccdc0e607567474&oe=56048285&__gda__=1439039617_e14795aa3b2a9a306a0a82afccc669ec"}/
       
-    /.carousel-inner
-    
-    / Controls
-    %a.left.carousel-control{"data-slide" => "prev", :href => "#myCarousel"}
-      %span.glyphicon.glyphicon-chevron-left
-    %a.right.carousel-control{"data-slide" => "next", :href => "#myCarousel"}
-      %span.glyphicon.glyphicon-chevron-right
+    .item
+      %img.img-responsive{:src => "https://fbcdn-sphotos-g-a.akamaihd.net/hphotos-ak-xat1/v/t1.0-9/11222791_100995970239637_2147948643914984918_n.jpg?oh=b9b89b2524195ead996839759aca97f2&oe=55F8165B&__gda__=1439332996_926e12d0ecf91bce98599d788131bad0"}/
+      
+    .item
+      %img.img-responsive{:src => "https://scontent-ams2-1.xx.fbcdn.net/hphotos-xpa1/v/t1.0-9/11231685_100995740239660_3897933186335868178_n.jpg?oh=4771422f0bc7d2885ed0efe830ce29cb&oe=560D3AE7"}/
+      
+    .item
+      %img.img-responsive{:src => "https://scontent-ams2-1.xx.fbcdn.net/hphotos-xap1/v/t1.0-9/11231685_100995733572994_679620403549190789_n.jpg?oh=4ad447ef93fc84eaf6a84bb57b006aa3&oe=55CAC172"}
+    .item 
+      %img.img-responsive{ :src => "https://scontent-ams2-1.xx.fbcdn.net/hphotos-xpa1/v/t1.0-9/11231685_100995730239661_6279220458207763248_n.jpg?oh=84523e2936dbee2592c2b0b30559df6d&oe=5604F440"}
+    .item 
+      %img.img-responsive{ :src => "https://fbcdn-sphotos-e-a.akamaihd.net/hphotos-ak-xat1/v/t1.0-9/11222791_100995973572970_9121557526687885445_n.jpg?oh=2b5e61ad9413b14457d231a9e8c696f1&oe=5607E5FD&__gda__=1439037986_be84af7f455f7c3a1eabc6393b01db50"}
+    .item 
+      %img.img-responsive{ :src => "https://scontent-ams2-1.xx.fbcdn.net/hphotos-xta1/v/t1.0-9/11222791_100995976906303_7962721779882327981_n.jpg?oh=ef43f0fd83e09af6d94fb00e596afaac&oe=55F990BF"}
+
+  /.carousel-inner
+  
+  / Controls
+  %a.left.carousel-control{"data-slide" => "prev", :href => "#myCarousel"}
+    %span.glyphicon.glyphicon-chevron-left
+  %a.right.carousel-control{"data-slide" => "next", :href => "#myCarousel"}
+    %span.glyphicon.glyphicon-chevron-right
