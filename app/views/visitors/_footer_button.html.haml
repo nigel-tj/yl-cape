@@ -1,0 +1,22 @@
+%ul.nav.pull-right.scroll-top
+  %li
+    %a{:href => "#", :title => "Scroll to top"}
+      %i.glyphicon.glyphicon-chevron-up
+#myModal.modal{:role => "dialog"}
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close{"data-dismiss" => "modal", :type => "button"} ×
+        %h3.modal-title
+      .modal-body
+        #modalCarousel.carousel
+          .carousel-inner
+          %a.carousel-control.left{"data-slide" => "prev", :href => "#modaCarousel"}
+            %i.glyphicon.glyphicon-chevron-left
+          %a.carousel-control.right{"data-slide" => "next", :href => "#modalCarousel"}
+            %i.glyphicon.glyphicon-chevron-right
+      .modal-footer
+        %button.btn.btn-default{"data-dismiss" => "modal"} Close
+
+
+

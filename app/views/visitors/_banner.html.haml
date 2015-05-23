@@ -1,0 +1,38 @@
+%header.masthead
+ 
+  #myCarousel.carousel.slide
+    / Indicators
+    %ol.carousel-indicators
+      %li.active{"data-slide-to" => "0", "data-target" => "#myCarousel"}
+      %li{"data-slide-to" => "1", "data-target" => "#myCarousel"}
+      %li{"data-slide-to" => "2", "data-target" => "#myCarousel"}
+    .carousel-inner
+      .item.active
+        %img{:src => "https://fbcdn-sphotos-d-a.akamaihd.net/hphotos-ak-xpf1/v/t1.0-9/11164703_1599834523633120_4281180496812680020_n.png?oh=0ecbf41d58be6f3db2d80ce72b049d9b&oe=560A21A3&__gda__=1442828444_d544c8fefef29f193e828a8f71f74864"}/
+        .container
+          // .carousel-caption
+          //   %h2 Architectural Design
+          //   %p
+      .item
+        %img{:src => "https://fbcdn-sphotos-d-a.akamaihd.net/hphotos-ak-xap1/v/t1.0-9/16423_1600710896878816_3697497759322318422_n.jpg?oh=86a2e60d56bcec5153c3a39d3ef54cdd&oe=55BF728C&__gda__=1442468209_7d2b6c4ff58dbbbd29c712541910a4bd"}/
+        .container
+          // .carousel-caption
+          //   %h2 Interior Design
+          //   %p
+      .item
+        %img{:src => "https://fbcdn-sphotos-e-a.akamaihd.net/hphotos-ak-xat1/v/t1.0-9/11118265_1599964896953416_5230717101092378179_n.png?oh=95ec4334f15acbb1ec59935006006c82&oe=55FCE13F&__gda__=1442554167_cc5fb20df343f17a131c047c788fcf41"}/
+        .container
+          // .carousel-caption
+          //   %h2 Renovations &amp; Adaptive Re-use
+          //   %p
+      .item
+        %img{:src => "https://scontent-ams3-1.xx.fbcdn.net/hphotos-xpf1/v/t1.0-9/1610941_1602922156657690_747703104738790700_n.png?oh=2092968c7f9c4d7b2f0046880ae98cf0&oe=55F95E65"}
+      .item 
+        %img{ :src => "https://fbcdn-sphotos-g-a.akamaihd.net/hphotos-ak-xta1/v/t1.0-9/10689450_1605945439688695_391252071399960381_n.png?oh=cc29744d8d7d5d453431700e0edb8fb9&oe=560244A9&__gda__=1443243040_4e8ea9ea99cf20fc6101a29e57a7cb4d"}
+    /.carousel-inner
+    
+    / Controls
+    %a.left.carousel-control{"data-slide" => "prev", :href => "#myCarousel"}
+      %span.glyphicon.glyphicon-chevron-left
+    %a.right.carousel-control{"data-slide" => "next", :href => "#myCarousel"}
+      %span.glyphicon.glyphicon-chevron-right

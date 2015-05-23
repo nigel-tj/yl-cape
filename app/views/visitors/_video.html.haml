@@ -1,0 +1,17 @@
+#section4.divider
+.container
+  .row
+    .col-sm-10.col-sm-offset-1
+      %h1  Latest Videos
+      %hr/
+      .container.embed-responsive
+        .row
+          - @videos.each do |video|
+            .col-sm-6.col-md-4
+              %iframe.embed-responsive-item{:allowfullscreen => "", :height => "315", :src => "//www.youtube.com/embed/#{video.uid}", :width => "560"}
+
+        
+          
+      
+      %hr/
+      .divider
