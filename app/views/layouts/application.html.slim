@@ -9,9 +9,11 @@ html
     == javascript_include_tag 'application'
     == csrf_meta_tags
     
-  body
+  body#wrap.bg-1
     header
-
+      == render 'visitors/navbar'
+      == render 'visitors/banner'
     main[role="main"]
       == render 'layouts/messages'
       == yield
+      == render 'visitors/footer'
