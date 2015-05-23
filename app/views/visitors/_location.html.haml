@@ -1,11 +1,9 @@
 .container
   .row
-    .col-sm-10
+    .col-sm-1
       %h1 Location
-    
-   
-    %br
-    .col-sm-3
+      %br
+    .col-sm-4
       %address
         RedVillage Head quaters
         %br/
@@ -19,7 +17,7 @@
         %strong Email Us
         %br/
         %a{:href => "info@redvillage.com"} info@redvillage.com
-    .col-sm-9.pull-right
+    .col-sm-7.pull-right
       %script{:src => "http://maps.google.com/maps/api/js?sensor=false", :type => "text/javascript"}
       %div{:style => "overflow:hidden;height:500px;width:600px;"}
         #gmap_canvas{:style => "height:500px;width:600px;"}
