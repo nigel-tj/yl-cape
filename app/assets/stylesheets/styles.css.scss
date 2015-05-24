@@ -55,11 +55,11 @@ body {
 }
 
 /* Declare heights because of positioning of img element */
-#myCarousel  .item {
+#bannerCarousel  .item {
   height: 600px;
   background-color:#bbb;
 }
-#myCarousel img {
+#bannerCarousel img {
   position: absolute;
   top: 0;
   left: 0;
