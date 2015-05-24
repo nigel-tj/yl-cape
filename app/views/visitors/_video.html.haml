@@ -13,19 +13,20 @@
               - @videos.each do |video|
                 %ul.hide-bullets
                   %li.col-sm-3
-                    #carousel-selector-"#{video.id}".thumbnail
-                      .yt_video.thumbnail
-                        =  image_tag("https://img.youtube.com/vi/#{video.uid}/mqdefault.jpg", alt: video.title,  class: 'img-rounded')
-                        .caption
-                          %h5= video.title
-                          %p
-                            Published at #{video.published_at.strftime('%-d %B %Y %H:%M:%S')}
-                          %p  
-                            %span.glyphicon.glyphicon.glyphicon-thumbs-up
-                            = video.likes
-                            %span.glyphicon.glyphicon.glyphicon-thumbs-down
-                            = video.dislikes
-                  
+                    %a#carousel-selector-"#{video.id}".thumbnail
+                      .col-md-4
+                        .yt_video.thumbnail
+                          = link_to image_tag("https://img.youtube.com/vi/#{video.uid}/mqdefault.jpg", alt: video.title, |
+                            class: 'img-rounded'), "https://www.youtube.com/watch?v=#{video.uid}", target: '_blank'      |
+                          .caption
+                            %h5= video.title
+                            %p
+                              Published at #{video.published_at.strftime('%-d %B %Y %H:%M:%S')}
+                            %p
+                              %span.glyphicon.glyphicon.glyphicon-thumbs-up
+                              = video.likes
+                              %span.glyphicon.glyphicon.glyphicon-thumbs-down
+                              = video.dislikes
                 .col-sm-6
                   #slider.col-xs-12
                     / Top part of the slider
