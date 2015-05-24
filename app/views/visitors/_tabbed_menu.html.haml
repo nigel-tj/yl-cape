@@ -11,7 +11,7 @@
     #home.tab-pane.fade.in.active{:role => "tabpanel"}
       .container
         .row
-          - @tweets.each do |tweet|
+          - @tweets.take(10) do |tweet|
             .col-sm-6.col-md-4
             
               .thumbnail
@@ -21,7 +21,7 @@
     #profile.tab-pane.fade.in{:role => "tabpanel"} 
       .container
         .row
-          -@tweet_more.each do |tweet|
+          -@tweets.each do |tweet|
             .col-sm-6.col-md-4
               .thumbnail
                 .caption
