@@ -7,8 +7,10 @@
         / Bottom switcher of slider
           %ul.hide-bullets
             %li.col-sm-3
-              %a#carousel-selector-0.thumbnail
-                %img{:src => "https://img.youtube.com/vi/#{video.uid}/mqdefault.jpg"}/
+              .thumbnail#carousel-selector-"#{video.id}"
+                = link_to image_tag("https://img.youtube.com/vi/#{video.uid}/mqdefault.jpg", alt: video.title, |
+                  class: 'img-rounded')
+               
             
         .col-sm-6
           #slider.col-xs-12
