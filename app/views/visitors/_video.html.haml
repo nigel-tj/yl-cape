@@ -4,7 +4,48 @@
     .col-sm-10
       %h1  Latest 
       %br
-      
+      .container
+        #main_area
+          / Slider
+          .row
+            #slider-thumbs.col-sm-6
+              / Bottom switcher of slider
+              - @videos.each do |video|
+                %ul.hide-bullets
+                  %li.col-sm-3
+                    %a#carousel-selector-#{video.id}.thumbnail
+                      .yt_video.thumbnail
+                        =  image_tag("https://img.youtube.com/vi/#{video.uid}/mqdefault.jpg", alt: video.title,  class: 'img-rounded')
+                        .caption
+                          %h5= video.title
+                          %p
+                            Published at #{video.published_at.strftime('%-d %B %Y %H:%M:%S')}
+                          %p  
+                            %span.glyphicon.glyphicon.glyphicon-thumbs-up
+                            = video.likes
+                            %span.glyphicon.glyphicon.glyphicon-thumbs-down
+                            = video.dislikes
+                  
+                .col-sm-6
+                  #slider.col-xs-12
+                    / Top part of the slider
+                    .row
+                      #carousel-bounding-box.col-sm-12
+                        #Video-Carousel.carousel.slide
+                          / Carousel items
+                          .carousel-inner
+                            .active.item{"data-slide-number" => "#{video.id}"}
+                              .col-md-6.embed-responsive.embed-responsive-4by3
+                                %iframe.embed-responsive-item{:allowfullscreen => "", :height => "315", :src => "//www.youtube.com/embed/#{video.uid}"}
+                                
+                            
+                          / Carousel nav
+                          %a.left.carousel-control{"data-slide" => "prev", :href => "#myCarousel", :role => "button"}
+                            %span.glyphicon.glyphicon-chevron-left
+                          %a.right.carousel-control{"data-slide" => "next", :href => "#myCarousel", :role => "button"}
+                            %span.glyphicon.glyphicon-chevron-right
+                / /Slider
+            
       // .container
       //   .row
       //     .col-md-12
@@ -14,45 +55,3 @@
       //           %br
      
 .divider
-.container
-  #main_area
-    / Slider
-    .row
-      #slider-thumbs.col-sm-6
-        / Bottom switcher of slider
-        - @videos.each do |video|
-          %ul.hide-bullets
-            %li.col-sm-3
-              %a#carousel-selector-#{video.id}.thumbnail
-                .yt_video.thumbnail
-                  = link_to image_tag("https://img.youtube.com/vi/#{video.uid}/mqdefault.jpg", alt: video.title, |
-                  class: 'img-rounded'), "https://www.youtube.com/watch?v=#{video.uid}", target: '_blank'      |
-                  .caption
-                    %h5= video.title
-                    %p
-                      Published at #{video.published_at.strftime('%-d %B %Y %H:%M:%S')}
-                    %p  
-                      %span.glyphicon.glyphicon.glyphicon-thumbs-up
-                      = video.likes
-                      %span.glyphicon.glyphicon.glyphicon-thumbs-down
-                      = video.dislikes
-            
-          .col-sm-6
-            #slider.col-xs-12
-              / Top part of the slider
-              .row
-                #carousel-bounding-box.col-sm-12
-                  #Video-Carousel.carousel.slide
-                    / Carousel items
-                    .carousel-inner
-                      .active.item{"data-slide-number" => "#{video.id}"}
-                        .col-md-6.embed-responsive.embed-responsive-4by3
-                          %iframe.embed-responsive-item{:allowfullscreen => "", :height => "315", :src => "//www.youtube.com/embed/#{video.uid}"}
-                          
-                      
-                    / Carousel nav
-                    %a.left.carousel-control{"data-slide" => "prev", :href => "#myCarousel", :role => "button"}
-                      %span.glyphicon.glyphicon-chevron-left
-                    %a.right.carousel-control{"data-slide" => "next", :href => "#myCarousel", :role => "button"}
-                      %span.glyphicon.glyphicon-chevron-right
-          / /Slider
