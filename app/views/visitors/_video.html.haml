@@ -6,9 +6,9 @@
     %hr/
     .container
       .row
-        - @videos.in_groups_of(3) do |video|
+        - @videos.each do |video|
           %ul.hide-bullets
-            %li.col-sm-3
+            %li.col-sm-4.embed-responsive-4by3
               %iframe.embed-responsive-item{:allowfullscreen => "", :src => "//www.youtube.com/embed/#{video.uid}"}
 
       
