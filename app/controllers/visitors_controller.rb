@@ -1,6 +1,6 @@
 class VisitorsController < ApplicationController
     def index
-        @tweets = $twitter.search("life style news", result_type: "recent").take(10)
+        @tweets = $twitter.search(" Mordern Life Style ", result_type: "recent").take(20)
      
         @videos = Video.order('created_at DESC')
       
