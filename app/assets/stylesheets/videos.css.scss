@@ -8,3 +8,6 @@
     padding: 0;
 }
 
+.video-carousel-inner>.video-item>video, .video-carousel-inner>.video-item>a>video {
+    width: 100%;
+}

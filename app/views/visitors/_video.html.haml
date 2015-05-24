@@ -18,9 +18,9 @@
               %ul.video-hide-bullets
                 - @videos.each do |video|
                   %li.col-sm-3
-                    .yt_video.thumbnail
-                      = link_to image_tag("https://img.youtube.com/vi/#{video.uid}/mqdefault.jpg", alt: video.title, |
-                        class: 'img-rounded'), "#_#{video.id}"
+                    %a.yt_video.thumbnail#carousel-selector-"#{video.id}"
+                      = image_tag("https://img.youtube.com/vi/#{video.uid}/mqdefault.jpg", alt: video.title, |
+                        class: 'img-rounded')
                       .caption
                         %h5= video.title
                         %p
@@ -40,7 +40,7 @@
                       / Carousel items
                       .carousel-inner
                         - @videos.each do |video|
-                          .active.item.embed-responsive.embed-responsive-4by3{"data-slide-number" => "#_#{video.id}"}
+                          .item.embed-responsive.embed-responsive-4by3{"data-slide-number" => "#{video.id}"}
                             %iframe.embed-responsive-item{:allowfullscreen => "", :height => "315", :src => "//www.youtube.com/embed/#{video.uid}"}
                         
                       / Carousel nav
