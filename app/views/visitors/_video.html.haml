@@ -8,7 +8,7 @@
       .row
         - @videos.each do |video|
           %ul.hide-bullets
-            %li.col-sm-3.embed-responsive-4by3.embed-responsive
+            %li.col-sm-3.embed-responsive-4by3.embed-responsive.thumbnail
               %iframe.embed-responsive-item{:allowfullscreen => "", :height => "315", :src => "//www.youtube.com/embed/#{video.uid}", :width => "560"}
 
       
