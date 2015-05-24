@@ -8,22 +8,22 @@
     
   / Tab panes
   .tab-content
-    #home.tab-pane.active{:role => "tabpanel"}
-    .container
-      .row
-        - @tweets.each do |tweet|
-          .col-sm-6.col-md-4
+    #home.tab-pane.fade.in.active{:role => "tabpanel"}
+      .container
+        .row
+          - @tweets.each do |tweet|
+            .col-sm-6.col-md-4
+            
+              .thumbnail
+                .caption
+                  %p= tweet.text
           
-            .thumbnail
-              .caption
-                %p= tweet.text
-          
-    #profile.tab-pane{:role => "tabpanel"} 
-    .container
-      .row
-        -@tweet_more.each do |tweet|
-          .col-sm-6.col-md-4
-            .thumbnail
-              .caption
-                %p= tweet.text
-   
+    #profile.tab-pane.fade.in{:role => "tabpanel"} 
+      .container
+        .row
+          -@tweet_more.each do |tweet|
+            .col-sm-6.col-md-4
+              .thumbnail
+                .caption
+                  %p= tweet.text
+     
