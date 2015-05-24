@@ -1,0 +1,30 @@
+%div{:role => "tabpanel"}
+  / Nav tabs
+  %ul.nav.nav-tabs{:role => "tablist"}
+    %li.active{:role => "presentation"}
+      %a{"aria-controls" => "home", "data-toggle" => "tab", :href => "#home", :role => "tab"} Latest
+    %li{:role => "presentation"}
+      %a{"aria-controls" => "profile", "data-toggle" => "tab", :href => "#profile", :role => "tab"} More
+    
+  .tab-content
+    #home.tab-pane.active{:role => "tabpanel"}
+    .container
+        .row
+          - @tweets.each do |tweet|
+            .col-sm-6.col-md-4
+              .thumbnail
+                .caption
+                  
+                  %p=  tweet.text
+                  
+    #profile.tab-pane{:role => "tabpanel"} 
+    .container
+        .row
+          - @tweets.each do |tweet|
+            .col-sm-6.col-md-4
+              .thumbnail
+                .caption
+                  
+                  %p=  tweet.text
+    #messages.tab-pane{:role => "tabpanel"} ...
+    #settings.tab-pane{:role => "tabpanel"} ...
