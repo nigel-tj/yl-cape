@@ -1,0 +1,17 @@
+%div{:role => "tabpanel"}
+  / Nav tabs
+  %ul.nav.nav-tabs{:role => "tablist"}
+    %li.active{:role => "presentation"}
+      %h2
+        %a{"aria-controls" => "home", "data-toggle" => "tab", :href => "#home", :role => "tab"} Latest
+    %li.pull-right{:role => "presentation"}
+      %h2
+        %a{"aria-controls" => "profile", "data-toggle" => "tab", :href => "#profile", :role => "tab"} More
+  %br
+  %br
+    
+  
+  
+  .tab-content
+    = render 'news_content'
+    
