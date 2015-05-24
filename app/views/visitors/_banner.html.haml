@@ -1,10 +1,10 @@
 
-#myCarousel.carousel.slide
+#bannerCarousel.carousel.slide
   / Indicators
   %ol.carousel-indicators
-    %li.active{"data-slide-to" => "0", "data-target" => "#myCarousel"}
-    %li{"data-slide-to" => "1", "data-target" => "#myCarousel"}
-    %li{"data-slide-to" => "2", "data-target" => "#myCarousel"}
+    %li.active{"data-slide-to" => "0", "data-target" => "#bannerCarousel"}
+    %li{"data-slide-to" => "1", "data-target" => "#bannerCarousel"}
+    %li{"data-slide-to" => "2", "data-target" => "#bannerCarousel"}
   .carousel-inner
     .item.active
       %img.img-responsive{:src => "https://fbcdn-sphotos-d-a.akamaihd.net/hphotos-ak-xpt1/v/t1.0-9/11222791_100995980239636_7649291936747245066_n.jpg?oh=6c5025ac0da76bb1eccdc0e607567474&oe=56048285&__gda__=1439039617_e14795aa3b2a9a306a0a82afccc669ec"}/
@@ -27,7 +27,7 @@
   /.carousel-inner
   
   / Controls
-  %a.left.carousel-control{"data-slide" => "prev", :href => "#myCarousel"}
+  %a.left.carousel-control{"data-slide" => "prev", :href => "#bannerCarousel"}
     %span.glyphicon.glyphicon-chevron-left
-  %a.right.carousel-control{"data-slide" => "next", :href => "#myCarousel"}
+  %a.right.carousel-control{"data-slide" => "next", :href => "#bannerCarousel"}
     %span.glyphicon.glyphicon-chevron-right
