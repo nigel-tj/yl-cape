@@ -23,7 +23,7 @@ gem 'high_voltage'
 gem 'devise'
 gem 'pundit'
 gem "erb2haml", :group => :development
-
+gem 'soundcloud'
 
 group :development do
   gem 'guard-bundler'
