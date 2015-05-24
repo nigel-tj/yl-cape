@@ -13,7 +13,7 @@
               - @videos.each do |video|
                 %ul.hide-bullets
                   %li.col-sm-3
-                    %a#carousel-selector-#{video.id}.thumbnail
+                    %a#carousel-selector-"#{video.id}".thumbnail
                       .yt_video.thumbnail
                         =  image_tag("https://img.youtube.com/vi/#{video.uid}/mqdefault.jpg", alt: video.title,  class: 'img-rounded')
                         .caption
