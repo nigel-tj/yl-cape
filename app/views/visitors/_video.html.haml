@@ -24,9 +24,19 @@
         %ul.video-hide-bullets
           - @videos.each do |video|
             %li.col-sm-3
-              %a#carousel-selector-"#{video.id}".video-thumbnail
-                %img.img-rounded{:src => "https://img.youtube.com/vi/#{video.uid}/mqdefault.jpg"}/
-         
+              .yt_video.thumbnail
+                = link_to image_tag("https://img.youtube.com/vi/#{video.uid}/mqdefault.jpg", alt: video.title, |
+                  class: 'img-rounded'), "#_#{video.id}"
+                .caption
+                  %h5= video.title
+                  %p
+                    Published at #{video.published_at.strftime('%-d %B %Y %H:%M:%S')}
+                  %p
+                    %span.glyphicon.glyphicon.glyphicon-thumbs-up
+                    = video.likes
+                    %span.glyphicon.glyphicon.glyphicon-thumbs-down
+                    = video.dislikes
+            
       .col-sm-6
         #slider.col-xs-12
           / Top part of the slider
@@ -36,12 +46,12 @@
                 / Carousel items
                 .carousel-inner
                   - @videos.each do |video|
-                    .active.item.embed-responsive.embed-responsive-4by3{"data-slide-number" => "#{video.id}"}
+                    .active.item.embed-responsive.embed-responsive-4by3{"data-slide-number" => "#_#{video.id}"}
                       %iframe.embed-responsive-item{:allowfullscreen => "", :height => "315", :src => "//www.youtube.com/embed/#{video.uid}"}
                   
                 / Carousel nav
-                %a.left.carousel-control{"data-slide" => "prev", :href => "#myCarousel", :role => "button"}
+                %a.left.carousel-control{"data-slide" => "prev", :href => "#video-Carousel", :role => "button"}
                   %span.glyphicon.glyphicon-chevron-left
-                %a.right.carousel-control{"data-slide" => "next", :href => "#myCarousel", :role => "button"}
+                %a.right.carousel-control{"data-slide" => "next", :href => "#video-Carousel", :role => "button"}
                   %span.glyphicon.glyphicon-chevron-right
       / /Slider
