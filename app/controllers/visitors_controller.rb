@@ -8,7 +8,7 @@ class VisitorsController < ApplicationController
         default_search = client.tag_search('Redcupvillage')
         @tag = default_search
         @tag = @tag.first.name
-        @results = client.tag_recent_media(@tag)
+        @results = @client.tag_recent_media(@tag)
         
       
     end
