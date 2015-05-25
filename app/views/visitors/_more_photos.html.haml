@@ -5,16 +5,20 @@
       %ul.nav.tabs
         %li.active
           %h3
-            %a{"data-toggle" => "tab", :href => "#tab1"} Past Event
+            %a{"data-toggle" => "tab", :href => "#past_event"} Past Event
         %li
           %h3
-            %a{"data-toggle" => "tab", :href => "#tab2"} #RedCupVillage
+            %a{"data-toggle" => "tab", :href => "#instagram_gallery"} #RedCupVillage
         
     
   / tab content
   .tab-content
-    #tab1.tab-pane.active
-      = render 'editors_choice'
-    #tab2.tab-pane
-      = render 'instagram_gallery'
+    .container
+      .row
+        .col-md-10
+          #past_event.tab-pane.active
+            
+            = render 'editors_choice'
+          #instagram_gallery.tab-pane
+            = render 'instagram_gallery'
       
