@@ -1,14 +1,18 @@
 
+#wrap
+  = render 'banner'
+
+  / Fixed navbar
+  = render 'navbar'
   
   / Begin page content
-%section
-  = render 'about'
-%section
-  = render 'news'
-%section
-  = render 'gallery'
-%section
-  = render 'video'
-%section
-  = render 'location'
+  %section
+    = render 'about'
+  %section
+    = render 'news'
+  %section
+    = render 'gallery'
+  %section
+    = render 'video'
 = render 'footer_button'
+  
