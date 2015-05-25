@@ -1,5 +1,5 @@
 
-$(document).ready(function(){$('.carousel').carousel({interval:true});
+$(document).ready(function(){$('.carousel').carousel({interval:2000});
 
 /* affix the navbar after scroll below header */
 $('#nav').affix({
