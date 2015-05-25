@@ -2,7 +2,7 @@
 %br
 .container
   .row
-    .col-sm-12
+    .col-md-12
       %div{:role => "tabpanel"}
         / Nav tabs
         %ul.nav.nav-tabs{:role => "tablist"}
@@ -15,8 +15,9 @@
         %br
         %br
           
-        
-        
-        .tab-content
-          = render 'gallery_content'
-          
+        .container
+          .row
+            .col-md-8
+              .tab-content
+                = render 'gallery_content'
+                
