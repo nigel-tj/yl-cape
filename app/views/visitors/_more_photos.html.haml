@@ -4,25 +4,17 @@
     %nav.nav-sidebar
       %ul.nav.tabs
         %li.active
-          %a{"data-toggle" => "tab", :href => "#tab1"} Lorem ipsum
+          %h3
+            %a{"data-toggle" => "tab", :href => "#tab1"} Past Event
         %li
-          %a{"data-toggle" => "tab", :href => "#tab2"} Dolor asit amet
-        %li
-          %a{"data-toggle" => "tab", :href => "#tab3"} Stet clita
-    %div
-      %h2.add Place for your add!
+          %h3
+            %a{"data-toggle" => "tab", :href => "#tab2"} #RedCupVillage
+        
+    
   / tab content
   .tab-content
     #tab1.tab-pane.active.text-style
-      %h2 Lorem ipsum
-      %p
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
-        a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining
-        essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-        and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-      %hr/
-      %img.img-rounded.pull-right{:src => "http://placehold.it/350x250"}/
+      = render 'editors_choice'
     #tab2.tab-pane.text-style
       %h2 Dolor asit amet
       %p
