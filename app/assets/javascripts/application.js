@@ -13,6 +13,7 @@
 //= require jquery
 //= require scripts
 //= require videos
+//= require gallery
 
 //= require jquery_ujs
 //= require bootstrap-sprockets

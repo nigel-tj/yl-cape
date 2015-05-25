@@ -24,6 +24,7 @@ gem 'devise'
 gem 'pundit'
 gem "erb2haml", :group => :development
 gem 'soundcloud'
+gem 'instagram'
 
 group :development do
   gem 'guard-bundler'

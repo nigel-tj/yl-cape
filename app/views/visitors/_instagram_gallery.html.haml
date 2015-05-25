@@ -1,0 +1,30 @@
+.container
+  .row
+    
+    .col-lg-12
+      - @results.each do |instagram|
+        - if instagram.caption
+          - caption = instagram.caption.text
+        .col-lg-3.col-md-4.col-xs-6.thumb.image-list
+
+          %a.thumbnail{"data-caption" => caption, "data-image" => "#{instagram.images.standard_resolution.url}", "data-image-id" => "", "data-target" => "#image-gallery", "data-title" => "@#{instagram.user.username}", "data-toggle" => "modal", :href => "#"}
+            %img.img-responsive{:alt => caption, :src => "#{instagram.images.standard_resolution.url}"}/
+        #image-gallery.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+          .modal-dialog
+            .modal-content
+              .modal-header
+                %button.close{"data-dismiss" => "modal", :type => "button"}
+                  %span{"aria-hidden" => "true"} ×
+                  %span.sr-only Close
+                %h4#image-gallery-title.modal-title
+              .modal-body
+                %img#image-gallery-image.img-responsive{:src => "#{instagram.images.standard_resolution.url}"}/
+              .modal-footer
+                .col-md-2
+                  %button#show-previous-image.btn.btn-primary{:type => "button"} Previous
+                #image-gallery-caption.col-md-8.text-justify
+                  This text will be overwritten by jQuery
+                .col-md-2
+                  %button#show-next-image.btn.btn-default{:type => "button"} Next
+
+                
