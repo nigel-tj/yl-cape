@@ -1,0 +1,44 @@
+.container
+  .col-sm-2
+    %nav.nav-sidebar
+      %ul.nav.tabs
+        %li.active
+          %a{"data-toggle" => "tab", :href => "#tab1"} Lorem ipsum
+        %li
+          %a{"data-toggle" => "tab", :href => "#tab2"} Dolor asit amet
+        %li
+          %a{"data-toggle" => "tab", :href => "#tab3"} Stet clita
+    %div
+      %h2.add Place for your add!
+  / tab content
+  .tab-content
+    #tab1.tab-pane.active.text-style
+      %h2 Lorem ipsum
+      %p
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
+        a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining
+        essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+        and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+      %hr/
+      %img.img-rounded.pull-right{:src => "http://placehold.it/350x250"}/
+    #tab2.tab-pane.text-style
+      %h2 Dolor asit amet
+      %p
+        Dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt
+        ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
+        dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
+        et dolore magna aliquyam erat, sed diam voluptua.
+      %hr/
+      %img.img-rounded.pull-left{:src => "http://placehold.it/150x90"}/
+    #tab3.tab-pane.text-style
+      %h2 Stet clita
+      %p
+        Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Duis autem vel eum
+        iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla
+        facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit
+        augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet,
+      %hr/
+      .col-xs-6.col-md-3
+        %img.img-rounded.pull-right{:src => "http://placehold.it/150x150"}/
