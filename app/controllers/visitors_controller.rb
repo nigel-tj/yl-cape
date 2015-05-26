@@ -9,7 +9,7 @@ class VisitorsController < ApplicationController
         @tag = default_search
         @tag = @tag.first.name
         @results = @client.tag_recent_media(@tag)
-        @graph = Koala::Facebook::API.new( 'CAACEdEose0cBAIfnOo7Fxv49emoR3ae9JAp6l9XZBgMZCguSRNp2fyDNenJyxSoZCuKh1ZCJy7Vd8BHf4g3iQehScf37jA79iZAJ6DlJBYcrJjOjgLlhjKYurfAHzZCo3KeiXZARyYjZAonCMV5GVrn5HobQummylQSgOgAooJXqUH2icusWdcpnQentdkJygCvjL83vWDQRMWe0Ll0J8JkZCVQ15OXBopGsZD')
+        @graph = Koala::Facebook::API.new( 'CAACEdEose0cBAPeqb26hqvNjOPPafaVbTz7aZCvrHcZAJHx2MuevZBmoqrBnIdtZBBAe7HKM0ZBvVZBrRCjTtYBZBvPukuGNlLZCxPLqshJt3FZAgxbbZCxTA9ZCGrlUKssfxYX1HS7uH1zafFQSZBHpKKZBlLqA49f7PPyjARXpeFClxzAxhvDQ6mZB94PH034zZCQ38gz5xV1X2JRbmxk1vz6HcGD' , '41b99146e69977030e7bca75d879bbf6')
         @graph.get_connections("TheRedcupvillage", "feed")
         
       
