@@ -4,7 +4,7 @@
       %h1 Feeds
       - @feed.each do |facebook|
         %img{:src => "#{facebook['picture']}"}
-        %p= facebook["message"].present?
+        %p= facebook["message"]
       
         - feed_next_page = @feed.next_page
         
