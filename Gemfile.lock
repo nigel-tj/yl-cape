@@ -170,6 +170,10 @@ GEM
       thor (>= 0.14, < 2.0)
     json (1.8.2)
     jwt (1.4.1)
+    koala (2.0.0)
+      addressable
+      faraday
+      multi_json
     libnotify (0.9.1)
       ffi (>= 1.0.11)
     listen (2.10.0)
@@ -408,6 +412,7 @@ DEPENDENCIES
   instagram
   jbuilder (~> 2.0)
   jquery-rails
+  koala (~> 2.0)
   libnotify
   minitest-rails
   minitest-rails-capybara
