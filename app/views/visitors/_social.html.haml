@@ -8,15 +8,7 @@
         %th Story tags
       - @feed.each do |f|
         %tr
-          %td= f["story"]
-          %td= f["story_tags"]["19"][0]["name"]
+          %td= f["message"]
+          %td= f["type"]
       - feed_next_page = @feed.next_page
-      - feed_next_page.each do |f|
-        %tr
-          %td= f["story"]
-          %td= f["story_tags"]["19"][0]["name"] if f["story_tags"]["19"]
-      - feed_next_page = @feed.next_page
-      - feed_next_page.each do |f|
-        %tr
-          %td= f["story"]
-          %td= f["story_tags"]["19"][0]["name"] if f["story_tags"]["19"]
+      

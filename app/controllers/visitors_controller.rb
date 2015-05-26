@@ -10,7 +10,8 @@ class VisitorsController < ApplicationController
         @tag = @tag.first.name
         @results = @client.tag_recent_media(@tag)
         @graph = Koala::Facebook::API.new( '427969987356450|1BAAiHW4nnWkIL7NfhsI7pi5dD0')
-        @feed = @graph.get_connections("TheRedcupvillage", "feed")
+        @feed = @graph.get_connections("TheRedcupvillage", "posts", {limit: @options[:max_items], fields: ['message' , 'id' , 'type' , 'picture','created_time', 'updated_time']})
+        
         
       
     end
