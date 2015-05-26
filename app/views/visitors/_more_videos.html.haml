@@ -5,10 +5,10 @@
       %ul.nav.tabs
         %li.active
           %h3
-            %a{"data-toggle" => "tab", :href => "#tab1"} Past Event
+            %a{"data-toggle" => "tab", :href => "#music_videos"} Music
         %li
           %h3
-            %a{"data-toggle" => "tab", :href => "#tab2"} #RedCupVillage
+            %a{"data-toggle" => "tab", :href => "#vines"} Vines
         
     
   / tab content
@@ -17,8 +17,8 @@
       .col-md-6
         .tab-content
           
-          #tab1.tab-pane.fade.in.active
-            = render 'editors_choice'
-          #tab2.tab-pane.fade.in
+          #music_videos.tab-pane.fade.in.active
+            = render 'music_videos'
+          #vines.tab-pane.fade.in
             = render 'instagram_gallery'
             
