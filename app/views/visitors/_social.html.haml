@@ -1,0 +1,21 @@
+.row{:style => "margin-top: 16px;width: 1000px;"}
+  .span5
+    %h1 Feeds
+    %table.table.table-striped
+      %tr
+        %th Story
+        %th Story tags
+      - @feed.each do |f|
+        %tr
+          %td= f["story"]
+          %td= f["story_tags"]["19"][0]["name"]
+      - feed_next_page = @feed.next_page
+      - feed_next_page.each do |f|
+        %tr
+          %td= f["story"]
+          %td= f["story_tags"]["19"][0]["name"] if f["story_tags"]["19"]
+      - feed_next_page = @feed.next_page
+      - feed_next_page.each do |f|
+        %tr
+          %td= f["story"]
+          %td= f["story_tags"]["19"][0]["name"] if f["story_tags"]["19"]
