@@ -1,18 +1,6 @@
 
 .container
   .row
-    .col-lg-12
-      %h1  Latest Videos
-      %hr/
-      .container
-        .row
-          %ul.hide-bullets
-            .container
-              - @videos.each do |video|
-                %li.col-md-4.embed-responsive-4by3
-                  %iframe.embed-responsive-item{:allowfullscreen => "", :src => "//www.youtube.com/embed/#{video.uid}"}
-  
-      
-        
-      
-     
+    .col-sm-10
+      = render 'video_tabbed_content'
+    
