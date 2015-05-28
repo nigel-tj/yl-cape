@@ -1,19 +1,29 @@
-
 .container
-  %h2 Book Tickets
   .row
-    .row
-  .col-sm-6.col-md-4
-    .thumbnail
-      %img{:alt => "...", :src => "https://scontent-ams3-1.xx.fbcdn.net/hphotos-xpf1/v/t1.0-9/11018065_1608222406127665_5287395859032954627_n.png?oh=580130a199e75e0a8db5b6f7617e8d16&oe=55FA0638"}/
-      .caption
-        %h3 Upper Echelon
-        %p 
-          Jun 12 at 9:00pm to Jun 13 at 4:00am
-        %p  
-          St Yves Night Club
+    
 
-        %p
-          %a.btn.btn-primary{:href => "#qr_code", :role => "button"} Book ticket
-          
-.divider
+      
+        .col-lg-3.col-md-4.col-xs-6.thumb.image-list
+
+          %a.thumbnail{ "data-image" => "https://scontent-ams3-1.xx.fbcdn.net/hphotos-xaf1/v/t1.0-9/11149565_1607481382868434_1944563872031262486_n.png?oh=0c5c2777957b8a754be1f81faa759551&oe=55FF13D7", "data-target" => "#events-image-gallery", "data-toggle" => "modal", :href => "#"}
+            %img.img-responsive{:alt => caption, :src => "https://scontent-ams3-1.xx.fbcdn.net/hphotos-xaf1/v/t1.0-9/11149565_1607481382868434_1944563872031262486_n.png?oh=0c5c2777957b8a754be1f81faa759551&oe=55FF13D7}"}/
+        #events-image-gallery.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+          .modal-dialog
+            .modal-content
+              .modal-header
+                %button.close{"data-dismiss" => "modal", :type => "button"}
+                  %span{"aria-hidden" => "true"} ×
+                  %span.sr-only Close
+                %h4#image-gallery-title.modal-title
+              .modal-body
+                %img#image-gallery-image.img-responsive{:src => "#{@qr}"}/
+              .modal-footer
+                .col-md-2
+                  %button#show-previous-image.btn.btn-primary{:type => "button"} Previous
+                .col-md-4
+                  %p#image-gallery-caption.col-md-8.text-justify
+                  
+                .col-md-2
+                  %button#show-next-image.btn.btn-default{:type => "button"} Next
+
+                
