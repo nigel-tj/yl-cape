@@ -13,8 +13,8 @@
               %span.sr-only Close
             %h4#image-gallery-title.modal-title
           .modal-body
-            = image_tag(@qr , id: "image-gallery" , class: "img-responsive")
-            // %img#image-gallery-image.img-responsive{:src => "#{@qr}"}/
+            = image_tag @qr 
+            
           .modal-footer
             .col-md-2
               %button#show-previous-image.btn.btn-primary{:type => "button"} Previous
