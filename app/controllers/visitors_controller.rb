@@ -1,3 +1,4 @@
+require 'rqrcode_png'  
 class VisitorsController < ApplicationController
     def index
         @tweets = $twitter.search("lifestyle news ", result_type: "recent").take(20)
@@ -11,7 +12,7 @@ class VisitorsController < ApplicationController
         @results = @client.tag_recent_media(@tag)
         @graph = Koala::Facebook::API.new( '427969987356450|1BAAiHW4nnWkIL7NfhsI7pi5dD0')
         @feed = @graph.get_connections("TheRedcupvillage", "posts",'type' => 'large')
-        
+        @qr = RQRCode::QRCode.new("http://redvillage.herokuapp.com").to_img.resize(200, 200).to_data_url
         
       
     end

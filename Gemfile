@@ -26,6 +26,7 @@ gem "erb2haml", :group => :development
 gem 'soundcloud'
 gem 'instagram'
 gem "koala", "~> 2.0"
+gem 'rqrcode_png'  
 
 group :development do
   gem 'guard-bundler'
