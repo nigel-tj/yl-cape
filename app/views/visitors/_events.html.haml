@@ -2,11 +2,18 @@
 .container
   %h2 Book Tickets
   .row
-    .col-md-4
-      .panel.panel-default
-        .panel-thumbnail
-          %a{:href => "#qr_code" , :title => ""}
-            %img.img-responsive{:src => "https://scontent-ams3-1.xx.fbcdn.net/hphotos-xpf1/v/t1.0-9/11018065_1608222406127665_5287395859032954627_n.png?oh=580130a199e75e0a8db5b6f7617e8d16&oe=55FA0638"}
-   
-     
+    .row
+  .col-sm-6.col-md-4
+    .thumbnail
+      %img{:alt => "...", :src => "https://scontent-ams3-1.xx.fbcdn.net/hphotos-xpf1/v/t1.0-9/11018065_1608222406127665_5287395859032954627_n.png?oh=580130a199e75e0a8db5b6f7617e8d16&oe=55FA0638"}/
+      .caption
+        %h3 Upper Echelon
+        %p 
+          Jun 12 at 9:00pm to Jun 13 at 4:00am
+        %p  
+          St Yves Night Club
+
+        %p
+          %a.btn.btn-primary{:href => "#qr_code", :role => "button"} Book ticket
+          
 .divider
