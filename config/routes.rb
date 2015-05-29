@@ -11,10 +11,10 @@ Rails.application.routes.draw do
   resources :gallery
   resources :videos
   resources :video_uploads
-  resources :users do
-    resources :events do
+  
+  resources :events do
     resources :vip_tickets , :standard_tickets
-    end
+    
   end
   resources :events
   resources :vip_tickets
