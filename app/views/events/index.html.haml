@@ -5,8 +5,8 @@
         
         = image_tag event.image_link
         .caption
-          = link_to "Vip tickets" , user_event_vip_tickets_path
-          = link_to "standard_tickets" , user_event_standard_tickets_path
+          = link_to "Vip tickets" , user_event_vip_tickets_path(current_user.id , event.id)
+          = link_to "standard_tickets" , user_event_standard_tickets_path(current_user.id , event.id)
 
           %br
 
