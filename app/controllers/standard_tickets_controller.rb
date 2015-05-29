@@ -2,7 +2,6 @@ class StandardTicketsController < ApplicationController
      def create
         if current_user 
           @event = Event.find_by_id(params[:event_id])
-          
             @event.standard_tickets.create({user_id: current_user.id})
              flash[:notice] = "Ticket has been Sent to your facebook photo : "
              redirect_to root_path    
@@ -16,4 +15,10 @@ class StandardTicketsController < ApplicationController
         end
         
       end
+       def index
+            @qr = RQRCode::QRCode.new("http://redvillage.herokuapp.com/standard_tickets").to_img.resize(200, 200).to_data_url
+            
+            
+        end
+        
 end
