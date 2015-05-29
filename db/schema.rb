@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150529164618) do
+ActiveRecord::Schema.define(version: 20150529185218) do
 
   create_table "facebook_oauth_settings", force: :cascade do |t|
     t.string   "access_token"
@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 20150529164618) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.string   "token"
+    t.string   "provider"
     t.string   "uid"
   end
 
