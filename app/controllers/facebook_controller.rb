@@ -1,6 +1,6 @@
 class FacebookController < ApplicationController
     def index
-        unless  current_user
+        unless  current_user.facebook_oauth_setting
         @oauth = Koala::Facebook::OAuth.new("427969987356450","41b99146e69977030e7bca75d879bbf6", "http://#{request.host}:#{request.port}/callback")
         session["oauth_obj"] = @oauth
         redirect_to @oauth.url_for_oauth_code
@@ -11,7 +11,7 @@ class FacebookController < ApplicationController
     end
     
     def callback
-        unless current_user
+        unless current_user.facebook_oauth_setting
         @oauth = session["oauth_obj"]
         FacebookOauthSetting.create({:access_token => @oauth.get_access_token(params[:code], :user_id => current_user.id)})
         redirect_to "/facebook_profile"
@@ -23,7 +23,7 @@ class FacebookController < ApplicationController
     end
     
     def facebook_profile
-         if current_user
+         if current_user.facebook_oauth_setting
              @graph = Koala::Facebook.API.new(current_user.facebook_oauth_setting.access_token)
              @profile = @graph.get_object("me")
              @picture = @graph.get_picture("me")
