@@ -10,6 +10,19 @@ class EventsController < ApplicationController
         @event= Event.new
         
       end
+      def create 
+        @event = Event.create(event_params)
+        
+        if @event.save
+          flash[:notice] = "The event has been saved"
+          redirect_to root_path
+          
+        else
+          flash[:alert] = "The event has not been created"
+          render "new"
+        end
+        
+      end
       def show
         @event = Event.find(params[:id]) 
         @events = Event.all  
