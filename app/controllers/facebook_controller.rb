@@ -1,4 +1,5 @@
 class FacebookController < ApplicationController
+    before_filter :authenticate_user!
     def index
         unless  current_user.facebook_oauth_setting
         @oauth = Koala::Facebook::OAuth.new("427969987356450","41b99146e69977030e7bca75d879bbf6", "http://#{request.host}:#{request.port}/callback")
