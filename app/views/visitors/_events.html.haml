@@ -21,11 +21,11 @@
             
           .modal-footer
             .col-md-2
-              %a.btn.btn-primary{:type => "button" , :href => "/callback"} Vip Ticket
-            .col-md-4
-              %p#image-gallery-caption.col-md-8.text-justify
+              = link_to "Vip Ticket", user_omniauth_authorize_path(:facebook) , class: "btn btn-primary"
+              
+            
               
             .col-md-2
-              %a.btn.btn-default{:type => "button" , :href => "/callback"} Normal Ticket
-
+              = link_to "Normal Ticket", user_omniauth_authorize_path(:facebook), class: "btn btn-default"
+              
             

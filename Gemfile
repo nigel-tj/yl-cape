@@ -27,7 +27,7 @@ gem 'soundcloud'
 gem 'instagram'
 gem "koala", "~> 2.0"
 gem 'rqrcode_png'  
-
+gem 'omniauth-facebook'
 group :development do
   gem 'guard-bundler'
   gem 'guard-minitest'
