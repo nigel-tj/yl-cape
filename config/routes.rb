@@ -3,7 +3,8 @@ Rails.application.routes.draw do
 
   get 'music/index'
   get 'gallery/index'
-
+  get "/callback" => "facebook#callback"
+  get "/facebook_profile" => "facebook#facebook_profile"
   devise_for :users
   resources :users
   resources :musics
