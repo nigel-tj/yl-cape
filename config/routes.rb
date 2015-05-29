@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get 'gallery/index'
   get "/callback" => "facebook#callback"
   get "/facebook_profile" => "facebook#facebook_profile"
-  devise_for :users
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   resources :users
   resources :musics
   resources :gallery
