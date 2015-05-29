@@ -1,0 +1,2 @@
+class VipTicketsController < ApplicationController
+end

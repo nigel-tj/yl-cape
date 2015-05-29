@@ -11,6 +11,16 @@ Rails.application.routes.draw do
   resources :gallery
   resources :videos
   resources :video_uploads
+  resources :users do
+    resources :events do
+    resources :vip_tickets , :standard_tickets
+    end
+  end
+  resources :events
+  resources :vip_tickets
+  resources :standard_tickets
+  
+  
   get '/auth/:provider/callback', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy', as: :logout
 

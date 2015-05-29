@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable , :omniauthable, :omniauth_providers => [:facebook]
   enum role: [:user, :admin]
   after_initialize :set_default_role, :if => :new_record?
+  has_many :events
 
   def set_default_role
     self.role ||= :user

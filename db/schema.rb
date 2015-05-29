@@ -11,14 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150529185218) do
+ActiveRecord::Schema.define(version: 20150529205933) do
 
-  create_table "facebook_oauth_settings", force: :cascade do |t|
-    t.string   "access_token"
-    t.integer  "user_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+  create_table "events", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "image_link"
   end
+
+  create_table "standard_tickets", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "event_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "standard_tickets", ["event_id"], name: "index_standard_tickets_on_event_id"
+  add_index "standard_tickets", ["user_id"], name: "index_standard_tickets_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
@@ -54,5 +64,15 @@ ActiveRecord::Schema.define(version: 20150529185218) do
   end
 
   add_index "videos", ["uid"], name: "index_videos_on_uid"
+
+  create_table "vip_tickets", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "event_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "vip_tickets", ["event_id"], name: "index_vip_tickets_on_event_id"
+  add_index "vip_tickets", ["user_id"], name: "index_vip_tickets_on_user_id"
 
 end

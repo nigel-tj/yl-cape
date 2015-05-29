@@ -1,0 +1,2 @@
+class StandardTicketsController < ApplicationController
+end
