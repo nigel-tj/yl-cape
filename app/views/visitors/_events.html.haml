@@ -15,17 +15,17 @@
             %button.close{"data-dismiss" => "modal", :type => "button"}
               %span{"aria-hidden" => "true"} ×
               %span.sr-only Close
-            %h4#image-gallery-title.modal-title
+            %h4#image-gallery-title.modal-title Upper Echellon
           .modal-body
-            = image_tag @qr 
+            %img.img-responsive{ :src => "https://scontent-ams3-1.xx.fbcdn.net/hphotos-xaf1/v/t1.0-9/11149565_1607481382868434_1944563872031262486_n.png?oh=0c5c2777957b8a754be1f81faa759551&oe=55FF13D7"}/ 
             
           .modal-footer
             .col-md-2
-              %button#show-previous-image.btn.btn-primary{:type => "button"} Previous
+              %button#show-previous-image.btn.btn-primary{:type => "button" , :href => "users/sign_up"} Vip Ticket
             .col-md-4
               %p#image-gallery-caption.col-md-8.text-justify
               
             .col-md-2
-              %button#show-next-image.btn.btn-default{:type => "button"} Next
+              %button#show-next-image.btn.btn-default{:type => "button" , :href => "users/sign_up"} Normal Ticket
 
             
