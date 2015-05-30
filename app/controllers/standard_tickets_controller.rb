@@ -16,7 +16,7 @@ class StandardTicketsController < ApplicationController
         
       end
        def index
-            @qr_standard_code = RQRCode::QRCode.new("http://redvillage.herokuapp.com/events/1/standard_tickets",:size => 4, :level => :h).to_img.resize(200, 200).to_data_url
+            @qr_standard_code = RQRCode::QRCode.new("http://redvillage.herokuapp.com/").to_img.resize(200, 200).to_data_url
             
             
         end
