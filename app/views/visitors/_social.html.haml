@@ -3,17 +3,10 @@
     .col-md-12
       %h1 Feeds
       - @feed.each do |facebook|
-  
-        .col-md-10
-          
-          .col-md-4
-            .thumbnail
-              %img.img-responsive{:src => "#{facebook['picture']}"}
-          // %img{:src => "#{facebook['picture']}"}
-          .col-md-6
+        .col-md-3
+          %img.img-responsive{:src => "#{facebook['picture']}"}
             .caption
-              %p
-                = facebook["message"]
+              %p= facebook["message"]
     
           
         
