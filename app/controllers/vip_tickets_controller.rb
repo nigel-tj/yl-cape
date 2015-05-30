@@ -1,6 +1,7 @@
 class VipTicketsController < ApplicationController
     def index
-    @qr_vip_tickets = RQRCode::QRCode.new("http://redvillage.herokuapp.com/",:size => 4, :level => :h).to_img.resize(200, 200).to_data_url
+    @qr_vip_tickets = RQRCode::QRCode.new("http://redvillage.herokuapp.com/events/1/vip_tickets",:size => 8).to_img.resize(200, 200).to_data_url
+    
         
         
     end
