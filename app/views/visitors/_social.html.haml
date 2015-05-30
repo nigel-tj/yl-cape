@@ -4,10 +4,9 @@
       %h1 Feeds
       - @feed.each do |facebook|
         .col-sm-6.col-md-4
-          .thumbnail
-            %img{:src => "#{facebook['picture']}"}
-              .caption
-                %p= facebook["message"]
-      
+          %img{:src => "#{facebook['picture']}"}
+            .caption
+              %p= facebook["message"]
+    
           
         
