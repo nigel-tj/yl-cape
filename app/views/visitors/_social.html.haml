@@ -5,14 +5,15 @@
       - @feed.each do |facebook|
   
         .col-md-4
-          .row
-            .col-md-1
-              .thumbnail
-                %img.img-responsive{:src => "#{facebook['picture']}"}
+          
+          .col-md-1
+            .thumbnail
+              %img.img-responsive{:src => "#{facebook['picture']}"}
           // %img{:src => "#{facebook['picture']}"}
-            .col-md-3
-              .caption
-                %p= facebook["message"]
+          .col-md-3
+            .caption
+              %p
+                = facebook["message"]
     
           
         
