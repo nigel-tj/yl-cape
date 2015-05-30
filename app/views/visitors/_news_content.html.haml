@@ -4,7 +4,7 @@
       - @tweets.take(10).collect do |tweet|
         .col-sm-6.col-md-4
         
-          .thumbnail
+          .well
             .caption
               %p= tweet.text
       
@@ -13,7 +13,7 @@
     .row
       -@tweets.each do |tweet|
         .col-sm-6.col-md-4
-          .thumbnail
+          .well
             .caption
               %p= tweet.text
  
