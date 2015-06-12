@@ -1,20 +1,22 @@
 #home.tab-pane.fade.in.active{:role => "tabpanel"}
   .container
-    .row
-      - @feed.take(10).collect do |facebook|
-        .col-md-3
-          %img.img-responsive{:src => "#{facebook['picture']}"}
-          .caption
-            %p= facebook["message"]
-    
+    .col-md-12
+      .row
+        - @feed.take(10).collect do |facebook|
+          .col-md-3
+            %img.img-responsive{:src => "#{facebook['picture']}"}
+            .caption
+              %p= facebook["message"]
+      
       
 #profile.tab-pane.fade.in{:role => "tabpanel"} 
   .container
-    .row
-      - @feed.each do |facebook|
-        .col-md-3
-          %img.img-responsive{:src => "#{facebook['picture']}"}
-          .caption
-            %p= facebook["message"]
-    
+    .col-md-12
+      .row
+        - @feed.each do |facebook|
+          .col-md-3
+            %img.img-responsive{:src => "#{facebook['picture']}"}
+            .caption
+              %p= facebook["message"]
+      
  
