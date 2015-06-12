@@ -1,7 +1,7 @@
 require 'rqrcode_png'  
 class VisitorsController < ApplicationController
     def index
-        @tweets = $twitter.search("lifestyle news ", result_type: "recent").take(20)
+        @tweets = $twitter.search("UpperEchelon12June ", result_type: "recent").take(20)
      
         @videos = Video.order('created_at DESC')
         

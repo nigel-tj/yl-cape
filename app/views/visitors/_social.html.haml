@@ -1,14 +1,14 @@
 .container
   .row
     .col-md-12
-      %h1 Feed
+      %h1 Our Trending Feed
       %hr
       %br
-      - @feed.each do |facebook|
-        .col-md-3
-          %img.img-responsive{:src => "#{facebook['picture']}"}
+      - @tweets.take(10).collect do |tweet|
+        .col-sm-6.col-md-4
+        
+          
           .caption
-            %p= facebook["message"]
-    
+            %p.text-info= tweet.text
           
         
