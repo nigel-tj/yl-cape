@@ -1,7 +1,7 @@
 .container
   .row
     .col-md-12
-      %h1 Our Trending Feed
+      %h1Trending Feed
       %hr
       %br
       - @tweets.take(10).collect do |tweet|
@@ -9,6 +9,6 @@
         
           
           .caption
-            %p.text-info= tweet.text
+            %p tweet.text
           
         
