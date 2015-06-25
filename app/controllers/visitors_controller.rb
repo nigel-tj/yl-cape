@@ -19,6 +19,10 @@ class VisitorsController < ApplicationController
        @videos = Video.order('created_at DESC')
     end
 
+    def social
+       @tweets = $twitter.search("UpperEchelon12June ", result_type: "recent").take(20)
+    end
+
     def news
       @client = Instagram.client(:access_token  => '1052563623.1fb234f.99cb9eff244d48e8a71027ed63f6830f')
         default_search = @client.tag_search('Redcupvillage')
