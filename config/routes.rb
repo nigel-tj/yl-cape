@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get 'visitors/videos'
   get 'visitors/social'
   get 'visitors/events'
-  get 'visitors/location'
+  get 'visitors/contact'
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   resources :users
@@ -36,7 +36,7 @@ Rails.application.routes.draw do
   match '/news' => 'visitors#news', :via => :get
   match '/social' => 'visitors#social', :via => :get
   match '/videos' => 'visitors#videos', :via => :get
-  match '/location' => 'visitors#location', :via => :get
+  match '/location' => 'visitors#contact', :via => :get
 
   root to: 'visitors#index'
 end
