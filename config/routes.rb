@@ -31,11 +31,12 @@ Rails.application.routes.draw do
   get '/auth/:provider/callback', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy', as: :logout
 
-  match 'gallery' => 'visitors#gallery', :via => :get
-  match 'music' => 'visitors#music', :via => :get
-  match 'news' => 'visitors#news', :via => :get
-  match 'social' => 'visitors#social', :via => :get
-  match 'videos' => 'visitors#videos', :via => :get
+  match '/gallery' => 'visitors#gallery', :via => :get
+  match '/music' => 'visitors#music', :via => :get
+  match '/news' => 'visitors#news', :via => :get
+  match '/social' => 'visitors#social', :via => :get
+  match '/videos' => 'visitors#videos', :via => :get
+  match '/location' => 'visitors#location', :via => :get
 
   root to: 'visitors#index'
 end
