@@ -5,7 +5,7 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
-gem 'turbolinks'
+
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 group :development, :test do
@@ -22,7 +22,12 @@ gem 'simple_form'
 gem 'high_voltage'
 gem 'devise'
 gem 'pundit'
+gem "erb2haml", :group => :development
 gem 'soundcloud'
+gem 'instagram'
+gem "koala", "~> 2.0"
+gem 'rqrcode_png'  
+gem 'omniauth-facebook'
 group :development do
   gem 'guard-bundler'
   gem 'guard-minitest'
@@ -56,4 +61,5 @@ gem 'autoprefixer-rails'
 gem 'rails-observers'
 gem 'omniauth-google-oauth2'
 gem 'active_type', '0.3.1'
+gem 'rails-gallery'
 

@@ -1,7 +1,6 @@
 // import the CSS framework
 @import "bootstrap-sprockets";
-@import "variable";
-@import "soundcloud";
+
 @import "bootstrap";
 
 
@@ -15,9 +14,9 @@ img {
   font-size: inherit;
   }
 
-// THESE ARE EXAMPLES YOU CAN MODIFY
-// create your own classes
-// to make views framework-neutral
+THESE ARE EXAMPLES YOU CAN MODIFY
+create your own classes
+to make views framework-neutral
 .column {
   @extend .col-md-6;
   @extend .text-center;
@@ -36,12 +35,12 @@ img {
   }
 // apply styles to HTML elements
 // to make views framework-neutral
-main {
-  @extend .container;
-  padding-bottom: 80px;
-  width: 100%;
-  margin-top: 51px; // accommodate the navbar
-  }
+// main {
+//   @extend .container;
+//   padding-bottom: 80px;
+//   width: 100%;
+//   margin-top: 51px; // accommodate the navbar
+//   }
 section {
   @extend .row;
   margin-top: 20px;

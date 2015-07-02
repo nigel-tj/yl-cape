@@ -11,9 +11,12 @@
 // about supported directives.
 //
 //= require jquery
+//= require scripts
+//= require videos
+//= require gallery
+
 //= require jquery_ujs
 //= require bootstrap-sprockets
-//= require soundcloud
-//= require turbolinks
+
 
 //= require_tree .

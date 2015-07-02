@@ -1,0 +1,30 @@
+.container
+  %h1  
+    Book Tickets
+    %hr
+    %br
+  .row
+    .col-lg-3.col-md-4.col-xs-6.thumb.image-list
+
+      %a.thumbnail{ "data-image" => "https://scontent-ams3-1.xx.fbcdn.net/hphotos-xaf1/v/t1.0-9/11149565_1607481382868434_1944563872031262486_n.png?oh=0c5c2777957b8a754be1f81faa759551&oe=55FF13D7", "data-target" => "#events-image-gallery", "data-toggle" => "modal", :href => "#"}
+        %img.img-responsive{ :src => "https://scontent-ams3-1.xx.fbcdn.net/hphotos-xaf1/v/t1.0-9/11149565_1607481382868434_1944563872031262486_n.png?oh=0c5c2777957b8a754be1f81faa759551&oe=55FF13D7"}/
+    #events-image-gallery.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+      .modal-dialog
+        .modal-content
+          .modal-header
+            %button.close{"data-dismiss" => "modal", :type => "button"}
+              %span{"aria-hidden" => "true"} ×
+              %span.sr-only Close
+            %h4#image-gallery-title.modal-title Upper Echellon
+          .modal-body
+            %img.img-responsive{ :src => "https://scontent-ams3-1.xx.fbcdn.net/hphotos-xaf1/v/t1.0-9/11149565_1607481382868434_1944563872031262486_n.png?oh=0c5c2777957b8a754be1f81faa759551&oe=55FF13D7"}/ 
+            
+          .modal-footer
+            .col-md-2
+              %button.close{"data-dismiss" => "modal", :type => "button"}Close
+              
+.divider
+
+           
+              
+            
