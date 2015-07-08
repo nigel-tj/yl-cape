@@ -1,0 +1,80 @@
+body{
+/* background:#eee url("/images/background.png") no-repeat fixed; */
+background-size:100%;
+}
+
+.footer {
+background-color:#000;
+margin-top:10px;
+padding-bottom:5px;
+padding-top:10px;
+position:relative;
+}
+
+.carousel-inner{
+background-color:#000;
+height:400px;
+}
+
+.carousel-inner .item{
+height:400px;
+}
+
+.carousel-inner>.item>img, .carousel-inner>.item>a>img {
+  height: 100%;
+}
+
+.login {
+background-color:#000;
+padding-bottom:5px;
+padding-right:20px;
+padding-top:5px;
+width:100%;
+}
+
+.custom-btn{
+background-color: #900;
+border:0;
+color:#fcc;
+padding-left:10px;
+padding-right:10px;
+}
+
+.custom-btn:hover {
+color: #fff;
+background-color: #c00;
+}
+
+.front-content-blocks{
+background-color: #181818;
+padding:0 30px;
+margin-top:2px;
+}
+
+.col-lg-4.front-content-blocks{
+padding:0 30px 30px;
+margin-top:30px;
+width:100%;
+}
+
+.front-content-blocks h1{
+color:#fff;
+text-transform:uppercase;
+margin: 0.67em 0;
+}
+
+.add-margin{
+margin: 2.5em 0;
+}
+
+#news, a #icon-pause{
+color:#999;
+}
+
+.toggle-label {
+    color: #FFFFFF;
+    line-height: 14px;
+    margin: 7px 11px 0 0;
+    text-align: right;
+    font-size:13px;
+}
