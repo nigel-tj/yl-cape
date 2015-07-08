@@ -1,37 +1,69 @@
 
-#bannerCarousel.carousel.slide
-  / Indicators
-  %ol.carousel-indicators
-    %li.active{"data-slide-to" => "0", "data-target" => "#bannerCarousel"}
-    %li{"data-slide-to" => "1", "data-target" => "#bannerCarousel"}
-    %li{"data-slide-to" => "2", "data-target" => "#bannerCarousel"}
-  .carousel-inner
-    .item.active
-      %img.img-responsive{:src => "https://scontent-ams2-1.xx.fbcdn.net/hphotos-xat1/v/t1.0-9/11246478_1421750491481057_8925542422565878626_n.jpg?oh=00c3b0176a332d1d61c324a2f26fa19d&oe=55F7A5E3"}/
-    
-    .item
-      %img.img-responsive{:src => "https://scontent-ams3-1.xx.fbcdn.net/hphotos-xat1/v/t1.0-9/11143436_1607120386237867_3355442846362451173_n.png?oh=2777135c12af1be1c7313519677f0b1b&oe=560BBB35"}
-    .item
-      %img.img-responsive{:src => "https://fbcdn-sphotos-g-a.akamaihd.net/hphotos-ak-xat1/v/t1.0-9/11222791_100995970239637_2147948643914984918_n.jpg?oh=b9b89b2524195ead996839759aca97f2&oe=55F8165B&__gda__=1439332996_926e12d0ecf91bce98599d788131bad0"}/
-    .item
-      %img.img-responsive{:src => "https://fbcdn-sphotos-e-a.akamaihd.net/hphotos-ak-xpa1/v/t1.0-9/p480x480/11219329_1607520952864477_8851180991948297011_n.jpg?oh=1350d53d97357039169afbf83012f916&oe=55C30B66&__gda__=1442675363_9b9e73cfb2c7eee96ea49698fddc2718"}
-    .item
-      %img.img-responsive{:src => "https://scontent-ams2-1.xx.fbcdn.net/hphotos-xpa1/v/t1.0-9/11231685_100995740239660_3897933186335868178_n.jpg?oh=4771422f0bc7d2885ed0efe830ce29cb&oe=560D3AE7"}/
-    .item
-      %img.img-responsive{:src => "https://scontent-ams3-1.xx.fbcdn.net/hphotos-xtp1/v/t1.0-9/11063751_1608063356143570_1899369983217149005_n.jpg?oh=a6ea64283336124398cc35706e772a57&oe=55C1A844"}
-    .item
-      %img.img-responsive{:src => "https://scontent-ams2-1.xx.fbcdn.net/hphotos-xap1/v/t1.0-9/11231685_100995733572994_679620403549190789_n.jpg?oh=4ad447ef93fc84eaf6a84bb57b006aa3&oe=55CAC172"}
-    .item 
-      %img.img-responsive{ :src => "https://scontent-ams2-1.xx.fbcdn.net/hphotos-xpa1/v/t1.0-9/11231685_100995730239661_6279220458207763248_n.jpg?oh=84523e2936dbee2592c2b0b30559df6d&oe=5604F440"}
-    .item 
-      %img.img-responsive{ :src => "https://fbcdn-sphotos-e-a.akamaihd.net/hphotos-ak-xat1/v/t1.0-9/11222791_100995973572970_9121557526687885445_n.jpg?oh=2b5e61ad9413b14457d231a9e8c696f1&oe=5607E5FD&__gda__=1439037986_be84af7f455f7c3a1eabc6393b01db50"}
-    .item 
-      %img.img-responsive{ :src => "https://scontent-ams2-1.xx.fbcdn.net/hphotos-xta1/v/t1.0-9/11222791_100995976906303_7962721779882327981_n.jpg?oh=ef43f0fd83e09af6d94fb00e596afaac&oe=55F990BF"}
 
-  /.carousel-inner
+.container-fluid.hero
+  / Carousel
+  #hero-carousel.carousel.slide{"data-ride" => "carousel"}
+    / Indicators
+    %ol.carousel-indicators.row
+      %li.col-sm-4.message-1.active{"data-slide-to" => "0", "data-target" => "#hero-carousel"}
+        .caption CAPTION 1
+      %li.col-sm-4.message-2{"data-slide-to" => "1", "data-target" => "#hero-carousel"}
+        .caption CAPTION 2
+      %li.col-sm-4.message-3{"data-slide-to" => "2", "data-target" => "#hero-carousel"}
+        .caption CAPTION 3
+    / Wrapper for slides
+    .carousel-inner
+      .item.active
+        .carousel-card{:style => "background-image: url(\"https://scontent-ams2-1.xx.fbcdn.net/hphotos-xat1/v/t1.0-9/11246478_1421750491481057_8925542422565878626_n.jpg?oh=00c3b0176a332d1d61c324a2f26fa19d&oe=55F7A5E3\"); background-size: cover;"}
+        .carousel-caption
+          %h1.message-1 Title 1
+          %p
+            %a.btn.btn-lg.message-1{:href => "#"} Link to title 1
+      .item
+        .carousel-card{:style => "background-image: url(\"https://scontent-ams3-1.xx.fbcdn.net/hphotos-xat1/v/t1.0-9/11143436_1607120386237867_3355442846362451173_n.png?oh=2777135c12af1be1c7313519677f0b1b&oe=560BBB35\"); background-size: cover;"}
+        .carousel-caption
+          %h1.message-2 Title 2!
+          %p
+            %a.btn.btn-lg.message-2{:href => "#"} Link to title 2
+      .item
+        .carousel-card{:style => "background-image: url(\"https://scontent-ams2-1.xx.fbcdn.net/hphotos-xpa1/v/t1.0-9/11231685_100995740239660_3897933186335868178_n.jpg?oh=4771422f0bc7d2885ed0efe830ce29cb&oe=560D3AE7\"); background-size: cover;"}
+        .carousel-caption
+          %h1.message-3 Title 3?
+          %p
+            %a.btn.btn-lg.message-3{:href => "#"} Link to title 1
+<!-- #bannerCarousel.carousel.slide -->
+<!--   / Indicators -->
+<!--   %ol.carousel-indicators -->
+<!--     %li.active{"data-slide-to" => "0", "data-target" => "#bannerCarousel"} -->
+<!--     %li{"data-slide-to" => "1", "data-target" => "#bannerCarousel"} -->
+<!--     %li{"data-slide-to" => "2", "data-target" => "#bannerCarousel"} -->
+<!--   .carousel-inner -->
+<!--     .item.active -->
+<!--       %img.img-responsive{:src => "https://scontent-ams2-1.xx.fbcdn.net/hphotos-xat1/v/t1.0-9/11246478_1421750491481057_8925542422565878626_n.jpg?oh=00c3b0176a332d1d61c324a2f26fa19d&oe=55F7A5E3"}/ -->
+    
+<!--     .item -->
+<!--       %img.img-responsive{:src => "https://scontent-ams3-1.xx.fbcdn.net/hphotos-xat1/v/t1.0-9/11143436_1607120386237867_3355442846362451173_n.png?oh=2777135c12af1be1c7313519677f0b1b&oe=560BBB35"} -->
+<!--     .item -->
+<!--       %img.img-responsive{:src => "https://fbcdn-sphotos-g-a.akamaihd.net/hphotos-ak-xat1/v/t1.0-9/11222791_100995970239637_2147948643914984918_n.jpg?oh=b9b89b2524195ead996839759aca97f2&oe=55F8165B&__gda__=1439332996_926e12d0ecf91bce98599d788131bad0"}/ -->
+<!--     .item -->
+<!--       %img.img-responsive{:src => "https://fbcdn-sphotos-e-a.akamaihd.net/hphotos-ak-xpa1/v/t1.0-9/p480x480/11219329_1607520952864477_8851180991948297011_n.jpg?oh=1350d53d97357039169afbf83012f916&oe=55C30B66&__gda__=1442675363_9b9e73cfb2c7eee96ea49698fddc2718"} -->
+<!--     .item -->
+<!--       %img.img-responsive{:src => "https://scontent-ams2-1.xx.fbcdn.net/hphotos-xpa1/v/t1.0-9/11231685_100995740239660_3897933186335868178_n.jpg?oh=4771422f0bc7d2885ed0efe830ce29cb&oe=560D3AE7"}/ -->
+<!--     .item -->
+<!--       %img.img-responsive{:src => "https://scontent-ams3-1.xx.fbcdn.net/hphotos-xtp1/v/t1.0-9/11063751_1608063356143570_1899369983217149005_n.jpg?oh=a6ea64283336124398cc35706e772a57&oe=55C1A844"} -->
+<!--     .item -->
+<!--       %img.img-responsive{:src => "https://scontent-ams2-1.xx.fbcdn.net/hphotos-xap1/v/t1.0-9/11231685_100995733572994_679620403549190789_n.jpg?oh=4ad447ef93fc84eaf6a84bb57b006aa3&oe=55CAC172"} -->
+<!--     .item  -->
+<!--       %img.img-responsive{ :src => "https://scontent-ams2-1.xx.fbcdn.net/hphotos-xpa1/v/t1.0-9/11231685_100995730239661_6279220458207763248_n.jpg?oh=84523e2936dbee2592c2b0b30559df6d&oe=5604F440"} -->
+<!--     .item  -->
+<!--       %img.img-responsive{ :src => "https://fbcdn-sphotos-e-a.akamaihd.net/hphotos-ak-xat1/v/t1.0-9/11222791_100995973572970_9121557526687885445_n.jpg?oh=2b5e61ad9413b14457d231a9e8c696f1&oe=5607E5FD&__gda__=1439037986_be84af7f455f7c3a1eabc6393b01db50"} -->
+<!--     .item  -->
+<!--       %img.img-responsive{ :src => "https://scontent-ams2-1.xx.fbcdn.net/hphotos-xta1/v/t1.0-9/11222791_100995976906303_7962721779882327981_n.jpg?oh=ef43f0fd83e09af6d94fb00e596afaac&oe=55F990BF"} -->
+
+<!--   /.carousel-inner -->
   
-  / Controls
-  %a.left.carousel-control{"data-slide" => "prev", :href => "#bannerCarousel"}
-    %span.glyphicon.glyphicon-chevron-left
-  %a.right.carousel-control{"data-slide" => "next", :href => "#bannerCarousel"}
-    %span.glyphicon.glyphicon-chevron-right
+<!--   / Controls -->
+<!--   %a.left.carousel-control{"data-slide" => "prev", :href => "#bannerCarousel"} -->
+<!--     %span.glyphicon.glyphicon-chevron-left -->
+<!--   %a.right.carousel-control{"data-slide" => "next", :href => "#bannerCarousel"} -->
+<!--     %span.glyphicon.glyphicon-chevron-right -->
