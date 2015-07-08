@@ -1,6 +1,7 @@
 require 'rqrcode_png'  
 class VisitorsController < ApplicationController
     def index
+      # twiiter
         #@tweets = $twitter.search("UpperEchelon12June ", result_type: "recent").take(20)
            
         @client = Instagram.client(:access_token  => '1052563623.1fb234f.99cb9eff244d48e8a71027ed63f6830f')

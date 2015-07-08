@@ -3,9 +3,9 @@
   li = link_to 'Sign out', destroy_user_session_path, :method=>'delete'
 - else
   
-  li = link_to 'News' , 'news'
-  li = link_to 'Gallery' , 'gallery'
-  li = link_to 'Videos' , 'videos'
+  li = link_to 'News' , '#'
+  li = link_to 'Gallery' , '#'
+  li = link_to 'Videos' , '#'
   li = link_to 'Sign in', new_user_session_path
   li = link_to 'Sign up', new_user_registration_path
 - if user_signed_in?
