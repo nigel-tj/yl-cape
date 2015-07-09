@@ -10,13 +10,5 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
-//= require scripts
-//= require videos
-//= require gallery
-
-//= require jquery_ujs
-//= require bootstrap-sprockets
-
 
 //= require_tree .

@@ -1,69 +1,643 @@
-
-
-.container-fluid.hero
-  / Carousel
-  #hero-carousel.carousel.slide{"data-ride" => "carousel"}
-    / Indicators
-    %ol.carousel-indicators.row
-      %li.col-sm-4.message-1.active{"data-slide-to" => "0", "data-target" => "#hero-carousel"}
-        .caption CAPTION 1
-      %li.col-sm-4.message-2{"data-slide-to" => "1", "data-target" => "#hero-carousel"}
-        .caption CAPTION 2
-      %li.col-sm-4.message-3{"data-slide-to" => "2", "data-target" => "#hero-carousel"}
-        .caption CAPTION 3
-    / Wrapper for slides
-    .carousel-inner
-      .item.active
-        .carousel-card{:style => "background-image: url(\"https://scontent-ams2-1.xx.fbcdn.net/hphotos-xat1/v/t1.0-9/11246478_1421750491481057_8925542422565878626_n.jpg?oh=00c3b0176a332d1d61c324a2f26fa19d&oe=55F7A5E3\"); background-size: cover;"}
-        .carousel-caption
-          %h1.message-1 Title 1
+/ Start banner
+#banner.module.parallax.parallax-header
+  .container
+    .row
+      .banner-inner
+        #header-slider.owl-carousel
+          .item.col-xs-12
+            %h1.title.title-lines
+              %span 10 March, 2016
+            %h3.subtitle Live Concert in France
+            %a.btn.scroll.btn-concert-register{:href => "#reservation"} Register
+            %a.btn.btn-concert-play{"data-gal" => "prettyPhoto", :href => "http://vimeo.com/8245346"} Watch Video
+          .item
+            .col-sm-5.col-lg-4.col-xs-12
+              .concert-registration
+                %form.form-inline
+                  .form-group
+                    %label.sr-only{:for => "inputName"} Name
+                    %input#inputName.form-control{:placeholder => "Name", :required => "", :type => "text"}
+                  .form-group
+                    %label.sr-only{:for => "inputEmail"} Email
+                    %input#inputEmail.form-control{:placeholder => "Email", :required => "", :type => "password"}
+                  .form-group
+                    %label.sr-only{:for => "inputPhone"} Phone
+                    %input#inputPhone.form-control{:placeholder => "Phone", :required => "", :type => "password"}
+                  %button.btn.btn-default.btn-lg.btn-concert-registration{:type => "submit", :value => ""} Register Now
+            .col-sm-7.col-lg-8.col-xs-12.hidden-xs
+              .title.title-lines-full
+                %hr.hr-line
+                  %hr.hr-line
+                    %h1
+                      %span 10 March, 2016
+                    %h3.subtitle Live Concert in France
+                    %hr.hr-line
+                      %hr.hr-line
+          .item.col-xs-12
+            %h1.title.title-lines
+              %span 10 March, 2016
+            %h3.subtitle Live Concert in France
+            %a.btn-play{"data-gal" => "prettyPhoto", :href => "http://vimeo.com/8245346"}
+              %span.play-button
+                %i.fa.fa-play.fa-4x
+          .item.col-xs-12
+            %h1.title.title-lines
+              %span 10 March, 2016
+            %h3.subtitle Live Concert in France
+            #defaultCountdown.col-sm-12
+            
+            %a.btn.scroll{:href => "#reservation"} Register
+    .row.banner-bottom.hidden-xs
+      .concert-info
+        .col-xs-12.col-sm-3.col-md-3.no-left-padding
+          .concert-info-body
+            %span.pull-left
+              %i.fa.fa-calendar.fa-2x
+            .concert-info-text
+              %h4 Date
+              %span 10 March,2016
+        .col-xs-12.col-sm-3.col-md-3.no-left-padding
+          .concert-info-body
+            %span.pull-left
+              %i.fa.fa-users.fa-2x
+            .concert-info-text
+              %h4 Remaining
+              %span 245 Tickets
+        .col-xs-12.col-sm-3.col-md-3.no-left-padding
+          .concert-info-body
+            %span.pull-left
+              %i.fa.fa-microphone.fa-2x
+            .concert-info-text
+              %h4 Artists
+              %span 6 Famous Artists
+        .col-xs-12.col-sm-3.col-md-3.no-left-padding
+          .concert-info-body
+            %span.pull-left
+              %i.fa.fa-map-marker.fa-2x
+            .concert-info-text
+              %h4 Location
+              %span ABC, XYZ, France
+/ end banner
+/ start services
+#services
+  .container
+    .row
+      .services-inner.col-md-12.text-center
+        %h1.wow.fadeInUp{"data-wow-duration" => "2s"} SMART NIGHT SERVICE
+        %h2.wow.fadeInUp{"data-wow-duration" => "2s"} Mauris a massa id leo aliquam consequat porttitor vitae est.
+        %p.wow.fadeInUp{"data-wow-duration" => "2s"}
+          Mauris a massa id leo aliquam consequat porttitor vitae est. Proin ultricies velit sed porttitor viverra. Pellen-tesque eget tristique est. Donec volutpat, eros et bibendum lacinia Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        .servicebox.col-md-4.wow.fadeIn{"data-wow-delay" => "1s", "data-wow-duration" => "2s"}
+          %img.img-responsive{:alt => "Night club service", :src => "/images/service-img1.jpg"}/
+          .servicebox-inner.text-left.wow.slideInLeft
+            %img{:alt => "Night Club Music", :src => "/images/music.png"}/
+            %h2 DJ'S MUSIC
+            %p
+              Nulla or narm mus vel ultric-
+              %br
+                ies. Quisque ve odio nibh
+                %br
+                  Nulla or narm mus vel ultric-
+                  %br ies. Quisque ve odio.
+        .servicebox.col-md-4.wow.fadeIn{"data-wow-delay" => "1.3s", "data-wow-duration" => "2s"}
+          %img.img-responsive{:alt => "Night club service", :src => "/images/service-img2.jpg"}/
+          .servicebox-inner.text-left
+            %img{:alt => "Night Club Music", :src => "/images/drink.png"}/
+            %h2 DRINK BAR
+            %p
+              Nulla or narm mus vel ultric-
+              %br
+                ies. Quisque ve odio nibh
+                %br
+                  Nulla or narm mus vel ultric-
+                  %br ies. Quisque ve odio.
+        .servicebox.col-md-4.wow.fadeIn{"data-wow-delay" => "1.6s", "data-wow-duration" => "2s"}
+          %img.img-responsive{:alt => "Night club service", :src => "/images/service-img3.jpg"}/
+          .servicebox-inner.text-left
+            %img{:alt => "Night Club Music", :src => "/images/restaurant.png"}/
+            %h2 RESTAURANT
+            %p
+              Nulla or narm mus vel ultric-
+              %br
+                ies. Quisque ve odio nibh
+                %br
+                  Nulla or narm mus vel ultric-
+                  br ies. Quisque ve odio.
+/ end services
+/ start gallery
+#gallery.text-center
+  .container
+    .row.text-center
+      .tabs.tabs-style-linebox.wow.fadeInUp{"data-wow-duration" => "2s"}
+        %nav
+          %ul.filters
+            %li.hvr-sweep-to-top.active.filter{"data-filter" => "all"}
+              %span All
+            %li.hvr-sweep-to-top.filter{"data-filter" => ".girlsPub"}
+              %span Girls Pub
+            %li.hvr-sweep-to-top.filter{"data-filter" => ".danceParty"}
+              %span Dance Party
+            %li.hvr-sweep-to-top.filter{"data-filter" => ".videos"}
+              %span Videos
+  .container-fluid
+    .row.gallery.text-center
+      .col-md-12.noPadding
+        .gallery-photo-grid
+          .gallery-photos
+            .gallery-photos-thumb
+              .gallery-photo-item.mix.danceParty.wow.fadeIn
+                %a.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "/images/gallery-img1.jpg"}
+                  .photo-thumb
+                    %img{:alt => "image-1", :src => "/images/gallery-small-img-1.jpg"}
+                  .overlay
+                    %span.gallery-icon
+                      %i.fa.fa-search-plus.fa-2x
+              .gallery-photo-item.mix.danceParty.wow.fadeIn{"data-wow-delay" => "0.2s"}
+                %a.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "/images/gallery-img2.jpg"}
+                  .photo-thumb
+                    %img{:alt => "image-2", :src => "/images/gallery-small-img-2.jpg"}
+                  .overlay
+                    %span.gallery-icon
+                      %i.fa.fa-search-plus.fa-2x
+              .gallery-photo-item.mix.videos.wow.fadeIn{"data-wow-delay" => "0.4s"}
+                %a.pretty-photo{"data-gal" => "prettyPhoto", :href => "http://vimeo.com/8245346"}
+                  .photo-thumb
+                    %img{:alt => "Video", :src => "/images/gallery-small-img-3.jpg"}
+                  .overlay
+                    %span.gallery-icon
+                      %i.fa.fa-play.fa-2x
+              .gallery-photo-item.mix.videos.wow.fadeIn{"data-wow-delay" => "0.6s"}
+                %a.pretty-photo{"data-gal" => "prettyPhoto", :href => "http://vimeo.com/8245346"}
+                  .photo-thumb
+                    %img{:alt => "video", :src => "/images/gallery-small-img-4.jpg"}
+                  .overlay
+                    %span.gallery-icon
+                      %i.fa.fa-play.fa-2x
+              .gallery-photo-item.mix.videos.wow.fadeIn{"data-wow-delay" => "0.1s"}
+                %a.pretty-photo{"data-gal" => "prettyPhoto", :href => "http://vimeo.com/8245346"}
+                  .photo-thumb
+                    %img{:alt => "video", :src => "/images/gallery-small-img-5.jpg"}
+                  .overlay
+                    %span.gallery-icon
+                      %i.fa.fa-play.fa-2x
+              .gallery-photo-item.mix.girlsPub.wow.fadeIn{"data-wow-delay" => "0.2s"}
+                %a.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "/images/gallery-img6.jpg"}
+                  .photo-thumb
+                    %img{:alt => "image-3", :src => "/images/gallery-small-img-6.jpg"}
+                  .overlay
+                    %span.gallery-icon
+                      %i.fa.fa-search-plus.fa-2x
+              .gallery-photo-item.mix.danceParty.wow.fadeIn{"data-wow-delay" => "0.4s"}
+                %a.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "/images/gallery-img7.jpg"}
+                  .photo-thumb
+                    %img{:alt => "image-4", :src => "/images/gallery-small-img-7.jpg"}
+                  .overlay
+                    %span.gallery-icon
+                      %i.fa.fa-search-plus.fa-2x
+              .gallery-photo-item.mix.danceParty.wow.fadeIn{"data-wow-delay" => "0.6s"}
+                %a.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "/images/gallery-img8.jpg"}
+                  .photo-thumb
+                    %img{:alt => "image-5", :src => "/images/gallery-small-img-8.jpg"}
+                  .overlay
+                    %span.gallery-icon
+                      %i.fa.fa-search-plus.fa-2x
+              .gallery-photo-item.mix.girlsPub.wow.fadeIn{"data-wow-delay" => "0.2s"}
+                %a.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "/images/gallery-img9.jpg"}
+                  .photo-thumb
+                    %img{:alt => "image-6", :src => "/images/gallery-small-img-9.jpg"}
+                  .overlay
+                    %span.gallery-icon
+                      %i.fa.fa-search-plus.fa-2x
+              .gallery-photo-item.mix.girlsPub.wow.fadeIn{"data-wow-delay" => "0.4s"}
+                %a.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "/images/gallery-img10.jpg"}
+                  .photo-thumb
+                    %img{:alt => "image-7", :src => "/images/gallery-small-img-10.jpg"}
+                  .overlay
+                    %span.gallery-icon
+                      %i.fa.fa-search-plus.fa-2x
+              .gallery-photo-item.mix.girlsPub.wow.fadeIn{"data-wow-delay" => "0.5s"}
+                %a.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "/images/gallery-img11.jpg"}
+                  .photo-thumb
+                    %img{:alt => "image-8", :src => "/images/gallery-small-img-11.jpg"}
+                  .overlay
+                    %span.gallery-icon
+                      %i.fa.fa-search-plus.fa-2x
+              .gallery-photo-item.mix.videos.wow.fadeIn{"data-wow-delay" => "0.6s"}
+                %a.pretty-photo{"data-gal" => "prettyPhoto", :href => "http://vimeo.com/8245346"}
+                  .photo-thumb
+                    %img{:alt => "Video", :src => "/images/gallery-small-img-12.jpg"}
+                  .overlay
+                    %span.gallery-icon
+                      %i.fa.fa-play.fa-2x
+/ end gallery
+/ subscribe form
+#club-form
+  .container
+    .row
+      .club-form.col-md-7.col-sm-6.text-center
+        %h1.wow.fadeIn{"data-wow-duration" => "1s"} WANT THE LATEST PARTY NEWS?
+        %p.wow.fadeIn{"data-wow-duration" => "1s"} Subscribe to our newsletter and never miss Party again!
+        %form#subscribe-form.clearfix.wow.fadeIn{"data-wow-duration" => "2s", :method => "post"}
+          %input{:name => "email", :placeholder => "Enter your Email", :required => "", :type => "email"}
+            %input.submit.submit-button{:name => "submit", :type => "submit", :value => "GO!"}
+        %p.wow.fadeIn{"data-wow-delay" => "1s", "data-wow-duration" => "1s"} We’ll never send unwanted spam. Promise.
+      .club-form.col-md-5.col-sm-6.hidden-xs.wow.fadeIn{"data-wow-duration" => "3s"}
+        %img.img-responsive{:alt => "Night Club Image", :src => "/images/form-img.jpg"}/
+/ end club top form
+/ Event of the month
+#events.module.parallax.parallax-events
+  .container
+    .row
+      .event-inner.col-sm-12.text-center
+        %h1.wow.fadeInUp{"data-wow-duration" => "1s"} EVENTS OF THE MONTH
+        %ul.bxslider.one
+          %li
+            .event-box
+              .event-box-left.clearfix
+                %h2
+                  29
+                  %br
+                    %span.month APRIL
+                %h3 11:00 PM
+                %p
+                  %i.fa.fa-map-marker
+                  %br
+                    CITY PLAZA,
+                    %br
+                      NEW YORK, AMERICA
+              .event-box-right.clearfix
+                %img.img-responsive{:alt => "Night Club Event", :src => "/images/event-img1.jpg"}/
+              .event-box-bottom.text-left.clearfix
+                %h2 Fire and ice dumparter party!
+          %li
+            .event-box
+              .event-box-left.clearfix
+                %h2
+                  07
+                  %br
+                    %span.month AUGUST
+                %h3 12:20 AM
+                %p
+                  %i.fa.fa-map-marker
+                  %br
+                    CITY PLAZA,
+                    %br
+                      NEW YORK, AMERICA
+              .event-box-right.clearfix
+                %img.img-responsive{:alt => "Night Club Event", :src => "/images/event-img2.jpg"}/
+              .event-box-bottom.text-left.clearfix
+                %h2 Proudly Present owner theme event
+          %li
+            .event-box
+              .event-box-left.clearfix
+                %h2
+                  21
+                  %br
+                    %span.month October
+                %h3 03:10 AM
+                %p
+                  %i.fa.fa-map-marker
+                  %br
+                    CITY PLAZA,
+                    %br
+                      NEW YORK, AMERICA
+              .event-box-right.clearfix
+                %img.img-responsive{:alt => "Night Club Event", :src => "/images/event-img3.jpg"}/
+              .event-box-bottom.text-left.clearfix
+                %h2 Proudly Present owner theme event
+/ Event of the month
+/ start club profiles
+#club-profiles.module.parallax.parallax-profiles
+  .container
+    .row
+      %h1.wow.fadeInUp{"data-wow-duration" => "1s"} MOST POPULAR DJ'S PROFILE
+      .col-md-6.col-sm-12.profile-box.wow.fadeIn{"data-wow-delay" => "0.5s", "data-wow-duration" => "2s"}
+        .col-md-6.col-sm-6.profile-box-left.flip-container.text-center
+          .flipper
+            #dj-1.front
+            .back.text-center
+              %ul.profile-social
+                %li.facebook
+                  %a.entypo-facebook{:href => "#"}
+                    %i.fa.fa-facebook.fa-2x
+                %li.twitter
+                  %a.entypo-twitter{:href => "#"}
+                    %i.fa.fa-twitter.fa-2x
+                %li.dribbble
+                  %a.entypo-dribbble{:href => "#"}
+                    %i.fa.fa-google-plus.fa-2x
+                %li.behance
+                  %a.entypo-behance{:href => "#"}
+                    %i.fa.fa-pinterest.fa-2x
+                %li.linked-in
+                  %a.entypo-linkedin{:href => "#"}
+                    %i.fa.fa-linkedin.fa-2x
+        .col-md-6.col-sm-6.profle-box-right.clearfix
+          %h2 DJ Zadda
+          %h3 Turnable master
           %p
-            %a.btn.btn-lg.message-1{:href => "#"} Link to title 1
-      .item
-        .carousel-card{:style => "background-image: url(\"https://scontent-ams3-1.xx.fbcdn.net/hphotos-xat1/v/t1.0-9/11143436_1607120386237867_3355442846362451173_n.png?oh=2777135c12af1be1c7313519677f0b1b&oe=560BBB35\"); background-size: cover;"}
-        .carousel-caption
-          %h1.message-2 Title 2!
+            Nulla or narm mus vel ultricies. Quisque ve odio nibh. Fusce vel dignissim orem, ac malesuada massa. Manas malesuada.
+          .profile-info.text-center
+            / <img class="img-responsive" src="/images/since.png" alt="Night Club" />
+            .eq
+              %span.bar.bar-1
+              %span.bar.bar-2
+              %span.bar.bar-3
+            %p SINCE
+            %h3 2002
+          .profile-info.text-center
+            %img.img-responsive{:alt => "Night Club", :src => "/images/event.png"}/
+            %p EVENT
+            %h3 1367
+          .profile-info.text-center
+            %img.img-responsive{:alt => "Night Club", :src => "/images/latest.png"}/
+            %p LATEST
+            %h3 12:33
+      .col-md-6.col-sm-12.profile-box.wow.fadeIn{"data-wow-delay" => "1s", "data-wow-duration" => "2s"}
+        .col-md-6.col-sm-6.profile-box-left.flip-container.text-center
+          .flipper
+            #dj-2.front             
+            .back.text-center
+              %ul.profile-social
+                %li.facebook
+                  %a.entypo-facebook{:href => "#"}
+                    %i.fa.fa-facebook.fa-2x
+                %li.twitter
+                  %a.entypo-twitter{:href => "#"}
+                    %i.fa.fa-twitter.fa-2x
+                %li.dribbble
+                  %a.entypo-dribbble{:href => "#"}
+                    %i.fa.fa-google-plus.fa-2x
+                %li.behance
+                  %a.entypo-behance{:href => "#"}
+                    %i.fa.fa-pinterest.fa-2x
+                %li.linked-in
+                  %a.entypo-linkedin{:href => "#"}
+                    %i.fa.fa-linkedin.fa-2x
+        .col-md-6.col-sm-6.profle-box-right.clearfix
+          %h2 DJ Robat
+          %h3 Turnable master
           %p
-            %a.btn.btn-lg.message-2{:href => "#"} Link to title 2
-      .item
-        .carousel-card{:style => "background-image: url(\"https://scontent-ams2-1.xx.fbcdn.net/hphotos-xpa1/v/t1.0-9/11231685_100995740239660_3897933186335868178_n.jpg?oh=4771422f0bc7d2885ed0efe830ce29cb&oe=560D3AE7\"); background-size: cover;"}
-        .carousel-caption
-          %h1.message-3 Title 3?
-          %p
-            %a.btn.btn-lg.message-3{:href => "#"} Link to title 1
-<!-- #bannerCarousel.carousel.slide -->
-<!--   / Indicators -->
-<!--   %ol.carousel-indicators -->
-<!--     %li.active{"data-slide-to" => "0", "data-target" => "#bannerCarousel"} -->
-<!--     %li{"data-slide-to" => "1", "data-target" => "#bannerCarousel"} -->
-<!--     %li{"data-slide-to" => "2", "data-target" => "#bannerCarousel"} -->
-<!--   .carousel-inner -->
-<!--     .item.active -->
-<!--       %img.img-responsive{:src => "https://scontent-ams2-1.xx.fbcdn.net/hphotos-xat1/v/t1.0-9/11246478_1421750491481057_8925542422565878626_n.jpg?oh=00c3b0176a332d1d61c324a2f26fa19d&oe=55F7A5E3"}/ -->
-    
-<!--     .item -->
-<!--       %img.img-responsive{:src => "https://scontent-ams3-1.xx.fbcdn.net/hphotos-xat1/v/t1.0-9/11143436_1607120386237867_3355442846362451173_n.png?oh=2777135c12af1be1c7313519677f0b1b&oe=560BBB35"} -->
-<!--     .item -->
-<!--       %img.img-responsive{:src => "https://fbcdn-sphotos-g-a.akamaihd.net/hphotos-ak-xat1/v/t1.0-9/11222791_100995970239637_2147948643914984918_n.jpg?oh=b9b89b2524195ead996839759aca97f2&oe=55F8165B&__gda__=1439332996_926e12d0ecf91bce98599d788131bad0"}/ -->
-<!--     .item -->
-<!--       %img.img-responsive{:src => "https://fbcdn-sphotos-e-a.akamaihd.net/hphotos-ak-xpa1/v/t1.0-9/p480x480/11219329_1607520952864477_8851180991948297011_n.jpg?oh=1350d53d97357039169afbf83012f916&oe=55C30B66&__gda__=1442675363_9b9e73cfb2c7eee96ea49698fddc2718"} -->
-<!--     .item -->
-<!--       %img.img-responsive{:src => "https://scontent-ams2-1.xx.fbcdn.net/hphotos-xpa1/v/t1.0-9/11231685_100995740239660_3897933186335868178_n.jpg?oh=4771422f0bc7d2885ed0efe830ce29cb&oe=560D3AE7"}/ -->
-<!--     .item -->
-<!--       %img.img-responsive{:src => "https://scontent-ams3-1.xx.fbcdn.net/hphotos-xtp1/v/t1.0-9/11063751_1608063356143570_1899369983217149005_n.jpg?oh=a6ea64283336124398cc35706e772a57&oe=55C1A844"} -->
-<!--     .item -->
-<!--       %img.img-responsive{:src => "https://scontent-ams2-1.xx.fbcdn.net/hphotos-xap1/v/t1.0-9/11231685_100995733572994_679620403549190789_n.jpg?oh=4ad447ef93fc84eaf6a84bb57b006aa3&oe=55CAC172"} -->
-<!--     .item  -->
-<!--       %img.img-responsive{ :src => "https://scontent-ams2-1.xx.fbcdn.net/hphotos-xpa1/v/t1.0-9/11231685_100995730239661_6279220458207763248_n.jpg?oh=84523e2936dbee2592c2b0b30559df6d&oe=5604F440"} -->
-<!--     .item  -->
-<!--       %img.img-responsive{ :src => "https://fbcdn-sphotos-e-a.akamaihd.net/hphotos-ak-xat1/v/t1.0-9/11222791_100995973572970_9121557526687885445_n.jpg?oh=2b5e61ad9413b14457d231a9e8c696f1&oe=5607E5FD&__gda__=1439037986_be84af7f455f7c3a1eabc6393b01db50"} -->
-<!--     .item  -->
-<!--       %img.img-responsive{ :src => "https://scontent-ams2-1.xx.fbcdn.net/hphotos-xta1/v/t1.0-9/11222791_100995976906303_7962721779882327981_n.jpg?oh=ef43f0fd83e09af6d94fb00e596afaac&oe=55F990BF"} -->
-
-<!--   /.carousel-inner -->
-  
-<!--   / Controls -->
-<!--   %a.left.carousel-control{"data-slide" => "prev", :href => "#bannerCarousel"} -->
-<!--     %span.glyphicon.glyphicon-chevron-left -->
-<!--   %a.right.carousel-control{"data-slide" => "next", :href => "#bannerCarousel"} -->
-<!--     %span.glyphicon.glyphicon-chevron-right -->
+            Nulla or narm mus vel ultricies. Quisque ve odio nibh. Fusce vel dignissim orem, ac malesuada massa. Manas malesuada.
+          .profile-info.text-center
+            .eq
+              %span.bar.bar-1
+              %span.bar.bar-2
+              %span.bar.bar-3
+            %p SINCE
+            %h3 2008
+          .profile-info.text-center
+            %img.img-responsive{:alt => "Night Club", :src => "/images/event.png"}/
+            %p EVENT
+            %h3 3598
+          .profile-info.text-center
+            %img.img-responsive{:alt => "Night Club", :src => "/images/latest.png"}/
+            %p LATEST
+            %h3 10:33
+/ end club profiles
+/ start blogs
+#blogs
+  .container
+    .row
+      %h1.wow.fadeInUp{"data-wow-delay" => "0.5s", "data-wow-duration" => "1s"} POPULAR BLOGS
+      .blog-slider.col-md-7.col-xs-12
+        %ul.nav.nav-tabs.bxslider.two
+          %li.clearfix.active
+            .borderLeft
+            .event-time.clearfix
+              %p 21-05-2009
+              %h2 friday
+              %i.fa.fa-microphone
+            .event-detail.clearfix
+              %i.fa.fa-caret-left.fa-4x
+              .event-detail-img
+                %img{:alt => "Night Club Blog", :src => "/images/blog-small-img1.png"}/
+              .event-detail-inner
+                %h2
+                  %a{"data-toggle" => "tab", :href => "#blog1"} Girls Party Pub Review
+                %p Nulla or narm mus vel ultricies. Quisque ve odio nibh. Fusce vel dignissim orem
+                %i.fa.fa-long-arrow-right
+          %li.clearfix
+            .borderLeft
+            .event-time.clearfix
+              %p 25-09-2012
+              %h2 monday
+              %i.fa.fa-play
+            .event-detail.clearfix
+              %i.fa.fa-caret-left.fa-4x
+              .event-detail-img
+                %img{:alt => "Night Club Blog", :src => "/images/blog-small-img2.jpg"}/
+              .event-detail-inner
+                %h2
+                  %a{"data-toggle" => "tab", :href => "#blog2"} More then 100 year of night club
+                %p Nulla or narm mus vel ultricies. Quisque ve odio nibh. Fusce vel dignissim orem
+                %i.fa.fa-long-arrow-right
+          %li.clearfix
+            .borderLeft
+            .event-time.clearfix
+              %p 22-12-2013
+              %h2 sunday
+              %i.fa.fa-camera
+            .event-detail.clearfix
+              %i.fa.fa-caret-left.fa-4x
+              .event-detail-img
+                %img{:alt => "Night Club Blog", :src => "/images/blog-small-img3.jpg"}/
+              .event-detail-inner
+                %h2
+                  %a{"data-toggle" => "tab", :href => "#blog3"} Tattoo convention club
+                %p Nulla or narm mus vel ultricies. Quisque ve odio nibh. Fusce vel dignissim orem.
+                %i.fa.fa-long-arrow-right
+        .control
+          %span#slider-prev
+          %span#slider-next
+      #myTabContent.col-md-5.col-xs-12.tab-content.wow.fadeIn{"data-wow-duration" => "1s"}
+        #blog1.tab-pane.active
+          %h2 Girls Party Pub Review
+          %i.fa.fa-user
+            %span.admin by admin
+          %i.fa.fa-tag
+            %span.tag event, tattoos, convetions
+          %img.wow.fadeIn{:alt => "Night Club Event", "data-wow-duration" => "1s", :src => "/images/blog-img1.jpg"}/
+          .overlay.clearfix
+            .overlay-inner
+              %h3
+                %span.bold Beautiful tattoos
+                \- source: Image Bigshok
+          %h3 Reviews of parties
+          %p.wow.fadeIn{"data-wow-duration" => "1s"} Nulla or narm mus vel ultricies. Quisque ve odio nibh. Fusce vel dignissim orem, ac malesuada massa. Manas malesuada.Nulla or narm mus vel ultricies. Quisque ve odio nibh. Fusce vel dignissim orem, ac malesuada massa Nulla or narm mus vel ultricies. Quisque ve odio nibh. Fusce vel dignissim orem, ac malesuada massa. Manas malesuada.Nulla or narm mus vel ultricies Nulla or narm Nulla or narm mus vel ultricies. Quisque ve odio nibh. Fusce vel dignissim orem, ac malesuada massa. Manas malesuada.Nulla or narm mus vel ultricies. Quisque ve odio nibh. Fusce vel dignissim orem, ac malesuada massa. mus vel ultricies. Quisque ve odio nibh. Fusce vel dignissim orem, ac malesuada massa. Manas malesuada.
+          .share
+            %h4 Share this article:
+            %p.clearfix
+              %a{:href => "http://www.facebook.com"}
+                %i.fa.fa-facebook
+              %a{:href => "http://www.google.com"}
+                %i.fa.fa-google
+              %a{:href => "http://www.pinterest.com"}
+                %i.fa.fa-pinterest
+              %a{:href => "http://www.twitter.com"}
+                %i.fa.fa-twitter
+              %a{:href => "http://www.rss.com"}
+                %i.fa.fa-rss
+        #blog2.tab-pane
+          %h2 More then 100 year of night club
+          %i.fa.fa-user
+            %span.admin by admin
+          %i.fa.fa-tag
+            %span.tag event, tattoos, convetions
+          %img{:alt => "Night Club Event", :src => "/images/blog-img2.jpg"}/
+          .overlay.clearfix
+            .overlay-inner
+              %h3
+                %span.bold Beautiful tattoos
+                \- source: Image Bigshok
+          %h3 We are the champion of this field
+          %p Nulla or narm mus vel ultricies. Quisque ve odio nibh. Fusce vel dignissim orem, ac malesuada massa. Manas malesuada.Nulla or narm mus vel ultricies. Quisque ve odio nibh. Fusce vel dignissim orem, ac malesuada massa Nulla or narm mus vel ultricies. Quisque ve odio nibh. Fusce vel dignissim orem, ac malesuada massa. Manas malesuada.Nulla or narm mus vel ultricies Nulla or narm Nulla or narm mus vel ultricies.
+          .share
+            %h4 Share this article:
+            %p.clearfix
+              %a{:href => "http://www.facebook.com"}
+                %i.fa.fa-facebook
+              %a{:href => "http://www.google.com"}
+                %i.fa.fa-google
+              %a{:href => "http://www.pinterest.com"}
+                %i.fa.fa-pinterest
+              %a{:href => "http://www.twitter.com"}
+                %i.fa.fa-twitter
+              %a{:href => "http://www.rss.com"}
+                %i.fa.fa-rss
+        #blog3.tab-pane
+          %h2 Tattoo convention club
+          %i.fa.fa-user
+            %span.admin by admin
+          %i.fa.fa-tag
+            %span.tag event, tattoos, convetions
+          %img{:alt => "Night Club Event", :src => "/images/blog-img3.jpg"}/
+          .overlay.clearfix
+            .overlay-inner
+              %h3
+                %span.bold Beautiful tattoos
+                \- source: Image Bigshok
+          %h3 We introduce many new Trends
+          %p Nulla or narm mus vel ultricies. Quisque ve odio nibh. Fusce vel dignissim orem, ac malesuada massa. Manas malesuada.Nulla or narm mus vel ultricies. Quisque ve odio nibh. Fusce vel dignissim orem, ac malesuada massa Nulla or narm mus vel ultricies. Quisque ve odio nibh. Fusce vel dignissim orem, ac malesuada massa. Manas malesuada.Nulla or narm mus vel ultricies.
+          .share
+            %h4 Share this article:
+            %p.clearfix
+              %a{:href => "http://www.facebook.com"}
+                %i.fa.fa-facebook
+              %a{:href => "http://www.google.com"}
+                %i.fa.fa-google
+              %a{:href => "http://www.pinterest.com"}
+                %i.fa.fa-pinterest
+              %a{:href => "http://www.twitter.com"}
+                %i.fa.fa-twitter
+              %a{:href => "http://www.rss.com"}
+                %i.fa.fa-rss
+/ end blogs
+/ Make-Reservation
+#reservation.module.parallax.parallax-reservation
+  .container
+    .row
+      %h1.wow.fadeInUp{"data-wow-duration" => "1s"} Make Reservation
+      %p.wow.fadeIn{"data-wow-duration" => "1s"} Would you liked to make reservation?
+      .col-sm-12.reservation-form
+        %form.form-horizontal{:method => "post"}
+          .form-group
+            %label.col-sm-5.col-xs-12.control-label{:for => "name"} What's your full name?
+            .col-sm-7.col-xs-12.input-field
+              .input-group
+                %input#name.form-control{:onchange => "checkField();", :placeholder => "David Smith", :required => "", :type => "text"}
+                  %span.input-group-addon
+                    %i.fa.fa-user.fa-2x
+          .form-group
+            %label.col-sm-5.col-xs-12.control-label{:for => "phone"} What's your phone number?
+            .col-sm-5.col-xs-12.input-field
+              .input-group
+                %input#phone.form-control{:onchange => "checkField();", :placeholder => "345-555-2398", :required => "", :type => "text"}
+                  %span.input-group-addon.phone-icon
+                    %i.fa.fa-mobile.fa-2x
+          .form-group
+            %label.col-sm-5.col-xs-12.control-label{:for => "people"} For how many people?
+            .col-sm-3.col-xs-12.input-field
+              .input-group
+                %select#people.form-control{:name => "peoples"}
+                  %option{:value => ""} 6+
+                %span.input-group-addon
+                  %i.fa.fa-users.fa-2x
+          .form-group
+            %label.col-sm-5.col-xs-12.control-label{:for => "date"} For what date?
+            .col-sm-4.col-xs-12.input-field
+              .input-group
+                %input#date.form-control{:onchange => "checkField();", :placeholder => "23/07/15", :required => "", :type => "text"}
+                  %span.input-group-addon
+                    %i.fa.fa-calendar.fa-2x
+          .form-group
+            %label.col-sm-5.col-xs-12.control-label{:for => "time"} What time?
+            .col-sm-3.col-xs-12.input-field
+              .input-group
+                %input#time.form-control{:name => "concert-time", :onchange => "checkField();", :placeholder => "04:30 pm", :required => "", :type => "text"}
+                  %span.input-group-addon
+                    %i.fa.fa-clock-o.fa-2x
+          .form-group
+            %label.col-sm-5.col-xs-12.control-label{:for => "location"} Where would you like to stay?
+            .col-sm-6.col-xs-12.input-field
+              .input-group
+                %select#location.form-control{:name => "location"}
+                  %option{:value => ""} Table for 6, club
+                %span.input-group-addon
+                  %i.fa.fa-cube.fa-2x
+          .form-group
+            .col-sm-10.text-center
+              %button.btn.btn-default.btn-lg.btn-booking{:name => "booking", :type => "submit", :value => "booking"} Book me up!
+/ Make-Reservation
+/ Map
+.container-fluid.margin-top
+  .row.map.wow.fadeIn{"data-wow-delay" => "1s", "data-wow-duration" => "2s", "data-wow-offset" => "200"}
+    #map-canvas
+      %h1.sr-only Map
+/ Map
+/ footer
+#footer.module.parallax.parallax-footer
+  .container
+    .row
+      .col-md-3.col-sm-12.text-center.footer-info.wow.fadeInUp{"data-wow-duration" => "1s"}
+        %img{:alt => "Logo", :src => "/images/Red-Cup-Logo.gif", :width => "150"}
+      .col-md-3.col-sm-4.text-center.footer-info.wow.fadeIn{"data-wow-delay" => "1s", "data-wow-duration" => "2s"}
+        %p
+          %i.fa.fa-map-marker.fa-3x
+        %p.footer-text San Francisso, 13 Ave. Street, Twin Peaks New Yourk city.
+      .col-md-3.col-sm-4.text-center.footer-info.wow.fadeIn{"data-wow-delay" => "1s", "data-wow-duration" => "2s"}
+        %p
+          %i.fa.fa-envelope.fa-3x
+        %p.footer-text
+          %a{:href => "#"} info@samrtnightclub.com
+          %a{:href => "#"} smartnightclub@info.com
+      .col-md-3.col-sm-4.text-center.footer-info.wow.fadeIn{"data-wow-delay" => "1s", "data-wow-duration" => "2s"}
+        %p
+          %i.fa.fa-phone.fa-3x
+        %p.footer-text
+          0021-2587-3659-51
+          %br
+            0021-2587-3659-53
+    .row.text-center
+      .social.affix-social
+        %a{:href => "http://www.facebook.com"}
+          %i.fa.fa-facebook.fa-2x
+        %a{:href => "http://www.google.com"}
+          %i.fa.fa-google.fa-2x
+        %a{:href => "http://www.linkedin.com"}
+          %i.fa.fa-linkedin.fa-2x
+        %a{:href => "http://www.pinterest.com"}
+          %i.fa.fa-pinterest.fa-2x
+        %a{:href => "http://www.twitter.com"}
+          %i.fa.fa-twitter.fa-2x
+        %a{:href => "http://www.rss.com"}
+          %i.fa.fa-rss.fa-2x
+        %a{:href => "http://www.skype.com"}
+          %i.fa.fa-skype.fa-2x
+/ footer
+#copy-right
+  .container
+    .row.text-center
+      %p
+        CopyRight &copy; 2015 Smart Night Club, Theme all rights reserved, Design and Develop by
+        %a{:href => "#"} ***
