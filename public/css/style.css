@@ -173,7 +173,7 @@ h1, h2, h3, h4, h5, p{
 }
 
 div.module.parallax-header {
-	background-image:url("../images/site-images/turn-down-for-what.jpg");
+	background-image:url("../images/site-images/banners/12.png");
 	min-height: 400px;
 	padding-top: 40px;
 }
@@ -197,7 +197,7 @@ div.module.parallax-header {
    margin-top: 300px; 
 }
 .owl-theme .owl-controls .owl-buttons div{
-   color: #FFF;
+   color: #000;
    display: inline-block;
    *display: inline;/*IE7 life-saver */
    padding: 0px;
@@ -211,7 +211,7 @@ div.module.parallax-header {
    -webkit-border-radius: 10px;
    -moz-border-radius: 10px;
    border-radius: 10px;
-   border: 1px solid #fff;
+   border: 1px solid #000;
    filter: Alpha(Opacity=80);/*IE7 fix*/
    opacity: 0.8;
 }
@@ -239,7 +239,7 @@ div.module.parallax-header {
    	display: inline-block;
    	position: relative;
    	font-family: 'PT Sans';
-   	color: #fff;
+   	color: #000;
    	text-transform: uppercase;
    	font-size: 56px;
 }
@@ -275,6 +275,7 @@ div.module.parallax-header {
 .hr-line {
 	margin-top: 1px;
 	margin-bottom: 1px;
+	color: #000;
 }
 
 .btn-play {
@@ -312,7 +313,7 @@ div.module.parallax-header {
 .is-countdown {
 	margin-top: 30px;
 	margin-bottom: 10px;		
-	color: #fff;
+	color: #000;
 	background: none;
 	font-family: 'Open Sans';
 	font-size: 36px;		
@@ -320,7 +321,7 @@ div.module.parallax-header {
 #header-slider .item h3 {
 	text-align: center;
 	font-family: 'Oswald';
-	color: #fff;
+	color: #000;
 	font-size: 55px;
 	font-weight: bold;
 	text-transform: uppercase;
@@ -340,14 +341,14 @@ div.module.parallax-header {
    border-top-right-radius: 25px;
 }
 .concert-info .concert-info-body {
-   color: #fff;
+   color: #000;
    font-family: 'PT Sans';
 }
 .concert-info .concert-info-body span {
    margin-right: 10px;
 }
 .concert-info .concert-info-body .concert-info-text h4 {
-   color: #000;
+   color: #fff;
    font-weight: bold;
    margin-top: 10px;
 }
@@ -395,7 +396,7 @@ div.module.parallax-header {
 	background: #fff;
 }
 #banner .banner-inner p{
-   color:#fff;
+   color:#000;
    font-size:18px;
    padding:20px 0 30px 0;
    font-family: 'PT Sans';
