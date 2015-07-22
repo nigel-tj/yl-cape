@@ -33,10 +33,11 @@ Rails.application.routes.draw do
 
   match '/gallery' => 'visitors#gallery', :via => :get
   match '/music' => 'visitors#music', :via => :get
-  match '/news' => 'visitors#news', :via => :get
+  match '/features' => 'visitors#news', :via => :get
   match '/social' => 'visitors#social', :via => :get
   match '/videos' => 'visitors#videos', :via => :get
-  match '/location' => 'visitors#contact', :via => :get
+  match '/contact' => 'visitors#contact', :via => :get
+  match '/artists' => 'visitors#artists', :via => :get
 
   root to: 'visitors#index'
 end

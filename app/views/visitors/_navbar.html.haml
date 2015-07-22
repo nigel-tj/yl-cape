@@ -3,7 +3,7 @@
   .container
     .row
       .col-md-2.col-sm-3.col-xs-12.text-center.logo
-        %a{:href => "index"}
+        %a{:href => "/#banner"}
           %img.logo-img.wow.fadeIn{:alt => "Night Club logo", "data-wow-duration" => "3s", :src => "images/Red-Cup-Logo.gif"}/
       .col-md-10.col-sm-9.col-xs-12.header-right.affix-header-right
         %nav.navbar.navbar-default.col-xs-12.text-center
@@ -16,13 +16,17 @@
           #bs-example-navbar-collapse-1.collapse.navbar-collapse
             %ul.nav.navbar-nav
               %li.hvr-underline-from-center.active
-                %a.scroll{:href => "#banner"} HOME
+                %a.scroll{:href => "/#banner"} RED VILLAGE
               %li.hvr-underline-from-center
-                %a.scroll{:href => "#gallery"} GALLERY
+                %a{:href => "/features"} FEATURES
               %li.hvr-underline-from-center
-                %a.scroll{:href => "#events"} EVENTS
+                %a{:href => "/videos"} VIDEOS 
               %li.hvr-underline-from-center
-                %a.scroll{:href => "#blogs"} BLOG &amp; NEWS
+                %a{:href => "/music"} MUSIC
               %li.hvr-underline-from-center
-                %a.scroll{:href => "#reservation"} CONTACT
+                %a{:href => "/artists"} ARTISTS
+              %li.hvr-underline-from-center
+                %a{:href => "/events"} EVENTS
+              %li.hvr-underline-from-center
+                %a{:href => "/contact"} CONTACT US
 / end header

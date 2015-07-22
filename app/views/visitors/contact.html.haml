@@ -1,8 +1,63 @@
+/ Make-Reservation
+#reservation.module.parallax.parallax-reservation
+  .container
+    .row
+      %h1.wow.fadeInUp{"data-wow-duration" => "1s"} Make Reservation
+      %p.wow.fadeIn{"data-wow-duration" => "1s"} Would you liked to make reservation?
+      .col-sm-12.reservation-form
+        %form.form-horizontal{:method => "post"}
+          .form-group
+            %label.col-sm-5.col-xs-12.control-label{:for => "name"} What's your full name?
+            .col-sm-7.col-xs-12.input-field
+              .input-group
+                %input#name.form-control{:onchange => "checkField();", :placeholder => "David Smith", :required => "", :type => "text"}
+                  %span.input-group-addon
+                    %i.fa.fa-user.fa-2x
+          .form-group
+            %label.col-sm-5.col-xs-12.control-label{:for => "phone"} What's your phone number?
+            .col-sm-5.col-xs-12.input-field
+              .input-group
+                %input#phone.form-control{:onchange => "checkField();", :placeholder => "345-555-2398", :required => "", :type => "text"}
+                  %span.input-group-addon.phone-icon
+                    %i.fa.fa-mobile.fa-2x
+          .form-group
+            %label.col-sm-5.col-xs-12.control-label{:for => "people"} For how many people?
+            .col-sm-3.col-xs-12.input-field
+              .input-group
+                %select#people.form-control{:name => "peoples"}
+                  %option{:value => ""} 6+
+                %span.input-group-addon
+                  %i.fa.fa-users.fa-2x
+          .form-group
+            %label.col-sm-5.col-xs-12.control-label{:for => "date"} For what date?
+            .col-sm-4.col-xs-12.input-field
+              .input-group
+                %input#date.form-control{:onchange => "checkField();", :placeholder => "23/07/15", :required => "", :type => "text"}
+                  %span.input-group-addon
+                    %i.fa.fa-calendar.fa-2x
+          .form-group
+            %label.col-sm-5.col-xs-12.control-label{:for => "time"} What time?
+            .col-sm-3.col-xs-12.input-field
+              .input-group
+                %input#time.form-control{:name => "concert-time", :onchange => "checkField();", :placeholder => "04:30 pm", :required => "", :type => "text"}
+                  %span.input-group-addon
+                    %i.fa.fa-clock-o.fa-2x
+          .form-group
+            %label.col-sm-5.col-xs-12.control-label{:for => "location"} Where would you like to stay?
+            .col-sm-6.col-xs-12.input-field
+              .input-group
+                %select#location.form-control{:name => "location"}
+                  %option{:value => ""} Table for 6, club
+                %span.input-group-addon
+                  %i.fa.fa-cube.fa-2x
+          .form-group
+            .col-sm-10.text-center
+              %button.btn.btn-default.btn-lg.btn-booking{:name => "booking", :type => "submit", :value => "booking"} Send!
+/ Make-Reservation
+/ Map
+.container-fluid.margin-top
+  .row.map.wow.fadeIn{"data-wow-delay" => "1s", "data-wow-duration" => "2s", "data-wow-offset" => "200"}
+    #map-canvas
+      %h1.sr-only Map
+/ Map
 
-#wrap
-
-  
-  / Begin page content
-  %section#location
-    = render 'location'
-= render 'footer_button'
