@@ -238,9 +238,8 @@
                       %i.fa.fa-play.fa-2x
 / end gallery
 /youtube
-.container
-  .row
-    / 1. The <iframe> (and video player) will replace this <div> tag.
+.row
+  .col-xs-6
     #player
     :javascript
       // 2. This code loads the IFrame Player API code asynchronously.
@@ -283,3 +282,8 @@
       function stopVideo() {
         player.stopVideo();
       }
+  .col-md-3
+    .col-md-12
+      %p  ONE
+    .col-md-12
+      %p TWO
