@@ -1,106 +1,107 @@
-/ start gallery
-#gallery.text-center
-  .container
-    .row.text-center
-      .tabs.tabs-style-linebox.wow.fadeInUp{"data-wow-duration" => "2s"}
-        %nav
-          %ul.filters
-            %li.hvr-sweep-to-top.active.filter{"data-filter" => "all"}
-              %span All
-            %li.hvr-sweep-to-top.filter{"data-filter" => ".girlsPub"}
-              %span New
-            %li.hvr-sweep-to-top.filter{"data-filter" => ".danceParty"}
-              %span Party
-            %li.hvr-sweep-to-top.filter{"data-filter" => ".videos"}
-              %span Trending
-  .container-fluid
-    .row.gallery.text-center
-      .col-md-12.noPadding
-        .gallery-photo-grid
-          .gallery-photos
-            .gallery-photos-thumb
-              .gallery-photo-item.mix.danceParty.wow.fadeIn
-                %a.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "images/site-images/ass.jpg"}
-                  .photo-thumb
-                    %img{:alt => "image-1", :src => "images/site-images/200/ass.jpg"}
-                  .overlay
-                    %span.gallery-icon
-                      %i.fa.fa-search-plus.fa-2x
-              .gallery-photo-item.mix.danceParty.wow.fadeIn{"data-wow-delay" => "0.2s"}
-                %a.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "images/site-images/masai.jpg"}
-                  .photo-thumb
-                    %img{:alt => "image-2", :src => "images/site-images/200/masai.jpg"}
-                  .overlay
-                    %span.gallery-icon
-                      %i.fa.fa-search-plus.fa-2x
-              .gallery-photo-item.mix.videos.wow.fadeIn{"data-wow-delay" => "0.4s"}
-                %a.pretty-photo{"data-gal" => "prettyPhoto", :href => "http://vimeo.com/8245346"}
-                  .photo-thumb
-                    %img{:alt => "Video", :src => "images/site-images/200/achelon-1.jpg"}
-                  .overlay
-                    %span.gallery-icon
-                      %i.fa.fa-play.fa-2x
-              .gallery-photo-item.mix.videos.wow.fadeIn{"data-wow-delay" => "0.6s"}
-                %a.pretty-photo{"data-gal" => "prettyPhoto", :href => "http://vimeo.com/8245346"}
-                  .photo-thumb
-                    %img{:alt => "video", :src => "images/site-images/200/prep.jpg"}
-                  .overlay
-                    %span.gallery-icon
-                      %i.fa.fa-play.fa-2x
-              .gallery-photo-item.mix.videos.wow.fadeIn{"data-wow-delay" => "0.1s"}
-                %a.pretty-photo{"data-gal" => "prettyPhoto", :href => "http://vimeo.com/8245346"}
-                  .photo-thumb
-                    %img{:alt => "video", :src => "images/site-images/200/turn-down-for-what.jpg"}
-                  .overlay
-                    %span.gallery-icon
-                      %i.fa.fa-play.fa-2x
-              .gallery-photo-item.mix.girlsPub.wow.fadeIn{"data-wow-delay" => "0.2s"}
-                %a.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "images/site-images/10955436_1583572498592656_6830399686314720063_n.jpg"}
-                  .photo-thumb
-                    %img{:alt => "image-3", :src => "images/site-images/200/10955436_1583572498592656_6830399686314720063_n.jpg"}
-                  .overlay
-                    %span.gallery-icon
-                      %i.fa.fa-search-plus.fa-2x
-              .gallery-photo-item.mix.danceParty.wow.fadeIn{"data-wow-delay" => "0.4s"}
-                %a.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "images/site-images/11154688_1596103474006225_3730434740165331633_o.jpg"}
-                  .photo-thumb
-                    %img{:alt => "image-4", :src => "images/site-images/200/11154688_1596103474006225_3730434740165331633_o.jpg"}
-                  .overlay
-                    %span.gallery-icon
-                      %i.fa.fa-search-plus.fa-2x
-              .gallery-photo-item.mix.danceParty.wow.fadeIn{"data-wow-delay" => "0.6s"}
-                %a.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "images/site-images/ejay-2.jpg"}
-                  .photo-thumb
-                    %img{:alt => "image-5", :src => "images/site-images/200/ejay-2.jpg"}
-                  .overlay
-                    %span.gallery-icon
-                      %i.fa.fa-search-plus.fa-2x
-              .gallery-photo-item.mix.girlsPub.wow.fadeIn{"data-wow-delay" => "0.2s"}
-                %a.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "images/site-images/ejay-cover.jpg"}
-                  .photo-thumb
-                    %img{:alt => "image-6", :src => "images/site-images/200/ejay-cover.jpg"}
-                  .overlay
-                    %span.gallery-icon
-                      %i.fa.fa-search-plus.fa-2x
-              .gallery-photo-item.mix.girlsPub.wow.fadeIn{"data-wow-delay" => "0.4s"}
-                %a.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "images/site-images/village.jpg"}
-                  .photo-thumb
-                    %img{:alt => "image-7", :src => "images/site-images/200/village.jpg"}
-                  .overlay
-                    %span.gallery-icon
-                      %i.fa.fa-search-plus.fa-2x
-              .gallery-photo-item.mix.girlsPub.wow.fadeIn{"data-wow-delay" => "0.5s"}
-                %a.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "images/site-images/11174898_1619892148294024_9111942606513769723_n.jpg"}
-                  .photo-thumb
-                    %img{:alt => "image-8", :src => "images/site-images/200/11174898_1619892148294024_9111942606513769723_n.jpg"}
-                  .overlay
-                    %span.gallery-icon
-                      %i.fa.fa-search-plus.fa-2x
-              .gallery-photo-item.mix.videos.wow.fadeIn{"data-wow-delay" => "0.6s"}
-                %a.pretty-photo{"data-gal" => "prettyPhoto", :href => "http://vimeo.com/8245346"}
-                  .photo-thumb
-                    %img{:alt => "Video", :src => "images/site-images/200/streets.jpg"}
-                  .overlay
-                    %span.gallery-icon
-                      %i.fa.fa-play.fa-2x
-/ end gallery
+<!-- / start gallery -->
+<!-- #gallery.text-center -->
+<!--   .container -->
+<!--     .row.text-center -->
+<!--       .tabs.tabs-style-linebox.wow.fadeInUp{"data-wow-duration" => "2s"} -->
+<!--         %nav -->
+<!--           %ul.filters -->
+<!--             %li.hvr-sweep-to-top.active.filter{"data-filter" => "all"} -->
+<!--               %span All -->
+<!--             %li.hvr-sweep-to-top.filter{"data-filter" => ".girlsPub"} -->
+<!--               %span New -->
+<!--             %li.hvr-sweep-to-top.filter{"data-filter" => ".danceParty"} -->
+<!--               %span Party -->
+<!--             %li.hvr-sweep-to-top.filter{"data-filter" => ".videos"} -->
+<!--               %span Trending -->
+<!--   .container-fluid -->
+<!--     .row.gallery.text-center -->
+<!--       .col-md-12.noPadding -->
+<!--         .gallery-photo-grid -->
+<!--           .gallery-photos -->
+<!--             .gallery-photos-thumb -->
+<!--               .gallery-photo-item.mix.danceParty.wow.fadeIn -->
+<!--                 %a.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "images/site-images/ass.jpg"} -->
+<!--                   .photo-thumb -->
+<!--                     %img{:alt => "image-1", :src => "images/site-images/200/ass.jpg"} -->
+<!--                   .overlay -->
+<!--                     %span.gallery-icon -->
+<!--                       %i.fa.fa-search-plus.fa-2x -->
+<!--               .gallery-photo-item.mix.danceParty.wow.fadeIn{"data-wow-delay" => "0.2s"} -->
+<!--                 %a.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "images/site-images/masai.jpg"} -->
+<!--                   .photo-thumb -->
+<!--                     %img{:alt => "image-2", :src => "images/site-images/200/masai.jpg"} -->
+<!--                   .overlay -->
+<!--                     %span.gallery-icon -->
+<!--                       %i.fa.fa-search-plus.fa-2x -->
+<!--               .gallery-photo-item.mix.videos.wow.fadeIn{"data-wow-delay" => "0.4s"} -->
+<!--                 %a.pretty-photo{"data-gal" => "prettyPhoto", :href => "http://vimeo.com/8245346"} -->
+<!--                   .photo-thumb -->
+<!--                     %img{:alt => "Video", :src => "images/site-images/200/achelon-1.jpg"} -->
+<!--                   .overlay -->
+<!--                     %span.gallery-icon -->
+<!--                       %i.fa.fa-play.fa-2x -->
+<!--               .gallery-photo-item.mix.videos.wow.fadeIn{"data-wow-delay" => "0.6s"} -->
+<!--                 %a.pretty-photo{"data-gal" => "prettyPhoto", :href => "http://vimeo.com/8245346"} -->
+<!--                   .photo-thumb -->
+<!--                     %img{:alt => "video", :src => "images/site-images/200/prep.jpg"} -->
+<!--                   .overlay -->
+<!--                     %span.gallery-icon -->
+<!--                       %i.fa.fa-play.fa-2x -->
+<!--               .gallery-photo-item.mix.videos.wow.fadeIn{"data-wow-delay" => "0.1s"} -->
+<!--                 %a.pretty-photo{"data-gal" => "prettyPhoto", :href => "http://vimeo.com/8245346"} -->
+<!--                   .photo-thumb -->
+<!--                     %img{:alt => "video", :src => "images/site-images/200/turn-down-for-what.jpg"} -->
+<!--                   .overlay -->
+<!--                     %span.gallery-icon -->
+<!--                       %i.fa.fa-play.fa-2x -->
+<!--               .gallery-photo-item.mix.girlsPub.wow.fadeIn{"data-wow-delay" => "0.2s"} -->
+<!--                 %a.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "images/site-images/10955436_1583572498592656_6830399686314720063_n.jpg"} -->
+<!--                   .photo-thumb -->
+<!--                     %img{:alt => "image-3", :src => "images/site-images/200/10955436_1583572498592656_6830399686314720063_n.jpg"} -->
+<!--                   .overlay -->
+<!--                     %span.gallery-icon -->
+<!--                       %i.fa.fa-search-plus.fa-2x -->
+<!--               .gallery-photo-item.mix.danceParty.wow.fadeIn{"data-wow-delay" => "0.4s"} -->
+<!--                 %a.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "images/site-images/11154688_1596103474006225_3730434740165331633_o.jpg"} -->
+<!--                   .photo-thumb -->
+<!--                     %img{:alt => "image-4", :src => "images/site-images/200/11154688_1596103474006225_3730434740165331633_o.jpg"} -->
+<!--                   .overlay -->
+<!--                     %span.gallery-icon -->
+<!--                       %i.fa.fa-search-plus.fa-2x -->
+<!--               .gallery-photo-item.mix.danceParty.wow.fadeIn{"data-wow-delay" => "0.6s"} -->
+<!--                 %a.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "images/site-images/ejay-2.jpg"} -->
+<!--                   .photo-thumb -->
+<!--                     %img{:alt => "image-5", :src => "images/site-images/200/ejay-2.jpg"} -->
+<!--                   .overlay -->
+<!--                     %span.gallery-icon -->
+<!--                       %i.fa.fa-search-plus.fa-2x -->
+<!--               .gallery-photo-item.mix.girlsPub.wow.fadeIn{"data-wow-delay" => "0.2s"} -->
+<!--                 %a.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "images/site-images/ejay-cover.jpg"} -->
+<!--                   .photo-thumb -->
+<!--                     %img{:alt => "image-6", :src => "images/site-images/200/ejay-cover.jpg"} -->
+<!--                   .overlay -->
+<!--                     %span.gallery-icon -->
+<!--                       %i.fa.fa-search-plus.fa-2x -->
+<!--               .gallery-photo-item.mix.girlsPub.wow.fadeIn{"data-wow-delay" => "0.4s"} -->
+<!--                 %a.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "images/site-images/village.jpg"} -->
+<!--                   .photo-thumb -->
+<!--                     %img{:alt => "image-7", :src => "images/site-images/200/village.jpg"} -->
+<!--                   .overlay -->
+<!--                     %span.gallery-icon -->
+<!--                       %i.fa.fa-search-plus.fa-2x -->
+<!--               .gallery-photo-item.mix.girlsPub.wow.fadeIn{"data-wow-delay" => "0.5s"} -->
+<!--                 %a.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "images/site-images/11174898_1619892148294024_9111942606513769723_n.jpg"} -->
+<!--                   .photo-thumb -->
+<!--                     %img{:alt => "image-8", :src => "images/site-images/200/11174898_1619892148294024_9111942606513769723_n.jpg"} -->
+<!--                   .overlay -->
+<!--                     %span.gallery-icon -->
+<!--                       %i.fa.fa-search-plus.fa-2x -->
+<!--               .gallery-photo-item.mix.videos.wow.fadeIn{"data-wow-delay" => "0.6s"} -->
+<!--                 %a.pretty-photo{"data-gal" => "prettyPhoto", :href => "http://vimeo.com/8245346"} -->
+<!--                   .photo-thumb -->
+<!--                     %img{:alt => "Video", :src => "images/site-images/200/streets.jpg"} -->
+<!--                   .overlay -->
+<!--                     %span.gallery-icon -->
+<!--                       %i.fa.fa-play.fa-2x -->
+<!-- / end gallery -->
+= render 'video_tabbed_menu'
