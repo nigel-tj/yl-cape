@@ -17,8 +17,8 @@ Rails.application.routes.draw do
   resources :users
   resources :musics
   resources :gallery
-  resources :videos
-  resources :video_uploads
+  resources :videos, only: [:index, :new, :create]
+  #resources :video_uploads
   
   resources :events do
     resources :vip_tickets , :standard_tickets
