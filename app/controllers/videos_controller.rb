@@ -1,4 +1,5 @@
 class VideosController < ApplicationController
+  before_action :authenticate_admin!, except: [:index]
   def index
     @videos = Video.order('created_at DESC')
   end
