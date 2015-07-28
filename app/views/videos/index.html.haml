@@ -22,110 +22,15 @@
         .gallery-photo-grid
           .gallery-photos
             .gallery-photos-thumb
-              .gallery-photo-item.mix.danceParty.wow.fadeIn
-                %a.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "images/site-images/ass.jpg"}
-                  .photo-thumb
-                    %img{:alt => "image-1", :src => "images/site-images/400/1.png"}
-                  .overlay
-                    %span.gallery-icon
-                      %i.fa.fa-search-plus.fa-2x
-              .gallery-photo-item.mix.danceParty.wow.fadeIn{"data-wow-delay" => "0.2s"}
-                %a.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "images/site-images/masai.jpg"}
-                  .photo-thumb
-                    %img{:alt => "image-2", :src => "images/site-images/400/4.png"}
-                  .overlay
-                    %span.gallery-icon
-                      %i.fa.fa-search-plus.fa-2x
-              .gallery-photo-item.mix.videos.wow.fadeIn{"data-wow-delay" => "0.4s"}
-                %a.pretty-photo{"data-gal" => "prettyPhoto", :href => "http://vimeo.com/8245346"}
-                  .photo-thumb
-                    %img{:alt => "Video", :src => "images/site-images/400/3.png"}
-                  .overlay
-                    %span.gallery-icon
-                      %i.fa.fa-play.fa-2x
-              .gallery-photo-item.mix.videos.wow.fadeIn{"data-wow-delay" => "0.6s"}
-                %a.pretty-photo{"data-gal" => "prettyPhoto", :href => "http://vimeo.com/8245346"}
-                  .photo-thumb
-                    %img{:alt => "video", :src => "images/site-images/400/5.png"}
-                  .overlay
-                    %span.gallery-icon
-                      %i.fa.fa-play.fa-2x
-              .gallery-photo-item.mix.videos.wow.fadeIn{"data-wow-delay" => "0.1s"}
-                %a.pretty-photo{"data-gal" => "prettyPhoto", :href => "http://vimeo.com/8245346"}
-                  .photo-thumb
-                    %img{:alt => "video", :src => "images/site-images/400/6.png"}
-                  .overlay
-                    %span.gallery-icon
-                      %i.fa.fa-play.fa-2x
-              .gallery-photo-item.mix.girlsPub.wow.fadeIn{"data-wow-delay" => "0.2s"}
-                %a.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "images/site-images/400/7.png"}
-                  .photo-thumb
-                    %img{:alt => "image-3", :src => "images/site-images/400/8.png"}
-                  .overlay
-                    %span.gallery-icon
-                      %i.fa.fa-search-plus.fa-2x
-              .gallery-photo-item.mix.danceParty.wow.fadeIn{"data-wow-delay" => "0.4s"}
-                %a.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "images/site-images/400/9.png"}
-                  .photo-thumb
-                    %img{:alt => "image-4", :src => "images/site-images/400/9.png"}
-                  .overlay
-                    %span.gallery-icon
-                      %i.fa.fa-search-plus.fa-2x
-              .gallery-photo-item.mix.danceParty.wow.fadeIn{"data-wow-delay" => "0.6s"}
-                %a.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "images/site-images/400/10.png"}
-                  .photo-thumb
-                    %img{:alt => "image-5", :src => "images/site-images/400/10.png"}
-                  .overlay
-                    %span.gallery-icon
-                      %i.fa.fa-search-plus.fa-2x
-              .gallery-photo-item.mix.girlsPub.wow.fadeIn{"data-wow-delay" => "0.2s"}
-                %a.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "images/site-images/400/11.png"}
-                  .photo-thumb
-                    %img{:alt => "image-6", :src => "images/site-images/400/11.png"}
-                  .overlay
-                    %span.gallery-icon
-                      %i.fa.fa-search-plus.fa-2x
-              .gallery-photo-item.mix.girlsPub.wow.fadeIn{"data-wow-delay" => "0.4s"}
-                %a.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "images/site-images/400/12.png"}
-                  .photo-thumb
-                    %img{:alt => "image-7", :src => "images/site-images/400/12.png"}
-                  .overlay
-                    %span.gallery-icon
-                      %i.fa.fa-search-plus.fa-2x
-              .gallery-photo-item.mix.girlsPub.wow.fadeIn{"data-wow-delay" => "0.5s"}
-                %a.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "images/site-images/400/13.png"}
-                  .photo-thumb
-                    %img{:alt => "image-8", :src => "images/site-images/400/13.png"}
-                  .overlay
-                    %span.gallery-icon
-                      %i.fa.fa-search-plus.fa-2x
-              .gallery-photo-item.mix.videos.wow.fadeIn{"data-wow-delay" => "0.6s"}
-                %a.pretty-photo{"data-gal" => "prettyPhoto", :href => "http://vimeo.com/8245346"}
-                  .photo-thumb
-                    %img{:alt => "Video", :src => "images/site-images/600/10410412_1451601768456397_7010684179840250317_n.jpg"}
-                  .overlay
-                    %span.gallery-icon
-                      %i.fa.fa-play.fa-2x
-/ end gallery
 
-- if @videos.any?
-  .container
-    
-    #player-wrapper
-    - @videos.in_groups_of(3) do |group|
-      .row
-        - group.take(5).collect do |video|
-          - if video
-            .col-md-4
-              .yt_video
-                = link_to image_tag("https://img.youtube.com/vi/#{video.uid}/mqdefault.jpg", alt: video.title, |
-                  class: 'img-rounded'), "https://www.youtube.com/watch?v=#{video.uid}", target: '_blank'      |
-                .caption
-                  %h5= video.title
-                  %p
-                    Published at #{video.published_at.strftime('%-d %B %Y %H:%M:%S')}
-                  %p
-                    %span.glyphicon.glyphicon.glyphicon-thumbs-up
-                    = video.likes
-                    %span.glyphicon.glyphicon.glyphicon-thumbs-down
-                    = video.dislikes
+              - if @videos.any?
+                - @videos.in_groups_of(1) do |group|
+                  - group.take(5).collect do |video|
+                    .gallery-photo-item.mix.danceParty.wow.fadeIn
+                      %a.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "https://img.youtube.com/vi/#{video.uid}/mqdefault.jpg"}
+                        .photo-thumb
+                          %img{:alt => "image-1", :src => "https://img.youtube.com/vi/#{video.uid}/mqdefault.jpg"}
+                        .overlay
+                          %span.gallery-icon
+                            %i.fa.fa-search-plus.fa-2x
+

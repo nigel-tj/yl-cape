@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get 'visitors/social'
   get 'visitors/events'
   get 'visitors/contact'
+  get 'videos/test'
 
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
