@@ -31,8 +31,7 @@
 }
 .vid-item {
     display: block;
-    width: 148px;
-    height: 148px;
+    height: 60px;
     float: left;
     margin: 0;
     padding: 10px;

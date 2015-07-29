@@ -10,20 +10,21 @@
           %ul.filters
             %li.hvr-sweep-to-top.active.filter{"data-filter" => "all"}
               %span All
-            %li.hvr-sweep-to-top.filter{"data-filter" => ".villageHits"}
-              %span Village hits
-            %li.hvr-sweep-to-top.filter{"data-filter" => ".bangers"}
-              %span #bangers
-            %li.hvr-sweep-to-top.filter{"data-filter" => ".upcoming"}
-              %span Upcoming
+            %li.hvr-sweep-to-top.filter{"data-filter" => ".girlsPub"}
+              %span Girls Pub
+            %li.hvr-sweep-to-top.filter{"data-filter" => ".danceParty"}
+              %span Dance Party
+            %li.hvr-sweep-to-top.filter{"data-filter" => ".videos"}
+              %span Videos
   .container-fluid
     .row.gallery.text-center
       .col-md-12.noPadding
         .gallery-photo-grid
           .gallery-photos
             .gallery-photos-thumb
+
               - if @videos.any?
-                - @videos.in_groups_of(1) do |group|
+                - @videos.in_groups_of(3) do |group|
                   - group.take(5).collect do |video|
                     .gallery-photo-item.mix.danceParty.wow.fadeIn
                       %a.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "https://img.youtube.com/vi/#{video.uid}/mqdefault.jpg"}
@@ -32,4 +33,4 @@
                         .overlay
                           %span.gallery-icon
                             %i.fa.fa-search-plus.fa-2x
-                      
+                          
