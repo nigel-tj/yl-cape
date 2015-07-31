@@ -22,6 +22,16 @@ class VideosController < ApplicationController
     end
   end
 
+  def get_category_style(category)
+    if category.eql? "bangers"
+      puts ".gallery-photo-item.mix.bangers.wow.fadeIn"
+    elsif category.eql? "villageHits"
+      puts ".gallery-photo-item.mix.villageHits.wow.fadeIn"
+    elsif category.eql? "upcoming"
+      puts ".gallery-photo-item.mix.upcoming.wow.fadeIn"
+    end
+  end
+
   private
 
   def video_params
