@@ -24,11 +24,11 @@ class VideosController < ApplicationController
 
   def get_category_style(category)
     if category.eql? "bangers"
-      puts ".gallery-photo-item.mix.bangers.wow.fadeIn"
+      render :text => ".gallery-photo-item.mix.bangers.wow.fadeIn"
     elsif category.eql? "villageHits"
-      puts ".gallery-photo-item.mix.villageHits.wow.fadeIn"
+      render :text => ".gallery-photo-item.mix.villageHits.wow.fadeIn"
     elsif category.eql? "upcoming"
-      puts ".gallery-photo-item.mix.upcoming.wow.fadeIn"
+      render :text => ".gallery-photo-item.mix.upcoming.wow.fadeIn"
     end
   end
 
