@@ -25,13 +25,34 @@
               - if @videos.any?
                 - @videos.in_groups_of(1) do |group|
                   - group.take(5).collect do |video|
-                    .gallery-photo-item.mix.danceParty.wow.fadeIn
-                      %a.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "https://img.youtube.com/vi/#{video.uid}/mqdefault.jpg"}
-                        .photo-thumb
-                          %img{:alt => "image-1", :src => "https://img.youtube.com/vi/#{video.uid}/mqdefault.jpg"}
-                        .overlay
-                          %span.gallery-icon
-                            %i.fa.fa-search-plus.fa-2x
+                    - if video.category == "upcoming"
+                      .gallery-photo-item.mix.upcoming.wow.fadeIn
+                        %a.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "https://img.youtube.com/vi/#{video.uid}/mqdefault.jpg"}
+                          .photo-thumb
+                            %img{:alt => "image-1", :src => "https://img.youtube.com/vi/#{video.uid}/mqdefault.jpg"}
+                          .overlay
+                            %span.gallery-icon
+                              %i.fa.fa-search-plus.fa-2x
+                         
+                        #{video.title}
+                    - elsif video.category == "bangers"
+                      .gallery-photo-item.mix.bangers.wow.fadeIn
+                        %a.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "https://img.youtube.com/vi/#{video.uid}/mqdefault.jpg"}
+                          .photo-thumb
+                            %img{:alt => "image-1", :src => "https://img.youtube.com/vi/#{video.uid}/mqdefault.jpg"}
+                          .overlay
+                            %span.gallery-icon
+                              %i.fa.fa-search-plus.fa-2x
+                         
+                        #{video.title}
+                    - elsif video.category == "villageHits"
+                      .gallery-photo-item.mix.villageHits.wow.fadeIn
+                        %a.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "https://img.youtube.com/vi/#{video.uid}/mqdefault.jpg"}
+                          .photo-thumb
+                            %img{:alt => "image-1", :src => "https://img.youtube.com/vi/#{video.uid}/mqdefault.jpg"}
+                          .overlay
+                            %span.gallery-icon
+                              %i.fa.fa-search-plus.fa-2x
                          
                         #{video.title}
                         
