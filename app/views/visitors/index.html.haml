@@ -237,59 +237,148 @@
                     %span.gallery-icon
                       %i.fa.fa-play.fa-2x
 / end gallery
-/youtube
-.row
-  .col-xs-6
-    #player
-    :javascript
-      // 2. This code loads the IFrame Player API code asynchronously.
-      var tag = document.createElement('script');
+<!-- /youtube -->
+<!-- .row -->
+<!--   .col-xs-6 -->
+<!--     #player -->
+<!--     :javascript -->
+<!--       // 2. This code loads the IFrame Player API code asynchronously. -->
+<!--       var tag = document.createElement('script'); -->
 
-      tag.src = "https://www.youtube.com/iframe_api";
-      var firstScriptTag = document.getElementsByTagName('script')[0];
-      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+<!--       tag.src = "https://www.youtube.com/iframe_api"; -->
+<!--       var firstScriptTag = document.getElementsByTagName('script')[0]; -->
+<!--       firstScriptTag.parentNode.insertBefore(tag, firstScriptTag); -->
 
-      // 3. This function creates an <iframe> (and YouTube player)
-      //    after the API code downloads.
-      var player;
-      function onYouTubeIframeAPIReady() {
-        player = new YT.Player('player', {
-          height: '390',
-          width: '640',
-          videoId: 'foQusxK9iT8',
-          events: {
-            'onReady': onPlayerReady,
-            'onStateChange': onPlayerStateChange
-          }
-        });
-      }
+<!--       // 3. This function creates an <iframe> (and YouTube player) -->
+<!--       //    after the API code downloads. -->
+<!--       var player; -->
+<!--       function onYouTubeIframeAPIReady() { -->
+<!--         player = new YT.Player('player', { -->
+<!--           height: '390', -->
+<!--           width: '640', -->
+<!--           videoId: 'foQusxK9iT8', -->
+<!--           events: { -->
+<!--             'onReady': onPlayerReady, -->
+<!--             'onStateChange': onPlayerStateChange -->
+<!--           } -->
+<!--         }); -->
+<!--       } -->
 
-      // 4. The API will call this function when the video player is ready.
-      function onPlayerReady(event) {
-        event.target.playVideo();
-      }
+<!--       // 4. The API will call this function when the video player is ready. -->
+<!--       function onPlayerReady(event) { -->
+<!--         event.target.playVideo(); -->
+<!--       } -->
 
-      // 5. The API calls this function when the player's state changes.
-      //    The function indicates that when playing a video (state=1),
-      //    the player should play for six seconds and then stop.
-      var done = false;
-      function onPlayerStateChange(event) {
-        if (event.data == YT.PlayerState.PLAYING && !done) {
-          setTimeout(stopVideo, 6000);
-          done = true;
-        }
-      }
-      function stopVideo() {
-        player.stopVideo();
-      }
-  .col-md-3
-    .vid-item.col-md-12
-      .thumb
-        %img{:src => "http://img.youtube.com/vi/eg6kNoJmzkY/0.jpg"}
-      .desc
-        Jessica Hernandez & the Deltas - Dead Brains
-    .vid-item.col-md-12
-      .thumb
-        %img{:src => "http://img.youtube.com/vi/eg6kNoJmzkY/0.jpg"}
-      .desc
-        Jessica Hernandez & the Deltas - Dead Brains
+<!--       // 5. The API calls this function when the player's state changes. -->
+<!--       //    The function indicates that when playing a video (state=1), -->
+<!--       //    the player should play for six seconds and then stop. -->
+<!--       var done = false; -->
+<!--       function onPlayerStateChange(event) { -->
+<!--         if (event.data == YT.PlayerState.PLAYING && !done) { -->
+<!--           setTimeout(stopVideo, 6000); -->
+<!--           done = true; -->
+<!--         } -->
+<!--       } -->
+<!--       function stopVideo() { -->
+<!--         player.stopVideo(); -->
+<!--       } -->
+<!--   .col-md-3 -->
+<!--     .vid-item.col-md-12 -->
+<!--       .thumb -->
+<!--         %img{:src => "http://img.youtube.com/vi/eg6kNoJmzkY/0.jpg"} -->
+<!--       .desc -->
+<!--         Jessica Hernandez & the Deltas - Dead Brains -->
+<!--     .vid-item.col-md-12 -->
+<!--       .thumb -->
+<!--         %img{:src => "http://img.youtube.com/vi/eg6kNoJmzkY/0.jpg"} -->
+<!--       .desc -->
+<!--         Jessica Hernandez & the Deltas - Dead Brains -->
+/ start club profiles
+#club-profiles.module.parallax.parallax-profiles
+  .container
+    .row
+      %h1.wow.fadeInUp{"data-wow-duration" => "1s"} MOST POPULAR DJ'S PROFILE
+      .col-md-6.col-sm-12.profile-box.wow.fadeIn{"data-wow-delay" => "0.5s", "data-wow-duration" => "2s"}
+        .col-md-6.col-sm-6.profile-box-left.flip-container.text-center
+          .flipper
+            #dj-1.front
+            .back.text-center
+              %ul.profile-social
+                %li.facebook
+                  %a.entypo-facebook{:href => "#"}
+                    %i.fa.fa-facebook.fa-2x
+                %li.twitter
+                  %a.entypo-twitter{:href => "#"}
+                    %i.fa.fa-twitter.fa-2x
+                %li.dribbble
+                  %a.entypo-dribbble{:href => "#"}
+                    %i.fa.fa-google-plus.fa-2x
+                %li.behance
+                  %a.entypo-behance{:href => "#"}
+                    %i.fa.fa-pinterest.fa-2x
+                %li.linked-in
+                  %a.entypo-linkedin{:href => "#"}
+                    %i.fa.fa-linkedin.fa-2x
+        .col-md-6.col-sm-6.profle-box-right.clearfix
+          %h2 DJ Zadda
+          %h3 Turnable master
+          %p
+            Nulla or narm mus vel ultricies. Quisque ve odio nibh. Fusce vel dignissim orem, ac malesuada massa. Manas malesuada.
+          .profile-info.text-center
+            / <img class="img-responsive" src="images/since.png" alt="Night Club" />
+            .eq
+              %span.bar.bar-1
+              %span.bar.bar-2
+              %span.bar.bar-3
+            %p SINCE
+            %h3 2002
+          .profile-info.text-center
+            %img.img-responsive{:alt => "Night Club", :src => "images/event.png"}/
+            %p EVENT
+            %h3 1367
+          .profile-info.text-center
+            %img.img-responsive{:alt => "Night Club", :src => "images/latest.png"}/
+            %p LATEST
+            %h3 12:33
+      .col-md-6.col-sm-12.profile-box.wow.fadeIn{"data-wow-delay" => "1s", "data-wow-duration" => "2s"}
+        .col-md-6.col-sm-6.profile-box-left.flip-container.text-center
+          .flipper
+            #dj-2.front
+            .back.text-center
+              %ul.profile-social
+                %li.facebook
+                  %a.entypo-facebook{:href => "#"}
+                    %i.fa.fa-facebook.fa-2x
+                %li.twitter
+                  %a.entypo-twitter{:href => "#"}
+                    %i.fa.fa-twitter.fa-2x
+                %li.dribbble
+                  %a.entypo-dribbble{:href => "#"}
+                    %i.fa.fa-google-plus.fa-2x
+                %li.behance
+                  %a.entypo-behance{:href => "#"}
+                    %i.fa.fa-pinterest.fa-2x
+                %li.linked-in
+                  %a.entypo-linkedin{:href => "#"}
+                    %i.fa.fa-linkedin.fa-2x
+        .col-md-6.col-sm-6.profle-box-right.clearfix
+          %h2 DJ Robat
+          %h3 Turnable master
+          %p
+            Nulla or narm mus vel ultricies. Quisque ve odio nibh. Fusce vel dignissim orem, ac malesuada massa. Manas malesuada.
+          .profile-info.text-center
+            .eq
+              %span.bar.bar-1
+              %span.bar.bar-2
+              %span.bar.bar-3
+            %p SINCE
+            %h3 2008
+          .profile-info.text-center
+            %img.img-responsive{:alt => "Night Club", :src => "images/event.png"}/
+            %p EVENT
+            %h3 3598
+          .profile-info.text-center
+            %img.img-responsive{:alt => "Night Club", :src => "images/latest.png"}/
+            %p LATEST
+            %h3 10:33
+/ end club profiles
