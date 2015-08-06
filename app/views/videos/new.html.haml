@@ -9,11 +9,5 @@
       = f.label :link
       = f.text_field :link, class: 'form-control', required: true
       %span.help-block A link to the video on YouTube.
-      %p
-        %select{ :name => :category }
-          %option{:value => "none"}= "Select category"
-          %option{:value => "bangers"}= "Bangers"
-          %option{:value => "villageHits"}= "Village hits"
-          %option{:value => "upcoming"}= "Upcoming"
-      %p
+      = f.select "category", [["Select category","none"],["Bangers","bangers"], ["Village hits","villageHits"], ["Upcoming","upcoming"]]
     = f.submit class: 'btn btn-primary'
