@@ -41,7 +41,7 @@ Rails.application.routes.draw do
   match '/videos' => 'visitors#videos', :via => :get
   match '/contact' => 'visitors#contact', :via => :get
   match '/artists' => 'visitors#artists', :via => :get
-
+  match '/store' => 'visitors#store', :via => :get
 
 
   root to: 'visitors#index'
