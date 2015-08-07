@@ -1,0 +1,13 @@
+#services
+  .container
+    .row
+.container
+  %h1 Add New Artist
+  = form_for @artist do |f|
+    = render 'shared/errors', object: @artist
+    .form-group
+      = f.label :name
+      = f.text_field :name, class: 'form-control', required: true
+      %span.help-block A link to the video on YouTube.
+      = f.select "category", [["Select category","none"],["Bangers","bangers"], ["Village hits","villageHits"], ["Upcoming","upcoming"]]
+    = f.submit class: 'btn btn-primary'

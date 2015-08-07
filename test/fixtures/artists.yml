@@ -1,0 +1,16 @@
+# Read about fixtures at
+# http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  email: MyString
+  cell_number: 1
+  bio: MyText
+  category: MyString
+
+two:
+  name: MyString
+  email: MyString
+  cell_number: 1
+  bio: MyText
+  category: MyString

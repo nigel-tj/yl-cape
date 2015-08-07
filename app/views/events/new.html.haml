@@ -1,3 +1,13 @@
-= render "form"
-
-= link_to "Back" , root_path
+#services
+  .container
+    .row
+.container
+  %h1 New event
+  = form_for @event do |f|
+    = render 'shared/errors', object: @event
+    .form-group
+      = f.label :name
+      = f.text_field :name, class: 'form-control', required: true
+      %span.help-block A link to the events.
+     
+    = f.submit class: 'btn btn-primary'

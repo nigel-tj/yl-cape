@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   devise_for :admins
   get 'gallery/index'
 
@@ -20,7 +21,7 @@ Rails.application.routes.draw do
   resources :musics
   resources :gallery
   resources :videos, only: [:index, :new, :create]
-  #resources :video_uploads
+  resources :artists, only: [:index, :new, :create]
   
   resources :events do
     resources :vip_tickets , :standard_tickets
@@ -38,9 +39,9 @@ Rails.application.routes.draw do
   match '/music' => 'visitors#music', :via => :get
   match '/features' => 'visitors#news', :via => :get
   match '/social' => 'visitors#social', :via => :get
-  match '/videos' => 'visitors#videos', :via => :get
+  match '/videos' => 'videos#index', :via => :get
   match '/contact' => 'visitors#contact', :via => :get
-  match '/artists' => 'visitors#artists', :via => :get
+  match '/artists' => 'artists#index', :via => :get
   match '/store' => 'visitors#store', :via => :get
   match '/gallery_uploads' => 'gallery#upload', :via => :get
 
