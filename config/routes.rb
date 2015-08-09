@@ -1,5 +1,17 @@
 Rails.application.routes.draw do
 
+  get 'features/index'
+
+  get 'features/new'
+
+  get 'features/create'
+
+  get 'feature/index'
+
+  get 'feature/new'
+
+  get 'feature/create'
+
   devise_for :admins
   get 'gallery/index'
 
@@ -44,7 +56,8 @@ Rails.application.routes.draw do
   match '/artists' => 'artists#index', :via => :get
   match '/store' => 'visitors#store', :via => :get
   match '/gallery_uploads' => 'gallery#upload', :via => :get
-
+  match '/artist_uploads' => 'artists#new', :via => :get
+  match '/feature_uploads' => 'features#new', :via => :get
 
   root to: 'visitors#index'
 end
