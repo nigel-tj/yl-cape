@@ -1,2 +1,12 @@
-%h1 Features#new
-%p Find me in app/views/features/new.html.haml
+#services
+  .container
+    .row
+.container
+  %h1 New Feture
+  = form_for @feature do |f|
+    = render 'shared/errors', object: @feature
+    .form-group
+      = f.label :link
+      = f.text_field :link, class: 'form-control', required: true
+      %span.help-block A link to article.
+    = f.submit class: 'btn btn-primary'

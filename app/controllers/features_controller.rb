@@ -3,6 +3,7 @@ class FeaturesController < ApplicationController
   end
 
   def new
+    @feature = Feature.new
   end
 
   def create
