@@ -1,0 +1,12 @@
+#services
+  .container
+    .row
+.container
+  %h1 Add New Track
+  = form_for @music do |f|
+    = render 'shared/errors', object: @music
+    .form-group
+      = f.label :track_title
+      = f.text_field :track_title, class: 'form-control', required: true
+      %span.help-block Track name .
+    = f.submit class: 'btn btn-primary'

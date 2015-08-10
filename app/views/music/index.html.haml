@@ -1,17 +1,110 @@
-// .col-sm-12
-//   %a.sc-player{:href => "http://soundcloud.com/matas/hobnotropic"} My new dub track
-//   //   %iframe{:frameborder => "0", :height => "355", :scrollbars => "no", :scrolling => "no", :src => "http://www.audiomack.com/embed4-playlist/nigel-30/redvillage", :width => "100%"}
-//   - @client.get('/tracks', :limit => 10, :order => 'hotness').each do |track|
-//     #putTheWidgetHere
-//     %script{:type => "text/JavaScript"}
-//       :cdata
-//         SC.oEmbed("#{track.permalink_url}", {color: "ff0066"},  document.getElementById("putTheWidgetHere"));
+#services
+  .container
+    .row
+/ start gallery
+#gallery.text-center
+  .container
+    .row.text-center
+      .tabs.tabs-style-linebox.wow.fadeInUp{"data-wow-duration" => "2s"}
+        %nav
+          %ul.filters
+            %li.hvr-sweep-to-top.active.filter{"data-filter" => "all"}
+              %span Village picks
+            %li.hvr-sweep-to-top.filter{"data-filter" => ".girlsPub"}
+              %span Mash ups
+            %li.hvr-sweep-to-top.filter{"data-filter" => ".danceParty"}
+              %span This - That
+            %li.hvr-sweep-to-top.filter{"data-filter" => ".videos"}
+              %span #goodMusic
+  .container-fluid
+    .row.gallery.text-center
+      .col-md-12.noPadding
+        .gallery-photo-grid
+          .gallery-photos
+            .gallery-photos-thumb
+              .gallery-photo-item.mix.danceParty.wow.fadeIn
+                %a.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "images/site-images/ass.jpg"}
+                  .photo-thumb
+                    %img{:alt => "image-1", :src => "images/site-images/400/1.png"}
+                  .overlay
+                    %span.gallery-icon
+                      %i.fa.fa-search-plus.fa-2x
+              .gallery-photo-item.mix.danceParty.wow.fadeIn{"data-wow-delay" => "0.2s"}
+                %a.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "images/site-images/masai.jpg"}
+                  .photo-thumb
+                    %img{:alt => "image-2", :src => "images/site-images/400/4.png"}
+                  .overlay
+                    %span.gallery-icon
+                      %i.fa.fa-search-plus.fa-2x
+              .gallery-photo-item.mix.videos.wow.fadeIn{"data-wow-delay" => "0.4s"}
+                %a.pretty-photo{"data-gal" => "prettyPhoto", :href => "http://vimeo.com/8245346"}
+                  .photo-thumb
+                    %img{:alt => "Video", :src => "images/site-images/400/3.png"}
+                  .overlay
+                    %span.gallery-icon
+                      %i.fa.fa-play.fa-2x
+              .gallery-photo-item.mix.videos.wow.fadeIn{"data-wow-delay" => "0.6s"}
+                %a.pretty-photo{"data-gal" => "prettyPhoto", :href => "http://vimeo.com/8245346"}
+                  .photo-thumb
+                    %img{:alt => "video", :src => "images/site-images/400/5.png"}
+                  .overlay
+                    %span.gallery-icon
+                      %i.fa.fa-play.fa-2x
+              .gallery-photo-item.mix.videos.wow.fadeIn{"data-wow-delay" => "0.1s"}
+                %a.pretty-photo{"data-gal" => "prettyPhoto", :href => "http://vimeo.com/8245346"}
+                  .photo-thumb
+                    %img{:alt => "video", :src => "images/site-images/400/6.png"}
+                  .overlay
+                    %span.gallery-icon
+                      %i.fa.fa-play.fa-2x
+              .gallery-photo-item.mix.girlsPub.wow.fadeIn{"data-wow-delay" => "0.2s"}
+                %a.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "images/site-images/400/7.png"}
+                  .photo-thumb
+                    %img{:alt => "image-3", :src => "images/site-images/400/8.png"}
+                  .overlay
+                    %span.gallery-icon
+                      %i.fa.fa-search-plus.fa-2x
+              .gallery-photo-item.mix.danceParty.wow.fadeIn{"data-wow-delay" => "0.4s"}
+                %a.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "images/site-images/400/9.png"}
+                  .photo-thumb
+                    %img{:alt => "image-4", :src => "images/site-images/400/9.png"}
+                  .overlay
+                    %span.gallery-icon
+                      %i.fa.fa-search-plus.fa-2x
+              .gallery-photo-item.mix.danceParty.wow.fadeIn{"data-wow-delay" => "0.6s"}
+                %a.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "images/site-images/400/10.png"}
+                  .photo-thumb
+                    %img{:alt => "image-5", :src => "images/site-images/400/10.png"}
+                  .overlay
+                    %span.gallery-icon
+                      %i.fa.fa-search-plus.fa-2x
+              .gallery-photo-item.mix.girlsPub.wow.fadeIn{"data-wow-delay" => "0.2s"}
+                %a.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "images/site-images/400/11.png"}
+                  .photo-thumb
+                    %img{:alt => "image-6", :src => "images/site-images/400/11.png"}
+                  .overlay
+                    %span.gallery-icon
+                      %i.fa.fa-search-plus.fa-2x
+              .gallery-photo-item.mix.girlsPub.wow.fadeIn{"data-wow-delay" => "0.4s"}
+                %a.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "images/site-images/400/12.png"}
+                  .photo-thumb
+                    %img{:alt => "image-7", :src => "images/site-images/400/12.png"}
+                  .overlay
+                    %span.gallery-icon
+                      %i.fa.fa-search-plus.fa-2x
+              .gallery-photo-item.mix.girlsPub.wow.fadeIn{"data-wow-delay" => "0.5s"}
+                %a.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "images/site-images/400/13.png"}
+                  .photo-thumb
+                    %img{:alt => "image-8", :src => "images/site-images/400/13.png"}
+                  .overlay
+                    %span.gallery-icon
+                      %i.fa.fa-search-plus.fa-2x
+              .gallery-photo-item.mix.videos.wow.fadeIn{"data-wow-delay" => "0.6s"}
+                %a.pretty-photo{"data-gal" => "prettyPhoto", :href => "http://vimeo.com/8245346"}
+                  .photo-thumb
+                    %img{:alt => "Video", :src => "images/site-images/600/10410412_1451601768456397_7010684179840250317_n.jpg"}
+                  .overlay
+                    %span.gallery-icon
+                      %i.fa.fa-play.fa-2x
+/ end gallery
 
-//     // = track.permalink_url
-
-    // %script{:src => "//w.soundcloud.com/player/api.js"}
-    // .player
-    //   %span.info
-    //   .waveform
-    //   .position
-    // %iframe.sc-widget{:src => "//w.soundcloud.com/player/?url=#{track.permalink_url}"}

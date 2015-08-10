@@ -1,0 +1,14 @@
+# Read about fixtures at
+# http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  track_title: MyString
+  cover: MyText
+  intro: MyText
+  thumb: MyText
+
+two:
+  track_title: MyString
+  cover: MyText
+  intro: MyText
+  thumb: MyText
