@@ -13,6 +13,9 @@ class ArtistsController < ApplicationController
   def update
   end
 
+  def downloads
+  end
+
   private
 
   def artist_params
