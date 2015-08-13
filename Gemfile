@@ -62,4 +62,5 @@ gem 'rails-observers'
 gem 'omniauth-google-oauth2'
 gem 'active_type', '0.3.1'
 gem 'rails-gallery'
+gem 'carrierwave'
 

@@ -6,4 +6,9 @@ describe GalleryController do
     assert_response :success
   end
 
+  it "should get new" do
+    get :new
+    assert_response :success
+  end
+
 end

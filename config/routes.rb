@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+
   get 'features/index'
   get 'features/new'
 
@@ -22,7 +23,7 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   resources :users
   resources :musics
-  resources :gallery
+  resources :galleries
   resources :videos, only: [:index, :new, :create]
   resources :artists, only: [:index, :new, :create]
   
@@ -46,7 +47,7 @@ Rails.application.routes.draw do
   match '/contact' => 'visitors#contact', :via => :get
   match '/artists' => 'artists#index', :via => :get
   match '/store' => 'visitors#store', :via => :get
-  match '/gallery_uploads' => 'gallery#upload', :via => :get
+  match '/gallery_uploads' => 'galleries#new', :via => :get
   match '/artist_uploads' => 'artists#new', :via => :get
   match '/feature_uploads' => 'features#new', :via => :get
   match '/artist_downloads' => 'artists#downloads', :via => :get

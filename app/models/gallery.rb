@@ -1,4 +1,4 @@
-class Feature < ActiveRecord::Base
+class Gallery < ActiveRecord::Base
   mount_uploader :file, FileUploader
 
   def to_jq_upload
