@@ -1,13 +1,4 @@
 class Gallery < ActiveRecord::Base
-  mount_uploader :file, FileUploader
-
-  def to_jq_upload
-    {
-      "name" => read_attribute(:file),
-      "size" => file.size,
-      "url" => file.url,
-      "delete_url" => "/documents/#{id}",
-      "delete_type" => "DELETE"
-    }
-  end
+  #attr_accessible :name
+  has_many :paintings
 end

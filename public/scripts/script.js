@@ -129,35 +129,35 @@ $(window).load(function(){
 
 		/* Map */
 
-	function initialize() {
-		    var mapCanvas = document.getElementById('map-canvas');
-		    var mapOptions = {
-		      center: new google.maps.LatLng(44.5403, -78.5463),
-		      zoom: 8,
-		      scrollwheel: false,
-		      mapTypeId: google.maps.MapTypeId.ROADMAP
-		    }
-		    var map = new google.maps.Map(mapCanvas, mapOptions);
-		}
-		 google.maps.event.addDomListener(window, 'load', initialize);
+    //     function initialize() {
+    //     	    var mapCanvas = document.getElementById('map-canvas');
+    //     	    var mapOptions = {
+    //     	      center: new google.maps.LatLng(44.5403, -78.5463),
+    //     	      zoom: 8,
+    //     	      scrollwheel: false,
+    //     	      mapTypeId: google.maps.MapTypeId.ROADMAP
+    //     	    }
+    //     	    var map = new google.maps.Map(mapCanvas, mapOptions);
+    //     	}
+    //     	 google.maps.event.addDomListener(window, 'load', initialize);
 
-		 /* Map */
+    //     	 /* Map */
 
-		/* Smooth-Scroll */
+    //     	/* Smooth-Scroll */
 
-		$(".scroll").click(function(event){
+    //     	$(".scroll").click(function(event){
 			
-		event.preventDefault();
-		$('html,body').animate({scrollTop:$(this.hash).offset().top}, 2000);
-		});
+    //     	event.preventDefault();
+    //     	$('html,body').animate({scrollTop:$(this.hash).offset().top}, 2000);
+    //     	});
 
-		/* Smooth-Scroll */
-		$(function () {
-	    var austDay = new Date();
-	    austDay = new Date(austDay.getFullYear() + 1, 3 - 1, 10);
-	    $('#defaultCountdown').countdown({until: austDay});
-	    $('#year').text(austDay.getFullYear());
-    });
+    //     	/* Smooth-Scroll */
+    //     	$(function () {
+    //         var austDay = new Date();
+    //         austDay = new Date(austDay.getFullYear() + 1, 3 - 1, 10);
+    //         $('#defaultCountdown').countdown({until: austDay});
+    //         $('#year').text(austDay.getFullYear());
+    // });
 	
 	
 function checkField(){

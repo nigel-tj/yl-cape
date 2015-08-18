@@ -1,0 +1,70 @@
+/ footer
+#footer.module.parallax.parallax-footer
+  .container
+    .row
+      .col-md-3.col-sm-12.text-center.footer-info.wow.fadeInUp{"data-wow-duration" => "1s"}
+        %img{:alt => "Logo", :src => "/images/Red-Cup-Logo.gif", :width => "150"}
+      .col-md-3.col-sm-4.text-center.footer-info.wow.fadeIn{"data-wow-delay" => "1s", "data-wow-duration" => "2s"}
+        %p
+          %i.fa.fa-map-marker.fa-3x
+        %p.footer-text RedVillage Head quaters, 93 Catenbury Street, Zonnebloom , Cape Town
+      .col-md-3.col-sm-4.text-center.footer-info.wow.fadeIn{"data-wow-delay" => "1s", "data-wow-duration" => "2s"}
+        %p
+          %i.fa.fa-envelope.fa-3x
+        %p.footer-text
+          %a{:href => "#"} info@redvillage.co.za
+          %a{:href => "#"} media@redvillage.coza
+      .col-md-3.col-sm-4.text-center.footer-info.wow.fadeIn{"data-wow-delay" => "1s", "data-wow-duration" => "2s"}
+        %p
+          %i.fa.fa-phone.fa-3x
+        %p.footer-text
+          063 096 4310
+          %br
+            084 052 2558
+    .row.text-center
+      .social.affix-social
+        %a{:href => "http://www.facebook.com"}
+          %i.fa.fa-facebook.fa-2x
+        %a{:href => "http://www.google.com"}
+          %i.fa.fa-google.fa-2x
+        %a{:href => "http://www.linkedin.com"}
+          %i.fa.fa-linkedin.fa-2x
+        %a{:href => "http://www.pinterest.com"}
+          %i.fa.fa-pinterest.fa-2x
+        %a{:href => "http://www.twitter.com"}
+          %i.fa.fa-twitter.fa-2x
+        %a{:href => "http://www.rss.com"}
+          %i.fa.fa-rss.fa-2x
+        %a{:href => "http://www.skype.com"}
+          %i.fa.fa-skype.fa-2x
+
+/ footer
+#copy-right
+  .container
+    .row.text-center
+      %p
+        CopyRight &copy; 2015 Red Village
+        %a{:href => "#"} Red Village
+
+:javascript
+  jQuery(document).ready(function($){
+  // Initialize the jQuery File Upload widget:
+  $('#fileupload').fileupload({
+  paramName: 'gallery[file]'
+  });
+  //
+  // Load existing files:
+  $.getJSON($('#fileupload').prop('action'), function (files) {
+  var fu = $('#fileupload').data('blueimpFileupload'),
+  template;
+  fu._adjustMaxNumberOfFiles(-files.length);
+  console.log(files);
+  template = fu._renderDownload(files).appendTo($('#fileupload .files'));
+  // Force reflow:
+  fu._reflow = fu._transition && template.length &&
+  template[0].offsetWidth;
+  template.addClass('in');
+  $('#loading').remove();
+  });
+  
+  });

@@ -1,0 +1,15 @@
+<div class="container" style="margin-top:200px">
+  <div class="row">
+    
+    <h1>Galleries</h1>
+    
+    <% for gallery in @galleries %>
+    <div class="gallery">
+      <h2><%= link_to gallery.name, gallery %></h2>
+      Paintings: <%= gallery.paintings.size %>
+    </div>
+    <% end %>
+    
+    <p><%= link_to "New Gallery", new_gallery_path %></p>
+  </div>
+</div>
