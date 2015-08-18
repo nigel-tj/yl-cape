@@ -1,15 +1,14 @@
-<div class="container" style="margin-top:200px">
+<div class="container">
   <div class="row">
-    
-    <h1>Galleries</h1>
-    
-    <% for gallery in @galleries %>
-    <div class="gallery">
-      <h2><%= link_to gallery.name, gallery %></h2>
-      Images: <%= gallery.images.size %>
-    </div>
+    <div class="col-md-12">
+      <h1>Galleries</h1>
+      <p><%= link_to "New Gallery", new_gallery_path %></p>
+      
+      <% for gallery in @galleries %>
+      <div class="col-md-4" style="height:250px"><%= link_to gallery.name, gallery %>
+        Images: <%= gallery.images.size %>
+      </div>
     <% end %>
-    
-    <p><%= link_to "New Gallery", new_gallery_path %></p>
+    </div>
   </div>
 </div>
