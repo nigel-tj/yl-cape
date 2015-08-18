@@ -25,9 +25,8 @@ Rails.application.routes.draw do
   resources :musics
 
   resources :galleries
-  resources :paintings
+  resources :images
 
-  resources :documents
   resources :videos, only: [:index, :new, :create]
   resources :artists, only: [:index, :new, :create]
   

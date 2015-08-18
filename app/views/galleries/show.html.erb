@@ -3,14 +3,14 @@
 
     <h1> <%= @gallery.name %><h1>
         
-        <div id="paintings">
-          <% for painting in @gallery.paintings %>
-          <div class="painting">
-            <%= image_tag painting.image_url(:thumb) if painting.image? %>
-            <div class="name"><%= painting.name %></div>
+        <div id="images">
+          <% for image in @gallery.images %>
+          <div class="image">
+            <%= image_tag image.image_url(:thumb) if image.image? %>
+            <div class="name"><%= image.name %></div>
             <div class="actions">
-              <%= link_to "edit", edit_painting_path(painting) %> |
-              <%= link_to "remove", painting, :confirm => 'Are you sure?', :method => :delete %>
+              <%= link_to "edit", edit_image_path(image) %> |
+              <%= link_to "remove", image, :confirm => 'Are you sure?', :method => :delete %>
             </div>
           </div>
           <% end %>
@@ -18,7 +18,7 @@
         </div>
         
         <p>
-          <%= link_to "Add a Painting", new_painting_path(:gallery_id => @gallery) %> |
+          <%= link_to "Add a Image", new_image_path(:gallery_id => @gallery) %> |
           <%= link_to "Remove Gallery", @gallery, :confirm => 'Are you sure?', :method => :delete %> |
           <%= link_to "View Galleries", galleries_path %>
         </p>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150818095518) do
+ActiveRecord::Schema.define(version: 20150818125844) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -69,6 +69,14 @@ ActiveRecord::Schema.define(version: 20150818095518) do
     t.datetime "updated_at"
   end
 
+  create_table "images", force: :cascade do |t|
+    t.integer  "gallery_id"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "image"
+  end
+
   create_table "musics", force: :cascade do |t|
     t.string   "track_title"
     t.text     "cover"
@@ -76,14 +84,6 @@ ActiveRecord::Schema.define(version: 20150818095518) do
     t.text     "thumb"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-  end
-
-  create_table "paintings", force: :cascade do |t|
-    t.integer  "gallery_id"
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "image"
   end
 
   create_table "standard_tickets", force: :cascade do |t|
