@@ -4,13 +4,24 @@ class PaintingsController < ApplicationController
   end
 
   def create
-    @painting = Painting.new(painting_params)
-    if @painting.save
-      flash[:notice] = "Successfully created painting."
-      redirect_to @painting.gallery
-    else
-      render :action => 'new'
+    @name  = params[:painting][:name]
+    @gallery_id = params[:painting][:gallery_id]
+    @images = params[:painting][:images]
+    @images.each do |image|
+      @painting = Painting.new
+      @painting.gallery_id = @gallery_id
+      @painting.name = @name
+      @painting.image = image
+      @painting.save
     end
+    
+    redirect_to @painting.gallery
+    # if @painting.save
+    #   flash[:notice] = "Successfully created painting."
+    #   redirect_to @painting.gallery
+    # else
+    #   render :action => 'new'
+    # end
   end
 
   def edit
@@ -36,7 +47,7 @@ class PaintingsController < ApplicationController
 
   private
   def painting_params
-    params.require(:painting).permit(:gallery_id, :name, :image, :remote_image_url)
+    params.require(:painting).permit(:gallery_id, :name, :images, :remote_image_url)
   end
 
 end
