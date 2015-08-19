@@ -10,6 +10,7 @@ class VideosController < ApplicationController
 
   def new
     @video = Video.new
+    render :layout => 'admin'
   end
 
   def create
