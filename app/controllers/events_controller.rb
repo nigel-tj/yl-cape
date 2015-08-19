@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-    before_filter :authenticate_user!
+    before_action :authenticate_admin!, except: [:index]
    
       def index
         @events = Event.all
@@ -8,7 +8,7 @@ class EventsController < ApplicationController
     
       def new
         @event= Event.new
-        
+        render :layout => 'admin'
       end
       def create 
         @event = Event.create(event_params)

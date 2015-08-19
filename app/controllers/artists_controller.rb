@@ -5,6 +5,7 @@ class ArtistsController < ApplicationController
 
   def new
     @artist = Artist.new 
+    render :layout => 'admin'
   end
 
   def create

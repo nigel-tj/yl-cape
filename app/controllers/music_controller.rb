@@ -5,5 +5,6 @@ class MusicController < ApplicationController
 
   def new
     @music = Music.new
+    render :layout => 'admin'
   end
 end
