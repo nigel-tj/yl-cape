@@ -54,8 +54,9 @@ Rails.application.routes.draw do
   match '/feature_uploads' => 'features#new', :via => :get
   match '/artist_downloads' => 'artists#downloads', :via => :get
   match '/music_uploads' => 'music#new', :via => :get
-  match '/gallery_uploads' => 'galleries#index', :via => :get
-  match '/gallery_upload' => 'galleries#new', :via => :get 
+  match '/gallery_uploads' => 'galleries#new', :via => :get
+  match '/video_uploads' => 'videos#new', :via => :get 
+  match '/store_uploads' => 'features#new', :via => :get
 
   #root :to => "galleries#index"
   root to: 'visitors#index'

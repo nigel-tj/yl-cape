@@ -1,5 +1,5 @@
 class GalleriesController < ApplicationController
-  layout "galleries"
+  before_action :authenticate_admin!, except: [:index]
   def index
     @galleries = Gallery.all
   end
@@ -10,6 +10,7 @@ class GalleriesController < ApplicationController
 
   def new
     @gallery = Gallery.new
+    render :layout => 'admin'
   end
 
   def create
