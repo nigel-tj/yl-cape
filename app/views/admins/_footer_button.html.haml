@@ -43,28 +43,5 @@
   .container
     .row.text-center
       %p
-        CopyRight &copy; 2015 Red Village
+        CopyRight &copy; 2015
         %a{:href => "#"} Red Village
-
-:javascript
-  jQuery(document).ready(function($){
-  // Initialize the jQuery File Upload widget:
-  $('#fileupload').fileupload({
-  paramName: 'gallery[file]'
-  });
-  //
-  // Load existing files:
-  $.getJSON($('#fileupload').prop('action'), function (files) {
-  var fu = $('#fileupload').data('blueimpFileupload'),
-  template;
-  fu._adjustMaxNumberOfFiles(-files.length);
-  console.log(files);
-  template = fu._renderDownload(files).appendTo($('#fileupload .files'));
-  // Force reflow:
-  fu._reflow = fu._transition && template.length &&
-  template[0].offsetWidth;
-  template.addClass('in');
-  $('#loading').remove();
-  });
-  
-  });
