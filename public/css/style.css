@@ -788,7 +788,7 @@ div.module.parallax-header {
 .gallery-photo-item .overlay{
  	 position: absolute;
    background-color: transparent;
-   background-color: rgba(255,42,112, 0.7);
+   background-color: rgba(206, 31, 43, 1);
    width: 100%;
    height: 100%;
    overflow: hidden;
