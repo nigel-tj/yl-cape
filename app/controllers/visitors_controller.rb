@@ -35,5 +35,12 @@ class VisitorsController < ApplicationController
         @qr = RQRCode::QRCode.new("http://redvillage.herokuapp.com").to_img.resize(200, 200).to_data_url
         
     end
+    def portfolio
+        render :pdf => "public/docs/Proposal-template.pdf"
+    end
+
+    def gallery
+      @galleries = Gallery.all
+    end
 
 end

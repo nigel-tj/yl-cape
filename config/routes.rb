@@ -48,7 +48,7 @@ Rails.application.routes.draw do
   get '/auth/:provider/callback', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy', as: :logout
 
-  match '/gallery' => 'galleries#index', :via => :get
+  match '/gallery' => 'visitors#gallery', :via => :get
   match '/music' => 'music#index', :via => :get
   match '/features' => 'visitors#news', :via => :get
   match '/social' => 'visitors#social', :via => :get
@@ -64,7 +64,7 @@ Rails.application.routes.draw do
   match '/video_uploads' => 'videos#new', :via => :get 
   match '/store_uploads' => 'store#new', :via => :get
   match '/event_uploads' => 'events#new', :via => :get
-  #match '/admin' => 'admins#index', :via => :get
+  match '/portfolio' => 'visitors#portfolio', :via => :get
 
   #root :to => "galleries#index"
   root to: 'visitors#index'
