@@ -1,0 +1,12 @@
+.container
+  .row
+    .col-md-12
+      %h1 Features
+      %p= link_to "New Feature", new_feature_path
+      - if @features.any?
+        - for feature in @features
+          .col-md-4{:style => "height:250px"}
+            %h4 #{feature.heading}
+            %img{:alt => "Album Cover", :src => "https://placehold.it/300x200"}/
+            %p #{feature.intro}
+            %p #{feature.link}

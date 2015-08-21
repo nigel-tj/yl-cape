@@ -32,7 +32,7 @@ Rails.application.routes.draw do
 
   resources :galleries
   resources :images
-
+  resources :features
   resources :videos, only: [:index, :new, :create]
   resources :artists, only: [:index, :new, :create]
   
@@ -65,6 +65,7 @@ Rails.application.routes.draw do
   match '/store_uploads' => 'store#new', :via => :get
   match '/event_uploads' => 'events#new', :via => :get
   match '/portfolio' => 'visitors#portfolio', :via => :get
+  match '/admin_index' => 'features#admin_index', :via => :get
 
   #root :to => "galleries#index"
   root to: 'visitors#index'

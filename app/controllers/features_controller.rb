@@ -1,6 +1,12 @@
 class FeaturesController < ApplicationController
   before_action :authenticate_admin!, except: [:index, :test]
   def index
+    @features = Feature.all
+  end
+
+  def admin_index
+    @features = Feature.all
+    render :layout => 'admin'
   end
 
   def new
@@ -9,5 +15,18 @@ class FeaturesController < ApplicationController
   end
 
   def create
+    @feature = Feature.new(feature_params)
+    if @feature.save
+      flash[:notice] = "Successfully created gallery."
+      redirect_to "/admin_index"
+    else
+      render :action => 'new'
+    end
   end
+
+  private
+  def feature_params
+    params.require(:feature).permit(:link,:image,:intro,:heading)
+  end
+
 end
