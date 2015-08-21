@@ -59,13 +59,14 @@ Rails.application.routes.draw do
   match '/artist_uploads' => 'artists#new', :via => :get
   match '/feature_uploads' => 'features#new', :via => :get
   match '/artist_downloads' => 'artists#downloads', :via => :get
-  match '/music_uploads' => 'music#new', :via => :get
+  match '/music_uploads' => 'musics#new', :via => :get
   match '/gallery_uploads' => 'galleries#new', :via => :get
   match '/video_uploads' => 'videos#new', :via => :get 
   match '/store_uploads' => 'store#new', :via => :get
   match '/event_uploads' => 'events#new', :via => :get
   match '/portfolio' => 'visitors#portfolio', :via => :get
   match '/admin_index' => 'features#admin_index', :via => :get
+  match '/artist_songs' => 'artists#downloads', :via => :get
 
   #root :to => "galleries#index"
   root to: 'visitors#index'

@@ -9,6 +9,10 @@
 		 width: 16.66666%; 
 		 margin-bottom: -4px;
 	}
+	.gallery-tract-item {
+		 width: 100%; 
+		 margin-bottom: -4px;
+	}
 	#gallery .gallery span.gallery-icon {
 		top: 40% !important;
 	}

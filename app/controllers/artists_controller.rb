@@ -15,6 +15,7 @@ class ArtistsController < ApplicationController
   end
 
   def downloads
+    @songs = Music.all
   end
 
   private
