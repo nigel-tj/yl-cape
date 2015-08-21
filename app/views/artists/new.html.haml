@@ -1,13 +1,31 @@
-#services
-  .container
-    .row
 .container
   %h1 Add New Artist
-  = form_for @artist do |f|
+  = form_for @artist, html: { class: "form-horizontal"} do |f|
     = render 'shared/errors', object: @artist
     .form-group
-      = f.label :name
-      = f.text_field :name, class: 'form-control', required: true
-      %span.help-block A link to the video on YouTube.
-      = f.select "category", [["Select category","none"],["Bangers","bangers"], ["Village hits","villageHits"], ["Upcoming","upcoming"]]
-    = f.submit class: 'btn btn-primary'
+      = f.label :name, :class => "control-label col-sm-2"
+      .col-sm-10 
+        = f.text_field :name, class: 'form-control', required: true
+        %span.help-block Artst Name.
+    .form-group
+      = f.label :email, :class => "control-label col-sm-2"
+      .col-sm-10 
+        = f.text_field :email, class: 'form-control', required: true
+        %span.help-block Artist Email.
+    .form-group
+      = f.label :cell_number, :class => "control-label col-sm-2"
+      .col-sm-10 
+        = f.text_field :cell_number, class: 'form-control', required: true
+        %span.help-block A link to the video on YouTube.
+    .form-group
+      = f.label :bio, :class => "control-label col-sm-2"
+      .col-sm-10 
+        = f.text_area :bio, class: 'form-control', required: true
+        %span.help-block Artist Bio.
+    .form-group
+      .col-sm-offset-2.col-sm-10
+        = f.select "category", [["Select category","none"],["Bangers","bangers"], ["Village hits","villageHits"], ["Upcoming","upcoming"]]
+    .form-group
+      .col-sm-offset-2.col-sm-10
+        = f.submit class: 'btn btn-primary'
+
