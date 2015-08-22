@@ -1,39 +1,32 @@
-/ start header
-%header#header{"data-offset-top" => "2", "data-spy" => "affix"}
-  .container
-    .row
-      .col-md-12.col-sm-9.col-xs-12.header-right.affix-header-right
-        .col-md-2.col-sm-3.col-xs-12.text-center.logo
-          %a{:href => "/#banner"}
-            %img.logo-img.wow.fadeIn{:alt => "Night Club logo", "data-wow-duration" => "3s", :src => "/images/Red-Cup-Logo.gif"}/
-        .col-md-10.col-sm-9.col-xs-12
-          %nav.navbar.navbar-default.col-xs-12.text-center
-            .navbar-header
-              %button.navbar-toggle{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
-              %span.sr-only Toggle navigation
-              %span.icon-bar
-              %span.icon-bar
-              %span.icon-bar
-          #bs-example-navbar-collapse-1.collapse.navbar-collapse
-            %ul.nav.navbar-nav
-              %li.hvr-underline-from-center.active
-                %a.scroll{:href => "/#banner"} RED VILLAGE
-              %li.hvr-underline-from-center
-                %a{:href => "/gallery"} GALLERY
-              %li.hvr-underline-from-center
-                %a{:href => "/features"} FEATURES
-              %li.hvr-underline-from-center
-                %a{:href => "/videos"} VIDEOS 
-              %li.hvr-underline-from-center
-                %a{:href => "/music"} MUSIC
-              %li.hvr-underline-from-center
-                %a{:href => "/artists"} ARTISTS
-              %li.hvr-underline-from-center
-                %a{:href => "/events"} EVENTS
-              %li.hvr-underline-from-center
-                %a{:href => "/store"} STORE
-              %li.hvr-underline-from-center
-                %a{:href => "/portfolio"} PORTFOLIO
-              %li.hvr-underline-from-center
-                %a{:href => "/contact"} CONTACT US
-/ end header
+%nav.navbar.navbar-inverse.navbar-fixed-top{:role => "navigation"}
+  .container-fluid
+    / Brand and toggle get grouped for better mobile display
+    .navbar-header
+      %button.navbar-toggle.collapsed{"aria-expanded" => "false", "data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      <!-- .col-md-2.col-sm-3.col-xs-12.text-center.logo -->
+      <!--   %a.navbar-brand{:href => "#"} -->
+      <!--     %img.logo-img.wow.fadeIn{:alt => "Night Club logo", "data-wow-duration" => "3s", :src => "/images/Red-Cup-Logo.gif"}/ -->
+    / Collect the nav links, forms, and other cgontent for toggling
+    #bs-example-navbar-collapse-1.collapse.navbar-collapse
+      %ul.nav.navbar-nav.navbar-left
+        %li.active
+          %a{:href => "/gallery_uploads"}
+            GALLERY
+            %span.sr-only (current)
+        %li
+          %a{:href => "/feature_uploads"} FEATURES
+        %li
+          %a{:href => "/video_uploads"} VIDEOS
+        %li
+          %a{:href => "/music_uploads"} MUSIC
+        %li
+          %a{:href => "/artist_uploads"} ARTISTS
+        %li
+          %a{:href => "event_uploads"} EVENTS
+        %li
+          %a{:href => "store_uploads"} STORE
+
