@@ -49,7 +49,7 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy', as: :logout
 
   match '/gallery' => 'visitors#gallery', :via => :get
-  match '/music' => 'music#index', :via => :get
+  match '/music' => 'musics#index', :via => :get
   match '/features' => 'visitors#news', :via => :get
   match '/social' => 'visitors#social', :via => :get
   match '/videos' => 'videos#index', :via => :get
