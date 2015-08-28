@@ -1,0 +1,13 @@
+#services
+  .container
+    .row
+.container
+  %h1 New Gallery
+  = form_for @gallery do |f|
+    = render 'shared/errors', object: @gallery
+    .form-group
+      = f.label :name
+      = f.text_field :name, class: 'form-control', required: true
+      %span.help-block A link to the video on YouTube.
+      = f.select "category", [["Select category","none"],["New","new"], ["Hall Of Fame","hallOfFame"]]
+    = f.submit class: 'btn btn-primary'
