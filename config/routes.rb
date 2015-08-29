@@ -67,6 +67,7 @@ Rails.application.routes.draw do
   match '/portfolio' => 'visitors#portfolio', :via => :get
   match '/admin_index' => 'features#admin_index', :via => :get
   match '/artist_songs' => 'artists#downloads', :via => :get
+  match '/users' => 'users#index', :via => :get
 
   #root :to => "galleries#index"
   root to: 'visitors#index'
