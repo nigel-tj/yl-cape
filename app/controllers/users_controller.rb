@@ -29,6 +29,12 @@ class UsersController < ApplicationController
     redirect_to users_path, :notice => "User deleted."
   end
 
+  def is_signed_in?
+    if user_signed_in? # if user signed
+      true
+    end
+  end
+    
   private
 
   def secure_params
