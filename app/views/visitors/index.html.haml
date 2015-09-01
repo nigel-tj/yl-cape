@@ -7,9 +7,9 @@
           - for banner in @banners
             .item.col-xs-12
               %h1.title.title-lines
-                %span 24 July, 2015
-              %h3.subtitle CHEZ NTEMBA
-              %a.btn-play{"data-gal" => "prettyPhoto", :href => "https://fbcdn-video-m-a.akamaihd.net/hvideo-ak-xta1/v/t42.1790-2/11772480_689295264535911_765739657_n.mp4?efg=eyJybHIiOjMwMCwicmxhIjo1MTJ9&rl=300&vabr=99&oh=e6b963ec165a420dc5ff836287f9a2a9&oe=55B274FD&__gda__=1437758706_ad944dac170a627d5748c962110e4a93"}
+                %span #{banner.name}
+              %h3.subtitle #{banner.title}
+              %a.btn-play{"data-gal" => "prettyPhoto", :href => "#{banner.image_url(:thumb)}"}
                 %span.play-button
                   %i.fa.fa-play.fa-4x
     .row.banner-bottom.hidden-xs
