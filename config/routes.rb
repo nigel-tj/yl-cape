@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get 'features/index'
   get 'features/new'
 
-  devise_for :admins
+
   get 'gallery/index'
 
   get 'music/index'
@@ -25,9 +25,11 @@ Rails.application.routes.draw do
   get 'visitors/contact'
   get 'videos/test'
 
+  devise_for :admins
 
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
-  resources :users
+  devise_for :users
+
+  #resources :users
   resources :musics
 
   resources :galleries
@@ -45,11 +47,11 @@ Rails.application.routes.draw do
   resources :standard_tickets
   
   
-  get '/auth/:provider/callback', to: 'sessions#create'
-  delete '/logout', to: 'sessions#destroy', as: :logout
+  # get '/auth/:provider/callback', to: 'sessions#create'
+  # delete '/logout', to: 'sessions#destroy', as: :logout
 
   match '/gallery' => 'visitors#gallery', :via => :get
-  match '/music' => 'music#index', :via => :get
+  match '/music' => 'musics#index', :via => :get
   match '/features' => 'visitors#news', :via => :get
   match '/social' => 'visitors#social', :via => :get
   match '/videos' => 'videos#index', :via => :get
@@ -67,6 +69,8 @@ Rails.application.routes.draw do
   match '/portfolio' => 'visitors#portfolio', :via => :get
   match '/admin_index' => 'features#admin_index', :via => :get
   match '/artist_songs' => 'artists#downloads', :via => :get
+  match '/users' => 'users#index', :via => :get
+
 
   #root :to => "galleries#index"
   root to: 'visitors#index'

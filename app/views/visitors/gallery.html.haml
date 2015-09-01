@@ -21,10 +21,19 @@
           .gallery-photos
             .gallery-photos-thumb
               - for gallery in @galleries
-                .gallery-photo-item.mix.wow.fadeIn
-                  %a.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "#"}
-                    .photo-thumb
-                      %img{:alt => "image-1", :src => "https://placehold.it/300x200"}
-                    .overlay
-                      %span.gallery-icon
-                        %i.fa.fa-search-plus.fa-2x
+                - if(gallery.category == "new")
+                  .gallery-photo-item.mix.new.fadeIn
+                    %a.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "galleries/#{gallery.id}"}
+                      .photo-thumb
+                        %img{:alt => "album cover", :src => "https://placehold.it/300x200"}
+                      .overlay
+                        %span.gallery-icon
+                          %i.fa.fa-search-plus.fa-2x
+                - if(gallery.category == "hallOfFame")
+                  .gallery-photo-item.mix.hallOfFame.fadeIn
+                    %a.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href =>  "galleries/#{gallery.id}"}
+                      .photo-thumb
+                        %img{:alt => "album cover", :src => "https://placehold.it/300x200"}
+                      .overlay
+                        %span.gallery-icon
+                          %i.fa.fa-search-plus.fa-2x
