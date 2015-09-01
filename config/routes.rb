@@ -1,18 +1,5 @@
 Rails.application.routes.draw do
 
-
-  get 'store/index'
-
-  get 'store/new'
-
-  get 'store/create'
-
-  get 'features/index'
-  get 'features/new'
-
-
-  get 'gallery/index'
-
   get 'music/index'
   get 'gallery/index'
   get "/callback" => "facebook#callback"
@@ -31,7 +18,7 @@ Rails.application.routes.draw do
 
   #resources :users
   resources :musics
-
+  resources :main_banners
   resources :galleries
   resources :images
   resources :features
@@ -69,6 +56,7 @@ Rails.application.routes.draw do
   match '/portfolio' => 'visitors#portfolio', :via => :get
   match '/admin_index' => 'features#admin_index', :via => :get
   match '/artist_songs' => 'artists#downloads', :via => :get
+  match '/banners_index' => 'main_banners#index', :via => :get
   match '/users' => 'users#index', :via => :get
 
 
