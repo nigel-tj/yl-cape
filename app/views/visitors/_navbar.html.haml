@@ -1,40 +1,44 @@
-%nav.navbar.navbar-inverse.navbar-fixed-top{:role => "navigation"}
-  .container-fluid
-    / Brand and toggle get grouped for better mobile display
-    .navbar-header
-      %button.navbar-toggle.collapsed{"aria-expanded" => "false", "data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
-        %span.sr-only Toggle navigation
-        %span.icon-bar
-        %span.icon-bar
-        %span.icon-bar
-      <!-- .col-md-2.col-sm-3.col-xs-12.text-center.logo -->
-      <!--   %a.navbar-brand{:href => "#"} -->
-      <!--     %img.logo-img.wow.fadeIn{:alt => "Night Club logo", "data-wow-duration" => "3s", :src => "/images/Red-Cup-Logo.gif"}/ -->
-    / Collect the nav links, forms, and other cgontent for toggling
-    #bs-example-navbar-collapse-1.collapse.navbar-collapse
-      %ul.nav.navbar-nav.navbar-left
-        %li.active
-          %a{:href => "/gallery"}
-            GALLERY
-            %span.sr-only (current)
-        %li
-          %a{:href => "/features"} NEWS
-        %li
-          %a{:href => "/videos"} VIDEOS
-        %li
-          %a{:href => "/music"} MUSIC
-        %li
-          %a{:href => "/artists"} ARTISTS
-        %li
-          %a{:href => "/events"} EVENTS
-        %li
-          %a{:href => "/store"} STORE
-        %li
-          = link_to 'Sign in', new_user_session_path
-        %li
-          = link_to 'Sign up', new_user_registration_path
-        %li
-          = link_to 'Sign out', destroy_user_session_path, :method=>'delete'
-        %li
-          kfdkj  #{@current_user} jasj 
-         
+<!--         %li -->
+<!--           = link_to 'Sign in', new_user_session_path -->
+<!--         %li -->
+<!--           = link_to 'Sign up', new_user_registration_path -->
+<!--         %li -->
+<!--           = link_to 'Sign out', destroy_user_session_path, :method=>'delete' -->
+<!--         %li -->
+<!--           kfdkj  #{@current_user} jasj  -->
+/ start header
+%header#header{"data-offset-top" => "2", "data-spy" => "affix"}
+  .container
+    .row
+      .col-md-2.col-sm-3.col-xs-12.text-center.logo
+        %a{:href => "index"}
+          %img.logo-img.wow.fadeIn{:alt => "Night Club logo", "data-wow-duration" => "3s", :src => "/images/Red-Cup-Logo.gif"}/
+      .col-md-10.col-sm-9.col-xs-12.header-right.affix-header-right
+        %nav.navbar.navbar-default.col-xs-12.text-center
+          .navbar-header
+            %button.navbar-toggle{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+              %span.sr-only Toggle navigation
+              %span.icon-bar
+              %span.icon-bar
+              %span.icon-bar
+          #bs-example-navbar-collapse-1.collapse.navbar-collapse
+            %ul.nav.navbar-nav
+              %li.hvr-underline-from-center.active
+                %a.scroll{:href => "/#banner"} HOME
+              %li.hvr-underline-from-center
+                %a.scroll{:href => "/gallery"} GALLERY
+              %li.hvr-underline-from-center
+                %a.scroll{:href => "/videos"} VIDEOS
+              %li.hvr-underline-from-center
+                %a.scroll{:href => "/music"} MUSIC
+              %li.hvr-underline-from-center
+                %a.scroll{:href => "/artists"} ARTISTS
+              %li.hvr-underline-from-center
+                %a.scroll{:href => "/events"} EVENTS
+              %li.hvr-underline-from-center
+                %a.scroll{:href => "/features"} NEWS
+              %li.hvr-underline-from-center
+                %a.scroll{:href => "/store"} STORE
+              %li.hvr-underline-from-center
+                %a.scroll{:href => "/contact"} CONTACT
+/ end header
