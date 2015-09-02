@@ -6,7 +6,7 @@
       
       <% for gallery in @galleries %>
       <div class="col-md-4" style="height:250px">
-        <img src="https://placehold.it/300x200" alt="Album Cover">
+         <%= image_tag gallery.image_url(:thumb) if gallery.image? %>
         <p>
           <%= link_to gallery.name, gallery %><br />
           Images: <%= gallery.images.size %>

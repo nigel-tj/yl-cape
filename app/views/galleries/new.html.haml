@@ -6,8 +6,17 @@
   = form_for @gallery do |f|
     = render 'shared/errors', object: @gallery
     .form-group
-      = f.label :name
-      = f.text_field :name, class: 'form-control', required: true
-      %span.help-block A link to the video on YouTube.
-      = f.select "category", [["Select category","none"],["New","new"], ["Hall Of Fame","hallOfFame"]]
+      = f.label :name, :class => "control-label col-sm-2"
+      .col-sm-10
+        = f.text_field :name, class: 'form-control', required: true
+        %span.help-block A link to the video on YouTube.
+    .form-group
+      = f.label :category, :class => "control-label col-sm-2"
+      .col-sm-10
+        = f.select "category", [["Select category","none"],["New","new"], ["Hall Of Fame","hallOfFame"]]
+    .form-group
+      = f.label :image, :class => "control-label col-sm-2"
+      .col-sm-10
+        = f.file_field :image, required: true
+        %span.help-block Album Cover.
     = f.submit class: 'btn btn-primary'

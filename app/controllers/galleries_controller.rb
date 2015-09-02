@@ -1,11 +1,14 @@
 class GalleriesController < ApplicationController
   before_action :authenticate_admin!, except: [:index]
+
   def index
     @galleries = Gallery.all
+    render :layout => 'admin'
   end
 
   def show
     @gallery = Gallery.find(params[:id])
+    render :layout => 'admin'
   end
 
   def new
@@ -35,6 +38,7 @@ class GalleriesController < ApplicationController
     else
       render :action => 'edit'
     end
+    render :layout => 'admin'
   end
 
   def destroy
@@ -46,7 +50,7 @@ class GalleriesController < ApplicationController
 
   private
   def gallery_params
-    params.require(:gallery).permit(:name,:category)
+    params.require(:gallery).permit(:name,:category,:image)
   end
 
 end

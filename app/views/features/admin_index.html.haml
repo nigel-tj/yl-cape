@@ -10,6 +10,6 @@
         - for feature in @features
           .col-md-4{:style => "height:250px"}
             %h4 #{feature.heading}
-            %img{:alt => "Album Cover", :src => "https://placehold.it/300x200"}/
+            = image_tag feature.image_url(:thumb) if feature.image?
             %p #{feature.intro}
             %p #{feature.link}
