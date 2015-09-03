@@ -27,7 +27,7 @@
                   - group.take(5).collect do |video|
                     - if video.category == "upcoming"
                       .gallery-photo-item.mix.upcoming.wow.fadeIn
-                        %a.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "https://img.youtube.com/vi/#{video.uid}/mqdefault.jpg"}
+                        %a.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "https://www.youtube.com/watch?v=#{video.uid}"}
                           .photo-thumb
                             %img{:alt => "image-1", :src => "https://img.youtube.com/vi/#{video.uid}/mqdefault.jpg"}
                           .overlay
