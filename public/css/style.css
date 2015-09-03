@@ -211,7 +211,6 @@ div.module.parallax-header {
    -webkit-border-radius: 10px;
    -moz-border-radius: 10px;
    border-radius: 10px;
-   border: 1px solid #000;
    filter: Alpha(Opacity=80);/*IE7 fix*/
    opacity: 0.8;
 }
