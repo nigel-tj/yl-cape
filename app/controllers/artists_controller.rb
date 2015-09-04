@@ -8,13 +8,22 @@ class ArtistsController < ApplicationController
     render :layout => 'admin'
   end
 
+
   def create
+    @artist = Artist.new(artist_params)
+    if @artist.save
+      flash[:notice] = "Successfully created artist."
+      redirect_to "/artist_songs"
+    else
+      render :action => 'new'
+    end
   end
 
   def update
   end
 
-  def downloads
+  def artist
+    @artist = Artist.find(params[:id])
     @songs = Music.all
   end
 

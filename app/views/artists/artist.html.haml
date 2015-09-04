@@ -5,7 +5,7 @@
 #reservation.module.parallax.parallax-reservation
   .container
     .row
-      %h1.wow.fadeInUp{"data-wow-duration" => "1s"} Artist Name
+      %h1.wow.fadeInUp{"data-wow-duration" => "1s"} "#{@artist.name}"
       %p.wow.fadeIn{"data-wow-duration" => "1s"}
       .col-sm-12.reservation-form        
 / start gallery
@@ -18,7 +18,7 @@
             %li.hvr-sweep-to-top.active.filter{"data-filter" => ".bio"}
               %span Bio
             %li.hvr-sweep-to-top.filter{"data-filter" => ".allDownloads"}
-              %span All Downloads
+              %span All Track
   .container-fluid
     .row.gallery.text-center
       .col-md-12.noPadding

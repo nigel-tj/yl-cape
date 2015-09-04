@@ -8,6 +8,10 @@
         = f.text_field :track_title, class: 'form-control', required: true
         %span.help-block Track name .
     .form-group
+      = f.label :category, :class => "control-label col-sm-2"
+      .col-sm-10
+        = f.select "category", [["Select category","none"],["Village picks","villagePics"], ["Mash Ups","mashUps"], ["Good Music","goodMusic"], ["Artist","artists"]]
+    .form-group
       = f.label :artist_id, :class => "control-label col-sm-2"
       .col-sm-10
         = f.text_field :artist_id, class: 'form-control', required: true

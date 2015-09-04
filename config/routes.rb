@@ -55,7 +55,7 @@ Rails.application.routes.draw do
   match '/event_uploads' => 'events#new', :via => :get
   match '/portfolio' => 'visitors#portfolio', :via => :get
   match '/admin_index' => 'features#admin_index', :via => :get
-  match '/artist_songs' => 'artists#downloads', :via => :get
+  match '/artist_songs' => 'artists#artist', :via => :get
   match '/banners_index' => 'main_banners#index', :via => :get
   match '/users' => 'users#index', :via => :get
 

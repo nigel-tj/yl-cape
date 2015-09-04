@@ -1,6 +1,8 @@
 require 'soundcloud'
 class MusicsController < ApplicationController
   def index
+    @music = Music.all
+    @artists = Artist.all
   end
 
   def new
