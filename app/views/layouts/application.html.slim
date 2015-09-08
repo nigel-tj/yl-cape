@@ -17,11 +17,12 @@ html
     link href="/css/videos.css" rel="stylesheet" type="text/css" /
     noscript
       link href="css/noJS.css" rel="stylesheet" type="text/css" /
+    == javascript_include_tag 'application'
   body#wrapper data-spy="scroll" data-target="#bs-example-navbar-collapse-1"
     #loader
       .loader
 
     header
-      == render 'visitors/navbar'       
+      == render 'visitors/navbar'
     == yield
     == render 'visitors/footer_button'

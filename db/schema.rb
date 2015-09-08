@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150904112113) do
+ActiveRecord::Schema.define(version: 20150908080933) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -116,10 +116,6 @@ ActiveRecord::Schema.define(version: 20150904112113) do
   add_index "standard_tickets", ["user_id"], name: "index_standard_tickets_on_user_id"
 
   create_table "users", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "role"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
@@ -130,8 +126,8 @@ ActiveRecord::Schema.define(version: 20150904112113) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.string   "provider"
-    t.string   "uid"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

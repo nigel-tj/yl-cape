@@ -1,6 +1,6 @@
 require 'rqrcode_png'  
 class VisitorsController < ApplicationController
-  #before_action :authenticate_user! #, except: [:index,:show, :vidoes, :social, :news, :portfolio,:gallery]
+  before_action :authenticate_user! #, except: [:index,:show, :vidoes, :social, :news, :portfolio,:gallery]
     def index
       @banners = MainBanner.all
       @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id] 

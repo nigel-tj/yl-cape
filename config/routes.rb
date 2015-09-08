@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+
+  devise_for :users
+  devise_for :admins
+
   get 'music/index'
   get 'gallery/index'
   get "/callback" => "facebook#callback"
@@ -11,10 +15,6 @@ Rails.application.routes.draw do
   get 'visitors/events'
   get 'visitors/contact'
   get 'videos/test'
-
-  devise_for :admins
-
-  devise_for :users
 
   #resources :users
   resources :musics
