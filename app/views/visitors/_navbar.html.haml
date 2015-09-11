@@ -1,12 +1,11 @@
 / start header
-%header#header{"data-offset-top" => "2", "data-spy" => "affix"}
-  .container
+%header
+  .container-fluid 
     .row
-      .col-md-2.col-sm-3.col-xs-12.text-center.logo
-        %a{:href => "index"}
-          %img.logo-img.wow.fadeIn{:alt => "Night Club logo", "data-wow-duration" => "3s", :src => "/images/Red-Cup-Logo.gif"}/
-      .col-md-10.col-sm-9.col-xs-12.header-right.affix-header-right
-        %nav.navbar.navbar-default.col-xs-12.text-center
+      .col-xs-12
+        %a.navbar-brand{:href => "index"}
+          %img.logo.img-responsive{:alt => "Night Club logo", :src => "/images/Red-Cup-Logo.gif"}/
+        %nav.navbar.navbar-default
           .navbar-header
             %button.navbar-toggle{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
               %span.sr-only Toggle navigation
@@ -14,7 +13,7 @@
               %span.icon-bar
               %span.icon-bar
           #bs-example-navbar-collapse-1.collapse.navbar-collapse
-            %ul.nav.navbar-nav
+            %ul.nav.navbar-nav.pull-left
               %li.hvr-underline-from-center.active
                 %a.scroll{:href => "/#banner"} HOME
               %li.hvr-underline-from-center
@@ -31,6 +30,7 @@
                 %a.scroll{:href => "/store"} STORE
               %li.hvr-underline-from-center
                 %a.scroll{:href => "/contact"} CONTACT
+            %ul.nav.navbar-nav.pull-right
               %li.hvr-underline-from-center
                 = link_to 'Sign in', new_user_session_path
               %li.hvr-underline-from-center

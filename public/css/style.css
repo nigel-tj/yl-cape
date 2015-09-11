@@ -428,51 +428,13 @@ div.module.parallax-header {
 	/* Main-Slider */
 
 .logo {
+height:64px;
   padding-left: 0px;
-}
-.logo-img {
-  margin-left: -30px;
-}
-#header{
-	background-color:rgba(0,0,0,0.5);
-	position:absolute;
-	top:0;
-	width:100%;	
-	border-bottom:1px solid rgba(255,255,255,0.1);
-	-webkit-transition: all 0.9s ease;
-  -moz-transition: all 0.9s ease;
-  -o-transition: all 0.9s ease;
-  transition: all 0.9s ease;
-  -ms-transition: all 1s ease;
-}
-#header.affix {
-	background-color:rgba(0,0,0,0.9);
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index:10;
-   -webkit-transition: all 0.9s ease;
-   -moz-transition: all 0.9s ease;
-   -o-transition: all 0.9s ease;
-   transition: all 0.9s ease;
-   -ms-transition: all 1s ease;
-}
-#header img {
-	height:80px;
-	margin-top: 10px;
-	-webkit-transition: all 0.9s ease;
-  -moz-transition: all 0.9s ease;
-  -o-transition: all 0.9s ease;
-  transition: all 0.9s ease;
-	-ms-transition: all 0.9s ease;
-}
-
-#header.affix img {
-	 height: 50px;
-   margin-left: -60px; 
+position:relative;
+z-index:999;
 }
 #header nav{
-	background-color:transparent !important;
+	background-color:#000 !important;
 	border:none !important;	
 	text-align:right;
 	padding-top:5px;
@@ -540,10 +502,11 @@ div.module.parallax-header {
 }
 
 .navbar-default {
-    background-image:none;
-	background-color:transparent;
+    background-color:#000;
+    border:0;
     border-radius:0;
     box-shadow:none;
+    margin:0 -15px;
 }
 .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .active > a {
     background-image:none;
