@@ -196,37 +196,64 @@ div.module.parallax-header {
    min-height: 500px;
    margin-top: 300px; 
 }
-.owl-theme .owl-controls .owl-buttons div{
-   color: #000;
-   display: inline-block;
-   *display: inline;/*IE7 life-saver */
-   padding: 0px;
-   margin-right: 5px;
-   font-weight: normal;	
-   width: 50px;
-   height: 50px;
-   line-height: 48px;
-   font-size: 20px;
-   text-align: center;
-   -webkit-border-radius: 10px;
-   -moz-border-radius: 10px;
-   border-radius: 10px;
-   filter: Alpha(Opacity=80);/*IE7 fix*/
-   opacity: 0.8;
+#owl-demo .item{
+    height: 700px;
 }
-.owl-theme .owl-controls .owl-buttons .owl-prev {
-	position: absolute;
-	left: -45px;
-	top: 50%;
+
+#owl-demo .item img{
+    display: block;
+    width: 100%;
+    height: auto;
 }
-.owl-theme .owl-controls .owl-buttons .owl-next {
-	position: absolute;
-	right: -45px;
-	top: 50%;
+
+#owl-demo .item .caption{
+    background-color:black;
+    padding:20px 20px;
+    color:white;
+    font-size:30px;
+    left:40px;
+    bottom:100px;
+    text-transform:uppercase;
+    position:absolute;
 }
-.owl-theme .owl-controls .owl-buttons div:hover {
-	background: #ce1f2b;
-	border-color: #fd1561;
+
+#owl-demo .item .caption.link{
+    color:red;
+    font-size:18px;
+    padding:10px 20px;
+    bottom:40px;
+}
+
+#owl-demo .item .caption.link a{
+    color:red;
+}
+
+.owl-theme .owl-controls {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.owl-theme .owl-controls .owl-page {
+    display: inline-block;
+    zoom: 1;
+}
+
+.owl-theme .owl-controls .owl-page span {
+    display: block;
+    width: 12px;
+    height: 12px;
+    margin: 5px 7px;
+    filter: Alpha(Opacity=50);
+    opacity: 0.5;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    background: #000;
+}
+
+.owl-theme .owl-controls .owl-page.active span, .owl-theme .owl-controls.clickable .owl-page:hover span {
+    filter: Alpha(Opacity=100);
+    opacity: 1;
 }
 
 #header-slider .item .title-lines {
