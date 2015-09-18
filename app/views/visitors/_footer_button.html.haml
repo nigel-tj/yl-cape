@@ -56,9 +56,21 @@
 %script{:src => "https://maps.googleapis.com/maps/api/js"}
 %script{:src => "/scripts/jquery.mixitup.js", :type => "text/javascript"}
 %script{:src => "/scripts/owl.carousel.js", :type => "text/javascript"}
+%script{:src => "/scripts/owl.carousel2.thumbs.js", :type => "text/javascript"}
 %script{:src => "/scripts/jquery.plugin.js", :type => "text/javascript"}
 %script{:src => "/scripts/jquery.countdown.min.js", :type => "text/javascript"}
 %script{:src => "/scripts/modernizr.custom.97074.js", :type => "text/javascript"}
 %script{:src => "/scripts/jquery.hoverdir.js", :type => "text/javascript"}
 %script{:src => "/scripts/script.js", :type => "text/javascript"}
 
+:javascript
+  $(document).ready(function(){
+   $('.owl-carousel').owlCarousel({
+     loop: true,
+        items: 1,
+        thumbs: true,
+        thumbImage: true,
+        thumbContainerClass: 'owl-thumbs',
+        thumbItemClass: 'owl-thumb-item'
+    });
+  });

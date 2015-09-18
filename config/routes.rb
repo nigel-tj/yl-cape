@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
 
 
-  devise_for :users
+  devise_for :users, controllers: {
+    sessions: 'users/sessions'
+  }
+
   devise_for :admins
 
   get 'music/index'
@@ -15,6 +18,7 @@ Rails.application.routes.draw do
   get 'visitors/events'
   get 'visitors/contact'
   get 'videos/test'
+  get 'visitors/stage'
 
   #resources :users
   resources :musics
@@ -58,7 +62,7 @@ Rails.application.routes.draw do
   match '/artist_songs' => 'artists#artist', :via => :get
   match '/banners_index' => 'main_banners#index', :via => :get
   match '/users' => 'users#index', :via => :get
-
+  match '/stage' => 'visitors#stage', :via => :get
 
   #root :to => "galleries#index"
   root to: 'visitors#index'
