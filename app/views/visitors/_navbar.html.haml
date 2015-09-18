@@ -4,7 +4,7 @@
     .row
       .col-xs-12
         %a.navbar-brand{:href => "index"}
-          %img.logo.img-responsive{:alt => "Night Club logo", :src => "/images/Red-Cup-Logo.gif"}/
+          %img.logo.img-responsive{:alt => "Night Club logo", :src => "/images/Red-Cup-Logo.gif"}
         %nav.navbar.navbar-default
           .navbar-header
             %button.navbar-toggle{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
@@ -32,12 +32,11 @@
                 %a.scroll{:href => "/contact"} CONTACT
             %ul.nav.navbar-nav.pull-right
               %li.hvr-underline-from-center
-                = link_to 'Sign in', new_user_session_path
+                %a{:href => "/users/sign_in"} Sign in
               %li.hvr-underline-from-center
-                = link_to 'Sign up', new_user_registration_path
+                %a{:href => "/users/sign_up"} Sign up
               %li.hvr-underline-from-center
-                = link_to 'Sign out', destroy_user_session_path, :method=>'delete'
-
+                %a{"data-method" => "delete", :href => "/users/sign_out", :rel => "nofollow"} Sign out
 / end header
 - flash.each do |key, value|
   %div{:class => "alert alert-#{key} alert-dismissable"}
