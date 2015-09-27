@@ -2,21 +2,12 @@
   .row
     / start banner
     .owl-carousel{"data-slider-id" => "1"}
-      %div
-        %img{:alt => "The Last of us", :src => "/images/site-images/banners/12.png"}
-          .caption here is a caption
-          .caption.link
-            %a{:href => "#"} More here
-      %div
-        %img{:alt => "GTA V", :src => "http://www.wallspick.com/wp-content/uploads/2015/04/nature-landscape-beautiful-photos-best-desktop-landscape-hd-wallpapers-widescreen.jpg"}
-          .caption A second caption
-          .caption.link
-            %a{:href => "#"} This is a link
-      %div
-        %img{:alt => "Mirror Edge", :src => "http://media1.santabanta.com/full1/Outdoors/Landscapes/landscapes-267a.jpg"}
-          .caption Caption for third image
-          .caption.link
-            %a{:href => "#"} Another link
+      - for banner in @banners
+        %div
+          %img{:alt => "#{banner.name}", :src => "#{banner.image_url}"}
+            .caption #{banner.name}
+            .caption.link
+              %a{:href => "#"} More here
   / end banner
   / start services
   #services
@@ -57,17 +48,15 @@
 #services
   .row
     .services-inner.col-md-12.text-center
-      %h1.wow.fadeInUp{"data-wow-duration" => "2s"} Red Village
-      %h2.wow.fadeInUp{"data-wow-duration" => "2s"} Vision
+      %h2.wow.fadeInUp{"data-wow-duration" => "2s"} Red Village
+      %h4.wow.fadeInUp{"data-wow-duration" => "2s"} Vision
       %p.wow.fadeInUp{"data-wow-duration" => "2s"}
         TO BE AFRICA'S LEADING LIFESTYLE BRAND THROUGH INNOVATIVE CONCEPTS AND PREMIUM PRODUCTS.
         %br
           TO HAVE A SUSTAINABLE CORPORATE BUSINESS.
     .services-inner.col-md-12.text-center
-      %h1.wow.fadeInUp{"data-wow-duration" => "2s"} MISSION
-      %p.wow.fadeInUp{"data-wow-duration" => "2s"} TO PROVIDE HIGH QUALITY SERVICE AND INNOVATIVE PRODUCT DESIGN.
-      %p.wow.fadeInUp{"data-wow-duration" => "2s"}
-        CREATING A PLATFORM FOR AFRICAN TALENT THROUGH SOCIAL COHESION.
+      %h2.wow.fadeInUp{"data-wow-duration" => "2s"} MISSION
+      %p.wow.fadeInUp{"data-wow-duration" => "2s"} TO PROVIDE HIGH QUALITY SERVICE AND INNOVATIVE PRODUCT DESIGN. CREATING A PLATFORM FOR AFRICAN TALENT THROUGH SOCIAL COHESION.
 / start club profiles
 #club-profiles.module.parallax.parallax-profiles
   .container

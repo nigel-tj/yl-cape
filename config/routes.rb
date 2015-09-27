@@ -43,7 +43,7 @@ Rails.application.routes.draw do
 
   match '/gallery' => 'visitors#gallery', :via => :get
   match '/music' => 'musics#index', :via => :get
-  match '/features' => 'visitors#news', :via => :get
+  match '/features' => 'visitors#news_page', :via => :get
   match '/social' => 'visitors#social', :via => :get
   match '/videos' => 'videos#index', :via => :get
   match '/contact' => 'visitors#contact', :via => :get
@@ -58,6 +58,7 @@ Rails.application.routes.draw do
   match '/store_uploads' => 'store#new', :via => :get
   match '/event_uploads' => 'events#new', :via => :get
   match '/portfolio' => 'visitors#portfolio', :via => :get
+  match '/banner_uploads' => 'main_banners#new', :via => :get
   match '/admin_index' => 'features#admin_index', :via => :get
   match '/artist_songs' => 'artists#artist', :via => :get
   match '/banners_index' => 'main_banners#index', :via => :get

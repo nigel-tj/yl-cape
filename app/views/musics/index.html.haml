@@ -1,44 +1,44 @@
 #services
   .container
     .row
-/ start gallery
-#gallery.text-center
-  .container
-    .row.text-center
-      .tabs.tabs-style-linebox.wow.fadeInUp{"data-wow-duration" => "2s"}
-        %nav
-          %ul.filters
-            %li.hvr-sweep-to-top.active.filter{"data-filter" => ".villagePics"}
-              %span Village picks
-            %li.hvr-sweep-to-top.filter{"data-filter" => ".mashUps"}
-              %span Mash ups
-            %li.hvr-sweep-to-top.filter{"data-filter" => ".goodMusic"}
-              %span #goodMusic
-            %li.hvr-sweep-to-top.filter{"data-filter" => ".artists"}
-              %span Browse By artist
+    / start gallery
+    #gallery.text-center
+      .container
+        .row.text-center
+          .tabs.tabs-style-linebox.wow.fadeInUp{"data-wow-duration" => "2s"}
+            %nav
+              %ul.filters
+                %li.hvr-sweep-to-top.active.filter{"data-filter" => ".villagePics"}
+                  %span Village picks
+                %li.hvr-sweep-to-top.filter{"data-filter" => ".mashUps"}
+                  %span Mash ups
+                %li.hvr-sweep-to-top.filter{"data-filter" => ".goodMusic"}
+                  %span #goodMusic
+                %li.hvr-sweep-to-top.filter{"data-filter" => ".artists"}
+                  %span Browse By artist
 
-  .container-fluid
-    .row.gallery.text-center
-      .col-md-12.noPadding
-        .gallery-photo-grid
-          .gallery-photos
-            .gallery-photos-thumb
-              - for track in @music
-                .gallery-photo-item.mix.villagePics.wow.fadeIn
-                  %a.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "#{track.image_url}"}
-                    .photo-thumb
-                      = image_tag track.image_url(:thumb)
-                    .overlay
-                      %span.gallery-icon
-                        %i.fa.fa-play.fa-2x
-              -for artist in @artists  
-                .gallery-photo-item.mix.artists.wow.fadeIn
-                  %a.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "#{track.image_url}"}
-                    .photo-thumb
-                      = image_tag track.image_url(:thumb)
-                    .overlay
-                      %span.gallery-icon
-                        %i.fa.fa-play.fa-2x
+      .container-fluid
+        .row.gallery.text-center
+          .col-md-12.noPadding
+            .gallery-photo-grid
+              .gallery-photos
+                .gallery-photos-thumb
+                  - for track in @music
+                    .gallery-photo-item.mix.villagePics.wow.fadeIn
+                      %a.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "#{track.image_url}"}
+                        .photo-thumb
+                          = image_tag track.image_url(:thumb)
+                        .overlay
+                          %span.gallery-icon
+                            %i.fa.fa-play.fa-2x
+                  -for artist in @artists  
+                    .gallery-photo-item.mix.artists.wow.fadeIn
+                      %a.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "#{track.image_url}"}
+                        .photo-thumb
+                          = image_tag track.image_url(:thumb)
+                        .overlay
+                          %span.gallery-icon
+                            %i.fa.fa-play.fa-2x
 
 / end gallery
 
