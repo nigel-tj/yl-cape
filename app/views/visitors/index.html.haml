@@ -44,6 +44,7 @@
             .servicebox-inner.text-left
               %img{:alt => "Night Club Music", :src => "images/restaurant.png"}
                 %h2 Advert
+
 / start services
 #services
   .row
@@ -57,6 +58,65 @@
     .services-inner.col-md-12.text-center
       %h2.wow.fadeInUp{"data-wow-duration" => "2s"} MISSION
       %p.wow.fadeInUp{"data-wow-duration" => "2s"} TO PROVIDE HIGH QUALITY SERVICE AND INNOVATIVE PRODUCT DESIGN. CREATING A PLATFORM FOR AFRICAN TALENT THROUGH SOCIAL COHESION.
+  .container
+    /youtube
+    .row
+      .col-md-8
+        #player
+        :javascript
+          // 2. This code loads the IFrame Player API code asynchronously.
+          var tag = document.createElement('script');
+
+          tag.src = "https://www.youtube.com/iframe_api";
+          var firstScriptTag = document.getElementsByTagName('script')[0];
+          firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+          // 3. This function creates an <iframe> (and YouTube player)
+          //    after the API code downloads.
+          var player;
+          function onYouTubeIframeAPIReady() {
+            player = new YT.Player('player', {
+              height: '390',
+              width: '640',
+              videoId: 'foQusxK9iT8',
+              events: {
+                'onReady': onPlayerReady,
+                'onStateChange': onPlayerStateChange
+              }
+            });
+          }
+
+          // 4. The API will call this function when the video player is ready.
+          function onPlayerReady(event) {
+            event.target.playVideo();
+          }
+
+          // 5. The API calls this function when the player's state changes.
+          //    The function indicates that when playing a video (state=1),
+          //    the player should play for six seconds and then stop.
+          var done = false;
+          function onPlayerStateChange(event) {
+            if (event.data == YT.PlayerState.PLAYING && !done) {
+              setTimeout(stopVideo, 6000);
+              done = true;
+            }
+          }
+          function stopVideo() {
+            player.stopVideo();
+          }
+      .col-md-4
+        .vid-item.col-md-12
+          .thumb
+            %img{:src => "http://img.youtube.com/vi/eg6kNoJmzkY/0.jpg"}
+          .desc
+            Jessica Hernandez & the Deltas - Dead Brains
+      .col-md-4
+        .vid-item.col-md-12
+          .thumb
+            %img{:src => "http://img.youtube.com/vi/eg6kNoJmzkY/0.jpg"}
+          .desc
+            Jessica Hernandez & the Deltas - Dead Brains
+
 / start club profiles
 #club-profiles.module.parallax.parallax-profiles
   .container
@@ -177,59 +237,3 @@
                         %span.gallery-icon
                           %i.fa.fa-search-plus.fa-2x
 / end gallery
-<!-- /youtube -->
-<!-- .row -->
-<!--   .col-xs-6 -->
-<!--     #player -->
-<!--     :javascript -->
-<!--       // 2. This code loads the IFrame Player API code asynchronously. -->
-<!--       var tag = document.createElement('script'); -->
-
-<!--       tag.src = "https://www.youtube.com/iframe_api"; -->
-<!--       var firstScriptTag = document.getElementsByTagName('script')[0]; -->
-<!--       firstScriptTag.parentNode.insertBefore(tag, firstScriptTag); -->
-
-<!--       // 3. This function creates an <iframe> (and YouTube player) -->
-<!--       //    after the API code downloads. -->
-<!--       var player; -->
-<!--       function onYouTubeIframeAPIReady() { -->
-<!--         player = new YT.Player('player', { -->
-<!--           height: '390', -->
-<!--           width: '640', -->
-<!--           videoId: 'foQusxK9iT8', -->
-<!--           events: { -->
-<!--             'onReady': onPlayerReady, -->
-<!--             'onStateChange': onPlayerStateChange -->
-<!--           } -->
-<!--         }); -->
-<!--       } -->
-
-<!--       // 4. The API will call this function when the video player is ready. -->
-<!--       function onPlayerReady(event) { -->
-<!--         event.target.playVideo(); -->
-<!--       } -->
-
-<!--       // 5. The API calls this function when the player's state changes. -->
-<!--       //    The function indicates that when playing a video (state=1), -->
-<!--       //    the player should play for six seconds and then stop. -->
-<!--       var done = false; -->
-<!--       function onPlayerStateChange(event) { -->
-<!--         if (event.data == YT.PlayerState.PLAYING && !done) { -->
-<!--           setTimeout(stopVideo, 6000); -->
-<!--           done = true; -->
-<!--         } -->
-<!--       } -->
-<!--       function stopVideo() { -->
-<!--         player.stopVideo(); -->
-<!--       } -->
-<!--   .col-md-3 -->
-<!--     .vid-item.col-md-12 -->
-<!--       .thumb -->
-<!--         %img{:src => "http://img.youtube.com/vi/eg6kNoJmzkY/0.jpg"} -->
-<!--       .desc -->
-<!--         Jessica Hernandez & the Deltas - Dead Brains -->
-<!--     .vid-item.col-md-12 -->
-<!--       .thumb -->
-<!--         %img{:src => "http://img.youtube.com/vi/eg6kNoJmzkY/0.jpg"} -->
-<!--       .desc -->
-<!--         Jessica Hernandez & the Deltas - Dead Brains -->
