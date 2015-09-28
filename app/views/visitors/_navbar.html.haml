@@ -14,9 +14,9 @@
               %span.icon-bar
           #bs-example-navbar-collapse-1.collapse.navbar-collapse
             %ul.nav.navbar-nav.pull-left
-              %li.hvr-underline-from-center.active
+              %li.navbar-left.hvr-underline-from-center.active
                 %a.scroll{:href => "/#banner"} HOME
-              %li.hvr-underline-from-center
+              %li.navbar-left.hvr-underline-from-center
                 %a.scroll{:href => "/gallery"} GALLERY
               %li.hvr-underline-from-center
                 %a.scroll{:href => "/videos"} VIDEOS
@@ -31,11 +31,19 @@
               %li.hvr-underline-from-center
                 %a.scroll{:href => "/contact"} CONTACT
               %li.hvr-underline-from-center
-                %a{:href => "/users/sign_in"} Sign in
+                %a{:href => "#"}  
+                  %img.img-responsive{:alt => "Facebook", :src => "/images/facebook_circle.png"}
+              %li.hvr-underline-from-center
+                %a{:href => "#"}
+                  %img.img-responsive{:alt => "Twitter", :src => "/images/twitter_circle.png"}
+              %li.hvr-underline-from-center
+                %a{:href => "#"}
+                  %img.img-responsive{:alt => "Instagram", :src => "/images/instagram_circle.png"}
+              %li.hvr-underline-from-center
+                %a{:href => "#"}
+                  %img.img-responsive{:alt => "Youtube", :src => "/images/youtube_circle.png"}
               %li.hvr-underline-from-center
                 %a{:href => "/users/sign_up"} Sign up
-              %li.hvr-underline-from-center
-                %a{"data-method" => "delete", :href => "/users/sign_out", :rel => "nofollow"} Sign out
 / end header
 - flash.each do |key, value|
   %div{:class => "alert alert-#{key} alert-dismissable"}
