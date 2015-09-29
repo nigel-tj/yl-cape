@@ -3,6 +3,8 @@ class VisitorsController < ApplicationController
   #before_action :authenticate_user! #, except: [:index,:show, :vidoes, :social, :news, :portfolio,:gallery]
     def index
       @banners = MainBanner.all
+      @trends  = Feature.all
+      @videos = Video.order('created_at DESC')
       #user = current_user
       #@user = User.find(user.id)
       # twiiter
