@@ -10,40 +10,44 @@
               %a{:href => "#"} More here
   / end banner
   / start services
-  #services
-    .row-fluid
-      .services-inner
-        .row
-          %h1.wow.fadeInUp{"data-wow-duration" => "2s"} Trending News
-          %ul.pagination
+  .row
+    #news
+      .col-md-12.front-news
+        .news-inner
+          %h1.pull-left.wow.fadeInUp{"data-wow-duration" => "2s"} Trending News
+          %ul.pagination.pull-right
             - for trend in @trends
               %li
                 %a{:href => "#"} 1
+        .clearfix
         - for trend in @trends
-          .servicebox.col-md-3.wow.fadeIn{"data-wow-delay" => "1s", "data-wow-duration" => "2s"}
-            %img.img-responsive{:alt => "#{trend.heading}", :src => "#{trend.image_url(:thumb)}"}
-              .servicebox-inner.text-left.wow.slideInLeft
+          .col-md-3.news
+            .row
+              .col-md-6.news-image
+                %img.img-responsive{:alt => "#{trend.heading}", :src => "#{trend.image_url(:thumb)}"}
+              .col-md-5.news-text
                 %h2 #{trend.heading}
                 %p
                   %a{:href => "#{trend.link}"} #{trend.intro}
-/ start services
-#services
-  .row
-    .services-inner.col-md-12.text-center
-      %h2.wow.fadeInUp{"data-wow-duration" => "2s"} Red Village
-      %h4.wow.fadeInUp{"data-wow-duration" => "2s"} Vision
+  / start services
+  .club-profiles.module.parallax.parallax-profiles.services.row
+    .col-md-12
+      %h1.wow.fadeInUp{"data-wow-duration" => "2s"} Red Village
+    .services-inner.col-md-6
+      %h2.wow.fadeInUp{"data-wow-duration" => "2s"} VISION
       %p.wow.fadeInUp{"data-wow-duration" => "2s"}
         TO BE AFRICA'S LEADING LIFESTYLE BRAND THROUGH INNOVATIVE CONCEPTS AND PREMIUM PRODUCTS.
         %br
           TO HAVE A SUSTAINABLE CORPORATE BUSINESS.
-    .services-inner.col-md-12.text-center
+    .services-inner.col-md-6
       %h2.wow.fadeInUp{"data-wow-duration" => "2s"} MISSION
       %p.wow.fadeInUp{"data-wow-duration" => "2s"} TO PROVIDE HIGH QUALITY SERVICE AND INNOVATIVE PRODUCT DESIGN. CREATING A PLATFORM FOR AFRICAN TALENT THROUGH SOCIAL COHESION.
-#club-profiles.module.parallax.parallax-profiles
-  .container
-    .row
-      %h1.wow.fadeInUp{"data-wow-duration" => "1s"} Redvillage TV
-      #player
+
+  .club-profiles.module.parallax.parallax-profiles.row
+    .col-md-12
+      .club-heading
+        %h1.wow.fadeInUp{"data-wow-duration" => "1s"} Redvillage TV
+      #player.col-md-12
         :javascript
           // 2. This code loads the IFrame Player API code asynchronously.
           var tag = document.createElement('script');
@@ -94,14 +98,14 @@
             .thumb
               %a{:href => "#{video.link}", :onclick => "playVideo('#{video.uid}')"}
                 %img{:src => "https://img.youtube.com/vi/#{video.uid}/mqdefault.jpg"}
-            .desc
-              #{video.title}
+                .desc
+                  #{video.title}
 
-/ start club profiles
-#club-profiles.module.parallax.parallax-profiles
-  .container
-    .row
-      %h1.wow.fadeInUp{"data-wow-duration" => "1s"} MOST POPULAR DJ'S PROFILE
+  / start club profiles
+  .club-profiles.module.parallax.parallax-profiles.row
+    .col-md-12
+      .club-heading
+        %h1.wow.fadeInUp{"data-wow-duration" => "1s"} MOST POPULAR DJ'S PROFILE
       .col-md-6.col-sm-12.profile-box.wow.fadeIn{"data-wow-delay" => "0.5s", "data-wow-duration" => "2s"}
         .col-md-6.col-sm-6.profile-box-left.flip-container.text-center
           .flipper
@@ -184,12 +188,12 @@
             %img.img-responsive{:alt => "Night Club", :src => "images/latest.png"}/
             %p LATEST
             %h3 10:33
-/ end club profiles
-/ start gallery
-#gallery.text-center
-  .container-fluid
-    .col-md-12
-      .row.text-center
+  / end club profiles
+  / start gallery
+
+  .clearfix
+    .row#gallery
+      .col-md-12
         .tabs.tabs-style-linebox.wow.fadeInUp{"data-wow-duration" => "2s"}
           %nav
             %ul.filters
@@ -202,7 +206,7 @@
               %li.hvr-sweep-to-top.filter{"data-filter" => ".videos"}
                 %span #RedCupVillage
  
-      .row.gallery.text-center
+      .gallery
         .col-md-12.noPadding
           .gallery-photo-grid
             .gallery-photos
@@ -215,4 +219,4 @@
                       .overlay
                         %span.gallery-icon
                           %i.fa.fa-search-plus.fa-2x
-/ end gallery
+  / end gallery

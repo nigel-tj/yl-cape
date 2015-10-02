@@ -1,6 +1,6 @@
 / footer
-#footer.module.parallax.parallax-footer
-  .container
+#footer
+  .module.parallax.parallax-footer.container
     .row
       .col-md-3.col-sm-12.text-center.footer-info.wow.fadeInUp{"data-wow-duration" => "1s"}
         %img{:alt => "Logo", :src => "/images/Red-Cup-Logo.gif", :width => "150"}
@@ -38,12 +38,12 @@
         %a{:href => "http://www.skype.com"}
           %i.fa.fa-skype.fa-2x
 
-/ footer
-#copy-right
-  .container
-    .row.text-center
-      %p
-        CopyRight &copy; 2015 Red Village
+    / footer
+  #copy-right.container 
+    .row
+      .col-md-12
+        %p
+          CopyRight &copy; 2015 Red Village
 
 %script{:src => "/scripts/wow.min.js"}
 %script{:src => "/scripts/jquery.js", :type => "text/javascript"}
