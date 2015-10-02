@@ -42,12 +42,8 @@
 #club-profiles.module.parallax.parallax-profiles
   .container
     .row
-      
-      .services-inner.col-md-12.text-center
-        %h1.wow.fadeInUp{"data-wow-duration" => "3s"} Red Village TV
-      .col-md-8
-        %a{:href => "RevillageTV"}
-        #player
+      %h1.wow.fadeInUp{"data-wow-duration" => "1s"} Redvillage TV
+      #player
         :javascript
           // 2. This code loads the IFrame Player API code asynchronously.
           var tag = document.createElement('script');
@@ -61,6 +57,7 @@
           var player;
           function onYouTubeIframeAPIReady() {
             player = new YT.Player('player', {
+              height: '480',
               width: '100%',
               videoId: 'foQusxK9iT8',
               events: {
@@ -72,7 +69,7 @@
 
           // 4. The API will call this function when the video player is ready.
           function onPlayerReady(event) {
-            
+            event.target.getPlayList();
           }
 
           // 5. The API calls this function when the player's state changes.
@@ -89,17 +86,16 @@
             player.stopVideo();
           }
           function playVideo(videoId) {          
-            player.loadVideoById(videoId, 0, "large")
+            player.loadVideoById(videoId, 0, "medium");
           }
-      .col-md-4
-        - for video in @videos
-          .vid-item.col-md-12
-            .col-md-6
-              .thumb
-                %a{:href => "#RedvillageTV", :onclick => "playVideo(#{video.uid})" } 
-                  %img{:src => "https://img.youtube.com/vi/#{video.uid}/mqdefault.jpg"}
-          .desc
-            #{video.title}
+      .col-md-12
+        -for video in @videos
+          .vid-item.col-md-3
+            .thumb
+              %a{:href => "#{video.link}"}
+                %img{:src => "https://img.youtube.com/vi/#{video.uid}/mqdefault.jpg"}
+            .desc
+              #{video.title}
 
 / start club profiles
 #club-profiles.module.parallax.parallax-profiles
