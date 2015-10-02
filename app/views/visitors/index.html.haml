@@ -92,7 +92,7 @@
         -for video in @videos
           .vid-item.col-md-3
             .thumb
-              %a{:href => "#{video.link}"}
+              %a{:href => "#{video.link}", :onclick => "playVideo('#{video.uid}')"}
                 %img{:src => "https://img.youtube.com/vi/#{video.uid}/mqdefault.jpg"}
             .desc
               #{video.title}
