@@ -14,21 +14,18 @@
     #news
       .col-md-12.front-news
         .news-inner
-          %h1.pull-left.wow.fadeInUp{"data-wow-duration" => "2s"} Trending News
-          %ul.pagination.pull-right
-            - for trend in @trends
-              %li
-                %a{:href => "#"} 1
+          %h1.wow.fadeInUp{"data-wow-duration" => "2s"} Trending News
         .clearfix
         - for trend in @trends
-          .col-md-3.news
+          .col-md-3.news.item
             .row
               .col-md-6.news-image
-                %img.img-responsive{:alt => "#{trend.heading}", :src => "#{trend.image_url(:thumb)}"}
+                %a{:href => "#{trend.link}"}
+                  %img.img-responsive{:alt => "#{trend.heading}", :src => "#{trend.image_url(:thumb)}"}
               .col-md-5.news-text
                 %h2 #{trend.heading}
-                %p
-                  %a{:href => "#{trend.link}"} #{trend.intro}
+                %p  #{trend.heading}
+
   / start services
   .club-profiles.module.parallax.parallax-profiles.services.row
     .col-md-12
@@ -61,7 +58,7 @@
           var player;
           function onYouTubeIframeAPIReady() {
             player = new YT.Player('player', {
-              height: '480',
+              height: '640',
               width: '100%',
               videoId: 'foQusxK9iT8',
               events: {
@@ -215,7 +212,7 @@
                   .gallery-photo-item.mix.danceParty.wow.fadeIn
                     %a.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "#{insta_tag.images.standard_resolution.url}"}
                       .photo-thumb
-                        %img{:alt => "image-1", :src => "#{insta_tag.images.standard_resolution.url}"}
+                        %img{:alt => "image-1", :src => "#{insta_tag.images.thumbnail.url}"}
                       .overlay
                         %span.gallery-icon
                           %i.fa.fa-search-plus.fa-2x

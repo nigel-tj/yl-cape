@@ -1,112 +1,186 @@
-.container
-  .row
-    / start banner
-    .owl-carousel{"data-slider-id" => "1"}
-      %div
-        %img{:alt => "The Last of us", :src => "/images/site-images/banners/12.png"}
-          .caption here is a caption
-          .caption.link
-            %a{:href => "#"} More here
-      %div
-        %img{:alt => "GTA V", :src => "http://www.wallspick.com/wp-content/uploads/2015/04/nature-landscape-beautiful-photos-best-desktop-landscape-hd-wallpapers-widescreen.jpg"}
-          .caption A second caption
-          .caption.link
-            %a{:href => "#"} This is a link
-      %div
-        %img{:alt => "Mirror Edge", :src => "http://media1.santabanta.com/full1/Outdoors/Landscapes/landscapes-267a.jpg"}
-          .caption Caption for third image
-          .caption.link
-            %a{:href => "#"} Another link
-  / end banner
-  / start services
-  #services
+/ start banner
+#banner.module.parallax.parallax-header
+  .container
     .row
-      .services-inner
-        %h1.wow.fadeInUp{"data-wow-duration" => "2s"} Trending News
-        .servicebox.col-md-2.wow.fadeIn{"data-wow-delay" => "1s", "data-wow-duration" => "2s"}
-          %img.img-responsive{:alt => "Night club service", :src => "images/site-images/600/party-1.jpg"}
-            .servicebox-inner.text-left.wow.slideInLeft
-              %h2 DJ'S MUSIC
-              %p
-                %a{:href => "#"} Read More
-        .servicebox.col-md-2.wow.fadeIn{"data-wow-delay" => "1s", "data-wow-duration" => "2s"}
-          %img.img-responsive{:alt => "Night club service", :src => "images/site-images/600/party-1.jpg"}
-            .servicebox-inner.text-left.wow.slideInLeft
-              %h2 DJ'S MUSIC
-              %p
-                %a{:href => "#"} Read More
-        .servicebox.col-md-2.wow.fadeIn{"data-wow-delay" => "1s", "data-wow-duration" => "2s"}
-          %img.img-responsive{:alt => "Night club service", :src => "images/site-images/600/party-1.jpg"}
-            .servicebox-inner.text-left.wow.slideInLeft
-              %h2 DJ'S MUSIC
-              %p
-                %a{:href => "#"} Read More
-        .servicebox.col-md-2.wow.fadeIn{"data-wow-delay" => "1s", "data-wow-duration" => "2s"}
-          %img.img-responsive{:alt => "Night club service", :src => "images/site-images/600/party-1.jpg"}
-            .servicebox-inner.text-left.wow.slideInLeft
-              %h2 DJ'S MUSIC
-              %p
-                %a{:href => "#"} Read More
-        / advert
+      .banner-inner
+        #header-slider.owl-carousel
+          - for banner in @banners
+            .item.col-xs-12
+              %h1.title.title-lines
+                %span #{banner.name}
+              %h3.subtitle #{banner.title}
+              %a.btn-play{"data-gal" => "prettyPhoto", :href => "#{banner.image_url(:thumb)}"}
+                %span.play-button
+                  %i.fa.fa-play.fa-4x
+    .row.banner-bottom.hidden-xs
+      .concert-info
+        .col-xs-12.col-sm-3.col-md-3.no-left-padding
+          .concert-info-body
+            %span.pull-left
+              %i.fa.fa-calendar.fa-2x
+            .concert-info-text
+              %h4 Date
+              %span 10 March,2016
+        .col-xs-12.col-sm-3.col-md-3.no-left-padding
+          .concert-info-body
+            %span.pull-left
+              %i.fa.fa-users.fa-2x
+            .concert-info-text
+              %h4 Remaining
+              %span 245 Tickets
+        .col-xs-12.col-sm-3.col-md-3.no-left-padding
+          .concert-info-body
+            %span.pull-left
+              %i.fa.fa-microphone.fa-2x
+            .concert-info-text
+              %h4 Artists
+              %span 6 Famous Artists
+        .col-xs-12.col-sm-3.col-md-3.no-left-padding
+          .concert-info-body
+            %span.pull-left
+              %i.fa.fa-map-marker.fa-2x
+            .concert-info-text
+              %h4 Location
+              %span ABC, XYZ, France
+/ end banner
+/ start services
+#services
+  .container
+    .row
+      .services-inner.col-md-12.text-center
+        %h1.wow.fadeInUp{"data-wow-duration" => "2s"} Red Village
+        %h2.wow.fadeInUp{"data-wow-duration" => "2s"} Vision
+        %p.wow.fadeInUp{"data-wow-duration" => "2s"}
+          #{session}
+          TO BE AFRICA'S LEADING LIFESTYLE BRAND THROUGH INNOVATIVE CONCEPTS AND PREMIUM PRODUCTS.
+          %br
+            TO HAVE A SUSTAINABLE CORPORATE BUSINESS.
+      .services-inner.col-md-12.text-center
+        %h1.wow.fadeInUp{"data-wow-duration" => "2s"} MISSION
+        %p.wow.fadeInUp{"data-wow-duration" => "2s"} TO PROVIDE HIGH QUALITY SERVICE AND INNOVATIVE PRODUCT DESIGN.
+        %p.wow.fadeInUp{"data-wow-duration" => "2s"}
+          CREATING A PLATFORM FOR AFRICAN TALENT THROUGH SOCIAL COHESION.
+        .servicebox.col-md-4.wow.fadeIn{"data-wow-delay" => "1s", "data-wow-duration" => "2s"}
+          %img.img-responsive{:alt => "Night club service", :src => "images/site-images/600/jj.jpg"}/
+          .servicebox-inner.text-left.wow.slideInLeft
+            %img{:alt => "Night Club Music", :src => "images/music.png"}/
+            %h2 DJ'S MUSIC
+            %p
+              Nulla or narm mus vel ultric-
+              %br
+                ies. Quisque ve odio nibh
+                %br
+                  Nulla or narm mus vel ultric-
+                  %br ies. Quisque ve odio.
+        .servicebox.col-md-4.wow.fadeIn{"data-wow-delay" => "1.3s", "data-wow-duration" => "2s"}
+          %img.img-responsive{:alt => "Night club service", :src => "images/site-images/600/party-1.jpg"}/
+          .servicebox-inner.text-left
+            %img{:alt => "Night Club Music", :src => "images/drink.png"}/
+            %h2 DRINK BAR
+            %p
+              Nulla or narm mus vel ultric-
+              %br
+                ies. Quisque ve odio nibh
+                %br
+                  Nulla or narm mus vel ultric-
+                  %br ies. Quisque ve odio.
         .servicebox.col-md-4.wow.fadeIn{"data-wow-delay" => "1.6s", "data-wow-duration" => "2s"}
-          %img.img-responsive{:alt => "Night club service", :src => "images/davincis.jpg"}
-            .servicebox-inner.text-left
-              %img{:alt => "Night Club Music", :src => "images/restaurant.png"}
-                %h2 Advert
+          %img.img-responsive{:alt => "Night club service", :src => "images/davincis.jpg"}/
+          .servicebox-inner.text-left
+            %img{:alt => "Night Club Music", :src => "images/restaurant.png"}/
+            %h2 RESTAURANT
+            %p
+              Nulla or narm mus vel ultric-
+              %br
+                ies. Quisque ve odio nibh
+                %br
+                  Nulla or narm mus vel ultric-
+                  %br ies. Quisque ve odio.
+/ end services
 / start gallery
-<!-- /youtube -->
-<!-- .row -->
-<!--   .col-xs-6 -->
-<!--     #player -->
-<!--     :javascript -->
-<!--       // 2. This code loads the IFrame Player API code asynchronously. -->
-<!--       var tag = document.createElement('script'); -->
+#gallery.text-center
+  .container-fluid
+    .col-md-6
+      .row.text-center
+        .tabs.tabs-style-linebox.wow.fadeInUp{"data-wow-duration" => "2s"}
+          %nav
+            %ul.filters
+              %li.hvr-sweep-to-top.active.filter{"data-filter" => "all"}
+                %span All
+              %li.hvr-sweep-to-top.filter{"data-filter" => ".girlsPub"}
+                %span #CCW
+              %li.hvr-sweep-to-top.filter{"data-filter" => ".danceParty"}
+                %span #MM
+              %li.hvr-sweep-to-top.filter{"data-filter" => ".videos"}
+                %span #RedCupVillage
+ 
+      .row.gallery.text-center
+        .col-md-12.noPadding
+          .gallery-photo-grid
+            .gallery-photos
+              .gallery-photos-thumb
+                - for insta_tag in @results
+                  .gallery-photo-item.mix.danceParty.wow.fadeIn
+                    %a.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "#{insta_tag.images.standard_resolution.url}"}
+                      .photo-thumb
+                        %img{:alt => "image-1", :src => "#{insta_tag.images.standard_resolution.url}"}
+                      .overlay
+                        %span.gallery-icon
+                          %i.fa.fa-search-plus.fa-2x
+/ end gallery
+/youtube
+.row
+  .col-xs-6
+    #player
+    :javascript
+      // 2. This code loads the IFrame Player API code asynchronously.
+      var tag = document.createElement('script');
 
-<!--       tag.src = "https://www.youtube.com/iframe_api"; -->
-<!--       var firstScriptTag = document.getElementsByTagName('script')[0]; -->
-<!--       firstScriptTag.parentNode.insertBefore(tag, firstScriptTag); -->
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-<!--       // 3. This function creates an <iframe> (and YouTube player) -->
-<!--       //    after the API code downloads. -->
-<!--       var player; -->
-<!--       function onYouTubeIframeAPIReady() { -->
-<!--         player = new YT.Player('player', { -->
-<!--           height: '390', -->
-<!--           width: '640', -->
-<!--           videoId: 'foQusxK9iT8', -->
-<!--           events: { -->
-<!--             'onReady': onPlayerReady, -->
-<!--             'onStateChange': onPlayerStateChange -->
-<!--           } -->
-<!--         }); -->
-<!--       } -->
+      // 3. This function creates an <iframe> (and YouTube player)
+      //    after the API code downloads.
+      var player;
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+          height: '390',
+          width: '640',
+          videoId: 'foQusxK9iT8',
+          events: {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+          }
+        });
+      }
 
-<!--       // 4. The API will call this function when the video player is ready. -->
-<!--       function onPlayerReady(event) { -->
-<!--         event.target.playVideo(); -->
-<!--       } -->
+      // 4. The API will call this function when the video player is ready.
+      function onPlayerReady(event) {
+        event.target.playVideo();
+      }
 
-<!--       // 5. The API calls this function when the player's state changes. -->
-<!--       //    The function indicates that when playing a video (state=1), -->
-<!--       //    the player should play for six seconds and then stop. -->
-<!--       var done = false; -->
-<!--       function onPlayerStateChange(event) { -->
-<!--         if (event.data == YT.PlayerState.PLAYING && !done) { -->
-<!--           setTimeout(stopVideo, 6000); -->
-<!--           done = true; -->
-<!--         } -->
-<!--       } -->
-<!--       function stopVideo() { -->
-<!--         player.stopVideo(); -->
-<!--       } -->
-<!--   .col-md-3 -->
-<!--     .vid-item.col-md-12 -->
-<!--       .thumb -->
-<!--         %img{:src => "http://img.youtube.com/vi/eg6kNoJmzkY/0.jpg"} -->
-<!--       .desc -->
-<!--         Jessica Hernandez & the Deltas - Dead Brains -->
-<!--     .vid-item.col-md-12 -->
-<!--       .thumb -->
-<!--         %img{:src => "http://img.youtube.com/vi/eg6kNoJmzkY/0.jpg"} -->
-<!--       .desc -->
-<!--         Jessica Hernandez & the Deltas - Dead Brains -->
+      // 5. The API calls this function when the player's state changes.
+      //    The function indicates that when playing a video (state=1),
+      //    the player should play for six seconds and then stop.
+      var done = false;
+      function onPlayerStateChange(event) {
+        if (event.data == YT.PlayerState.PLAYING && !done) {
+          setTimeout(stopVideo, 6000);
+          done = true;
+        }
+      }
+      function stopVideo() {
+        player.stopVideo();
+      }
+  .col-md-3
+    .vid-item.col-md-12
+      .thumb
+        %img{:src => "http://img.youtube.com/vi/eg6kNoJmzkY/0.jpg"}
+      .desc
+        Jessica Hernandez & the Deltas - Dead Brains
+    .vid-item.col-md-12
+      .thumb
+        %img{:src => "http://img.youtube.com/vi/eg6kNoJmzkY/0.jpg"}
+      .desc
+        Jessica Hernandez & the Deltas - Dead Brains
