@@ -1,13 +1,22 @@
 .container
   .row
     / start banner
-    .owl-carousel{"data-slider-id" => "1"}
-      - for banner in @banners
-        %div
-          %img{:alt => "#{banner.name}", :src => "#{banner.image_url}"}
-            .caption #{banner.name}
-            .caption.link
-              %a{:href => "#"} More here
+    #slider.flexslider
+      %ul.slides      
+        - for banner in @banners
+          %li
+            %img{:alt => "#{banner.name}", :src => "#{banner.image_url}"}
+              / .caption #{banner.name}
+              / .caption.link
+              /  %a{:href => "#"} More here
+    #carousel.flexslider
+      %ul.slides      
+        - for banner in @banners
+          %li
+            %img{:alt => "#{banner.name}", :src => "#{banner.image_url}"}
+              / .caption #{banner.name}
+              / .caption.link
+              /  %a{:href => "#"} More here
   / end banner
   / start services
   .row
@@ -15,7 +24,7 @@
       .col-md-12.front-news
         .news-inner
           %h1.wow.fadeInUp{"data-wow-duration" => "2s"} Trending News
-        .clearfix
+        .clearfxi
         - for trend in @trends
           .col-md-3.news.item
             .row
@@ -91,7 +100,7 @@
           }
       .col-md-12
         -for video in @videos
-          .vid-item.col-md-3
+          .vid-item
             .thumb
               %a{:href => "#{video.link}", :onclick => "playVideo('#{video.uid}')"}
                 %img{:src => "https://img.youtube.com/vi/#{video.uid}/mqdefault.jpg"}
