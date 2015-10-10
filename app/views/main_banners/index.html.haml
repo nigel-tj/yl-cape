@@ -25,6 +25,7 @@
                   %h1
                     #{banner.name}
                   .col-md-12
-                    = image_tag banner.image_url(:thumb) if banner.image?
+                    %a{:href => ""}
+                      = image_tag banner.image_url(:thumb) if banner.image?
                   .col-md-12
                     #{banner.title}
