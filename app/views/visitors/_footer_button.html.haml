@@ -1,6 +1,6 @@
 / footer
-#footer.module.parallax.parallax-footer
-  .container
+#footer
+  .module.parallax.parallax-footer.container
     .row
       .col-md-3.col-sm-12.text-center.footer-info.wow.fadeInUp{"data-wow-duration" => "1s"}
         %img{:alt => "Logo", :src => "/images/Red-Cup-Logo.gif", :width => "150"}
@@ -38,39 +38,69 @@
         %a{:href => "http://www.skype.com"}
           %i.fa.fa-skype.fa-2x
 
-/ footer
-#copy-right
-  .container
-    .row.text-center
-      %p
-        CopyRight &copy; 2015 Red Village
+    / footer
+  #copy-right.container 
+    .row
+      .col-md-12
+        %p
+          CopyRight &copy; 2015 Red Village
 
 %script{:src => "/scripts/wow.min.js"}
 %script{:src => "/scripts/jquery.js", :type => "text/javascript"}
 %script{:src => "/scripts/bootstrap.min.js", :type => "text/javascript"}
 %script{:src => "/scripts/jquery.smoothwheel.js", :type => "text/javascript"}
+%script{:defer => "defer", :src => "/flex/jquery.flexslider.js"}
 %script{:src => "/scripts/respond.js", :type => "text/javascript"}
 %script{:src => "/scripts/jquery-migrate.min.js", :type => "text/javascript"}
 %script{:src => "/scripts/jquery.prettyPhoto.js", :type => "text/javascript"}
 %script{:src => "/scripts/jquery.bxslider.min.js", :type => "text/javascript"}
-%script{:src => "https://maps.googleapis.com/maps/api/js"}
 %script{:src => "/scripts/jquery.mixitup.js", :type => "text/javascript"}
-%script{:src => "/scripts/owl.carousel.js", :type => "text/javascript"}
-%script{:src => "/scripts/owl.carousel2.thumbs.js", :type => "text/javascript"}
+
 %script{:src => "/scripts/jquery.plugin.js", :type => "text/javascript"}
 %script{:src => "/scripts/jquery.countdown.min.js", :type => "text/javascript"}
 %script{:src => "/scripts/modernizr.custom.97074.js", :type => "text/javascript"}
 %script{:src => "/scripts/jquery.hoverdir.js", :type => "text/javascript"}
 %script{:src => "/scripts/script.js", :type => "text/javascript"}
 
+
 :javascript
   $(document).ready(function(){
-   $('.owl-carousel').owlCarousel({
-     loop: true,
-        items: 1,
-        thumbs: true,
-        thumbImage: true,
-        thumbContainerClass: 'owl-thumbs',
-        thumbItemClass: 'owl-thumb-item'
+    $('#carousel').flexslider({
+      animation: "slide",
+      controlNav: false,
+      animationLoop: false,
+      slideshow: false,
+      itemWidth: 210,
+      itemMargin: 5,
+      asNavFor: '#slider'
+    });
+
+    $('#trends_carousel').flexslider({
+      animation: "slide",
+      controlNav: false,
+      animationLoop: false,
+      slideshow: false,
+      itemWidth: 210,
+      itemMargin: 5,
+      asNavFor: '#slider'
+    });
+
+    $('#video_carousel').flexslider({
+      animation: "slide",
+      controlNav: false,
+      animationLoop: false,
+      slideshow: false,
+      itemWidth: 210,
+      itemMargin: 5,
+      asNavFor: '#slider'
+    });
+
+ 
+    $('#slider').flexslider({
+      animation: "slide",
+      controlNav: false,
+      animationLoop: false,
+      slideshow: false,
+      sync: "#carousel"
     });
   });

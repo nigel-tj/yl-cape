@@ -64,3 +64,4 @@ gem 'active_type', '0.3.1'
 #gem 'rails-gallery'
 gem 'carrierwave'
 gem "rmagick"
+gem 'kaminari'

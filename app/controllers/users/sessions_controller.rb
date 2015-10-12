@@ -8,11 +8,14 @@ class Users::SessionsController < Devise::SessionsController
 
   # POST /resource/sign_in
   def create
-    super
-    def current_user
-      return unless session[:user_id]
-      @current_user ||= User.find(session[:user_id])
-  end
+    user_password = params[:session][:password]
+    user_email = params[:session][:email]
+    user = user_email.present? && User.find_by(email: user_email)
+    
+    if user.valid_password? user_password
+      sign_in user, store: false
+      user.save
+    end
 
   end
 
@@ -21,10 +24,4 @@ class Users::SessionsController < Devise::SessionsController
     super
   end
 
-  protected
-
-  # If you have extra params to permit, append them to the sanitizer.
-  def configure_sign_in_params
-    devise_parameter_sanitizer.for(:sign_in) << :attribute
-  end
 end

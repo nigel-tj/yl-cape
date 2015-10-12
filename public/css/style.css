@@ -25,7 +25,7 @@
 			- .navbar-header
 			- .navbar-collapse
 			
-	+ #services
+	+ .services
 		- .services-inner
 		
 	+ #gallery
@@ -65,7 +65,7 @@
   -------------------------------------------------------------------*/
 
 *{padding:0; margin:0; }
-body{ overflow-x:hidden; font-family: 'Open Sans'; margin:0 auto; }
+body{ overflow-x:hidden; font-family: 'Open Sans'; margin:15vh auto 0; }
 img{border:none;}
 .clr{ clear:both;}
 
@@ -168,6 +168,14 @@ h1, h2, h3, h4, h5, p{
 	margin:0;	
 }
 
+
+h1{
+    color:#fff;
+    font-size:45px;
+    font-family: 'Oswald';
+    padding-bottom:40px;
+    padding-top:40px;
+}
 #banner {
 	position: relative;
 }
@@ -606,32 +614,50 @@ z-index:999;
   -ms-transition: all 0.3s ease;	
 }
 
-#services{
-	padding:40px 0;	
+.services{
+	margin-top:20px;	
 }
-#services h1{
-	color:rgba(0, 0, 0, 1);
-	font-size:45px;	
-	font-family: 'Open Sans';
-        padding-bottom:15px;
-        font-weight:bold;
-        text-transform:uppercase;
-}
-#services h2{
-	color:#2f2f2f;
-	font-size:22px;
+.services-inner h2{
+	color:#999;
 	font-weight:bold;	
 	font-family: 'PT Sans';
-	padding-top:20px;
-	padding-bottom:40px;
+	padding-top:0;
+	padding-bottom:20px;
 }
-#services p{
-	color:#444444;
+.services-inner p{
+	color:#999;
 	font-size:16px;
 	font-family: 'PT Sans';
-	padding-bottom:110px;
+	padding-bottom:40px;        
 }
-#services .servicebox{
+.front-news{
+         background-color:#222;
+         margin-top:20px;
+         padding-left:40px;
+         padding-right:40px;
+         }
+
+.front-news .news-image{
+         padding-left:0;
+         }
+
+.front-news .news-image, .front-news .news-text{
+         background-color:#000;
+         }
+
+.front-news .news h2{
+         color:#666;
+         padding-top:15px;
+         text-transform:uppercase;
+         }
+
+.front-news .news p{
+         color:#666;
+         padding-bottom:15px;
+         padding-top:15px;
+         }
+
+.services .servicebox{
 	overflow:hidden;
 	position:relative;
 	display: inline-block;
@@ -639,7 +665,7 @@ z-index:999;
 	padding-left:0px;
 	cursor: pointer; 		
 }
-#services .servicebox .servicebox-inner{
+.services .servicebox .servicebox-inner{
 	padding:10px;
 	width:200px;
 	background-color:rgba(0,0,0,0.7);
@@ -653,10 +679,10 @@ z-index:999;
   transition: all 0.5s ease;
   -ms-transition: all 0.5s ease;
 }
-#services .servicebox:hover .servicebox-inner {
+.services .servicebox:hover .servicebox-inner {
 	left: 0;
 }
-#services .servicebox .servicebox-inner h2{
+.services .servicebox .servicebox-inner h2{
 	color:#fff;
 	font-family: 'Open Sans';
 	font-size:20px;	
@@ -664,14 +690,14 @@ z-index:999;
 	padding-top:0;
         text-transform:uppercase;
 }
-#services .servicebox .servicebox-inner p{
+.services .servicebox .servicebox-inner p{
 	color:#fff;
 	font-family: 'PT Sans';
 	font-size:18px;	
 	padding-bottom:0;
 }
 
-#services .servicebox .servicebox-inner p a{
+.services .servicebox .servicebox-inner p a{
 	color:red;
 }
 	/* Gallery-Tab */
@@ -685,9 +711,6 @@ z-index:999;
 }
 
 /* Nav */
-.tabs nav {
-	text-align: center;
-}
 
 .tabs nav a {
 	line-height: 2.5;
@@ -781,7 +804,7 @@ z-index:999;
   transform: scaleY(1);
 }
 #gallery {
-  overflow: hidden;
+  background-color:#000;
 }
 #gallery .gallery{
 	padding-top:30px;
@@ -846,7 +869,6 @@ z-index:999;
 }	
 
 #club-form{
-	padding:120px 0;
 	position:relative;	
 }
 #club-form h1{
@@ -990,47 +1012,47 @@ div.module.parallax-events {
 }
 div.module.parallax-profiles {
 	background-image:url("../images/profile-bg.jpg");
-	padding: 110px 0;
 }
-#club-profiles h1{
+.club-profiles{
+    margin-bottom:20px;
+}
+.club-profiles h1{
 	color:#fff;
 	font-size:45px;
 	font-family: 'Oswald';
-	text-align:center;	
-	padding-bottom:160px;
 }
-#club-profiles .profle-box-right h2{
+.club-profiles .profle-box-right h2{
 	color:#fff;
 	font-size:36px;
 	font-family: 'Oswald';
 	line-height:32px;	
 }
-#club-profiles .profle-box-right h3{
+.club-profiles .profle-box-right h3{
 	color:#fff;
 	font-size:18px;
 	font-family: 'Open Sans';
   font-style: italic;
 	padding:17px 0 20px 0;	
 }
-#club-profiles .profle-box-right p{
+.club-profiles .profle-box-right p{
 	color:#fff;
 	font-size:14px;
 	font-family: 'PT Sans';	
 	padding-bottom:20px;
 }
-#club-profiles .profle-box-right .profile-info{
+.club-profiles .profle-box-right .profile-info{
 	border-right:1px solid #fff;
 	width:32%;
 	padding-right:3px;
 	float:left;	
 }
-#club-profiles .profle-box-right .profile-info p{
+.club-profiles .profle-box-right .profile-info p{
 	color:#ce1f2b;
 	font-size:16px;
 	font-family: 'PT Sans';
 	padding-bottom:0;
 }
-#club-profiles .profle-box-right .profile-info h3{
+.club-profiles .profle-box-right .profile-info h3{
 	color:#fff;
 	font-size:30px;
 	font-family: 'PT Sans';
@@ -1290,8 +1312,6 @@ div.module.parallax {
 }
 div.module.parallax-reservation {
 	background-image:url("../images/reservation-bg.jpg");
-	padding-top: 70px;
-	padding-bottom: 100px;
 }
 #reservation h1 {
 	text-align: center;
