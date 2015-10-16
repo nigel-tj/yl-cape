@@ -14,7 +14,7 @@ class MusicsController < ApplicationController
     @music = Music.new(music_params)
     if @music.save
       flash[:notice] = "Successfully created gallery."
-      redirect_to "/artist_songs"
+      render :action => 'index'
     else
       render :action => 'new'
     end
