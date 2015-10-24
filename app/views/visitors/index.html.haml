@@ -6,9 +6,8 @@
         - for banner in @banners
           %li
             %img{:alt => "#{banner.name}", :src => "#{banner.image_url}"}
-              / .caption #{banner.name}
-              / .caption.link
-              /  %a{:href => "#"} More here
+              %p.flex-caption #{banner.name}              
+              %a{:href => "#"} More here
     #carousel.flexslider
       %ul.slides      
         - for banner in @banners
