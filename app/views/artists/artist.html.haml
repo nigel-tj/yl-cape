@@ -5,7 +5,7 @@
 #reservation.module.parallax.parallax-reservation
   .container
     .row
-      %h1.wow.fadeInUp{"data-wow-duration" => "1s"} "#{@artist.name}"
+      %h1.wow.fadeInUp{"data-wow-duration" => "1s"} "#"
       %p.wow.fadeIn{"data-wow-duration" => "1s"}
       .col-sm-12.reservation-form        
 / start gallery
@@ -42,14 +42,5 @@
                         %th File Size
                         %th
                     %tbody
-                    - for song in @songs 
-                      %tr
-                        %td
-                          #{song.track_title}
-                        %td
-                          file size
-                        %td
-                        %td.text-right
-                          %a.btn.btn-sm.btn-default{:href => "#"} Get Track   
 / end gallery
 
