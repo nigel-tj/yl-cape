@@ -30,6 +30,9 @@
 	}
 }
 @media (max-width: 1200px){
+	.profle-box-right {
+	    text-align:center;
+	}
 #info .info-left img{
 	padding-bottom:15px;	
 }
@@ -48,6 +51,12 @@
 }
 .navbar-nav > li > a {
 	padding:0 8px;
+}
+.club-profiles .profle-box-right .profile-info h3 {
+    font-size: 24px;
+}
+.eq .fa-bars{
+max-height: 56px;
 }
 }
 
@@ -178,10 +187,10 @@
 	.footer-info {
 		 border-bottom:1px solid rgba(255,255,255,0.1);
 	}
-	.eq {
-		height: 72px;
-		margin-left: 25px;
-	}	
+
+.eq .fa-bars{
+max-height: 56px;
+}
 }
 @media (max-width: 800px){
 	.owl-theme .owl-controls .owl-buttons .owl-next  {
@@ -192,6 +201,11 @@
 	}
 }
 @media (max-width: 768px){
+    .profile-box-top{
+        border-bottom: 1px solid rgba(255,255,255,0.2);
+        padding-bottom:40px;
+        margin-bottom:40px;
+    }
 	
 	.owl-theme .owl-controls .owl-buttons div {
 		width:40px;
@@ -470,6 +484,14 @@
 
 @media (max-width: 360px){
 
+.navbar-brand {
+    height: 70px;
+    padding:0;
+}
+
+.logo{
+height:100%;
+}
 	.logo-img {
 		margin-left:20px;
 	}
@@ -551,7 +573,7 @@
 		padding-top: 0px;
 	}
 	.navbar-default .navbar-toggle {
-		margin-right: 125px;
+		margin-right: 15px;
 	}
 	#header ul.nav {
 		text-align: center;
@@ -689,9 +711,6 @@
 		width: 100%;
 		margin-bottom: 15px;
 	}
-	#dj-1, #dj-2 {
-		margin-left: 20px;
-	}
 	.btn-booking {
 		margin-left: 0px;
 	}
@@ -699,11 +718,12 @@
 		text-align: center;
 		padding-top: 5px;
 	}
+        iframe{
+            height:auto;
+            }
 }
+
 @media (max-width: 320px){
-	.navbar-default .navbar-toggle {
-		margin-right: 108px;
-	}
 	#events .event-box-left h2 {
 		font-size: 22px;
 	}
@@ -727,4 +747,13 @@
 	#blogs .tab-content .share h4 {
 		font-size: 12px;
 	}
+
+.eq{
+margin-top:19%;
+height:56px;
+}
+
+.eq .fa-bars{
+max-height: 56px;
+}
 }

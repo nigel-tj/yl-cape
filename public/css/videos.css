@@ -33,7 +33,11 @@
     display: block;
     float: left;
     margin: 0;
-    padding:10px 0px 10px 10px;
+    padding:10px 10px 0 0;
+}
+
+.vid-item {
+    width:210px;
 }
 
 .thumb {
@@ -102,3 +106,19 @@
         top: -20px;
         }
 }
+
+@media (max-width: 360px)
+{
+    .thumb{
+        height:auto !important;
+    }
+    .thumb img{
+        display:none !important;
+    }
+    .vid-item .desc{
+        position:relative;
+    }
+    .flexslider:hover .flex-direction-nav .flex-next:hover {
+        opacity: 0.5;
+    }
+}		

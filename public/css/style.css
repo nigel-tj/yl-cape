@@ -205,93 +205,6 @@ div.module.parallax-header {
    margin-top: 300px; 
 }
 
-.owl-carousel{
-      height: 800px;
-  }
-  .owl-carousel .owl-item,.owl-carousel .item{
-      height: 650px;
-  }
-  .owl-carousel .owl-item img{
-      transform-style: initial;
-      height: 100%;
-      object-fit: cover;
-  }
-  .owl-thumbs{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    display: table;
-    text-align: center;
-  }
-  .owl-thumb-item{
-    display: table-cell;
-    border: none;
-    background: none;
-    padding: 0;
-    opacity: .6;
-      width: 200px;
-      height:150px;
-overflow:hidden;
-  }
-
-  .owl-thumb-item img{
-      auto;
-      height: 100%;
-  }
-  .owl-thumb-item.active{
-    opacity: 1;
-  }
-
-.owl-carousel .owl-item .caption{
-    background-color:rgba(0, 0, 0, 0.5);
-    padding:20px 20px;
-    color:white;
-    font-size:30px;
-    left:40px;
-    bottom:100px;
-    text-transform:uppercase;
-    position:absolute;
-}
-
-.owl-carousel .owl-item .caption.link{
-    color:red;
-    font-size:18px;
-    padding:10px 20px;
-    bottom:40px;
-}
-
-.owl-carousel .owl-item .caption.link a{
-    color:red;
-}
-
-.owl-theme .owl-controls {
-    margin-top: 10px;
-    text-align: center;
-}
-
-.owl-theme .owl-controls .owl-page {
-    display: inline-block;
-    zoom: 1;
-}
-
-.owl-theme .owl-controls .owl-page span {
-    display: block;
-    width: 12px;
-    height: 12px;
-    margin: 5px 7px;
-    filter: Alpha(Opacity=50);
-    opacity: 0.5;
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    border-radius: 20px;
-    background: #000;
-}
-
-.owl-theme .owl-controls .owl-page.active span, .owl-theme .owl-controls.clickable .owl-page:hover span {
-    filter: Alpha(Opacity=100);
-    opacity: 1;
-}
-
 #header-slider .item .title-lines {
    	text-align: center;
    	width: 100%;
@@ -614,7 +527,7 @@ z-index:999;
   -ms-transition: all 0.3s ease;	
 }
 
-.services{
+.front-news, .services{
 	margin-top:20px;	
 }
 .services-inner h2{
@@ -628,21 +541,25 @@ z-index:999;
 	color:#999;
 	font-size:16px;
 	font-family: 'PT Sans';
-	padding-bottom:40px;        
 }
-.front-news{
+
+.front-news, .club-profiles{
          background-color:#222;
-         margin-top:20px;
-         padding-left:40px;
-         padding-right:40px;
+         padding-left:20px;
+         padding-right:20px;
+         padding-bottom:40px;
          }
 
 .front-news .news-image{
          padding-left:0;
          }
 
-.front-news .news-image, .front-news .news-text{
+.news-block {
          background-color:#000;
+         }
+
+.front-news .news-image, .front-news .news-text{
+         color:#999;
          }
 
 .front-news .news h2{
@@ -1041,7 +958,6 @@ div.module.parallax-profiles {
 	padding-bottom:20px;
 }
 .club-profiles .profle-box-right .profile-info{
-	border-right:1px solid #fff;
 	width:32%;
 	padding-right:3px;
 	float:left;	
@@ -1495,15 +1411,20 @@ color: #ce1f2b;
     left: 80px;
 }
 .bar {
-		margin-bottom: 10px;
-	}
+    margin-bottom: 10px;
+}
 .eq{
     position: relative;
-    height: 68px;
-    margin-left: 12px;
+    margin: 0 auto;
 }
 
-		/* Social-Effect */
+.eq .fa-bars{
+    color:#fff;
+    max-height: 72px;
+    transform: rotate(90deg);
+}
+
+/* Social-Effect */
 
 .flip-container {
   background: transparent;
@@ -1514,10 +1435,9 @@ color: #ce1f2b;
 }
 
 .flip-container, .front, .back {
-  width: 260px;
+  width: 100%;
   height: 280px;
   margin-right: 10px;
-margin-bottom: 40px;
 }
 
 .flipper {
@@ -1535,15 +1455,19 @@ margin-bottom: 40px;
 
 .front {
   z-index: 2;
-  background-size: cover;
-  background-size: 100%; 
   background-position: 50%; 
 }
+
+#dj-1, #dj-2 {
+background-position: top center;
+background-repeat:no-repeat;
+}
+
 #dj-1 {
-	background:url(../images/ejay.png);
+	background-image:url(../images/ejay.png);
 }
 #dj-2 {
-	background:url(../images/jj.png);
+	background-image:url(../images/jj.png);
 }
 
 .back {
@@ -1633,6 +1557,45 @@ margin-bottom: 40px;
  left: 100%;
  top: 0%;
 }
+@media screen and (max-width: 860px) {
 
-	
-		
+    #carousel{
+        display:none;
+    }
+
+    h1{
+        font-size:36px;
+    }
+    .club-profiles .profle-box-right .profile-info {
+        border-right:0;
+    }
+    .club-profiles .profle-box-right .profile-info h3{
+        font-size:20px;
+    }
+}
+
+@media (max-width: 360px)
+{
+    body{
+        margin:0;
+    }
+    .back{
+        display:none;
+        }
+
+    .profile-box-top{
+        border-bottom: 1px solid rgba(255,255,255,0.2);
+        padding-bottom:40px;
+        margin-bottom:40px;
+    }
+    .profle-box-right{
+        text-align:center;
+    }
+    .footer-info{
+        padding-bottom:20px;
+        padding-top:20px;
+    }
+    .thumb img{
+        display:none;
+    }
+ }		
