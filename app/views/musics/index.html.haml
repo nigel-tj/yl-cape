@@ -23,7 +23,7 @@
             .gallery-photo-grid
               .gallery-photos
                 .gallery-photos-thumb
-                  - for track in @music
+                  - for track in @tracks
                     .gallery-photo-item.mix.villagePics.wow.fadeIn
                       %a.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "#{track.image_url}"}
                         .photo-thumb

@@ -1,7 +1,7 @@
 require 'soundcloud'
 class MusicsController < ApplicationController
   def index
-    @music = Music.all
+    @tracks = Music.all
     @artists = Artist.all
   end
 
@@ -27,7 +27,7 @@ class MusicsController < ApplicationController
 
   private
   def music_params
-    params.require(:music).permit(:track_title,:cover,:intro,:thumb,:track,:image,:artist)
+    params.require(:music).permit(:track_title,:cover,:intro,:thumb,:track,:image,:artist,:category)
   end
 
 end
