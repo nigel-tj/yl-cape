@@ -5,7 +5,7 @@
 #reservation.module.parallax.parallax-reservation
   .container
     .row
-      %h1.wow.fadeInUp{"data-wow-duration" => "1s"} "#"
+      %h1.wow.fadeInUp{"data-wow-duration" => "1s"} "#{@artist.name}"
       %p.wow.fadeIn{"data-wow-duration" => "1s"}
       .col-sm-12.reservation-form        
 / start gallery
@@ -15,10 +15,10 @@
       .tabs.tabs-style-linebox.wow.fadeInUp{"data-wow-duration" => "2s"}
         %nav
           %ul.filters
-            %li.hvr-sweep-to-top.active.filter{"data-filter" => ".bio"}
-              %span Bio
-            %li.hvr-sweep-to-top.filter{"data-filter" => ".allDownloads"}
+            %li.hvr-sweep-to-top.active.filter{"data-filter" => ".allDownloads", :id => "#all_downloads_tab"}
               %span All Track
+            %li.hvr-sweep-to-top.filter{"data-filter" => ".bio"}
+              %span Bio
   .container-fluid
     .row.gallery.text-center
       .col-md-12.noPadding
@@ -26,7 +26,7 @@
           .gallery-photos
             .gallery-photos-thumb
               .gallery-photo-item.mix.bio.wow.fadeIn
-                %a.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "images/site-images/ass.jpg"}
+                %a.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "images/site-images/ass.jpg", :id => "#bio_div"}
                   .photo-thumb
                     %img{:alt => "image-1", :src => "images/site-images/400/1.png"}
                   .overlay
@@ -44,3 +44,8 @@
                     %tbody
 / end gallery
 
+:javascript
+  $(document).ready(function(){
+    document.getElementById('#bio_div').style.display = 'none';
+    document.getElementById('#all_downloads_tab').classList.add("active");
+  });

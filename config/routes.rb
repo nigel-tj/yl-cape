@@ -27,7 +27,7 @@ Rails.application.routes.draw do
   resources :images
   resources :features
   resources :videos, only: [:index, :new, :create]
-  resources :artists, only: [:index, :new, :create]
+  resources :artists
   
   resources :events do
     resources :vip_tickets , :standard_tickets
@@ -47,7 +47,7 @@ Rails.application.routes.draw do
   match '/social' => 'visitors#social', :via => :get
   match '/videos' => 'videos#index', :via => :get
   match '/contact' => 'visitors#contact', :via => :get
-  match '/artists' => 'artists#index', :via => :get
+  match '/artist' => 'artists#show', :via => :get
   match '/store' => 'visitors#store', :via => :get
   match '/artist_uploads' => 'artists#new', :via => :get
   match '/feature_uploads' => 'features#new', :via => :get
