@@ -24,7 +24,7 @@ class ArtistsController < ApplicationController
 
   def show
     @artist = Artist.find(params[:id])
-    @songs = Music.where(:id => params[:id])
+    @songs = Music.where(:artist_id => params[:id])
   end
 
   def artist
