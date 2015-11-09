@@ -23,7 +23,7 @@
             .gallery-photo-grid
               .gallery-photos
                 .gallery-photos-thumb
-                  - for track in @music
+                  - for track in @tracks
                     .gallery-photo-item.mix.villagePics.wow.fadeIn
                       %a.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "#{track.image_url}"}
                         .photo-thumb
@@ -33,7 +33,7 @@
                             %i.fa.fa-play.fa-2x
                   -for artist in @artists  
                     .gallery-photo-item.mix.artists.wow.fadeIn
-                      %a.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "#{track.image_url}"}
+                      %a.pretty-photo{:href => "artists/#{artist.id}?#{artist.name}"}
                         .photo-thumb
                           = image_tag track.image_url(:thumb)
                         .overlay

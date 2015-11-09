@@ -17,17 +17,6 @@ $(window).load(function(){
 		
 		/* Main-Slider */
 
-	$('#header-slider').owlCarousel({        
-         autoPlay: true,
-         navigation : true, // Show next and prev buttons
-         slideSpeed : 300,
-         singleItem:true,
-         loop:true,
-         navigationText: [
-        "<i class='fa fa-chevron-left'></i>",
-        "<i class='fa fa-chevron-right'></i>"],
-         transitionStyle:"fade"
-        });
 
 		/* Main-Slider */
 

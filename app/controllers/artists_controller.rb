@@ -22,9 +22,12 @@ class ArtistsController < ApplicationController
   def update
   end
 
-  def artist
+  def show
     @artist = Artist.find(params[:id])
-    @songs = Music.all
+    @songs = Music.where(:artist_id => params[:id])
+  end
+
+  def artist
   end
 
   private
