@@ -1,0 +1,118 @@
+.container
+  .row
+  <!--   / start banner -->
+  <!--   #slider.flexslider -->
+  <!--     %ul.slides       -->
+  <!--       - for banner in @banners -->
+  <!--         %li -->
+  <!--           %img{:alt => "#{banner.name}", :src => "#{banner.image_url}"} -->
+  <!--           .flex-caption-block -->
+  <!--             %p.flex-caption #{banner.name} -->
+  <!--             %br -->
+  <!--             %p.flex-link -->
+  <!--               %a{:href => "#"} More here -->
+  <!--   #carousel.flexslider -->
+  <!--     %ul.slides       -->
+  <!--       - for banner in @banners -->
+  <!--         %li -->
+  <!--           %img{:alt => "#{banner.name}", :src => "#{banner.image_url}"} -->
+  <!--             / .caption #{banner.name} -->
+  <!--             / .caption.link -->
+  <!--             /  %a{:href => "#"} More here -->
+  <!-- / end banner -->
+  <!-- / start services -->
+  <!-- .row -->
+  <!--   #news.front-news.clearfix -->
+  <!--     .col-md-12 -->
+  <!--       .news-inner -->
+  <!--         %h1.wow.fadeInUp{"data-wow-duration" => "2s"} Trending News -->
+  <!--       .clearfix -->
+  <!--       #trends_carousel.flexslider -->
+  <!--         %ul.slides -->
+  <!--           - for trend in @trends -->
+  <!--             %li -->
+  <!--               .news-block -->
+  <!--                 .col-md-6.news-image -->
+  <!--                   %a{:href => "#{trend.link}"} -->
+  <!--                     %img.img-responsive{:alt => "#{trend.heading}", :src => "#{trend.image_url(:thumb)}"} -->
+  <!--                 .col-md-5.news-text -->
+  <!--                   %h2 #{trend.heading} -->
+  <!--                   %p  #{trend.heading} -->
+                  
+
+  / start services
+  .club-profiles.module.parallax.parallax-profiles.services.row
+    .col-md-12
+      %h1.wow.fadeInUp{"data-wow-duration" => "2s"} Red Village
+      .row 
+        .services-inner.col-md-6
+          %h2.wow.fadeInUp{"data-wow-duration" => "2s"} VISION
+          %p.wow.fadeInUp{"data-wow-duration" => "2s"}
+            TO BE AFRICA'S LEADING LIFESTYLE BRAND THROUGH INNOVATIVE CONCEPTS AND PREMIUM PRODUCTS.
+            %br
+            TO HAVE A SUSTAINABLE CORPORATE BUSINESS.
+        .services-inner.col-md-6
+          %h2.wow.fadeInUp{"data-wow-duration" => "2s"} MISSION
+          %p.wow.fadeInUp{"data-wow-duration" => "2s"} TO PROVIDE HIGH QUALITY SERVICE AND INNOVATIVE PRODUCT DESIGN. CREATING A PLATFORM FOR AFRICAN TALENT THROUGH SOCIAL COHESION.
+
+  .club-profiles.module.parallax.parallax-profiles.row
+    .col-md-12
+      .club-heading
+        %h1.wow.fadeInUp{"data-wow-duration" => "1s"} Redvillage TV
+      #player.col-md-12
+        :javascript
+          // 2. This code loads the IFrame Player API code asynchronously.
+          var tag = document.createElement('script');
+
+          tag.src = "https://www.youtube.com/iframe_api";
+          var firstScriptTag = document.getElementsByTagName('script')[0];
+          firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+          // 3. This function creates an <iframe> (and YouTube player)
+          //    after the API code downloads.
+          var player;
+          function onYouTubeIframeAPIReady() {
+            player = new YT.Player('player', {
+              height: '640',
+              width: '100%',
+              videoId: 'foQusxK9iT8',
+              events: {
+                'onReady': onPlayerReady,
+                'onStateChange': onPlayerStateChange
+              }
+            });
+          }
+
+          // 4. The API will call this function when the video player is ready.
+          function onPlayerReady(event) {
+            event.target.getPlayList();
+          }
+
+          // 5. The API calls this function when the player's state changes.
+          //    The function indicates that when playing a video (state=1),
+          //    the player should play for six seconds and then stop.
+          var done = false;
+          function onPlayerStateChange(event) {
+            if (event.data == YT.PlayerState.PLAYING && !done) {
+              setTimeout(stopVideo, 6000);
+              done = true;
+            }
+          }
+          function stopVideo() {
+            player.stopVideo();
+          }
+          function playVideo(videoId) {          
+            player.loadVideoById(videoId, 0, "medium");
+          }
+      .col-md-12
+        #video_carousel.flexslider
+          %ul.slides
+            -for video in @videos
+              %li
+                .vid-item
+                  .thumb
+                    %a{:href => "#{video.link}", :onclick => "playVideo('#{video.uid}')"}
+                      %img{:src => "https://img.youtube.com/vi/#{video.uid}/mqdefault.jpg"}
+                      .desc
+                        #{video.title}
+
