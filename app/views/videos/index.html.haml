@@ -1,58 +1,57 @@
 #services
   .container
     .row
-/ start gallery
-#gallery.text-center
-  .container
-    .row.text-center
-      .tabs.tabs-style-linebox.wow.fadeInUp{"data-wow-duration" => "2s"}
-        %nav
-          %ul.filters
-            %li.hvr-sweep-to-top.active.filter{"data-filter" => "all"}
-              %span All
-            %li.hvr-sweep-to-top.filter{"data-filter" => ".villageHits"}
-              %span Village hits
-            %li.hvr-sweep-to-top.filter{"data-filter" => ".bangers"}
-              %span #bangers
-            %li.hvr-sweep-to-top.filter{"data-filter" => ".upcoming"}
-              %span Upcoming
-  .container-fluid
-    .row.gallery.text-center
-      .col-md-12.noPadding
-        .gallery-photo-grid
-          .gallery-photos
-            .gallery-photos-thumb
-              - if @videos.any?
-                - @videos.in_groups_of(1) do |group|
-                  - group.take(5).collect do |video|
-                    - if video.category == "upcoming"
-                      .gallery-photo-item.mix.upcoming.wow.fadeIn
-                        %a.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "https://www.youtube.com/watch?v=#{video.uid}"}
-                          .photo-thumb
-                            %img{:alt => "image-1", :src => "https://img.youtube.com/vi/#{video.uid}/mqdefault.jpg"}
-                          .overlay
-                            %span.gallery-icon
-                              %i.fa.fa-play.fa-2x
+    #gallery.text-center
+      .container
+        .row.text-center
+          .tabs.tabs-style-linebox.wow.fadeInUp{"data-wow-duration" => "2s"}
+            %nav
+              %ul.filters
+                %li.hvr-sweep-to-top.active.filter{"data-filter" => "all"}
+                  %span All
+                %li.hvr-sweep-to-top.filter{"data-filter" => ".villageHits"}
+                  %span Village hits
+                %li.hvr-sweep-to-top.filter{"data-filter" => ".bangers"}
+                  %span #bangers
+                %li.hvr-sweep-to-top.filter{"data-filter" => ".upcoming"}
+                  %span Upcoming
+      .container-fluid
+        .row.gallery.text-center
+          .col-md-12.noPadding
+            .gallery-photo-grid
+              .gallery-photos
+                .gallery-photos-thumb
+                  - if @videos.any?
+                    - @videos.in_groups_of(1) do |group|
+                      - group.take(5).collect do |video|
+                        - if video.category == "upcoming"
+                          .gallery-photo-item.mix.upcoming.wow.fadeIn
+                            %a.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "https://www.youtube.com/watch?v=#{video.uid}"}
+                              .photo-thumb
+                                %img{:alt => "image-1", :src => "https://img.youtube.com/vi/#{video.uid}/mqdefault.jpg"}
+                              .overlay
+                                %span.gallery-icon
+                                  %i.fa.fa-play.fa-2x
                          
-                        #{video.title}
-                    - elsif video.category == "bangers"
-                      .gallery-photo-item.mix.bangers.wow.fadeIn
-                        %a.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "https://img.youtube.com/vi/#{video.uid}/mqdefault.jpg"}
-                          .photo-thumb
-                            %img{:alt => "image-1", :src => "https://img.youtube.com/vi/#{video.uid}/mqdefault.jpg"}
-                          .overlay
-                            %span.gallery-icon
-                              %i.fa.fa-play.fa-2x
+                            #{video.title}
+                        - elsif video.category == "bangers"
+                          .gallery-photo-item.mix.bangers.wow.fadeIn
+                            %a.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "https://img.youtube.com/vi/#{video.uid}/mqdefault.jpg"}
+                              .photo-thumb
+                                %img{:alt => "image-1", :src => "https://img.youtube.com/vi/#{video.uid}/mqdefault.jpg"}
+                              .overlay
+                                %span.gallery-icon
+                                  %i.fa.fa-play.fa-2x
                          
-                        #{video.title}
-                    - elsif video.category == "villageHits"
-                      .gallery-photo-item.mix.villageHits.wow.fadeIn
-                        %a.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "https://img.youtube.com/vi/#{video.uid}/mqdefault.jpg"}
-                          .photo-thumb
-                            %img{:alt => "image-1", :src => "https://img.youtube.com/vi/#{video.uid}/mqdefault.jpg"}
-                          .overlay
-                            %span.gallery-icon
-                              %i.fa.fa-play.fa-2x
+                            #{video.title}
+                        - elsif video.category == "villageHits"
+                          .gallery-photo-item.mix.villageHits.wow.fadeIn
+                            %a.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "https://img.youtube.com/vi/#{video.uid}/mqdefault.jpg"}
+                              .photo-thumb
+                                %img{:alt => "image-1", :src => "https://img.youtube.com/vi/#{video.uid}/mqdefault.jpg"}
+                              .overlay
+                                %span.gallery-icon
+                                  %i.fa.fa-play.fa-2x
                          
                         #{video.title}
 
