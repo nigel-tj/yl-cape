@@ -1,4 +1,5 @@
 class VideosController < ApplicationController
+  layout "admin", only: [:new, :create, :update]
 
   def index
     @videos = Video.order('created_at DESC')
@@ -10,7 +11,6 @@ class VideosController < ApplicationController
 
   def new
     @video = Video.new
-    render :layout => 'admin'
   end
 
   def create

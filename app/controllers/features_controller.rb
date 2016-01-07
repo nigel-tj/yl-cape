@@ -1,19 +1,19 @@
 class FeaturesController < ApplicationController
   before_action :authenticate_admin!, except: [:index, :test]
+  layout "admin", only: [:new, :create, :update, :admin_index]   
+  
   def index
     @features = Feature.all
   end
-
+  
   def admin_index
     @features = Feature.all
-    render :layout => 'admin'
   end
-
+  
   def new
     @feature = Feature.new
-    render :layout => 'admin'
   end
-
+  
   def create
     @feature = Feature.new(feature_params)
     if @feature.save
@@ -23,7 +23,7 @@ class FeaturesController < ApplicationController
       render :action => 'new'
     end
   end
-
+  
   private
   def feature_params
     params.require(:feature).permit(:link,:image,:intro,:heading)

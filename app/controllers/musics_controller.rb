@@ -1,5 +1,7 @@
 require 'soundcloud'
 class MusicsController < ApplicationController
+  layout "admin", only: [:new, :create, :update]
+
   def index
     @tracks = Music.all
     @artists = Artist.all
@@ -7,13 +9,12 @@ class MusicsController < ApplicationController
 
   def new
     @music = Music.new
-    render :layout => 'admin'
   end
 
   def create
     @music = Music.new(music_params)
     if @music.save
-      flash[:notice] = "Successfully created gallery."
+      flash[:notice] = "Successfully uploaded track."
       render :action => 'index'
     else
       render :action => 'new'

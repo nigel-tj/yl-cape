@@ -1,19 +1,24 @@
 class ArtistsController < ApplicationController
+  layout "admin", only: [:new, :create, :update]
+
   def index
     @artists = Artist.all 
   end
 
   def new
     @artist = Artist.new 
-    render :layout => 'admin'
+    #render :layout => 'admin'
   end
 
+  def admin_index
+    @artists = Artist.all 
+  end
 
   def create
     @artist = Artist.new(artist_params)
     if @artist.save
       flash[:notice] = "Successfully created artist."
-      redirect_to "/artist_songs"
+      render :action => 'admin_index'
     else
       render :action => 'new'
     end

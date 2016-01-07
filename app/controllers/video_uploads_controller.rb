@@ -1,8 +1,9 @@
 class VideoUploadsController < ApplicationController
   before_action :authenticate_admin!
+  layout "admin", only: [:new, :create, :update]
+
   def new
     @video_upload = VideoUpload.new
-    render :layout => 'admin'
   end
 
   def create
