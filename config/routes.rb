@@ -1,6 +1,7 @@
-Rails.application.routes.draw do
+gRails.application.routes.draw do
 
 
+  devise_for :admin_users
   devise_for :users, controllers: {
     sessions: 'users/sessions'
   }
