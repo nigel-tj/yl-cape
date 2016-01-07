@@ -1,4 +1,4 @@
 class Music < ActiveRecord::Base
-  belongs_to :artist
+  belongs_to :admin_user
   mount_uploader :image, ImageUploader
 end
