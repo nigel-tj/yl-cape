@@ -14,8 +14,7 @@ class MusicsController < ApplicationController
 
   def new
     @music = Music.new
-
-    #@artist_id = 
+    @artist_id = current_admin_user.id 
   end
 
   def create

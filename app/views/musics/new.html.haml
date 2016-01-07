@@ -11,7 +11,7 @@
       = f.label :category, :class => "control-label col-sm-2"
       .col-sm-10
         = f.select "category", [["Select category","none"],["Village picks","villagePics"], ["Mash Ups","mashUps"], ["Good Music","goodMusic"], ["Artist","artists"]]
-        = f.hidden_field :artist_id, class: 'form-control', required: true, value: 123
+        = f.hidden_field :artist_id, class: 'form-control', required: true, value: @artist_id
     .form-group
       = f.label :image, :class => "control-label col-sm-2"
       .col-sm-10
