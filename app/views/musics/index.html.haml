@@ -33,7 +33,7 @@
                             %i.fa.fa-play.fa-2x
                   -for artist in @artists  
                     .gallery-photo-item.mix.artists.wow.fadeIn
-                      %a.pretty-photo{:href => "artists/#{artist.id}?#{artist.name}"}
+                      %a.pretty-photo{:href => "artists/#{artist.id}"}
                         .photo-thumb
                           = image_tag track.image_url(:thumb)
                         .overlay
