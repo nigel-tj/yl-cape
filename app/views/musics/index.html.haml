@@ -8,7 +8,7 @@
           .tabs.tabs-style-linebox.wow.fadeInUp{"data-wow-duration" => "2s"}
             %nav
               %ul.filters
-                %li.hvr-sweep-to-top.active.filter{"data-filter" => ".villagePics"}
+                %li.hvr-sweep-to-top.active.filter{"data-filter" => ".villagePics", :id => "#vilage_picks"}
                   %span Village picks
                 %li.hvr-sweep-to-top.filter{"data-filter" => ".mashUps"}
                   %span Mash ups
@@ -35,10 +35,14 @@
                     .gallery-photo-item.mix.artists.wow.fadeIn
                       %a.pretty-photo{:href => "artists/#{artist.id}?#{artist.name}"}
                         .photo-thumb
-                          = image_tag artist.image_url(:thumb)
+                          = image_tag track.image_url(:thumb)
                         .overlay
                           %span.gallery-icon
                             %i.fa.fa-play.fa-2x
 
-/ end gallery
+/ end music
+:javascript
+  $(document).ready(function(){
+    document.getElementById('#vilage_picks').classList.add("active");
+  });
 
