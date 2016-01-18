@@ -20,25 +20,6 @@
               / .caption.link
               /  %a{:href => "#"} More here
   / end banner
-  / start services
-  .row
-    #news.front-news.clearfix
-      .col-md-12
-        .news-inner
-          %h1.wow.fadeInUp{"data-wow-duration" => "2s"} Trending News
-        .clearfix
-        #trends_carousel.flexslider
-          %ul.slides
-            - for trend in @trends
-              %li
-                .news-block
-                  .col-md-6.news-image
-                    %a{:href => "#{trend.link}"}
-                      %img.img-responsive{:alt => "#{trend.heading}", :src => "#{trend.image_url(:thumb)}"}
-                  .col-md-5.news-text
-                    %h2 #{trend.heading}
-                    %p  #{trend.heading}
-                  
 
   / start services
   .club-profiles.module.parallax.parallax-profiles.services.row
