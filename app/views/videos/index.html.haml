@@ -9,7 +9,7 @@
               %ul.filters
                 %li.hvr-sweep-to-top.active.filter{"data-filter" => "all"}
                   %span All
-                %li.hvr-sweep-to-top.filter{"data-filter" => ".villageHits"}
+                %li.hvr-sweep-to-top.filter{"data-filter" => ".videos"}
                   %span Village hits
                 %li.hvr-sweep-to-top.filter{"data-filter" => ".bangers"}
                   %span #bangers
@@ -32,27 +32,32 @@
                               .overlay
                                 %span.gallery-icon
                                   %i.fa.fa-play.fa-2x
+                            .desc
+                              %p
+                                #{video.title}
                          
-                            #{video.title}
                         - elsif video.category == "bangers"
                           .gallery-photo-item.mix.bangers.wow.fadeIn
-                            %a.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "https://img.youtube.com/vi/#{video.uid}/mqdefault.jpg"}
+                            %a.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "https://www.youtube.com/watch?v=#{video.uid}"}
                               .photo-thumb
                                 %img{:alt => "image-1", :src => "https://img.youtube.com/vi/#{video.uid}/mqdefault.jpg"}
                               .overlay
                                 %span.gallery-icon
                                   %i.fa.fa-play.fa-2x
-                         
-                            #{video.title}
+                            .desc
+                              %p
+                                #{video.title}
+
                         - elsif video.category == "villageHits"
-                          .gallery-photo-item.mix.villageHits.wow.fadeIn
-                            %a.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "https://img.youtube.com/vi/#{video.uid}/mqdefault.jpg"}
+                          .gallery-photo-item.mix.videos.wow.fadeIn
+                            %a.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "https://www.youtube.com/watch?v=#{video.uid}"}
                               .photo-thumb
                                 %img{:alt => "image-1", :src => "https://img.youtube.com/vi/#{video.uid}/mqdefault.jpg"}
                               .overlay
                                 %span.gallery-icon
                                   %i.fa.fa-play.fa-2x
-                         
-                            #{video.title}
+                            .desc
+                              %p
+                                #{video.title}
 
                         
