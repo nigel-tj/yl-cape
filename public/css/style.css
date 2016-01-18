@@ -747,6 +747,7 @@ z-index:999;
   width: 25%;
   position: relative;
   float: left;
+  height: 220px;
 }
 .gallery-photo-item .photo-thumb img {
   /* width: 100%; */
