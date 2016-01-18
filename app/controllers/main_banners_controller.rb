@@ -8,6 +8,10 @@ class MainBannersController < ApplicationController
   def new
     @banner = MainBanner.new 
   end
+
+  def edit
+    @banner = MainBanner.find(params[:id])
+  end
   
   def create
     @banner = MainBanner.new(main_banner_params)
@@ -19,8 +23,13 @@ class MainBannersController < ApplicationController
     end
   end
 
-  def update
+  def destroy
+    @banner = MainBanner.find(params[:id])
+    @banner.destroy
+    flash[:notice] = "Successfully destroyed painting."
+    redirect_to "/banners_index"
   end
+
 
   private
 

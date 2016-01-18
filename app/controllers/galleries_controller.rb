@@ -1,12 +1,16 @@
 class GalleriesController < ApplicationController
-  before_action :authenticate_admin!, except: [:index]
-  layout "admin", only: [:new, :create, :update, :show,]
+  before_action :authenticate_admin!, except: [:index,:show]
+  layout "admin", only: [:new, :create, :update, :admin_show,]
 
   def index
     @galleries = Gallery.all
   end
 
   def show
+    @gallery = Gallery.find(params[:id])
+  end
+
+  def admin_show
     @gallery = Gallery.find(params[:id])
   end
 
@@ -18,7 +22,7 @@ class GalleriesController < ApplicationController
     @gallery = Gallery.new(gallery_params)
     if @gallery.save
       flash[:notice] = "Successfully created gallery."
-      redirect_to @gallery
+      render :action => 'admin_show'
     else
       render :action => 'new'
     end
