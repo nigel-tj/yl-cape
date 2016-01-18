@@ -1,27 +1,66 @@
-<div class="container" style="margin-top:200px">
-  <div class="row">
-    
-    <h1> <%= @gallery.name %><h1>                
-          <p>
-            <%= link_to "Add a Image", new_image_path(:gallery_id => @gallery) %> |
-            <%= link_to "Remove Gallery", @gallery, :confirm => 'Are you sure?', :method => :delete %> |
-            <%= link_to "View All Galleries", galleries_path %>
-          </p>
+<div id="services">
+  <div class="container">
+    <div class="row"></div>
+    <div class="text-center" id="gallery">
+      <div class="container">
+        <div class="row text-center">
+          <div class="tabs tabs-style-linebox wow fadeInUp" data-wow-duration="2s">
+            <nav>
+              <ul class="filters">
+                <li class="hvr-sweep-to-top active filter" data-filter="all" id="#all_tab">
+                  <span>All</span>
+                </li>
+                <li class="hvr-sweep-to-top filter" data-filter=".new">
+                  <span>Latest</span>
+                </li>
+                <li class="hvr-sweep-to-top filter" data-filter=".hallOfFame">
+                  <span>Hall Of Fame</span>
+                </li>
+
+              </ul>
+            </nav>
+          </div>
         </div>
-        <div id="images">
-          <% for image in @gallery.images %>
-          <div class="col-md-4" style="height:300px">
-            <%= image_tag image.image_url(:thumb) if image.image? %>
-            <div class="name"><%= image.name %></div>
-            <div class="actions">
-              <%= link_to "edit", edit_image_path(image) %> |
-              <%= link_to "remove", image, :confirm => 'Are you sure?', :method => :delete %>
+      </div>
+   <div id="services">
+  <div class="container">
+    <div class="row"></div>
+    <div class="text-center" id="gallery">
+      <div class="container-fluid">
+        <div class="row gallery text-center">
+          <div class="col-md-12 noPadding">
+            <div class="gallery-photo-grid">
+              <div class="gallery-photos">
+                <div class="gallery-photos-thumb">
+                  <% for image in @gallery.images %>
+                    <div class="gallery-photo-item mix new fadeIn">
+                      <a class="pretty-photo" href="galleries/<%= image.id %>" rel="prettyPhoto[iframes]">
+                        <div class="photo-thumb">
+                          <%= image_tag image.image_url(:thumb) if image.image? %>
+                        </div>
+                        <div class="overlay">
+                          <span class="gallery-icon">
+                            <i class="fa fa-search-plus fa-2x"></i>
+                          </span>
+                        </div>
+                      </a>
+                    </div>
+                  <% end %>
+                </div>
+              </div>
             </div>
           </div>
-          <% end %>
-          <div class="clear"></div>
         </div>
-        <div class="clear"></div>
-        
+      </div>
+    </div>
   </div>
 </div>
+<script>
+  
+  $(document).ready(function(){
+    document.getElementById('#bio_div').style.display = 'none';
+    document.getElementById('#all_tab').classList.add("active");
+  });
+
+
+</script>

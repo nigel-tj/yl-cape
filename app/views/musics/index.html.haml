@@ -25,7 +25,7 @@
                 .gallery-photos-thumb
                   - for track in @tracks
                     .gallery-photo-item.mix.villagePics.wow.fadeIn
-                      %a.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "#{track.image_url}"}
+                      %a.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "#{track.track}"}
                         .photo-thumb
                           = image_tag track.image_url(:thumb)
                         .overlay

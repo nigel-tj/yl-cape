@@ -22,7 +22,7 @@
                   - for gallery in @galleries
                     - if(gallery.category == "new")
                       .gallery-photo-item.mix.new.fadeIn
-                        %a.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "galleries/#{gallery.id}"}
+                        %a.pretty-photo{"rel" => "prettyPhoto[iframes]", :href => "galleries/#{gallery.id}"}
                           .photo-thumb
                             = image_tag gallery.image_url(:thumb) if gallery.image?
                           .overlay
@@ -30,7 +30,7 @@
                               %i.fa.fa-search-plus.fa-2x
                     - if(gallery.category == "hallOfFame")
                       .gallery-photo-item.mix.hallOfFame.fadeIn
-                        %a.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href =>  "galleries/#{gallery.id}"}
+                        %a.pretty-photo{"rel" => "prettyPhoto[iframes]", :href =>  "galleries/#{gallery.id}"}
                           .photo-thumb
                             = image_tag gallery.image_url(:thumb) if gallery.image?
                           .overlay
