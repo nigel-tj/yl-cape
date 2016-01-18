@@ -1,5 +1,5 @@
 class MainBannersController < ApplicationController
-  layout "admin", only: [:new, :create, :update]
+  layout "admin", only: [:new, :create, :update, :edit]
 
   def index
     @banners = MainBanner.all 
@@ -16,7 +16,7 @@ class MainBannersController < ApplicationController
   def create
     @banner = MainBanner.new(main_banner_params)
     if @banner.save
-      flash[:notice] = "Successfully created gallery."
+      flash[:notice] = "Successfully created banner."
       redirect_to "/banners_index"
     else
       render :action => 'new'
@@ -26,13 +26,25 @@ class MainBannersController < ApplicationController
   def destroy
     @banner = MainBanner.find(params[:id])
     @banner.destroy
-    flash[:notice] = "Successfully destroyed painting."
+    flash[:notice] = "Successfully deleted banner."
     redirect_to "/banners_index"
   end
 
+  def update
+    @banner = MainBanner.find(params[:id])
+    if @banner.update_attributes(main_banner_params)
+      flash[:notice] = "Successfully updated banner."
+      redirect_to '/banners_index'
+    else
+      render :action => 'edit'
+    end
+  end
+
+  def show
+    @banner = MainBanner.find(params[:id])
+  end
 
   private
-
   def main_banner_params
     params.require(:main_banner).permit(:name,:title,:image)
   end

@@ -25,10 +25,11 @@
                   %h1
                     #{banner.name}
                   .col-md-12
-                    %a{:href => ""}
+                    %a{:href => "#"}
                       = image_tag banner.image_url(:thumb) if banner.image?
                   .col-md-12
                     %p
                       #{banner.title}
+                    %p
                       = link_to "edit", edit_main_banner_path(banner) | 
                       #{link_to "remove", banner, :confirm => 'Are you sure?', :method => :delete}
