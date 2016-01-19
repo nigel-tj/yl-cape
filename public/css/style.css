@@ -567,6 +567,9 @@ z-index:999;
 
 .front-news .news-image, .front-news .news-text{
          color:#999;
+         white-space: nowrap;
+         overflow: hidden;
+         text-overflow: ellipsis;
          }
 
 .front-news .news h2{
