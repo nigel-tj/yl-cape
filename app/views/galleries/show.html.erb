@@ -34,7 +34,7 @@
                 <div class="gallery-photos-thumb">
                   <% for image in @gallery.images %>
                     <div class="gallery-photo-item mix new fadeIn">
-                      <a class="pretty-photo" href="<%= image.image_url %>" rel="prettyPhoto[iframes]">
+                      <a class="pretty-photo" data-gal="prettyPhoto[gallery-photo-thumb]" href="<%= image.image_url %>">
                         <div class="photo-thumb">
                           <%= image_tag image.image_url(:thumb) if image.image? %>
                         </div>
