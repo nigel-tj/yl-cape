@@ -21,6 +21,7 @@
               /  %a{:href => "#"} More here
   / end banner
 
+
   / start services
   .club-profiles.module.parallax.parallax-profiles.services.row
     .col-md-12
@@ -40,7 +41,7 @@
     .col-md-12
       .club-heading
         %h1.wow.fadeInUp{"data-wow-duration" => "1s"} Redvillage TV
-      #player.col-md-12
+      #player.col-md-9
         :javascript
           // 2. This code loads the IFrame Player API code asynchronously.
           var tag = document.createElement('script');
@@ -84,9 +85,9 @@
           function playVideo(videoId) {          
             player.loadVideoById(videoId, 0, "medium");
           }
-      .col-md-12
+      .col-md-3
         #video_carousel.flexslider
-          %ul.slides
+          %ul.scroll_div
             -for video in @videos
               %li
                 .vid-item

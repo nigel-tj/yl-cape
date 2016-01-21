@@ -1571,6 +1571,12 @@ background-repeat:no-repeat;
 .desc { 
     color: #fff;
 }
+.scroll_div {
+    background-color: #00FFFF;
+    width: 340px;
+    height: 520px;
+    overflow: scroll;
+}
 @media screen and (max-width: 860px) {
 
     #carousel{
