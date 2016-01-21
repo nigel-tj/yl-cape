@@ -16,7 +16,6 @@
                   %span #goodMusic
                 %li.hvr-sweep-to-top.filter{"data-filter" => ".artists"}
                   %span Browse By artist
-
       .container-fluid
         .row.gallery.text-center
           .col-md-12.noPadding
@@ -25,21 +24,12 @@
                 .gallery-photos-thumb
                   - for track in @tracks
                     .gallery-photo-item.mix.villagePics.wow.fadeIn
-                      %a.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "#{track.track}"}
+                      %a.pretty-photo{"rel" => "prettyPhoto[iframe]", :href => "#{track.track}"}
                         .photo-thumb
                           = image_tag track.image_url(:thumb)
                         .overlay
                           %span.gallery-icon
                             %i.fa.fa-play.fa-2x
-                  -for artist in @artists  
-                    .gallery-photo-item.mix.artists.wow.fadeIn
-                      %a.pretty-photo{:href => "artists/#{artist.id}"}
-                        .photo-thumb
-                          = image_tag track.image_url(:thumb)
-                        .overlay
-                          %span.gallery-icon
-                            %i.fa.fa-play.fa-2x
-
 / end music
 :javascript
   $(document).ready(function(){
