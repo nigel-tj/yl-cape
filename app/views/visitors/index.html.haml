@@ -41,7 +41,7 @@
     .col-md-12
       .club-heading
         %h1.wow.fadeInUp{"data-wow-duration" => "1s"} Redvillage TV
-      #player.col-md-9
+      #player.col-md-12
         :javascript
           // 2. This code loads the IFrame Player API code asynchronously.
           var tag = document.createElement('script');
@@ -85,9 +85,9 @@
           function playVideo(videoId) {          
             player.loadVideoById(videoId, 0, "medium");
           }
-      .col-md-3
+      .col-md-12
         #video_carousel.flexslider
-          %ul.scroll_div
+          %ul.slides
             -for video in @videos
               %li
                 .vid-item

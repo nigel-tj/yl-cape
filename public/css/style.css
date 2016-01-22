@@ -1572,7 +1572,7 @@ background-repeat:no-repeat;
     color: #fff;
 }
 .scroll_div {
-    background-color: #00FFFF;
+    background-color: #000;
     width: 340px;
     height: 520px;
     overflow: scroll;
