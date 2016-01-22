@@ -8,8 +8,11 @@
     .form-group
       = f.label :heading, :class => "control-label col-sm-2"
       .col-sm-10
-        = f.text_field :heading, class: 'form-control', required: true
-        %span.help-block Article Heading.
+        = f.text_field :heading, class: 'form-control', required: true, id: 'word_count'
+        Total word count: 
+        %span#display_count 0 words. Words left: 
+        %span#word_left 20
+        %span.help-block Article Heading NB maximum of 20 words.
     .form-group
       = f.label :image, :class => "control-label col-sm-2"
       .col-sm-10
@@ -34,3 +37,19 @@
     .form-group
       .col-sm-offset-2.col-sm-10
         = f.submit class: 'btn btn-primary'
+
+%script{:src => "/scripts/jquery.js", :type => "text/javascript"}
+:javascript
+  $(document).ready(function() {
+    $("#word_count").on('keyup', function() {
+      var words = this.value.match(/\S+/g).length;
+        if (words > 20) {
+          var trimmed = $(this).val().split(/\s+/, 20).join(" ");
+          $(this).val(trimmed + " ");
+        }
+        else {
+            $('#display_count').text(words);
+            $('#word_left').text(20-words);
+        }
+    });
+  }); 
