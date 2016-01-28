@@ -1,5 +1,25 @@
 .container
   .row
+    / start banner
+    #slider.flexslider
+      %ul.slides      
+        - for banner in @banners
+          %li
+            %img{:alt => "#{banner.name}", :src => "#{banner.image_url}"}
+            .flex-caption-block
+              %p.flex-caption #{banner.name}
+              %br
+              %p.flex-link
+                %a{:href => "#"} More here
+    #carousel.flexslider
+      %ul.slides      
+        - for banner in @banners
+          %li
+            %img{:alt => "#{banner.name}", :src => "#{banner.image_url}"}
+              / .caption #{banner.name}
+              / .caption.link
+              /  %a{:href => "#"} More here
+  / end banner
   / start services
   #services
     .row
@@ -7,8 +27,9 @@
         %h1.wow.fadeInUp{"data-wow-duration" => "2s"} News
         -for feature in @features
           .servicebox.col-md-4.wow.fadeIn{"data-wow-delay" => "1s", "data-wow-duration" => "2s"}
-            %img.img-responsive{:alt => "#{feature.heading}", :src => "#{feature.image_url}"}
-              .servicebox-inner.text-left.wow.slideInLeft
-                %h2 #{feature.heading}
-                %p
-                  %a{:href => "#"} Read More
+            %a{:href => "#{feature.link}"}
+              %img.img-responsive{:alt => "#{feature.heading}", :src => "#{feature.image_url}"}
+                .servicebox-inner.text-left.wow.slideInLeft
+                  %h2 #{feature.heading}
+                  %p
+                    %a{:href => "#"} Read More

@@ -4,6 +4,7 @@ class FeaturesController < ApplicationController
   
   def index
     @features = Feature.all
+    @banners = FeatureBanner.all
   end
   
   def admin_index
