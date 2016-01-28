@@ -25,7 +25,7 @@
                     - @videos.in_groups_of(1) do |group|
                       - group.take(5).collect do |video|
                         - if video.category == "upcoming"
-                          .gallery-photo-item.mix.upcoming.wow.fadeIn
+                          .col.md-3.gallery-photo-item.mix.upcoming.wow.fadeIn
                             %a.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "https://www.youtube.com/watch?v=#{video.uid}"}
                               .photo-thumb
                                 %img{:alt => "#{video.title}", :src => "https://img.youtube.com/vi/#{video.uid}/mqdefault.jpg"}
@@ -37,7 +37,7 @@
                                 #{video.title}
                          
                         - elsif video.category == "bangers"
-                          .gallery-photo-item.mix.bangers.wow.fadeIn
+                          .col.md-3.gallery-photo-item.mix.bangers.wow.fadeIn
                             %a.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "https://www.youtube.com/watch?v=#{video.uid}"}
                               .photo-thumb
                                 %img{:alt => "#{video.title}", :src => "https://img.youtube.com/vi/#{video.uid}/mqdefault.jpg"}
@@ -49,7 +49,7 @@
                                 #{video.title}
 
                         - elsif video.category == "villageHits"
-                          .gallery-photo-item.mix.videos.wow.fadeIn
+                          .col.md-3.gallery-photo-item.mix.videos.wow.fadeIn
                             %a.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "https://www.youtube.com/watch?v=#{video.uid}"}
                               .photo-thumb
                                 %img{:alt => "#{video.title}", :src => "https://img.youtube.com/vi/#{video.uid}/mqdefault.jpg"}
