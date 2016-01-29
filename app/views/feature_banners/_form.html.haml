@@ -1,0 +1,22 @@
+= form_for @feature_banner do |f|
+  - if @feature_banner.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@feature_banner.errors.count, "error")} prohibited this feature_banner from being saved:"
+      %ul
+        - @feature_banner.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :description
+    = f.text_area :description
+  .field
+    = f.label :image
+    = f.text_field :image
+  .field
+    = f.label :link
+    = f.text_field :link
+  .actions
+    = f.submit 'Save'
