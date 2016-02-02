@@ -45,7 +45,7 @@ Rails.application.routes.draw do
 
   match '/gallery' => 'visitors#gallery', :via => :get
   match '/music' => 'musics#index', :via => :get
-  match '/features' => 'visitors#news_page', :via => :get
+  match '/news' => 'features#index', :via => :get
   match '/social' => 'visitors#social', :via => :get
   match '/videos' => 'videos#index', :via => :get
   match '/contact' => 'visitors#contact', :via => :get

@@ -20,14 +20,28 @@
               / .caption.link
               /  %a{:href => "#"} More here
   / end banner
-  / start services
-  .services.front-news
-    .row
-      .services-inner
-        %h1.wow.fadeInUp{"data-wow-duration" => "2s"} News
-        -for feature in @features
-          .servicebox.col-md-4.wow.fadeIn{"data-wow-delay" => "1s", "data-wow-duration" => "2s"}
-            %a{:href => "#{feature.link}"}
-              %img.img-responsive{:alt => "#{feature.heading}", :src => "#{feature.image_url}"}
-            .servicebox-inner.text-left.wow.slideInLeft
-              %h2 #{feature.heading}
+  / start news tabs
+  #gallery.text-center
+    .container
+      .row.text-center
+        .tabs.tabs-style-linebox.wow.fadeInUp{"data-wow-duration" => "2s"}
+          %nav
+            %ul.filters
+              %li.hvr-sweep-to-top.active.filter{"data-filter" => ".latest", :id => "#latest_news"}
+                %span Latest
+              %li.hvr-sweep-to-top.filter{"data-filter" => ".trending"}
+                %span Trending
+              %li.hvr-sweep-to-top.filter{"data-filter" => ".media"}
+                %span Media
+
+    / start services
+    .services.front-news
+      .row
+        .services-inner
+          %h1.wow.fadeInUp{"data-wow-duration" => "2s"} News
+          -for feature in @features
+            .servicebox.col-md-4.wow.fadeIn{"data-wow-delay" => "1s", "data-wow-duration" => "2s"}
+              %a{:href => "#{feature.link}"}
+                %img.img-responsive{:alt => "#{feature.heading}", :src => "#{feature.image_url}"}
+              .servicebox-inner.text-left.wow.slideInLeft
+                %h2 #{feature.heading}
