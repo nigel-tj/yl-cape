@@ -16,25 +16,46 @@
             %ul.nav.navbar-nav.pull-left
               %li.navbar-left.hvr-underline-from-center.active
                 %a.scroll{:href => "/#banner"} HOME
-              %li.navbar-left.hvr-underline-from-center
-                %a.scroll{:href => "/gallery"} GALLERY
-              %li.hvr-underline-from-center
-                %a.scroll{:href => "/videos"} VIDEOS
-              %li.hvr-underline-from-center
-                %a.scroll{:href => "/music"} MUSIC
-              %li.hvr-underline-from-center
-                %a.scroll{:href => "/events"} EVENTS
+              %li.hvr-underline-from-center.dropdown
+                %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+                  ABOUT US
+                  %span.caret
+                %ul.dropdown-menu
+                  %li
+                    %a{:href => "#"} Who we are
+                  %li
+                    %a{:href => "#"} Services
+                  %li
+                    %a{:href => "#"} Team
+                  %li.divider{:role => "separator"}
+                  %li.dropdown-header Contact us
+                  %li
+                    %a{:href => "#"} Advertise
+                  %li
+                    %a{:href => "#"} Partners
               %li.hvr-underline-from-center
                 %a.scroll{:href => "/features"} NEWS
               %li.hvr-underline-from-center
+                %a.scroll{:href => "/music"} MUSIC
+              %li.hvr-underline-from-center
+                %a.scroll{:href => "/lifestyle"} LIFESTYLE
+              %li.hvr-underline-from-center
+                %a.scroll{:href => "/artists"} ARTISTS
+              %li.hvr-underline-from-center
+                %a.scroll{:href => "/events"} EVENTS
+              %li.navbar-left.hvr-underline-from-center
+                %a.scroll{:href => "/media"} MEDIA
+              %li.hvr-underline-from-center
                 %a.scroll{:href => "/store"} STORE
-              %li.hvr-underline-from-center
-                %a.scroll{:href => "/team"} TEAM
-              %li.hvr-underline-from-center
-                %a.scroll{:href => "#ComingSoon"} CONTACT
+              <!-- %li.hvr-underline-from-center -->
+              <!--   %a.scroll{:href => "/videos"} VIDEOS -->
+              <!-- %li.hvr-underline-from-center -->
+              <!--   %a.scroll{:href => "/team"} TEAM -->
+              <!-- %li.hvr-underline-from-center -->
+              <!--   %a.scroll{:href => "#ComingSoon"} CONTACT -->
             %ul.nav.navbar-nav.pull-right
               %li.hvr-underline-from-center
-                %a{:href => "/users/sign_up"} Sign up
+                %a{:href => "/users/sign_up"} JOIN US
               <!-- %li -->
               <!--   %a{:href => "#"}   -->
               <!--     %img.img-responsive{:alt => "Facebook", :src => "/images/facebook_circle.png"} -->
