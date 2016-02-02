@@ -588,26 +588,19 @@ z-index:999;
 	overflow:hidden;
 	position:relative;
 	display: inline-block;
+        height: 25vh;
 	margin-bottom: 10px;
 	padding-left:0px;
 	cursor: pointer; 		
 }
 .services .servicebox .servicebox-inner{
-	padding:10px;
-	width:200px;
+	padding:3%;
+	width:97%;
 	background-color:rgba(0,0,0,0.7);
 	position:absolute;
 	bottom:0;
-	left:-200px;
+	left:0;
 	 display: inline-block; 	
-	-webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-  -ms-transition: all 0.5s ease;
-}
-.services .servicebox:hover .servicebox-inner {
-	left: 0;
 }
 .services .servicebox .servicebox-inner h2{
 	color:#fff;
@@ -750,7 +743,7 @@ z-index:999;
   width: 25%;
   position: relative;
   float: left;
-  height: 220px;
+  height: 140px;
 }
 .gallery-photo-item .photo-thumb img {
   /* width: 100%; */
@@ -1343,6 +1336,11 @@ div.module.parallax-footer {
 	padding-top: 70px;
 	padding-bottom: 70px;
 }
+
+#footer{
+    margin-top:20px;
+}
+
 #footer p.footer-text {
 	font-family: 'PT Sans';
 	font-size: 20px;
