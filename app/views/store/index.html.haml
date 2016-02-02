@@ -1,5 +1,16 @@
 .container
   .row
+    / start banner
+    #slider.flexslider
+      %ul.slides      
+        - for banner in @banners
+          %li
+            %img{:alt => "#{banner.name}", :src => "#{banner.image_url}"}
+            .flex-caption-block
+              %p.flex-caption #{banner.name}
+              %br
+              %p.flex-link
+                %a{:href => "#"} More here
   / start services
   #services
     .row

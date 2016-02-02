@@ -21,7 +21,7 @@
               /  %a{:href => "#"} More here
   / end banner
   / start services
-  #services
+  .services.front-news
     .row
       .services-inner
         %h1.wow.fadeInUp{"data-wow-duration" => "2s"} News
@@ -29,5 +29,5 @@
           .servicebox.col-md-4.wow.fadeIn{"data-wow-delay" => "1s", "data-wow-duration" => "2s"}
             %a{:href => "#{feature.link}"}
               %img.img-responsive{:alt => "#{feature.heading}", :src => "#{feature.image_url}"}
-                .servicebox-inner.text-left.wow.slideInLeft
-                  %h2 #{feature.heading}
+            .servicebox-inner.text-left.wow.slideInLeft
+              %h2 #{feature.heading}
