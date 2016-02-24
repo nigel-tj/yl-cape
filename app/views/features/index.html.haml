@@ -28,7 +28,6 @@
                     Breaking News 2 –
                     %a{:href => "#"} read more
 
-
         / start services
         .row.front-news.services
           .col-sm-12
@@ -45,7 +44,7 @@
             .gallery-photos-thumb.grid
               -for feature in @features
                 .grid-item.servicebox.latest.mix
-                  %a{:href => "#{feature.link}"}
+                  %a{:href => "features/#{feature.id}"}
                     %img.img-responsive{:alt => "#{feature.heading}", :src => "#{feature.image_url}"}  
                   .servicebox-inner
                     %h2 #{feature.heading}
