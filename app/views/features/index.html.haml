@@ -1,26 +1,4 @@
 .container
-  .row
-    / start banner
-    #slider.flexslider
-      %ul.slides      
-        - for banner in @banners
-          %li
-            %img{:alt => "#{banner.name}", :src => "#{banner.image_url}"}
-            .flex-caption-block
-              %p.flex-caption #{banner.name}
-              %br
-              %p.flex-link
-                %a{:href => "#"} More here
-    #carousel.flexslider
-      %ul.slides      
-        - for banner in @banners
-          %li
-            %img{:alt => "#{banner.name}", :src => "#{banner.image_url}"}
-              / .caption #{banner.name}
-              / .caption.link
-              /  %a{:href => "#"} More here
-  / end banner
-
   / start news tabs
   #gallery
     / banner
@@ -31,13 +9,17 @@
 
     /news tabs
     .row
-      .col-sm-9.front-news
+      .col-sm-8
         .row
-          %h1.text-center.wow.fadeInUp{"data-wow-duration" => "2s"} News
-          .col-sm-12.text-center
+          .col-sm-12
+            %h1.wow.fadeInUp{"data-wow-duration" => "2s"} News
+
+        / start services
+        .row.front-news.services
+          .col-sm-12
             .tabs.tabs-style-linebox.wow.fadeInUp{"data-wow-duration" => "2s"}
               %nav
-                %ul.filters
+                %ul.filters.text-center
                   %li.hvr-sweep-to-top.active.filter{"data-filter" => ".latest", :id => "#latest_news"}
                     %span Latest
                   %li.hvr-sweep-to-top.filter{"data-filter" => ".trending"}
@@ -45,21 +27,21 @@
                   %li.hvr-sweep-to-top.filter{"data-filter" => ".media"}
                     %span Media
 
-        / start services
-        .row
-          .col-sm-12.services
-            .services-inner
+            .gallery-photos-thumb.grid
               -for feature in @features
-                .servicebox.col-md-4.wow.fadeIn{"data-wow-delay" => "1s", "data-wow-duration" => "2s"}
+                .grid-item.servicebox.latest.mix
                   %a{:href => "#{feature.link}"}
-                    %img.img-responsive{:alt => "#{feature.heading}", :src => "#{feature.image_url}"}
-                  .servicebox-inner.text-left.wow.slideInLeft
+                    %img.img-responsive{:alt => "#{feature.heading}", :src => "#{feature.image_url}"}  
+                  .servicebox-inner
                     %h2 #{feature.heading}
   
-      / Breaking News
-      .col-sm-3
-        %h1.text-center.wow.fadeInUp{"data-wow-duration" => "2s"} Breaking News
-        %ul
-          %li News 1
-          %li News 2
-          %li News 3
+      / Adverts
+      .col-sm-4
+        .row.front-news
+          .col-sm-12
+            %h1.wow.fadeInUp{"data-wow-duration" => "2s"} Adverts
+            %ul.advert-image
+              %li
+                %img.img-responsive{:alt => "image", :src => "http://www.redvillage.co.za/uploads/main_banner/image/20/davincii_cropped.jpg"}
+              %li
+                %img.img-responsive{:alt => "image", :src => "http://www.redvillage.co.za/uploads/main_banner/image/16/COUSIN_JMF_do_it_like_boss_banner_redcup.jpg"}

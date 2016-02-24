@@ -60,6 +60,7 @@
 %script{:src => "/scripts/modernizr.custom.97074.js", :type => "text/javascript"}
 %script{:src => "/scripts/jquery.hoverdir.js", :type => "text/javascript"}
 %script{:src => "/scripts/script.js", :type => "text/javascript"}
+%script{:src => "https://npmcdn.com/masonry-layout@4.0/dist/masonry.pkgd.min.js", :type => "text/javascript"}
 
 
 :javascript
@@ -101,5 +102,11 @@
       animationLoop: false,
       slideshow: false,
       sync: "#carousel"
+    });
+
+    $('.grid').masonry({
+      percentPosition: true,
+      columnWidth: '.grid-item',
+      itemSelector: '.grid-item'
     });
   });
