@@ -1,3 +1,5 @@
+%link{:href => "/css/ticker.css", :rel => "stylesheet"}/
+
 .container
   / start news tabs
   #gallery
@@ -12,7 +14,9 @@
       .col-sm-8
         .row
           .col-sm-12
-            %h1.wow.fadeInUp{"data-wow-duration" => "2s"} Music
+          .ticker-container.col-sm-2
+            .ticker-caption
+              %p Music
         / start services
         .row.front-news
           .col-sm-12.services.text-center

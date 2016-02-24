@@ -13,11 +13,9 @@
     .row
       .col-sm-8
         .row
-          .col-sm-2
-            %h1.wow.fadeInUp{"data-wow-duration" => "2s"} News
           .ticker-container.col-sm-2
             .ticker-caption
-              %p Breaking News
+              %p News
             %ul
               %div
                 %li
@@ -51,6 +49,7 @@
                     %img.img-responsive{:alt => "#{feature.heading}", :src => "#{feature.image_url}"}  
                   .servicebox-inner
                     %h2 #{feature.heading}
+                  
   
       / Adverts
       .col-sm-4
