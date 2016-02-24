@@ -1,47 +1,65 @@
-.container
-  .row
-    / start banner
-    #slider.flexslider
-      %ul.slides      
-        - for banner in @banners
-          %li
-            %img{:alt => "#{banner.name}", :src => "#{banner.image_url}"}
-            .flex-caption-block
-              %p.flex-caption #{banner.name}
-              %br
-              %p.flex-link
-                %a{:href => "#"} More here
-    #carousel.flexslider
-      %ul.slides      
-        - for banner in @banners
-          %li
-            %img{:alt => "#{banner.name}", :src => "#{banner.image_url}"}
-              / .caption #{banner.name}
-              / .caption.link
-              /  %a{:href => "#"} More here
-  / end banner
-  / start news tabs
-  #gallery.text-center
-    .container
-      .row.text-center
-        .tabs.tabs-style-linebox.wow.fadeInUp{"data-wow-duration" => "2s"}
-          %nav
-            %ul.filters
-              %li.hvr-sweep-to-top.active.filter{"data-filter" => ".latest", :id => "#latest_news"}
-                %span Latest
-              %li.hvr-sweep-to-top.filter{"data-filter" => ".trending"}
-                %span Trending
-              %li.hvr-sweep-to-top.filter{"data-filter" => ".media"}
-                %span Media
+%link{:href => "/css/ticker.css", :rel => "stylesheet"}/
 
-    / start services
-    .services.front-news
-      .row
-        .services-inner
-          %h1.wow.fadeInUp{"data-wow-duration" => "2s"} News
-          -for feature in @features
-            .servicebox.col-md-4.wow.fadeIn{"data-wow-delay" => "1s", "data-wow-duration" => "2s"}
-              %a{:href => "#{feature.link}"}
-                %img.img-responsive{:alt => "#{feature.heading}", :src => "#{feature.image_url}"}
-              .servicebox-inner.text-left.wow.slideInLeft
-                %h2 #{feature.heading}
+.container
+  / start news tabs
+  #gallery
+    / banner
+    .row
+      .col-sm-12.banner
+        %img.img-responsive{:alt => "image", :src => "http://www.redvillage.co.za/uploads/main_banner/image/21/RCV_7STARS_scampD.jpg"}
+    / banner end
+
+    /news tabs
+    .row
+      .col-sm-8
+        .row
+          .ticker-container.col-sm-2
+            .ticker-caption
+              %p News
+            %ul
+              %div
+                %li
+                  %span
+                    Breaking News 1 –
+                    %a{:href => "#"} read more
+              %div
+                %li
+                  %span
+                    Breaking News 2 –
+                    %a{:href => "#"} read more
+
+
+        / start services
+        .row.front-news.services
+          .col-sm-12
+            .tabs.tabs-style-linebox.wow.fadeInUp{"data-wow-duration" => "2s"}
+              %nav
+                %ul.filters.text-center
+                  %li.hvr-sweep-to-top.active.filter{"data-filter" => ".latest", :id => "#latest_news"}
+                    %span Latest
+                  %li.hvr-sweep-to-top.filter{"data-filter" => ".trending"}
+                    %span Trending
+                  %li.hvr-sweep-to-top.filter{"data-filter" => ".media"}
+                    %span Media
+
+            .gallery-photos-thumb.grid
+              -for feature in @features
+                .grid-item.servicebox.latest.mix
+                  %a{:href => "#{feature.link}"}
+                    %img.img-responsive{:alt => "#{feature.heading}", :src => "#{feature.image_url}"}  
+                  .servicebox-inner
+                    %h2 #{feature.heading}
+                  
+  
+      / Adverts
+      .col-sm-4
+        .row.front-news
+          .col-sm-12
+            %h1.wow.fadeInUp{"data-wow-duration" => "2s"} Adverts
+            %ul.advert-image
+              %li
+                %img.img-responsive{:alt => "image", :src => "http://www.redvillage.co.za/uploads/main_banner/image/20/davincii_cropped.jpg"}
+              %li
+                %img.img-responsive{:alt => "image", :src => "http://www.redvillage.co.za/uploads/main_banner/image/16/COUSIN_JMF_do_it_like_boss_banner_redcup.jpg"}
+
+%script{:src => "/scripts/ticker.js"}
