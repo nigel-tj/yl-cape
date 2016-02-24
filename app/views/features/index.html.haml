@@ -1,3 +1,5 @@
+%link{:href => "/css/ticker.css", :rel => "stylesheet"}/
+
 .container
   / start news tabs
   #gallery
@@ -11,8 +13,23 @@
     .row
       .col-sm-8
         .row
-          .col-sm-12
+          .col-sm-2
             %h1.wow.fadeInUp{"data-wow-duration" => "2s"} News
+          .ticker-container.col-sm-2
+            .ticker-caption
+              %p Breaking News
+            %ul
+              %div
+                %li
+                  %span
+                    Breaking News 1 –
+                    %a{:href => "#"} read more
+              %div
+                %li
+                  %span
+                    Breaking News 2 –
+                    %a{:href => "#"} read more
+
 
         / start services
         .row.front-news.services
@@ -45,3 +62,5 @@
                 %img.img-responsive{:alt => "image", :src => "http://www.redvillage.co.za/uploads/main_banner/image/20/davincii_cropped.jpg"}
               %li
                 %img.img-responsive{:alt => "image", :src => "http://www.redvillage.co.za/uploads/main_banner/image/16/COUSIN_JMF_do_it_like_boss_banner_redcup.jpg"}
+
+%script{:src => "/scripts/ticker.js"}
