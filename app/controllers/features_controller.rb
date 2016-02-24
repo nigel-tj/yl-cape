@@ -1,5 +1,5 @@
 class FeaturesController < ApplicationController
-  before_action :authenticate_admin!, except: [:index, :test]
+  before_action :authenticate_admin!, except: [:index, :test,:show]
   layout "admin", only: [:new, :create, :update, :admin_index]   
   
   def index
@@ -23,6 +23,10 @@ class FeaturesController < ApplicationController
     else
       render :action => 'new'
     end
+  end
+
+  def show
+    @feature = Feature.find(params[:id])
   end
   
   private
