@@ -1,14 +1,13 @@
 Rails.application.routes.draw do
 
 
-  resources :feature_banners
-  devise_for :admin_users
-  devise_for :users, controllers: {
-    sessions: 'users/sessions'
-  }
-
-  devise_for :admins
-
+  get 'stores/index'
+  get 'stores/new'
+  get 'stores/show'
+  get 'stores/create'
+  get 'stores/update'
+  get 'stores/activate'
+  get 'stores/deactivate'
   get 'music/index'
   get 'gallery/index'
   get "/callback" => "facebook#callback"
@@ -22,7 +21,16 @@ Rails.application.routes.draw do
   get 'videos/test'
   get 'visitors/stage'
 
+  resources :feature_banners
+  devise_for :admin_users
+  devise_for :users, controllers: {
+    sessions: 'users/sessions'
+  }
+
+  devise_for :admins
+
   #resources :users
+  resources :stores
   resources :musics
   resources :main_banners
   resources :galleries
@@ -30,14 +38,9 @@ Rails.application.routes.draw do
   resources :features
   resources :videos, only: [:index, :new, :create]
   resources :artists
-  
-  resources :events do
-    resources :vip_tickets , :standard_tickets
-    
-  end
   resources :events
-  resources :vip_tickets
-  resources :standard_tickets
+  #resources :vip_tickets
+  #resources :standard_tickets
   
   
   # get '/auth/:provider/callback', to: 'sessions#create'
@@ -57,7 +60,7 @@ Rails.application.routes.draw do
   match '/new_track' => 'musics#new', :via => :get
   match '/new_gallery' => 'galleries#new', :via => :get
   match '/video_uploads' => 'videos#new', :via => :get 
-  match '/new_store' => 'store#new', :via => :get
+  match '/new_store' => 'stores#new', :via => :get
   match '/new_event' => 'events#new', :via => :get
   match '/portfolio' => 'visitors#portfolio', :via => :get
   match '/new_banner' => 'main_banners#new', :via => :get

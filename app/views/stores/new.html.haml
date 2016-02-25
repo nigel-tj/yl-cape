@@ -1,0 +1,32 @@
+.container
+  %h1 Add New Store
+  = form_for @store, html: { class: "form-horizontal"} do |f|
+    = render 'shared/errors', object: @artist
+    .form-group
+      = f.label :name, :class => "control-label col-sm-2"
+      .col-sm-10 
+        = f.text_field :name, class: 'form-control', required: true
+        %span.help-block Store Name.
+    .form-group
+      = f.label :cover, :class => "control-label col-sm-2"
+      .col-sm-10
+        = f.file_field :cover
+        %span.help-block Cover.
+    .form-group
+      = f.label :email, :class => "control-label col-sm-2"
+      .col-sm-10 
+        = f.text_field :email, class: 'form-control', required: true
+        %span.help-block Store Email.
+    .form-group
+      = f.label :contact_number, :class => "control-label col-sm-2"
+      .col-sm-10 
+        = f.text_field :contact_number, class: 'form-control'
+        %span.help-block Contact Number.
+    .form-group
+      = f.label :description, :class => "control-label col-sm-2"
+      .col-sm-10 
+        = f.text_area :descriptionfg, class: 'form-control', required: true
+        %span.help-block Store description.
+    .form-group
+      .col-sm-offset-2.col-sm-10
+        = f.submit class: 'btn btn-primary'
