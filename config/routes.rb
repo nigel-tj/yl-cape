@@ -51,13 +51,13 @@ Rails.application.routes.draw do
   match '/contact' => 'visitors#contact', :via => :get
   match '/artist' => 'artists#show', :via => :get
   match '/store' => 'visitors#store', :via => :get
-  match '/artist_uploads' => 'artists#new', :via => :get
-  match '/feature_uploads' => 'features#new', :via => :get
-  match '/artist_downloads' => 'artists#downloads', :via => :get
+  match '/new_artist' => 'artists#new', :via => :get
+  match '/new_article' => 'features#new', :via => :get
+  match '/downloads' => 'artists#downloads', :via => :get
   match '/music_uploads' => 'musics#new', :via => :get
-  match '/gallery_uploads' => 'galleries#new', :via => :get
+  match '/new_gallery' => 'galleries#new', :via => :get
   match '/video_uploads' => 'videos#new', :via => :get 
-  match '/store_uploads' => 'store#new', :via => :get
+  match '/new_store' => 'store#new', :via => :get
   match '/event_uploads' => 'events#new', :via => :get
   match '/portfolio' => 'visitors#portfolio', :via => :get
   match '/banner_uploads' => 'main_banners#new', :via => :get
