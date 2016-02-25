@@ -56,18 +56,20 @@
             %ul.nav.navbar-nav.pull-right
               %li.hvr-underline-from-center
                 %a{:href => "/users/sign_up"} JOIN US
-              <!-- %li -->
-              <!--   %a{:href => "#"}   -->
-              <!--     %img.img-responsive{:alt => "Facebook", :src => "/images/facebook_circle.png"} -->
-              <!-- %li -->
-              <!--   %a{:href => "#"} -->
-              <!--     %img.img-responsive{:alt => "Twitter", :src => "/images/twitter_circle.png"} -->
-              <!-- %li -->
-              <!--   %a{:href => "#"} -->
-              <!--     %img.img-responsive{:alt => "Instagram", :src => "/images/instagram_circle.png"} -->
-              <!-- %li -->
-              <!--   %a{:href => "#"} -->
-              <!--     %img.img-responsive{:alt => "Youtube", :src => "/images/youtube_circle.png"} -->
+              %li.hvr-underline-from-center
+                %a{:href => "/users/sign_in"} Login
+              %li
+                %a{:href => "#"}
+                  %img.img-responsive{:alt => "Facebook", :src => "/images/facebook_circle.png"}
+              %li
+                %a{:href => "#"}
+                  %img.img-responsive{:alt => "Twitter", :src => "/images/twitter_circle.png"}
+              %li
+                %a{:href => "#"}
+                  %img.img-responsive{:alt => "Instagram", :src => "/images/instagram_circle.png"}
+              %li
+                %a{:href => "#"}
+                  %img.img-responsive{:alt => "Youtube", :src => "/images/youtube_circle.png"}
 / end header
 - flash.each do |key, value|
   %div{:class => "alert alert-#{key} alert-dismissable"}
