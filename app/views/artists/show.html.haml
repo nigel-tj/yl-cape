@@ -5,7 +5,7 @@
 #reservation.module.parallax.parallax-reservation
   .container
     .row
-      %h1.wow.fadeInUp{"data-wow-duration" => "1s"} "#{@artist.name}"
+      %h1.wow.fadeInUp{"data-wow-duration" => "1s"} #{@artist.name}
       %p.wow.fadeIn{"data-wow-duration" => "1s"}
       .col-sm-12.reservation-form        
 / start gallery
@@ -18,7 +18,7 @@
             %li.hvr-sweep-to-top.active.filter{"data-filter" => ".allDownloads", :id => "#all_downloads_tab"}
               %span All Track
             %li.hvr-sweep-to-top.filter{"data-filter" => ".bio"}
-              %span Bio
+              %span Bio 
   .container-fluid
     .row.gallery.text-center
       .col-md-12.noPadding
@@ -34,7 +34,6 @@
                       %i.fa.fa-search-plus.fa-2x
               .col-sm-12.gallery-track-item.mix.allDownloads.wow.fadeIn{"data-wow-delay" => "0.2s"}
                 .col-sm-10.col-sm-offset-1
-                  %h1 Track downloads
                   %table.table.table-striped
                     %thead
                       %tr
@@ -55,3 +54,4 @@
     document.getElementById('#bio_div').style.display = 'none';
     document.getElementById('#all_downloads_tab').classList.add("active");
   });
+  $('#reservation').css('background-image','url(#{@artist.cover_url})');

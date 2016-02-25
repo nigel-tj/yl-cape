@@ -8,6 +8,16 @@
         = f.text_field :name, class: 'form-control', required: true
         %span.help-block Artst Name.
     .form-group
+      = f.label :cover, :class => "control-label col-sm-2"
+      .col-sm-10
+        = f.file_field :cover
+        %span.help-block Cover.
+    .form-group
+      = f.label :profile_picture, :class => "control-label col-sm-2"
+      .col-sm-10
+        = f.file_field :profile_picture
+        %span.help-block Profile Picture.
+    .form-group
       = f.label :email, :class => "control-label col-sm-2"
       .col-sm-10 
         = f.text_field :email, class: 'form-control', required: true
@@ -15,8 +25,8 @@
     .form-group
       = f.label :cell_number, :class => "control-label col-sm-2"
       .col-sm-10 
-        = f.text_field :cell_number, class: 'form-control', required: true
-        %span.help-block A link to the video on YouTube.
+        = f.text_field :cell_number, class: 'form-control'
+        %span.help-block Cellphone Number.
     .form-group
       = f.label :bio, :class => "control-label col-sm-2"
       .col-sm-10 
