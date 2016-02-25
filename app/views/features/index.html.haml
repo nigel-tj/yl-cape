@@ -34,7 +34,7 @@
                     Breaking News 2 –
                     %a{:href => "#"} read more
 
-      .col-sm-12
+      .col-sm-9
         #gallery
           #gallery-header
             #gallery-header-center
@@ -93,5 +93,16 @@
               %img.all.studio{:src => "_assets/studio22.jpg"}/
               %img.all.studio{:src => "_assets/studio23.jpg"}/
               %img.all.studio{:src => "_assets/studio24.jpg"}/                  
+
+      / Adverts
+      .col-sm-3
+        .row.front-news
+          .col-sm-12
+            %h1.wow.fadeInUp{"data-wow-duration" => "2s"} Adverts
+            %ul.advert-image
+              %li
+                %img.img-responsive{:alt => "image", :src => "http://www.redvillage.co.za/uploads/main_banner/image/20/davincii_cropped.jpg"}
+              %li
+                %img.img-responsive{:alt => "image", :src => "http://www.redvillage.co.za/uploads/main_banner/image/16/COUSIN_JMF_do_it_like_boss_banner_redcup.jpg"}
   
 %script{:src => "/scripts/ticker.js"}
