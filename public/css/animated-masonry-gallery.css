@@ -1,4 +1,4 @@
-body {
+Body {
 	margin: 0px;
 	padding: 0px;
 	background-color: #eeeeee;
@@ -113,7 +113,7 @@ body {
 	float: left;
 	height: 35px;
 	width: 35px;
-	background-color: rgba(63,141,191,1);
+	background-color: rgba(206,31,43,1);
 	color: rgba(255,255,255,1);
 	text-align: center;
 	font-size: 20px;
@@ -123,7 +123,7 @@ body {
 	transition: background 0.5s;
 }
 #gallery-header-center-left-icon:hover {
-	background-color: rgba(63,141,191,0.5);
+	background-color: rgba(206,31,43,0.5);
 	cursor: pointer;
 }
 #gallery-header-center-left-title{
@@ -154,16 +154,16 @@ body {
 	transition: background 0.5s;
 }
 .gallery-header-center-right-links:hover {
-	background-color: rgba(63,141,191,1);
+	background-color: rgba(206,31,43,1);
 	color: rgba(255,255,255,1);
 	cursor: pointer;
 }
 .gallery-header-center-right-links-current {
 	color: #FFFFFF;
-	background-color: rgba(63,141,191,1);
+	background-color: rgba(206,31,43,1);
 }
 .gallery-header-center-right-links-current:hover {
-	background-color: rgba(63,141,191,0.5);
+	background-color: rgba(206,31,43,0.5);
 }
 #gallery-content{
 	float: left;
