@@ -94,7 +94,6 @@ Body {
 }
 #gallery-header{
 	height: 100px;
-	width: 100%;
 	float: left;
 }
 #gallery-header-center{
@@ -186,4 +185,7 @@ Body {
 	-o-transition: all 0.5s;
 	transition: all 0.5s;
 	margin-left: 10px;
+}
+.breaking_news {
+    font-size: 20px;
 }

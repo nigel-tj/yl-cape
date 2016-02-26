@@ -17,7 +17,7 @@
 
     /news tabs
     .row
-      .col-sm-8
+      .col-sm-9
         .row
           .ticker-container.col-sm-2
             .ticker-caption
@@ -25,12 +25,12 @@
             %ul
               %div
                 %li
-                  %span
+                  %span.breaking_news
                     Breaking News 1 –
                     %a{:href => "#"} read more
               %div
                 %li
-                  %span
+                  %span.breaking_news
                     Breaking News 2 –
                     %a{:href => "#"} read more
 
@@ -98,7 +98,6 @@
       .col-sm-3
         .row.front-news
           .col-sm-12
-            %h1.wow.fadeInUp{"data-wow-duration" => "2s"} Adverts
             %ul.advert-image
               %li
                 %img.img-responsive{:alt => "image", :src => "http://www.redvillage.co.za/uploads/main_banner/image/20/davincii_cropped.jpg"}
