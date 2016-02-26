@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
 
 
+  get 'albums/new'
+  get 'albums/all_albums'
+  get 'albums/edit'
+  get 'albums/create'
+  get 'albums/update'
+  get 'albums/delete'
   get 'stores/index'
   get 'stores/new'
   get 'stores/show'
@@ -29,7 +35,8 @@ Rails.application.routes.draw do
 
   devise_for :admins
 
-  #resources :users
+  resources :albums
+  resources :users
   resources :stores
   resources :musics
   resources :main_banners

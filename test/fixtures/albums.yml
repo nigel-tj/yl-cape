@@ -1,0 +1,14 @@
+# Read about fixtures at
+# http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  date_uploads: 2016-02-26 01:46:33
+  cover: MyString
+  download_flag: 
+
+two:
+  name: MyString
+  date_uploads: 2016-02-26 01:46:33
+  cover: MyString
+  download_flag: 
