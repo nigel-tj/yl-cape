@@ -25,7 +25,7 @@
     .col-md-12
       .club-heading
         %h1.wow.fadeInUp{"data-wow-duration" => "1s"} Redvillage TV
-      #player.col-md-12
+      #player.player_left.col-sm-8
         :javascript
           // 2. This code loads the IFrame Player API code asynchronously.
           var tag = document.createElement('script');
@@ -80,6 +80,8 @@
                       %img{:src => "https://img.youtube.com/vi/#{video.uid}/mqdefault.jpg"}
                       .desc
                         #{video.title}
+
+
   / start hot box
   .club-profiles.module.parallax.parallax-profiles.services.row
     .col-md-12
@@ -87,12 +89,12 @@
         %h1.wow.fadeInUp{"data-wow-duration" => "1s"} Hot Boxx &trade;
 
     #cube.animate
-      %div
-      %div
-      %div
-      %div
-      %div
-      %div
+      #face1%div
+      #face2%div
+      #face3%div
+      #face4%div
+      #face5%div
+      #face6%div
 
   / LightWidget WIDGET
   .club-profiles.module.parallax.parallax-profiles.services.row
@@ -114,3 +116,11 @@
 
       %script{:src => "//lightwidget.com/widgets/lightwidget.js"}
       %iframe#lightwidget_4b69af7296.lightwidget-widget{:allowtransparency => "true", :name => "lightwidget_4b69af7296", :scrolling => "no", :src => "//lightwidget.com/widgets/4b69af7296a85a5e86fd7378cb9a9cf1.html", :style => "width: 100%; border: 0; overflow: hidden;"}
+
+:javascript
+  $('#face1').css("background-image", "url(/images/CHIooMZW4AAvYBT.jpg)");
+  $('#face2').css("background-image", "url(/images/gallery-img1.jpg)");
+  $('#face3').css("background-image", "url(/images/gallery-img8.jpg)");
+  $('#face4').css("background-image", "url(/images/gallery-small-img-5.jpg)");
+  $('#face5').css("background-image", "url(/images/gallery-small-img-12.jpg)");
+  $('#face6').css("background-image", "url(/images/jj.png)");
