@@ -96,12 +96,6 @@ Body {
 	height: 100px;
 	float: left;
 }
-#gallery-header-center{
-	height: 100px;
-	width: 950px;
-	margin-right: auto;
-	margin-left: auto;
-}
 #gallery-header-center-left{
 	float: left;
 	height: 35px;

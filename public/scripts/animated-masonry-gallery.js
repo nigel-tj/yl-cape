@@ -14,7 +14,7 @@ function check_button(){
 	$('.gallery-header-center-right-links').removeClass(button_class);
 	if(button==1){
 		$("#filter-all").addClass(button_class);
-		$("#gallery-header-center-left-title").html('All Galleries');
+		$("#gallery-header-center-left-title").html('All');
 		}
 	if(button==2){
 		$("#filter-studio").addClass(button_class);
