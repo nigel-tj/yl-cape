@@ -1,0 +1,66 @@
+/ Page Top Section
+%section#page-top.section-style{"data-background-image" => "images/background/page-top.jpg"}
+  .pattern.height-resize
+    .container
+      %h1.site-title
+        Redvillage
+      / /.site-title
+      %h3.section-name
+        %span
+          We Are
+      / /.section-name
+      %h2.section-title
+        Coming Soon
+      / /.Section-title
+      #time_countdown.time-count-container
+        .col-sm-3
+          .time-box
+            .time-box-inner.dash.days_dash.animated{"data-animation" => "rollIn", "data-animation-delay" => "300"}
+              %span.time-number
+                %span.digit 0
+                %span.digit 0
+                %span.digit 0
+              %span.time-name Days
+        .col-sm-3
+          .time-box
+            .time-box-inner.dash.hours_dash.animated{"data-animation" => "rollIn", "data-animation-delay" => "600"}
+              %span.time-number
+                %span.digit 0
+                %span.digit 0
+              %span.time-name Hours
+        .col-sm-3
+          .time-box
+            .time-box-inner.dash.minutes_dash.animated{"data-animation" => "rollIn", "data-animation-delay" => "900"}
+              %span.time-number
+                %span.digit 0
+                %span.digit 0
+              %span.time-name Minutes
+        .col-sm-3
+          .time-box
+            .time-box-inner.dash.seconds_dash.animated{"data-animation" => "rollIn", "data-animation-delay" => "1200"}
+              %span.time-number
+                %span.digit 0
+                %span.digit 0
+              %span.time-name Seconds
+      / /.time-count-container
+      %p.time-until
+        %span Time Until Launce
+      / /.time-until
+      .next-section
+        %a.go-to-about
+          %span
+      / /.next-section
+    / /.container
+  / /.pattern
+/ /#page-top
+/ Page Top Section  End
+/ jQuery Library
+%script{:src => "/assets/js/jquery-2.1.0.min.js", :type => "text/javascript"}
+/ Modernizr js
+%script{:src => "/assets/js/modernizr-2.8.0.min.js", :type => "text/javascript"}
+/ Plugins
+%script{:src => "/assets/js/plugins.js", :type => "text/javascript"}
+/ Custom JavaScript Functions
+%script{:src => "/assets/js/functions.js", :type => "text/javascript"}
+/ Custom JavaScript Functions
+%script{:src => "/assets/js/jquery.ajaxchimp.min.js", :type => "text/javascript"}

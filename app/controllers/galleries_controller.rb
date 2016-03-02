@@ -1,6 +1,6 @@
 class GalleriesController < ApplicationController
   before_action :authenticate_admin!, except: [:index,:show]
-  layout "admin", only: [:new, :create, :update, :admin_show,]
+  layout "admin", only: [:new, :create, :update, :admin_show]
 
   def index
     @galleries = Gallery.all

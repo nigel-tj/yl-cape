@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
 
+  get 'coming_soon/index'
+
   get 'albums/new'
   get 'albums/all_albums'
   get 'albums/edit'
@@ -26,6 +28,7 @@ Rails.application.routes.draw do
   get 'visitors/contact'
   get 'videos/test'
   get 'visitors/stage'
+  
 
   resources :feature_banners
   devise_for :admin_users
@@ -76,7 +79,8 @@ Rails.application.routes.draw do
   match '/banners_index' => 'main_banners#index', :via => :get
   match '/users' => 'users#index', :via => :get
   match '/stage' => 'visitors#stage', :via => :get
+  match '/coming_soon' => 'coming_soon#index', :via => :get
 
   #root :to => "galleries#index"
-  root to: 'visitors#index'
+  root to: 'coming_soon#index'
 end
