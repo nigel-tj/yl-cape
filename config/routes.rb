@@ -1,14 +1,21 @@
 Rails.application.routes.draw do
 
 
-  resources :feature_banners
-  devise_for :admin_users
-  devise_for :users, controllers: {
-    sessions: 'users/sessions'
-  }
+  get 'coming_soon/index'
 
-  devise_for :admins
-
+  get 'albums/new'
+  get 'albums/all_albums'
+  get 'albums/edit'
+  get 'albums/create'
+  get 'albums/update'
+  get 'albums/delete'
+  get 'stores/index'
+  get 'stores/new'
+  get 'stores/show'
+  get 'stores/create'
+  get 'stores/update'
+  get 'stores/activate'
+  get 'stores/deactivate'
   get 'music/index'
   get 'gallery/index'
   get "/callback" => "facebook#callback"
@@ -21,8 +28,19 @@ Rails.application.routes.draw do
   get 'visitors/contact'
   get 'videos/test'
   get 'visitors/stage'
+  
 
-  #resources :users
+  resources :feature_banners
+  devise_for :admin_users
+  devise_for :users, controllers: {
+    sessions: 'users/sessions'
+  }
+
+  devise_for :admins
+
+  resources :albums
+  resources :users
+  resources :stores
   resources :musics
   resources :main_banners
   resources :galleries
@@ -30,14 +48,9 @@ Rails.application.routes.draw do
   resources :features
   resources :videos, only: [:index, :new, :create]
   resources :artists
-  
-  resources :events do
-    resources :vip_tickets , :standard_tickets
-    
-  end
   resources :events
-  resources :vip_tickets
-  resources :standard_tickets
+  #resources :vip_tickets
+  #resources :standard_tickets
   
   
   # get '/auth/:provider/callback', to: 'sessions#create'
@@ -51,22 +64,23 @@ Rails.application.routes.draw do
   match '/contact' => 'visitors#contact', :via => :get
   match '/artist' => 'artists#show', :via => :get
   match '/store' => 'visitors#store', :via => :get
-  match '/artist_uploads' => 'artists#new', :via => :get
-  match '/feature_uploads' => 'features#new', :via => :get
-  match '/artist_downloads' => 'artists#downloads', :via => :get
-  match '/music_uploads' => 'musics#new', :via => :get
-  match '/gallery_uploads' => 'galleries#new', :via => :get
+  match '/new_artist' => 'artists#new', :via => :get
+  match '/new_article' => 'features#new', :via => :get
+  match '/downloads' => 'artists#downloads', :via => :get
+  match '/new_track' => 'musics#new', :via => :get
+  match '/new_gallery' => 'galleries#new', :via => :get
   match '/video_uploads' => 'videos#new', :via => :get 
-  match '/store_uploads' => 'store#new', :via => :get
-  match '/event_uploads' => 'events#new', :via => :get
+  match '/new_store' => 'stores#new', :via => :get
+  match '/new_event' => 'events#new', :via => :get
   match '/portfolio' => 'visitors#portfolio', :via => :get
-  match '/banner_uploads' => 'main_banners#new', :via => :get
+  match '/new_banner' => 'main_banners#new', :via => :get
   match '/admin_index' => 'features#admin_index', :via => :get
   match '/artist_songs' => 'artists#artist', :via => :get
   match '/banners_index' => 'main_banners#index', :via => :get
   match '/users' => 'users#index', :via => :get
   match '/stage' => 'visitors#stage', :via => :get
+  match '/coming_soon' => 'coming_soon#index', :via => :get
 
   #root :to => "galleries#index"
-  root to: 'visitors#index'
+  root to: 'coming_soon#index'
 end

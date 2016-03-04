@@ -13,7 +13,7 @@
                 %li.hvr-sweep-to-top.filter{"data-filter" => ".label"}
                   %span Labels
                 %li.hvr-sweep-to-top.filter{"data-filter" => ".management"}
-                  %span Management
+                  %span Management  
 
       .container-fluid
         .row.gallery.text-center
@@ -25,9 +25,11 @@
                     .gallery-photo-item.mix.artists.wow.fadeIn
                       %a.pretty-photo{:href => "artists/#{artist.id}?#{artist.name}"}
                         .photo-thumb
-                          = image_tag artist.image_url(:thumb)
+                          = image_tag artist.profile_picture_url(:thumb)
                         .overlay
                           %span.gallery-icon
                             %i.fa.fa-play.fa-2x
-
+                          
 / end gallery
+
+:javascript

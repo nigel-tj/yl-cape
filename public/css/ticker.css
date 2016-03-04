@@ -14,13 +14,13 @@
 	color: white;
 	/*background-color: white;
 	color: black;*/
-	font-size: 1.1em;
+	font-size: 40px;
 	margin-bottom: 15px;
 }
 .ticker-container .ticker-caption {
 	height: 50%;
 	width: 100%;
-	background-color: #EC0B43;
+	background-color: #ce1f2b;
 	display: table;
 	position: absolute;
 	color: white;
@@ -62,12 +62,12 @@
 	padding: 5px 0;
 }
 .ticker-container ul div li a {
-	color: #EC0B43;
+	color: #ce1f2b;
 }
 
 @media (min-width: 500px) {
 	.ticker-container {
-		height: 30px;
+		height: 60px;
 		text-align: left;
 	}
 	.ticker-container .ticker-caption {

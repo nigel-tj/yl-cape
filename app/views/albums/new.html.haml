@@ -1,0 +1,19 @@
+#services
+  .container
+    .row
+.container
+  %h1 New Album
+  = form_for @album do |f|
+    = render 'shared/errors', object: @album
+    .form-group
+      = f.label :name, :class => "control-label col-sm-2"
+      .col-sm-10
+        = f.text_field :name, class: 'form-control', required: true
+        %span.help-block Album Name.
+
+    .form-group
+      = f.label :cover, :class => "control-label col-sm-2"
+      .col-sm-10
+        = f.file_field :cover, required: true
+        %span.help-block Album Cover.
+    = f.submit class: 'btn btn-primary'

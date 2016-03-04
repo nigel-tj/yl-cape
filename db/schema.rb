@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160129141817) do
+ActiveRecord::Schema.define(version: 20160226011349) do
 
   create_table "admin_users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -49,14 +49,33 @@ ActiveRecord::Schema.define(version: 20160129141817) do
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
 
+  create_table "albums", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "date_uploads"
+    t.string   "cover"
+    t.boolean  "download_flag"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
   create_table "artists", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
     t.integer  "cell_number"
     t.text     "bio"
     t.string   "category"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "cover"
+    t.string   "profile_picture"
+  end
+
+  create_table "dowload_logs", force: :cascade do |t|
+    t.integer  "download_id"
+    t.datetime "download_date"
+    t.integer  "user_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "documents", force: :cascade do |t|
@@ -132,6 +151,7 @@ ActiveRecord::Schema.define(version: 20160129141817) do
     t.integer  "artist_id"
     t.string   "track"
     t.string   "category"
+    t.integer  "album_id"
   end
 
   create_table "standard_tickets", force: :cascade do |t|
@@ -143,6 +163,16 @@ ActiveRecord::Schema.define(version: 20160129141817) do
 
   add_index "standard_tickets", ["event_id"], name: "index_standard_tickets_on_event_id"
   add_index "standard_tickets", ["user_id"], name: "index_standard_tickets_on_user_id"
+
+  create_table "stores", force: :cascade do |t|
+    t.string   "name"
+    t.string   "cover"
+    t.string   "email"
+    t.string   "contact_number"
+    t.text     "description"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

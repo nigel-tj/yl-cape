@@ -22,22 +22,6 @@
           %br
             084 052 2558
     .row.text-center
-      .social.affix-social
-        %a{:href => "http://www.facebook.com"}
-          %i.fa.fa-facebook.fa-2x
-        %a{:href => "http://www.google.com"}
-          %i.fa.fa-google.fa-2x
-        %a{:href => "http://www.linkedin.com"}
-          %i.fa.fa-linkedin.fa-2x
-        %a{:href => "http://www.pinterest.com"}
-          %i.fa.fa-pinterest.fa-2x
-        %a{:href => "http://www.twitter.com"}
-          %i.fa.fa-twitter.fa-2x
-        %a{:href => "http://www.rss.com"}
-          %i.fa.fa-rss.fa-2x
-        %a{:href => "http://www.skype.com"}
-          %i.fa.fa-skype.fa-2x
-
       #copy-right.container 
         .row
           .col-md-12
@@ -45,7 +29,8 @@
               CopyRight &copy; 2015 Red Village
 
 %script{:src => "/scripts/wow.min.js"}
-%script{:src => "/scripts/jquery.js", :type => "text/javascript"}
+-if controller.controller_name != "features"
+  %script{:src => "/scripts/jquery.js", :type => "text/javascript"}
 %script{:src => "/scripts/bootstrap.min.js", :type => "text/javascript"}
 %script{:src => "/scripts/jquery.smoothwheel.js", :type => "text/javascript"}
 %script{:defer => "defer", :src => "/flex/jquery.flexslider.js"}
