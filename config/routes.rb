@@ -80,7 +80,8 @@ Rails.application.routes.draw do
   match '/users' => 'users#index', :via => :get
   match '/stage' => 'visitors#stage', :via => :get
   match '/coming_soon' => 'coming_soon#index', :via => :get
+  match '/team' => 'visitors#team', :via => :get
 
   #root :to => "galleries#index"
-  root to: 'coming_soon#index'
+  root to: 'visitors#index' #'coming_soon#index'
 end

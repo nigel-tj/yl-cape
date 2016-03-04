@@ -1,3 +1,4 @@
+%link{:href => "/css/experiment-styles.css", :rel => "stylesheet"}/
 .container
   .row
     / start banner
@@ -89,12 +90,12 @@
         %h1.wow.fadeInUp{"data-wow-duration" => "1s"} Hot Boxx &trade;
 
     #cube.animate
-      #face1%div
-      #face2%div
-      #face3%div
-      #face4%div
-      #face5%div
-      #face6%div
+      #face1
+      #face2
+      #face3
+      #face4
+      #face5
+      #face6
 
   / LightWidget WIDGET
   .club-profiles.module.parallax.parallax-profiles.services.row
@@ -116,6 +117,14 @@
 
       %script{:src => "//lightwidget.com/widgets/lightwidget.js"}
       %iframe#lightwidget_4b69af7296.lightwidget-widget{:allowtransparency => "true", :name => "lightwidget_4b69af7296", :scrolling => "no", :src => "//lightwidget.com/widgets/4b69af7296a85a5e86fd7378cb9a9cf1.html", :style => "width: 100%; border: 0; overflow: hidden;"}
+
+    .col-md-3
+      .club-heading
+        %h1.wow.fadeInUp{"data-wow-duration" => "1s"} Heading 2
+
+    .col-md-3
+      .club-heading
+        %h1.wow.fadeInUp{"data-wow-duration" => "1s"} Heading 3
 
 :javascript
   $('#face1').css("background-image", "url(/images/CHIooMZW4AAvYBT.jpg)");
