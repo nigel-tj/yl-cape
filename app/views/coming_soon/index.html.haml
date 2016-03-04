@@ -12,39 +12,14 @@
       %h2.section-title
         Coming Soon
       / /.Section-title
-      #time_countdown.time-count-container
-        .col-sm-3
-          .time-box
-            .time-box-inner.dash.days_dash.animated{"data-animation" => "rollIn", "data-animation-delay" => "300"}
-              %span.time-number
-                %span.digit 0
-                %span.digit 0
-                %span.digit 0
-              %span.time-name Days
-        .col-sm-3
-          .time-box
-            .time-box-inner.dash.hours_dash.animated{"data-animation" => "rollIn", "data-animation-delay" => "600"}
-              %span.time-number
-                %span.digit 0
-                %span.digit 0
-              %span.time-name Hours
-        .col-sm-3
-          .time-box
-            .time-box-inner.dash.minutes_dash.animated{"data-animation" => "rollIn", "data-animation-delay" => "900"}
-              %span.time-number
-                %span.digit 0
-                %span.digit 0
-              %span.time-name Minutes
-        .col-sm-3
-          .time-box
-            .time-box-inner.dash.seconds_dash.animated{"data-animation" => "rollIn", "data-animation-delay" => "1200"}
-              %span.time-number
-                %span.digit 0
-                %span.digit 0
-              %span.time-name Seconds
+      .row
+        .span4
+        .span4{:style => "text-align: center;"}
+          %img{:src => "/images/logo_badge_transparent_500.png"}/
+        .span4
       / /.time-count-container
       %p.time-until
-        %span Time Until Launce
+        %span #RedCupVillage
       / /.time-until
       .next-section
         %a.go-to-about
