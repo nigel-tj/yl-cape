@@ -2,17 +2,13 @@
   .container
     .row
 .container
-  %h1 New Feture
-  = form_for @feature, html: { class: "form-horizontal"} do |f|
-    = render 'shared/errors', object: @feature
+  %h1 New Lifestyle Article
+  = form_for @lifestyle, html: { class: "form-horizontal"} do |f|
+    = render 'shared/errors', object: @lifestyle
     .form-group
-      = f.label :heading, :class => "control-label col-sm-2"
+      = f.label :title, :class => "control-label col-sm-2"
       .col-sm-10
-        = f.text_field :heading, class: 'form-control', required: true, id: 'word_count'
-        Total word count: 
-        %span#display_count 0 words. Words left: 
-        %span#word_left 20
-        %span.help-block Article Heading NB maximum of 20 words.
+        = f.text_field :title, class: 'form-control', required: true
     .form-group
       = f.label :image, :class => "control-label col-sm-2"
       .col-sm-10
@@ -21,8 +17,11 @@
     .form-group
       = f.label :intro, :class => "control-label col-sm-2"
       .col-sm-10
-        = f.text_area :intro, class: 'form-control', required: true
-        %span.help-block Article Introduction.
+        = f.text_area :intro, class: 'form-control', required: true, id: 'word_count'
+        Total word count: 
+        %span#display_count 0 words. Words left: 
+        %span#word_left 20
+        %span.help-block Article Introduction NB maximum of 20 words.
     .form-group
       = f.label :link, :class => "control-label col-sm-2"
       .col-sm-10

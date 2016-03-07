@@ -1,8 +1,14 @@
 Rails.application.routes.draw do
 
-
+  get 'lifestyles/index'
+  get 'lifestyles/new'
+  get 'lifestyles/create'
+  get 'lifestyles/update'
+  get 'lifestyle/index'
+  get 'lifestyle/new'
+  get 'lifestyle/create'
+  get 'lifestyle/update'
   get 'coming_soon/index'
-
   get 'albums/new'
   get 'albums/all_albums'
   get 'albums/edit'
@@ -37,7 +43,7 @@ Rails.application.routes.draw do
   }
 
   devise_for :admins
-
+  resources :lifestyles
   resources :albums
   resources :users
   resources :stores
@@ -81,7 +87,9 @@ Rails.application.routes.draw do
   match '/stage' => 'visitors#stage', :via => :get
   match '/coming_soon' => 'coming_soon#index', :via => :get
   match '/team' => 'visitors#team', :via => :get
-
+  match '/new_lifestyle_article' => 'lifestyles#new', :via => :get
+  match '/lifestyle_admin_index' => 'lifestyles#lifestyle_admin_index', :via => :get
+  match '/lifestyle' => 'lifestyles#index', :via => :get
   #root :to => "galleries#index"
   root to: 'visitors#index' #'coming_soon#index'
 end

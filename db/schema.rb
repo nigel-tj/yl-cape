@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160226011349) do
+ActiveRecord::Schema.define(version: 20160307090130) do
 
   create_table "admin_users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -70,6 +70,12 @@ ActiveRecord::Schema.define(version: 20160226011349) do
     t.string   "profile_picture"
   end
 
+  create_table "documents", force: :cascade do |t|
+    t.string   "file"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "dowload_logs", force: :cascade do |t|
     t.integer  "download_id"
     t.datetime "download_date"
@@ -123,6 +129,15 @@ ActiveRecord::Schema.define(version: 20160226011349) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image"
+  end
+
+  create_table "lifestyles", force: :cascade do |t|
+    t.string   "image"
+    t.string   "title"
+    t.string   "link"
+    t.string   "intro"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "main_banners", force: :cascade do |t|
