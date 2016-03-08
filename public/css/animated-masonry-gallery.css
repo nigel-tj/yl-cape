@@ -1,100 +1,5 @@
-Body {
-	margin: 0px;
-	padding: 0px;
-	background-color: #eeeeee;
-	font-family: 'Source Sans Pro', sans-serif;
-}
-#header{
-	background-color: #3f8dbf;
-	float: left;
-	width: 100%;
-	height: 50px;
-	color: rgba(255,255,255,1);
-	line-height: 50px;
-}
-#header a {
-	color: rgba(255,255,255,1);
-	text-decoration: none;
-	display: block;
-	font-size: 15px;
-}
-#header-left{
-	float: left;
-	height: 50px;
-}
-#header-left:hover #header-left-icon{
-	background-color: #3F8DBF;
-}
-#header-left:hover #header-left-text{
-	background-color: #599BC8;
-}
-#header-left-icon{
-	float: left;
-	height: 50px;
-	width: 50px;
-	text-align: center;
-	background-color: #35759F;
-	-webkit-transition: background 0.5s;
-	-moz-transition: background 0.5s;
-	-o-transition: background 0.5s;
-	transition: background 0.5s;
-}
-#header-left-icon a {
-	font-size: 25px;
-}
-
-#header-left-text{
-	float: left;
-	height: 50px;
-		-webkit-transition: background 0.5s;
-	-moz-transition: background 0.5s;
-	-o-transition: background 0.5s;
-	transition: background 0.5s;
-}
-#header-left-text a {
-	padding-left: 20px;
-	padding-right: 20px;
-}
-#header-right{
-	float: right;
-	height: 50px;
-}
-#header-right:hover #header-right-icon{
-	background-color: #3F8DBF;
-	}
-#header-right:hover #header-right-text{
-	background-color: #599BC8;
-	}
-#header-right-icon{
-	float: right;
-	height: 50px;
-	width: 50px;
-	text-align: center;
-	background-color: #35759F;
-	-webkit-transition: background 0.5s;
-	-moz-transition: background 0.5s;
-	-o-transition: background 0.5s;
-	transition: background 0.5s;
-}
-#header-right-text{
-	float: right;
-	height: 50px;
-	-webkit-transition: background 0.5s;
-	-moz-transition: background 0.5s;
-	-o-transition: background 0.5s;
-	transition: background 0.5s;
-}
-#header-right-text a {
-	padding-right: 20px;
-	padding-left: 20px;
-}
-#gallery{
-	float: left;
-	width: 100%;
-}
 #gallery-header{
-	height: 100px;
-	float: left;
+	width: 100%;
 }
 #gallery-header-center-left{
 	float: left;
@@ -122,8 +27,8 @@ Body {
 #gallery-header-center-left-title{
 	float: left;
 	height: 35px;
-	font-size: 25px;
-	color: #ce1f2b;
+	font-size: 2em;
+	color: #999;
 	margin-left: 20px;
 }
 #gallery-header-center-right{
@@ -133,7 +38,7 @@ Body {
 	line-height: 35px;
 }
 .gallery-header-center-right-links {
-	color: #333333;
+	color: #ce1f2b;
 	float: left;
 	height: 35px;
 	padding-right: 20px;
@@ -170,15 +75,6 @@ Body {
 .gallery-content-center-full {
 	float: left;
 	width: 100%;
-}
-#gallery-content-center img {
-	width: 300px;
-	margin-bottom: 10px;
-	-webkit-transition: all 0.5s;
-	-moz-transition: all 0.5s;
-	-o-transition: all 0.5s;
-	transition: all 0.5s;
-	margin-left: 10px;
 }
 .breaking_news {
     font-size: 20px;

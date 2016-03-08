@@ -16,7 +16,7 @@
 
     /news tabs
     .row
-      .col-sm-9
+      .col-md-12
         .ticker-container
           .ticker-caption
             %p News
@@ -32,7 +32,8 @@
                   Breaking News 2 –
                   %a{:href => "#"} read more
 
-        #gallery
+      .col-md-9
+        #gallery.row
           #gallery-header
             #gallery-header-center
               #gallery-header-center-left
@@ -42,23 +43,22 @@
                 #filter-latest.gallery-header-center-right-links Latest
                 #filter-trending.gallery-header-center-right-links Trending
           #gallery-content.services
-            #gallery-content-center.row
+            #gallery-content-center
               -for feature in @features
-                %a.servicebox.col-sm-3.all.latest{:href => "#{feature.link}"}
+                %a.servicebox.col-md-4.col-sm-6.all.latest{:href => "#{feature.link}"}
                   %img.img-responsive{:alt => "#{feature.heading}", :src => "#{feature.image_url}"}
                   .servicebox-inner.text-left
                     %h2 #{feature.heading}
                     %p #{feature.intro}
 
       / Adverts
-      .col-sm-3
-        .row.side-adverts
-          .col-sm-12
-            %ul.advert-image
-              %li
-                %img.img-responsive{:alt => "image", :src => "http://www.redvillage.co.za/uploads/main_banner/image/20/davincii_cropped.jpg"}
-              %li
-                %img.img-responsive{:alt => "image", :src => "http://www.redvillage.co.za/uploads/main_banner/image/16/COUSIN_JMF_do_it_like_boss_banner_redcup.jpg"}
+      .col-md-3
+        .side-adverts
+          %ul.advert-image
+            %li
+              %img.img-responsive{:alt => "image", :src => "http://www.redvillage.co.za/uploads/main_banner/image/20/davincii_cropped.jpg"}
+            %li
+              %img.img-responsive{:alt => "image", :src => "http://www.redvillage.co.za/uploads/main_banner/image/16/COUSIN_JMF_do_it_like_boss_banner_redcup.jpg"}
   
 %script{:src => "/scripts/ticker.js"}
 :javascript

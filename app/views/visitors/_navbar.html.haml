@@ -13,6 +13,24 @@
               %span.icon-bar
               %span.icon-bar
           #bs-example-navbar-collapse-1.collapse.navbar-collapse
+            %ul.nav.navbar-nav.pull-right
+              %li.hvr-underline-from-center
+                %a{:href => "/users/sign_up"} JOIN US
+              %li.hvr-underline-from-center
+                %a{:href => "/users/sign_in"} Login
+              %li.nav-social-link
+                %a{:href => "#"}
+                  %img.img-responsive{:alt => "Facebook", :src => "/images/facebook_circle.png"}
+              %li.nav-social-link
+                %a{:href => "#"}
+                  %img.img-responsive{:alt => "Twitter", :src => "/images/twitter_circle.png"}
+              %li.nav-social-link
+                %a{:href => "#"}
+                  %img.img-responsive{:alt => "Instagram", :src => "/images/instagram_circle.png"}
+              %li.nav-social-link
+                %a{:href => "#"}
+                  %img.img-responsive{:alt => "Youtube", :src => "/images/youtube_circle.png"}
+
             %ul.nav.navbar-nav.pull-left
               %li.navbar-left.hvr-underline-from-center.active
                 %a.scroll{:href => "/#banner"} HOME
@@ -53,23 +71,6 @@
               <!--   %a.scroll{:href => "/team"} TEAM -->
               <!-- %li.hvr-underline-from-center -->
               <!--   %a.scroll{:href => "#ComingSoon"} CONTACT -->
-            %ul.nav.navbar-nav.pull-right
-              %li.hvr-underline-from-center
-                %a{:href => "/users/sign_up"} JOIN US
-              %li.hvr-underline-from-center
-                %a{:href => "/users/sign_in"} Login
-              %li
-                %a{:href => "#"}
-                  %img.img-responsive{:alt => "Facebook", :src => "/images/facebook_circle.png"}
-              %li
-                %a{:href => "#"}
-                  %img.img-responsive{:alt => "Twitter", :src => "/images/twitter_circle.png"}
-              %li
-                %a{:href => "#"}
-                  %img.img-responsive{:alt => "Instagram", :src => "/images/instagram_circle.png"}
-              %li
-                %a{:href => "#"}
-                  %img.img-responsive{:alt => "Youtube", :src => "/images/youtube_circle.png"}
 / end header
 - flash.each do |key, value|
   %div{:class => "alert alert-#{key} alert-dismissable"}

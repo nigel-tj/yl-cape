@@ -1,69 +1,3 @@
-/*
-  Project Name : Night Club
-  Author Company : Ewebcraft
-  Project Date: 02 April, 2015
-  Author Website : http://www.ewebcraft.com
-  Author Email : ewebcraft@gmail.com
-*/
-
-/*------------------------------------------------------------------
-[generic Table of contents]
-
-* body
-  
-  + #loader
-  
-  + @font-face
-
-	+ #banner
-		- .banner-inner
-      - .owl-carousel
-			
-	+ header
-		- .logo
-		- nav
-			- .navbar-header
-			- .navbar-collapse
-			
-	+ .services
-		- .services-inner
-		
-	+ #gallery
-    - .tabs
-    - .container-fluid
-      -ul.gallery
-
-  + #club-form
-    - .club-form
-
-  + #events
-    - .event-inner
-      -ul.bxslider
-
-  + #club-profiles
-    - .profile-box
-      -.profile-box-left
-      -.profile-box-right
-
-  + #blogs
-    - .blog-slider
-      -ul.bxslider
-    - #myTabContent
-      - .tab-pane
-
-  + #reservation
-    - .reservation-form
-
-  + #map-canvas
-
-  + #footer
-    - .footer-info
-    - .social
-
-  + #copy-right
-  
-  -------------------------------------------------------------------*/
-
 *{padding:0; margin:0; }
 body{ overflow-x:hidden; font-family: 'Open Sans'; margin:15vh auto 0; }
 img{border:none;}
@@ -585,10 +519,10 @@ z-index:999;
          }
 
 .services .servicebox{
-        border:10px solid #222;
+        border:2px solid black;
 	cursor: pointer;
-	padding:3%;
-	background-color:rgba(0,0,0,1);
+	padding:2%;
+	background-color:#222;
 }
 .services .servicebox .servicebox-inner h2{
 	color:#fff;
@@ -612,7 +546,7 @@ z-index:999;
 /*adverts*/
 .side-adverts{
     background-color:#222;
-    padding:40px 20px;
+    padding:5%;
     margin-top:15px;
 }
       
@@ -722,6 +656,7 @@ z-index:999;
 }
 #gallery {
   background-color:#000;
+    padding-bottom: 1%;
 }
 #gallery .gallery{
 	padding-top:30px;
@@ -1343,19 +1278,19 @@ div.module.parallax-reservation {
 
 div.module.parallax-footer {
 	background-image:url("../images/footer-bg.jpg");
-	padding-top: 70px;
-	padding-bottom: 70px;
+	padding-top: 5%;
+	padding-bottom: 3%;
 }
 
 #footer{
-    margin-top:20px;
+    margin-top:0.5%;
 }
 
 #footer p.footer-text {
 	font-family: 'PT Sans';
-	font-size: 20px;
+	font-size: 1.25em;
 	color: #fff;
-	line-height: 35px;
+	line-height:2;
 	margin-top: 30px;
 }
 #footer p.footer-text a {
