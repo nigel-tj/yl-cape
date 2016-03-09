@@ -1,5 +1,3 @@
-%link{:href => "../experiment-styles.css", :rel => "stylesheet"}/
-%link{:href => "/css/touch.css", :rel => "stylesheet"}/
 .container
   .row
     / start banner
@@ -89,38 +87,32 @@
     .col-md-12
       .club-heading
         %h1.wow.fadeInUp{"data-wow-duration" => "1s"} Hot Boxx &trade;
-
-
-
-/[if lt IE 9] <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-.experiment
-  .wrapper
-    %article.viewport
-      %section.cube
-        %div
-        %div
-          %h2 3D cube
-          %time 28th September 2010
-          %p By Paul Hayes
-          %p 3D cube built using css, webkit-perspective and webkit-transform. Rotation via webkit-transition.
-          %p Use arrow keys to navigate, or click and hold mouse. On touch screens, use one finger to rotate. Press ESC to reset.
-          %p
-            %a{:href => "http://www.paulrhayes.com/2010-09/3d-css-cube-ii-touch-gestures-click-and-drag/", :target => "_top"} Read more »
-        %div
-          / video
-        %div
-          %h2
-            %a{:href => "http://www.paulrhayes.com/2009-07/animated-css3-cube-interface-using-3d-transforms/", :target => "_top"} Learn how to make a cube
-          %time 17th July 2009
-          %p By Paul Hayes
-          %p “A 3D cube can be created solely in CSS, with all six faces.”
-          %p
-            Article:
-            %a{:href => "http://www.paulrhayes.com/2009-07/animated-css3-cube-interface-using-3d-transforms/", :target => "_top"} Cube explanation
-        %div
-          %p I design and build websites in Brighton
-        %div
-          %small Nothing down here.
+        %article.viewport
+          %section.cube
+            %div#face1
+            %div#face2
+              %h2 3D cube
+              %time 28th September 2010
+              %p By Paul Hayes
+              %p 3D cube built using css, webkit-perspective and webkit-transform. Rotation via webkit-transition.
+              %p Use arrow keys to navigate, or click and hold mouse. On touch screens, use one finger to rotate. Press ESC to reset.
+              %p
+                %a{:href => "http://www.paulrhayes.com/2010-09/3d-css-cube-ii-touch-gestures-click-and-drag/", :target => "_top"} Read more »
+            %div#face3
+              / video
+            %div#face4
+              %h2
+                %a{:href => "http://www.paulrhayes.com/2009-07/animated-css3-cube-interface-using-3d-transforms/", :target => "_top"} Learn how to make a cube
+              %time 17th July 2009
+              %p By Paul Hayes
+              %p “A 3D cube can be created solely in CSS, with all six faces.”
+              %p
+                Article:
+                %a{:href => "http://www.paulrhayes.com/2009-07/animated-css3-cube-interface-using-3d-transforms/", :target => "_top"} Cube explanation
+            %div#face5
+              %p I design and build websites in Brighton
+            %div#face6
+              %small Nothing down here.
  
   / LightWidget WIDGET
   .club-profiles.module.parallax.parallax-profiles.services.row
@@ -150,6 +142,8 @@
     .col-md-3
       .club-heading
         %h1.wow.fadeInUp{"data-wow-duration" => "1s"} Heading 3
+%link{:href => "/css/experiment-styles.css", :rel => "stylesheet"}/
+%link{:href => "/css/touch.css", :rel => "stylesheet"}/
 
 %script{:src => "/js/touch.js"}
 
