@@ -23,7 +23,7 @@ class AlbumsController < ApplicationController
     @album = Album.new(album_params)
     if @album.save
       flash[:notice] = "Successfully created album."
-      render :action => 'admin_show'
+      render :action => 'admin_show_album'
     else
       render :action => 'new'
     end

@@ -38,10 +38,7 @@ Rails.application.routes.draw do
 
   resources :feature_banners
   devise_for :admin_users
-  devise_for :users, controllers: {
-    sessions: 'users/sessions'
-  }
-
+  devise_for :users
   devise_for :admins
   resources :lifestyles
   resources :albums
@@ -90,6 +87,8 @@ Rails.application.routes.draw do
   match '/new_lifestyle_article' => 'lifestyles#new', :via => :get
   match '/lifestyle_admin_index' => 'lifestyles#lifestyle_admin_index', :via => :get
   match '/lifestyle' => 'lifestyles#index', :via => :get
+  match '/admin_show_album' => 'albums#index', :via => :get
+
   #root :to => "galleries#index"
   root to: 'visitors#index' #'coming_soon#index'
 end
