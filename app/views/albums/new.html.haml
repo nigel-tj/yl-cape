@@ -16,4 +16,5 @@
       .col-sm-10
         = f.file_field :cover, required: true
         %span.help-block Album Cover.
+    = f.hidden_field :artist_id, class: 'form-control', required: true, value: @artist_id
     = f.submit class: 'btn btn-primary'

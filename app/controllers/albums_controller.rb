@@ -1,13 +1,21 @@
 class AlbumsController < ApplicationController
-  before_action :authenticate_admin_user!, except: [:show]
-  #before_action :authenticate_admin!, except: [:show]
-  layout "admin", only: [:new, :create, :update, :admin_show,]
+  before_action :authenticate_admin_user!, except: [:index, :show]
+
+  layout "admin", only: [:new, :create, :update, :admin_show, :admin_index]
 
   def index
     @albums = Album.all
   end
 
+  def admin_index
+    @albums = Album.all
+  end
+
   def show
+    @album = Album.find(params[:id])
+  end
+
+  def admin_show
     @album = Album.find(params[:id])
   end
 
@@ -23,7 +31,8 @@ class AlbumsController < ApplicationController
     @album = Album.new(album_params)
     if @album.save
       flash[:notice] = "Successfully created album."
-      render :action => 'admin_show_album'
+      #render :action => 'admin_index'
+      redirect_to '/admin_album_index'
     else
       render :action => 'new'
     end
@@ -53,7 +62,7 @@ class AlbumsController < ApplicationController
 
   private
   def album_params
-    params.require(:album).permit(:name,:category,:cover,:download_flag)
+    params.require(:album).permit(:name,:cover, :artist_id)
   end
 
 end

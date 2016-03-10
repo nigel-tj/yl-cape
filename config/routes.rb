@@ -87,7 +87,9 @@ Rails.application.routes.draw do
   match '/new_lifestyle_article' => 'lifestyles#new', :via => :get
   match '/lifestyle_admin_index' => 'lifestyles#lifestyle_admin_index', :via => :get
   match '/lifestyle' => 'lifestyles#index', :via => :get
-  match '/admin_show_album' => 'albums#index', :via => :get
+  match '/admin_album_index' => 'albums#admin_index', :via => :get
+  match '/new_album' => 'albums#new', :via => :get
+
 
   #root :to => "galleries#index"
   root to: 'visitors#index' #'coming_soon#index'
