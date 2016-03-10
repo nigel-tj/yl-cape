@@ -31,27 +31,25 @@
                 %span.breaking_news
                   Breaking News 2 –
                   %a{:href => "#"} read more
-
-      .col-md-9
-        #gallery.row
-          #gallery-header
-            #gallery-header-center
-              #gallery-header-center-left
-                #gallery-header-center-left-title All
-              #gallery-header-center-right
-                #filter-all.gallery-header-center-right-links All
-                #filter-latest.gallery-header-center-right-links Latest
-                #filter-trending.gallery-header-center-right-links Trending
-          #gallery-content.services
-            #gallery-content-center
-              -for feature in @features
-                %a.servicebox.col-md-4.col-sm-6.all.latest{:href => "#{feature.link}"}
+      .col-sm-9
+        #gallery-header-center.clearfix          
+          #gallery-header-center-left.pull-left
+            #gallery-header-center-left-title All
+          #gallery-header-center-right.pull-right              
+            #filter-all.gallery-header-center-right-links All
+            #filter-latest.gallery-header-center-right-links Latest
+            #filter-trending.gallery-header-center-right-links Trending
+        .row#gallery-content
+          #gallery-content-center.services
+            -for feature in @features
+              .servicebox.all.latest.col-md-4.col-sm-6
+                %a{:href => "#{feature.link}"}
                   %img.img-responsive{:alt => "#{feature.heading}", :src => "#{feature.image_url}"}
-                  .servicebox-inner.text-left
+                  .servicebox-inner
                     %h2 #{feature.heading}
                     %p #{feature.intro}
 
-      / Adverts
+        / Adverts
       .col-sm-3
         .side-adverts
           %ul.advert-image
@@ -69,7 +67,7 @@
             var normal_size_class = "gallery-content-center-normal";
             var full_size_class = "gallery-content-center-full";
             var $container = $('#gallery-content-center');
-            $container.isotope({itemSelector : 'a'});
+            $container.isotope({itemSelector : '.servicebox'});
             function check_button(){
                 $('.gallery-header-center-right-links').removeClass(button_class);
                 if(button==1){
@@ -96,7 +94,7 @@
                     $("#gallery-content-center").addClass(full_size_class); 
                     $("#gallery-header-center-left-icon").html('<span class="iconb" data-icon="&#xe23b;"></span>');
                 }
-                $container.isotope({itemSelector : 'a'});
+                $container.isotope({itemSelector : '.servicebox'});
             }
             
             

@@ -1,9 +1,6 @@
 #gallery-header{
-	width: 100%;
 }
 #gallery-header-center-left{
-	float: left;
-	height: 35px;
 	line-height: 35px;
 	margin-top: 32px;
 }
@@ -25,15 +22,11 @@
 	cursor: pointer;
 }
 #gallery-header-center-left-title{
-	float: left;
-	height: 35px;
 	font-size: 2em;
 	color: #999;
 	margin-left: 20px;
 }
 #gallery-header-center-right{
-	float: right;
-	height: 35px;
 	margin-top: 32px;
 	line-height: 35px;
 }
@@ -64,17 +57,8 @@
 	background-color: rgba(206,31,43,0.5);
 }
 #gallery-content{
-	float: left;
-	width: 100%;
-}
-.gallery-content-center-normal {
-	width: 950px;
-	margin-right: auto;
-	margin-left: auto;
-}
-.gallery-content-center-full {
-	float: left;
-	width: 100%;
+/*	float: left;
+	width: 100%;*/
 }
 .breaking_news {
     font-size: 20px;
