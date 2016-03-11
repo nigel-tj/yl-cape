@@ -71,6 +71,12 @@ ActiveRecord::Schema.define(version: 20160310215419) do
     t.string   "profile_picture"
   end
 
+  create_table "documents", force: :cascade do |t|
+    t.string   "file"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "dowload_logs", force: :cascade do |t|
     t.integer  "download_id"
     t.datetime "download_date"
