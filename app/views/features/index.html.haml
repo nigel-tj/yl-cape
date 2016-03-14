@@ -31,21 +31,23 @@
                 %span.breaking_news
                   Breaking News 2 –
                   %a{:href => "#"} read more
-    /.col-sm-9
-      #gallery-header-center.clearfix          
-        #gallery-header-center-left.pull-left
-          #gallery-header-center-left-title All
-        #gallery-header-center-right.pull-right              
-          #filter-all.gallery-header-center-right-links All
-          #filter-latest.gallery-header-center-right-links Latest
-          #filter-trending.gallery-header-center-right-links Trending
+    /
+      .col-sm-9
+        #gallery-header-center.clearfix          
+          #gallery-header-center-left.pull-left
+            #gallery-header-center-left-title All
+          #gallery-header-center-right.pull-right              
+            #filter-all.gallery-header-center-right-links All
+            #filter-latest.gallery-header-center-right-links Latest
+            #filter-trending.gallery-header-center-right-links Trending
     .row
-      #gallery-content
-        #gallery-content-center.services
+      .col-sm-9#gallery-content
+        .row#gallery-content-center.services
           -for feature in @features
             .servicebox.all.latest.col-md-4.col-sm-6
               %a{:href => "#{feature.link}"}
-                %img.img-responsive{:alt => "#{feature.heading}", :src => "#{feature.image_url}"}
+                .servicebox-image
+                  %img.img-responsive{:alt => "#{feature.heading}", :src => "#{feature.image_url}"}
                 .servicebox-inner
                   %h2 #{feature.heading}
                   / %p #{feature.intro}

@@ -525,6 +525,12 @@ z-index:999;
         padding-bottom: 2%;
 	background-color:#222;
 }
+
+.services .servicebox-image{
+    height:200px;
+    overflow-y:hidden;
+}
+
 .services .servicebox .servicebox-inner h2{
 	color:#fff;
 	font-family: 'Open Sans';
