@@ -44,7 +44,7 @@
       .col-sm-9#gallery-content
         .row#gallery-content-center.services
           -for feature in @features
-            .servicebox.all.latest.col-md-4.col-sm-6
+            .servicebox.all.latest.col-lg-4.col-xs-6
               %a{:href => "#{feature.link}"}
                 .servicebox-image
                   %img.img-responsive{:alt => "#{feature.heading}", :src => "#{feature.image_url}"}
