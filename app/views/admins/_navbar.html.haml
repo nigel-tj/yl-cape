@@ -11,26 +11,87 @@
     / Collect the nav links, forms, and other cgontent for toggling
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
       %ul.nav.navbar-nav.navbar-left
-        %li.active
-          %a{:href => "/new_gallery_upload"}
-            GALLERY
-            %span.sr-only (current)
-        %li
-          %a{:href => "/new_feature_upload"} FEATURES
-        %li
-          %a{:href => "/new_video_upload"} VIDEOS
-        %li
-          %a{:href => "/new_music_upload"} MUSIC
-        %li
-          %a{:href => "/new_artist_upload"} ARTISTS
-        %li
-          %a{:href => "/new_event_upload"} EVENTS
-        %li
-          %a{:href => "/new_banner_upload"} BANNERS
-        %li
-          %a{:href => "/new_store_upload"} STORE
-        %li
-          %a{:href => "/new_lifestyle_upload"} LIFESTYLE
+        %li.hvr-underline-from-center.dropdown
+          %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+            Gallery
+            %span.caret
+              %ul.dropdown-menu
+                %li
+                  %a{:href => "/new_gallery_upload"} create gallery
+                %li
+                  %a{:href => "#"} all galleries
+        %li.hvr-underline-from-center.dropdown
+          %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+            News
+            %span.caret
+              %ul.dropdown-menu
+                %li
+                  %a{:href => "/new_feature_upload"} New news article
+                %li
+                  %a{:href => "#"} All news articles
+        %li.hvr-underline-from-center.dropdown
+          %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+            Videos
+            %span.caret
+              %ul.dropdown-menu
+                %li
+                  %a{:href => "/new_video_upload"} Upload video
+                %li
+                  %a{:href => "#"} all videos
+        %li.hvr-underline-from-center.dropdown
+          %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+            Music
+            %span.caret
+              %ul.dropdown-menu
+                %li
+                  %a{:href => "/new_music_upload"} Upload new track
+                %li
+                  %a{:href => "#"} all music
+        %li.hvr-underline-from-center.dropdown
+          %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+            Artists
+            %span.caret
+              %ul.dropdown-menu
+                %li
+                  %a{:href => "/new_artist_upload"} Add new artist
+                %li
+                  %a{:href => "#"} all artists
+        %li.hvr-underline-from-center.dropdown
+          %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+            Lifestyle
+            %span.caret
+              %ul.dropdown-menu
+                %li
+                  %a{:href => "/new_lifestyle_upload"} New lifestyle article
+                %li
+                  %a{:href => "#"} all lifestyle articles
+        %li.hvr-underline-from-center.dropdown
+          %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+            Main Banners
+            %span.caret
+              %ul.dropdown-menu
+                %li
+                  %a{:href => "/new_banner_upload"} Upload new banner
+                %li
+                  %a{:href => "#"} all banners
+        %li.hvr-underline-from-center.dropdown
+          %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+            Events
+            %span.caret
+              %ul.dropdown-menu
+                %li
+                  %a{:href => "/new_event_upload"} New event
+                %li
+                  %a{:href => "#"} all events
+        %li.hvr-underline-from-center.dropdown
+          %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+            Stores
+            %span.caret
+              %ul.dropdown-menu
+                %li
+                  %a{:href => "/new_store_upload"} New store
+                %li
+                  %a{:href => "#"} all stores
         %li
           %a{:href => "/"} Goto Front-End
   / /.container-fluid
