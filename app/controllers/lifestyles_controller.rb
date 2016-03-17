@@ -4,7 +4,9 @@ class LifestylesController < ApplicationController
   def index
     @lifestyle = Lifestyle.all
   end
-
+  def lifestyle_admin_index
+    @lifestyle = Lifestyle.all
+  end
   def new
     @lifestyle = Lifestyle.new
   end

@@ -21,9 +21,9 @@
             .tabs.tabs-style-linebox.wow.fadeInUp{"data-wow-duration" => "2s"}
               %nav
                 %ul.filters
-                  %li.hvr-sweep-to-top.active.filter{"data-filter" => ".villagePics", :id => "#hot_100"}
+                  %li.hvr-sweep-to-top.active.filter{"data-filter" => ".hot100", :id => "#hot_100"}
                     %span Hot 100
-                  %li.hvr-sweep-to-top.filter{"data-filter" => ".trending"}
+                  %li.hvr-sweep-to-top.filter{"data-filter" => ".mixtapes"}
                     %span Mixtapes
                   %li.hvr-sweep-to-top.filter{"data-filter" => ".news"}
                     %span News
@@ -33,13 +33,41 @@
               .gallery-photos
                 .gallery-photos-thumb
                   - for track in @tracks
-                    .gallery-photo-item.mix.villagePics.wow.fadeIn
-                      %a.pretty-photo{"rel" => "prettyPhoto[iframe]", :href => "#{track.track}"}
-                        .photo-thumb
-                          = image_tag track.image_url(:thumb)
-                        .overlay
-                          %span.gallery-icon
-                            %i.fa.fa-play.fa-2x
+                    -if(track.category == "hot100")
+                      .gallery-photo-item.mix.hot100.wow.fadeIn
+                        %a.pretty-photo{"rel" => "prettyPhoto[iframe]", :href => "#{track.track}"}
+                          .photo-thumb
+                            = image_tag track.image_url(:thumb)
+                          .overlay
+                            %span.gallery-icon
+                              %i.fa.fa-play.fa-2x
+
+                    -if(track.category == "mixtapes")
+                      .gallery-photo-item.mix.mixtapes.wow.fadeIn
+                        %a.pretty-photo{"rel" => "prettyPhoto[iframe]", :href => "#{track.track}"}
+                          .photo-thumb
+                            = image_tag track.image_url(:thumb)
+                          .overlay
+                            %span.gallery-icon
+                              %i.fa.fa-play.fa-2x
+
+                    -if(track.category == "news")
+                      .gallery-photo-item.mix.news.wow.fadeIn
+                        %a.pretty-photo{"rel" => "prettyPhoto[iframe]", :href => "#{track.track}"}
+                          .photo-thumb
+                            = image_tag track.image_url(:thumb)
+                          .overlay
+                            %span.gallery-icon
+                              %i.fa.fa-play.fa-2x
+
+                    -if(track.category == "videos")
+                      .gallery-photo-item.mix.vidoes.wow.fadeIn
+                        %a.pretty-photo{"rel" => "prettyPhoto[iframe]", :href => "#{track.track}"}
+                          .photo-thumb
+                            = image_tag track.image_url(:thumb)
+                          .overlay
+                            %span.gallery-icon
+                              %i.fa.fa-play.fa-2x
   
         / Adverts
       .col-sm-3

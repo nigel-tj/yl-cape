@@ -1,3 +1,4 @@
+%link{:href => "/css/thumbnail-slider.css", :rel => "stylesheet"}/
 .container
   .row
     / start banner
@@ -80,8 +81,6 @@
                       %img{:src => "https://img.youtube.com/vi/#{video.uid}/mqdefault.jpg"}
                       .desc
                         #{video.title}
-
-
   / start hot box
   .club-profiles.module.parallax.parallax-profiles.services.row
     .col-md-12
@@ -125,15 +124,37 @@
 
     .col-md-3
       .club-heading
-        %h1.wow.fadeInUp{"data-wow-duration" => "1s"} Heading 2
+        %h1.wow.fadeInUp{"data-wow-duration" => "1s"} ads
+      .side-adverts
+        %ul.advert-image
+          %li
+            %img.img-responsive{:alt => "image", :src => "http://www.redvillage.co.za/uploads/main_banner/image/20/davincii_cropped.jpg"}
+          %li
+            %img.img-responsive{:alt => "image", :src => "http://www.redvillage.co.za/uploads/main_banner/image/16/COUSIN_JMF_do_it_like_boss_banner_redcup.jpg"}
+          %li
+            %img.img-responsive{:alt => "image", :src => "http://www.redvillage.co.za/uploads/main_banner/image/20/davincii_cropped.jpg"}
+          %li
+            %img.img-responsive{:alt => "image", :src => "http://www.redvillage.co.za/uploads/main_banner/image/16/COUSIN_JMF_do_it_like_boss_banner_redcup.jpg"}
 
     .col-md-3
       .club-heading
-        %h1.wow.fadeInUp{"data-wow-duration" => "1s"} Heading 3
+        %h1.wow.fadeInUp{"data-wow-duration" => "1s"} ads
+      .side-adverts
+        %ul.advert-image
+          %li
+            %img.img-responsive{:alt => "image", :src => "http://www.redvillage.co.za/uploads/main_banner/image/20/davincii_cropped.jpg"}
+          %li
+            %img.img-responsive{:alt => "image", :src => "http://www.redvillage.co.za/uploads/main_banner/image/16/COUSIN_JMF_do_it_like_boss_banner_redcup.jpg"}
+          %li
+            %img.img-responsive{:alt => "image", :src => "http://www.redvillage.co.za/uploads/main_banner/image/20/davincii_cropped.jpg"}
+          %li
+            %img.img-responsive{:alt => "image", :src => "http://www.redvillage.co.za/uploads/main_banner/image/16/COUSIN_JMF_do_it_like_boss_banner_redcup.jpg"}
+
 %link{:href => "/css/experiment-styles.css", :rel => "stylesheet"}/
 %link{:href => "/css/touch.css", :rel => "stylesheet"}/
 
 %script{:src => "/js/touch.js"}
+%script{:src => "/j/touch.js"}
 
 :javascript
   $('#face1').css("background-image", "url(/images/CHIooMZW4AAvYBT.jpg)");
