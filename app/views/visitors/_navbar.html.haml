@@ -4,7 +4,7 @@
     .row
       .col-xs-12
         %a.navbar-brand{:href => "/"}
-          %img.logo.img-responsive{:alt => "Night Club logo", :src => "/images/Red-Cup-Logo.gif"}
+          %img.logo.img-responsive{:alt => "Red Cup logo", :src => "/images/Red-Cup-Logo.gif"}
         %nav.navbar.navbar-default
           .navbar-header
             %button.navbar-toggle{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
@@ -14,21 +14,17 @@
               %span.icon-bar
           #bs-example-navbar-collapse-1.collapse.navbar-collapse
             %ul.nav.navbar-nav.pull-right
-              %li.hvr-underline-from-center
-                %a{:href => "/users/sign_up"} JOIN US
-              %li.hvr-underline-from-center
-                %a{:href => "/users/sign_in"} Login
               %li.nav-social-link
-                %a{:href => "#"}
+                %a{:href => "https://www.facebook.com/TheRedcupvillage", :target => "_blank"}
                   %img.img-responsive{:alt => "Facebook", :src => "/images/facebook_circle.png"}
               %li.nav-social-link
-                %a{:href => "#"}
-                  %img.img-responsive{:alt => "Twitter", :src => "/images/twitter_circle.png"}
+                %a{:href => "https://twitter.com/Redcupvillage"}
+                  %img.img-responsive{:alt => "Twitter", :src => "/images/twitter_circle.png", :target => "_blank"}
               %li.nav-social-link
-                %a{:href => "#"}
+                %a{:href => "https://www.instagram.com/redcupvillage", :target => "_blank"}
                   %img.img-responsive{:alt => "Instagram", :src => "/images/instagram_circle.png"}
               %li.nav-social-link
-                %a{:href => "#"}
+                %a{:href => "https://www.instagram.com/redcupvillage", :target => "_blank"}
                   %img.img-responsive{:alt => "Youtube", :src => "/images/youtube_circle.png"}
 
             %ul.nav.navbar-nav.pull-left
@@ -46,7 +42,7 @@
                   %li
                     %a{:href => "#"} Team
                   %li.divider{:role => "separator"}
-                  %li.dropdown-header Contact us
+                  %li.dropdown-header 
                   %li
                     %a{:href => "#"} Advertise
                   %li
@@ -54,17 +50,19 @@
               %li.hvr-underline-from-center
                 %a.scroll{:href => "/news"} NEWS
               %li.hvr-underline-from-center
-                %a.scroll{:href => "/#comingSoon"} MUSIC
+                %a.scroll{:href => "/music"} MUSIC
               %li.hvr-underline-from-center
-                %a.scroll{:href => "/#comingSoon"} LIFESTYLE
+                %a.scroll{:href => "/lifestyle"} LIFESTYLE
               %li.hvr-underline-from-center
-                %a.scroll{:href => "/#comingSoon"} ARTISTS
+                %a.scroll{:href => "/artists"} ARTISTS
               %li.hvr-underline-from-center
-                %a.scroll{:href => "/#comingSoon"} EVENTS
+                %a.scroll{:href => "/events"} EVENTS
               %li.hvr-underline-from-center
                 %a.scroll{:href => "/#comingSoon"} MEDIA
               %li.hvr-underline-from-center
                 %a.scroll{:href => "/#comingSoon"} STORE
+              %li.hvr-underline-from-center
+                %a{:href => "#"} CONTACT US
               <!-- %li.hvr-underline-from-center -->
               <!--   %a.scroll{:href => "/videos"} VIDEOS -->
               <!-- %li.hvr-underline-from-center -->

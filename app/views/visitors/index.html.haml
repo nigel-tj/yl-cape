@@ -1,6 +1,6 @@
 %link{:href => "/css/thumbnail-slider.css", :rel => "stylesheet"}/
 .container
-  .row
+  .row.club-profiles
     / start banner
     #slider.flexslider
       %ul.slides      
@@ -20,13 +20,13 @@
               / .caption #{banner.name}
               / .caption.link
               /  %a{:href => "#"} More here
-  / end banner
+    / end banner
 
-  .club-profiles.module.parallax.parallax-profiles.row
+  .row.module.parallax.parallax-profiles
     .col-md-12
-      .club-heading
-        %h1.wow.fadeInUp{"data-wow-duration" => "1s"} Redvillage TV
-      #player.col-sm-8
+      %h1.wow.fadeInUp{"data-wow-duration" => "1s"} Redvillage TV
+    .row
+      #player.col-sm-9
         :javascript
           // 2. This code loads the IFrame Player API code asynchronously.
           var tag = document.createElement('script');
@@ -70,7 +70,7 @@
           function playVideo(videoId) {          
             player.loadVideoById(videoId, 0, "medium");
           }
-      .col-md-12
+      .col-md-3
         #video_carousel.flexslider
           %ul.slides
             -for video in @videos
@@ -81,7 +81,7 @@
                       %img{:src => "https://img.youtube.com/vi/#{video.uid}/mqdefault.jpg"}
                       .desc
                         #{video.title}
-  / start hot box
+    / start hot box
   .club-profiles.module.parallax.parallax-profiles.services.row
     .col-md-12
       .club-heading
@@ -122,7 +122,7 @@
       %script{:src => "//lightwidget.com/widgets/lightwidget.js"}
       %iframe#lightwidget_4b69af7296.lightwidget-widget{:allowtransparency => "true", :name => "lightwidget_4b69af7296", :scrolling => "no", :src => "//lightwidget.com/widgets/4b69af7296a85a5e86fd7378cb9a9cf1.html", :style => "width: 100%; border: 0; overflow: hidden;"}
 
-    .col-md-3
+    .col-md-4
       .club-heading
         %h1.wow.fadeInUp{"data-wow-duration" => "1s"} ads
       .side-adverts
@@ -133,10 +133,8 @@
             %img.img-responsive{:alt => "image", :src => "http://www.redvillage.co.za/uploads/main_banner/image/16/COUSIN_JMF_do_it_like_boss_banner_redcup.jpg"}
           %li
             %img.img-responsive{:alt => "image", :src => "http://www.redvillage.co.za/uploads/main_banner/image/20/davincii_cropped.jpg"}
-          %li
-            %img.img-responsive{:alt => "image", :src => "http://www.redvillage.co.za/uploads/main_banner/image/16/COUSIN_JMF_do_it_like_boss_banner_redcup.jpg"}
 
-    .col-md-3
+    .col-md-4
       .club-heading
         %h1.wow.fadeInUp{"data-wow-duration" => "1s"} ads
       .side-adverts
@@ -147,8 +145,6 @@
             %img.img-responsive{:alt => "image", :src => "http://www.redvillage.co.za/uploads/main_banner/image/16/COUSIN_JMF_do_it_like_boss_banner_redcup.jpg"}
           %li
             %img.img-responsive{:alt => "image", :src => "http://www.redvillage.co.za/uploads/main_banner/image/20/davincii_cropped.jpg"}
-          %li
-            %img.img-responsive{:alt => "image", :src => "http://www.redvillage.co.za/uploads/main_banner/image/16/COUSIN_JMF_do_it_like_boss_banner_redcup.jpg"}
 
 %link{:href => "/css/experiment-styles.css", :rel => "stylesheet"}/
 %link{:href => "/css/touch.css", :rel => "stylesheet"}/

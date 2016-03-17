@@ -31,13 +31,9 @@
 }
 .vid-item {
     display: block;
-    float: left;
     margin: 0;
-    padding:10px 10px 0 0;
-}
-
-.vid-item {
-    width:auto;
+    margin-bottom:10px;
+    width:100%;
 }
 
 .thumb {
@@ -105,6 +101,14 @@
         right: 0;
         top: -20px;
         }
+}
+
+#video_carousel.flexslider .slides > li{
+float:none !important;
+}
+
+#video_carousel .flex-viewport{
+    max-height: 550px !important;
 }
 
 @media (max-width: 360px)
