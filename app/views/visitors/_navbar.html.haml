@@ -40,7 +40,7 @@
                   %li
                     %a{:href => "#"} Services
                   %li
-                    %a{:href => "#"} Team
+                    %a{:href => "/team"} Team
                   %li.divider{:role => "separator"}
                   %li.dropdown-header 
                   %li
@@ -58,17 +58,9 @@
               %li.hvr-underline-from-center
                 %a.scroll{:href => "/events"} EVENTS
               %li.hvr-underline-from-center
-                %a.scroll{:href => "/#comingSoon"} MEDIA
-              %li.hvr-underline-from-center
                 %a.scroll{:href => "/#comingSoon"} STORE
               %li.hvr-underline-from-center
-                %a{:href => "#"} CONTACT US
-              <!-- %li.hvr-underline-from-center -->
-              <!--   %a.scroll{:href => "/videos"} VIDEOS -->
-              <!-- %li.hvr-underline-from-center -->
-              <!--   %a.scroll{:href => "/team"} TEAM -->
-              <!-- %li.hvr-underline-from-center -->
-              <!--   %a.scroll{:href => "#ComingSoon"} CONTACT -->
+                %a{:href => "/contact_us"} CONTACT US
 / end header
 - flash.each do |key, value|
   %div{:class => "alert alert-#{key} alert-dismissable"}

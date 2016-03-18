@@ -153,9 +153,58 @@
 %script{:src => "/j/touch.js"}
 
 :javascript
-  $('#face1').css("background-image", "url(/images/CHIooMZW4AAvYBT.jpg)");
-  $('#face2').css("background-image", "url(/images/gallery-img1.jpg)");
-  $('#face3').css("background-image", "url(/images/gallery-img8.jpg)");
-  $('#face4').css("background-image", "url(/images/gallery-small-img-5.jpg)");
-  $('#face5').css("background-image", "url(/images/gallery-small-img-12.jpg)");
-  $('#face6').css("background-image", "url(/images/jj.png)");
+  $(document).ready(function(){
+
+    $('#face1').css("background-image", "url(/images/CHIooMZW4AAvYBT.jpg)");
+    $('#face2').css("background-image", "url(/images/gallery-img1.jpg)");
+    $('#face3').css("background-image", "url(/images/gallery-img8.jpg)");
+    $('#face4').css("background-image", "url(/images/gallery-small-img-5.jpg)");
+    $('#face5').css("background-image", "url(/images/gallery-small-img-12.jpg)");
+    $('#face6').css("background-image", "url(/images/jj.png)");
+
+    $('#carousel').flexslider({
+      animation: "slide",
+      controlNav: false,
+      animationLoop: true,
+      slideshow: false,
+      itemWidth: 400,
+      itemMargin: 5,
+      asNavFor: '#slider'
+    });
+
+    $('#trends_carousel').flexslider({
+      animation: "slide",
+      controlNav: false,
+      animationLoop: false,
+      slideshow: false,
+      itemWidth: 400,
+      itemMargin: 5,
+      asNavFor: '#slider'
+    });
+
+    $('#video_carousel').flexslider({
+      animation: "slide",
+      direction: "vertical",
+      controlNav: false,
+      animationLoop: false,
+      slideshow: false,
+      itemWidth: 380,
+      itemMargin: 1,
+      asNavFor: '#slider'
+    });
+
+ 
+    $('#slider').flexslider({
+      animation: "slide",
+      controlNav: false,
+      animationLoop: false,
+      slideshow: false,
+      sync: "#carousel"
+    });
+
+    $('.grid').masonry({
+      percentPosition: true,
+      columnWidth: '.grid-item',
+      itemSelector: '.grid-item'
+    });
+  });

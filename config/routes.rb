@@ -64,7 +64,7 @@ Rails.application.routes.draw do
   match '/news' => 'features#index', :via => :get
   match '/social' => 'visitors#social', :via => :get
   match '/videos' => 'videos#index', :via => :get
-  match '/contact' => 'visitors#contact', :via => :get
+  match '/contact_us' => 'visitors#contact', :via => :get
   match '/artist' => 'artists#show', :via => :get
   match '/store' => 'visitors#store', :via => :get
   match '/new_artist_upload' => 'artists#new', :via => :get

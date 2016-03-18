@@ -37,7 +37,10 @@
         %nav
           %ul.filters
             %li.hvr-sweep-to-top.active.filter{"data-filter" => ".allDownloads", :id => "#all_downloads_tab"}
-              %span All Track
+              - if(@artist.category == "model" || @artist.category == "management")
+                %span Portfolio
+              - elsif(@artist.category == "label")
+                %span All Track
             %li.hvr-sweep-to-top.filter{"data-filter" => ".bio"}
               %span Bio 
   .container-fluid
