@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160317085811) do
+ActiveRecord::Schema.define(version: 20160318131122) do
 
   create_table "admin_users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -56,29 +56,11 @@ ActiveRecord::Schema.define(version: 20160317085811) do
     t.boolean  "download_flag"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
-  end
-
-  create_table "artists", force: :cascade do |t|
-    t.string   "name"
-    t.string   "email"
-    t.integer  "cell_number"
-    t.text     "bio"
-    t.string   "category"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-    t.string   "cover"
-    t.string   "profile_picture"
     t.integer  "artist_id"
   end
 
 # Could not dump table "artists" because of following NoMethodError
 #   undefined method `[]' for nil:NilClass
-
-  create_table "documents", force: :cascade do |t|
-    t.string   "file"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
   create_table "dowload_logs", force: :cascade do |t|
     t.integer  "download_id"
@@ -140,6 +122,7 @@ ActiveRecord::Schema.define(version: 20160317085811) do
     t.string   "title"
     t.string   "link"
     t.string   "intro"
+    t.string   "category"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

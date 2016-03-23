@@ -6,8 +6,9 @@
     %p
       = link_to "Add songs", new_music_path(:album_id => @album)
       |
-      \#{link_to "Delete album", @album, :confirm => 'Are you sure?', :method => :delete} |
-      \#{link_to "View All Albums", albums_path}
+      #{link_to "Delete album", @album, :confirm => 'Are you sure?', :method => :delete} 
+      |
+      #{link_to "View All Albums", albums_path}
   #musics
     - for song in @album.musics
       .col-md-4{:style => "height:300px"}

@@ -19,10 +19,6 @@ class AlbumsController < ApplicationController
     @album = Album.find(params[:id])
   end
 
-  def admin_show
-    @album = Album.find(params[:id])
-  end
-
   def new
     @album = Album.new
   end
@@ -31,8 +27,7 @@ class AlbumsController < ApplicationController
     @album = Album.new(album_params)
     if @album.save
       flash[:notice] = "Successfully created album."
-      #render :action => 'admin_index'
-      redirect_to '/admin_album_index'
+      render :action => 'admin_show'
     else
       render :action => 'new'
     end
