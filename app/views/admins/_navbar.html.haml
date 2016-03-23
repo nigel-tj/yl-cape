@@ -11,62 +11,87 @@
     / Collect the nav links, forms, and other cgontent for toggling
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
       %ul.nav.navbar-nav.navbar-left
-        %li.active
-          %a{:href => "/gallery_uploads"}
-            GALLERY
-            %span.sr-only (current)
+        %li.hvr-underline-from-center.dropdown
+          %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+            Gallery
+            %span.caret
+              %ul.dropdown-menu
+                %li
+                  %a{:href => "/new_gallery_upload"} create gallery
+                %li
+                  %a{:href => "#"} all galleries
+        %li.hvr-underline-from-center.dropdown
+          %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+            News
+            %span.caret
+              %ul.dropdown-menu
+                %li
+                  %a{:href => "/new_feature_upload"} New news article
+                %li
+                  %a{:href => "#"} All news articles
+        %li.hvr-underline-from-center.dropdown
+          %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+            Videos
+            %span.caret
+              %ul.dropdown-menu
+                %li
+                  %a{:href => "/new_video_upload"} Upload video
+                %li
+                  %a{:href => "#"} all videos
+        %li.hvr-underline-from-center.dropdown
+          %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+            Music
+            %span.caret
+              %ul.dropdown-menu
+                %li
+                  %a{:href => "/new_music_upload"} Upload new track
+                %li
+                  %a{:href => "#"} all music
+        %li.hvr-underline-from-center.dropdown
+          %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+            Artists
+            %span.caret
+              %ul.dropdown-menu
+                %li
+                  %a{:href => "/new_artist_upload"} Add new artist
+                %li
+                  %a{:href => "#"} all artists
+        %li.hvr-underline-from-center.dropdown
+          %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+            Lifestyle
+            %span.caret
+              %ul.dropdown-menu
+                %li
+                  %a{:href => "/new_lifestyle_upload"} New lifestyle article
+                %li
+                  %a{:href => "#"} all lifestyle articles
+        %li.hvr-underline-from-center.dropdown
+          %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+            Main Banners
+            %span.caret
+              %ul.dropdown-menu
+                %li
+                  %a{:href => "/new_banner_upload"} Upload new banner
+                %li
+                  %a{:href => "#"} all banners
+        %li.hvr-underline-from-center.dropdown
+          %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+            Events
+            %span.caret
+              %ul.dropdown-menu
+                %li
+                  %a{:href => "/new_event_upload"} New event
+                %li
+                  %a{:href => "#"} all events
+        %li.hvr-underline-from-center.dropdown
+          %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+            Stores
+            %span.caret
+              %ul.dropdown-menu
+                %li
+                  %a{:href => "/new_store_upload"} New store
+                %li
+                  %a{:href => "#"} all stores
         %li
-          %a{:href => "/feature_uploads"} FEATURES
-        %li
-          %a{:href => "/video_uploads"} VIDEOS
-        %li
-          %a{:href => "/music_uploads"} MUSIC
-        %li
-          %a{:href => "/artist_uploads"} ARTISTS
-        %li
-          %a{:href => "event_uploads"} EVENTS
-        %li
-          %a{:href => "banner_uploads"} BANNERS
-        %li
-          %a{:href => "store_uploads"} STORE
-
-      <!--   %li.dropdown -->
-      <!--     %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"} -->
-      <!--       Dropdown -->
-      <!--       %span.caret -->
-      <!--     %ul.dropdown-menu -->
-      <!--       %li -->
-      <!--         %a{:href => "#"} Action -->
-      <!--       %li -->
-      <!--         %a{:href => "#"} Another action -->
-      <!--       %li -->
-      <!--         %a{:href => "#"} Something else here -->
-      <!--       %li.divider{:role => "separator"} -->
-      <!--       %li -->
-      <!--         %a{:href => "#"} Separated link -->
-      <!--       %li.divider{:role => "separator"} -->
-      <!--       %li -->
-      <!--         %a{:href => "#"} One more separated link -->
-      <!-- %form.navbar-form.navbar-left{:role => "search"} -->
-      <!--   .form-group -->
-      <!--     %input.form-control{:placeholder => "Search", :type => "text"}/ -->
-      <!--   %button.btn.btn-default{:type => "submit"} Submit -->
-      <!-- %ul.nav.navbar-nav.navbar-right -->
-      <!--   %li -->
-      <!--     %a{:href => "#"} Link -->
-      <!--   %li.dropdown -->
-      <!--     %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"} -->
-      <!--       Dropdown -->
-      <!--       %span.caret -->
-      <!--     %ul.dropdown-menu -->
-      <!--       %li -->
-      <!--         %a{:href => "#"} Action -->
-      <!--       %li -->
-      <!--         %a{:href => "#"} Another action -->
-      <!--       %li -->
-      <!--         %a{:href => "#"} Something else here -->
-      <!--       %li.divider{:role => "separator"} -->
-      <!--       %li -->
-      <!--         %a{:href => "#"} Separated link -->
-    / /.navbar-collapse
+          %a{:href => "/"} Goto Front-End
   / /.container-fluid

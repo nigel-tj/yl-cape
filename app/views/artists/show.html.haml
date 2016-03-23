@@ -5,25 +5,30 @@
 #reservation.module.parallax.parallax-reservation
   .container
     .row
-      %h1.wow.fadeInUp{"data-wow-duration" => "1s"} #{@artist.name}
-      %p.wow.fadeIn{"data-wow-duration" => "1s"}
-      .row.text-center
-        .social.affix-social
-          %a{:href => "http://www.facebook.com"}
-            %i.fa.fa-facebook.fa-2x
-          %a{:href => "http://www.google.com"}
-            %i.fa.fa-google.fa-2x
-          %a{:href => "http://www.linkedin.com"}
-            %i.fa.fa-linkedin.fa-2x
-          %a{:href => "http://www.pinterest.com"}
-            %i.fa.fa-pinterest.fa-2x
-          %a{:href => "http://www.twitter.com"}
-            %i.fa.fa-twitter.fa-2x
-          %a{:href => "http://www.rss.com"}
-            %i.fa.fa-rss.fa-2x
-          %a{:href => "http://www.skype.com"}
-            %i.fa.fa-skype.fa-2x
-        
+      .profile-header-container
+        .profile-header-img
+          %img.img-circle{:src => "#{@artist.profile_picture_url}"}/
+          / badge
+          .rank-label-container
+            %span.label.label-default.rank-label.social.affix-social
+              %a{:href => "http://www.facebook.com"}
+                %i.fa.fa-facebook.fa-2x
+              %a{:href => "http://www.google.com"}
+                %i.fa.fa-google.fa-2x
+              %a{:href => "http://www.linkedin.com"}
+                %i.fa.fa-linkedin.fa-2x
+              %a{:href => "http://www.pinterest.com"}
+                %i.fa.fa-pinterest.fa-2x
+              %a{:href => "http://www.twitter.com"}
+                %i.fa.fa-twitter.fa-2x
+              %a{:href => "http://www.rss.com"}
+                %i.fa.fa-rss.fa-2x
+              %a{:href => "http://www.skype.com"}
+                %i.fa.fa-skype.fa-2x
+
+  %h1.wow.fadeInUp{"data-wow-duration" => "1s"} #{@artist.name}
+
+  %p.wow.fadeIn{"data-wow-duration" => "1s"}        
 / start gallery
 #gallery.text-center
   .container
@@ -32,7 +37,10 @@
         %nav
           %ul.filters
             %li.hvr-sweep-to-top.active.filter{"data-filter" => ".allDownloads", :id => "#all_downloads_tab"}
-              %span All Track
+              - if(@artist.category == "model" || @artist.category == "management")
+                %span Portfolio
+              - elsif(@artist.category == "label")
+                %span All Track
             %li.hvr-sweep-to-top.filter{"data-filter" => ".bio"}
               %span Bio 
   .container-fluid
@@ -70,4 +78,5 @@
     document.getElementById('#bio_div').style.display = 'none';
     document.getElementById('#all_downloads_tab').classList.add("active");
   });
-  $('#reservation').css('background-image','url(#{@artist.cover_url})');
+  $('body').css('background-image','url(#{@artist.cover_url})');
+

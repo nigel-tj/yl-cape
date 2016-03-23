@@ -1,5 +1,5 @@
 class ArtistsController < ApplicationController
-  layout "admin", only: [:new, :create, :update]
+  layout "admin", only: [:new, :create, :update, :admin_index]
 
   def index
     @artists = Artist.all 
@@ -18,7 +18,7 @@ class ArtistsController < ApplicationController
     @artist = Artist.new(artist_params)
     if @artist.save
       flash[:notice] = "Successfully created artist."
-      render :action => 'admin_index'
+      redirect_to '/admin_artist_index'
     else
       render :action => 'new'
     end
@@ -38,6 +38,6 @@ class ArtistsController < ApplicationController
   private
 
   def artist_params
-    params.require(:artist).permit(:name, :email, :cell_number, :bio, :cover, :profile_picture)
+    params.require(:artist).permit(:name, :email, :cell_number, :bio, :cover, :profile_picture, :category)
   end
 end

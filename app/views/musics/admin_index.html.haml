@@ -1,42 +1,60 @@
-#services
-  .container
-    .row
-    / start gallery
-    #gallery.text-center
-      .container
-        .row.text-center
+.container
+  /news tabs
+  .row
+    .col-sm-9
+      .row
+        .col-sm-12
+          .ticker-container.col-sm-2
+            .ticker-caption
+              %p Music
+              / start services
+      .row.front-news
+        .col-sm-12.services.text-center
           .tabs.tabs-style-linebox.wow.fadeInUp{"data-wow-duration" => "2s"}
             %nav
               %ul.filters
-                %li.hvr-sweep-to-top.active.filter{"data-filter" => ".villagePics", :id => "#vilage_picks"}
-                  %span Village picks
-                %li.hvr-sweep-to-top.filter{"data-filter" => ".mashUps"}
-                  %span Mash ups
-                %li.hvr-sweep-to-top.filter{"data-filter" => ".goodMusic"}
-                  %span #goodMusic
-                %li.hvr-sweep-to-top.filter{"data-filter" => ".artists"}
-                  %span Browse By artist
-
-      .container-fluid
-        .row.gallery.text-center
-          .col-md-12.noPadding
-            .gallery-photo-grid
-              .gallery-photos
-                .gallery-photos-thumb
-                - if @tracks.blank?
-                  %p There are currently no tracks available
-                - else
-                  - for track in @tracks
-                    .gallery-photo-item.mix.villagePics.wow.fadeIn
-                      %a.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "#{track.image_url}"}
+                %li.hvr-sweep-to-top.active.filter{"data-filter" => ".hot100", :id => "#hot_100"}
+                  %span Hot 100
+                %li.hvr-sweep-to-top.filter{"data-filter" => ".mixtapes"}
+                  %span Mixtapes
+                %li.hvr-sweep-to-top.filter{"data-filter" => ".news"}
+                  %span News
+                %li.hvr-sweep-to-top.filter{"data-filter" => ".videos"}
+                  %span Videos
+          .gallery-photo-grid
+            .gallery-photos
+              .gallery-photos-thumb
+                - for track in @tracks
+                  -if(track.category == "hot100")
+                    .gallery-photo-item.mix.hot100.wow.fadeIn
+                      %a.pretty-photo{"rel" => "prettyPhoto[iframe]", :href => "#{track.track}"}
                         .photo-thumb
                           = image_tag track.image_url(:thumb)
                         .overlay
                           %span.gallery-icon
                             %i.fa.fa-play.fa-2x
-                  -for artist in @artists  
-                    .gallery-photo-item.mix.artists.wow.fadeIn
-                      %a.pretty-photo{:href => "artists/#{artist.id}?#{artist.name}"}
+
+                  -if(track.category == "mixtapes")
+                    .gallery-photo-item.mix.mixtapes.wow.fadeIn
+                      %a.pretty-photo{"rel" => "prettyPhoto[iframe]", :href => "#{track.track}"}
+                        .photo-thumb
+                          = image_tag track.image_url(:thumb)
+                        .overlay
+                          %span.gallery-icon
+                            %i.fa.fa-play.fa-2x
+
+                  -if(track.category == "news")
+                    .gallery-photo-item.mix.news.wow.fadeIn
+                      %a.pretty-photo{"rel" => "prettyPhoto[iframe]", :href => "#{track.track}"}
+                        .photo-thumb
+                          = image_tag track.image_url(:thumb)
+                        .overlay
+                          %span.gallery-icon
+                            %i.fa.fa-play.fa-2x
+
+                  -if(track.category == "videos")
+                    .gallery-photo-item.mix.vidoes.wow.fadeIn
+                      %a.pretty-photo{"rel" => "prettyPhoto[iframe]", :href => "#{track.track}"}
                         .photo-thumb
                           = image_tag track.image_url(:thumb)
                         .overlay

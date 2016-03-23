@@ -8,7 +8,7 @@
           .tabs.tabs-style-linebox.wow.fadeInUp{"data-wow-duration" => "2s"}
             %nav
               %ul.filters
-                %li.hvr-sweep-to-top.active.filter{"data-filter" => ".all"}
+                %li.hvr-sweep-to-top.active.filter{"data-filter" => ".model"}
                   %span Models
                 %li.hvr-sweep-to-top.filter{"data-filter" => ".label"}
                   %span Labels
@@ -22,12 +22,31 @@
               .gallery-photos
                 .gallery-photos-thumb
                   -for artist in @artists  
-                    .gallery-photo-item.mix.artists.wow.fadeIn
-                      %a.pretty-photo{:href => "artists/#{artist.id}?#{artist.name}"}
-                        .photo-thumb
-                          = image_tag artist.profile_picture_url(:thumb)
-                        .overlay
-                          %span.gallery-icon
+                    - if(artist.category == "model")
+                      .gallery-photo-item.mix.model.wow.fadeIn
+                        %a.pretty-photo{:href => "artists/#{artist.id}?#{artist.name}"}
+                          .photo-thumb
+                            = image_tag artist.profile_picture_url(:thumb)
+                          .overlay
+                            %span.gallery-icon
+                            %i.fa.fa-play.fa-2x
+
+                    - if(artist.category == "label")
+                      .gallery-photo-item.mix.label.wow.fadeIn
+                        %a.pretty-photo{:href => "artists/#{artist.id}?#{artist.name}"}
+                          .photo-thumb
+                            = image_tag artist.profile_picture_url(:thumb)
+                          .overlay
+                            %span.gallery-icon
+                            %i.fa.fa-play.fa-2x
+
+                    - if(artist.category == "management")
+                      .gallery-photo-item.mix.management.wow.fadeIn
+                        %a.pretty-photo{:href => "artists/#{artist.id}?#{artist.name}"}
+                          .photo-thumb
+                            = image_tag artist.profile_picture_url(:thumb)
+                          .overlay
+                            %span.gallery-icon
                             %i.fa.fa-play.fa-2x
                           
 / end gallery

@@ -1,151 +1,61 @@
 / Event of the month
-#events.module.parallax.parallax-events
-  .container
-    .row
-      .event-inner.col-sm-12.text-center
-        %h1.wow.fadeInUp{"data-wow-duration" => "1s"} EVENTS OF THE MONTH
-        %ul.bxslider.one
-          %li
-            .event-box
-              .event-box-left.clearfix
-                %h2
-                  29
+.container#events
+  .row.col-md-12
+    .event-inner.col-sm-12.text-center
+      %h1.wow.fadeInUp{"data-wow-duration" => "1s"} EVENTS OF THE MONTH
+      %ul.bxslider.one
+        %li
+          .event-box
+            .event-box-left.clearfix
+              %h2
+                29
+                %br/
+                %span.month APRIL
+              %h3 11:00 PM
+              %p
+                %i.fa.fa-map-marker
+                %br/
+                CITY PLAZA,
+                = succeed "NEW" do
                   %br/
-                  %span.month APRIL
-                %h3 11:00 PM
-                %p
-                  %i.fa.fa-map-marker
+            .event-box-right.clearfix
+              %img.img-responsive{:alt => "Night Club Event", :src => "images/event-img1.jpg"}/
+            .event-box-bottom.text-left.clearfix
+              %h2 Fire and ice dumparter party!
+        %li
+          .event-box
+            .event-box-left.clearfix
+              %h2
+                07
+                %br/
+                %span.month AUGUST
+              %h3 12:20 AM
+              %p
+                %i.fa.fa-map-marker
+                %br/
+                CITY PLAZA,
+                = succeed "NEW" do
                   %br/
-                  CITY PLAZA,
-                  = succeed "NEW" do
-                    %br/
-              .event-box-right.clearfix
-                %img.img-responsive{:alt => "Night Club Event", :src => "images/event-img1.jpg"}/
-              .event-box-bottom.text-left.clearfix
-                %h2 Fire and ice dumparter party!
-          %li
-            .event-box
-              .event-box-left.clearfix
-                %h2
-                  07
+            .event-box-right.clearfix
+              %img.img-responsive{:alt => "Night Club Event", :src => "images/event-img2.jpg"}/
+            .event-box-bottom.text-left.clearfix
+              %h2 Proudly Present owner theme event
+        %li
+          .event-box
+            .event-box-left.clearfix
+              %h2
+                21
+                %br/
+                %span.month October
+              %h3 03:10 AM
+              %p
+                %i.fa.fa-map-marker
+                %br/
+                CITY PLAZA,
+                = succeed "NEW" do
                   %br/
-                  %span.month AUGUST
-                %h3 12:20 AM
-                %p
-                  %i.fa.fa-map-marker
-                  %br/
-                  CITY PLAZA,
-                  = succeed "NEW" do
-                    %br/
-              .event-box-right.clearfix
-                %img.img-responsive{:alt => "Night Club Event", :src => "images/event-img2.jpg"}/
-              .event-box-bottom.text-left.clearfix
-                %h2 Proudly Present owner theme event
-          %li
-            .event-box
-              .event-box-left.clearfix
-                %h2
-                  21
-                  %br/
-                  %span.month October
-                %h3 03:10 AM
-                %p
-                  %i.fa.fa-map-marker
-                  %br/
-                  CITY PLAZA,
-                  = succeed "NEW" do
-                    %br/
-              .event-box-right.clearfix
-                %img.img-responsive{:alt => "Night Club Event", :src => "images/event-img3.jpg"}/
-              .event-box-bottom.text-left.clearfix
-                %h2 Proudly Present owner theme event
+            .event-box-right.clearfix
+              %img.img-responsive{:alt => "Night Club Event", :src => "images/event-img3.jpg"}/
+            .event-box-bottom.text-left.clearfix
+              %h2 Proudly Present owner theme event
 / Event of the month
-/ start club profiles
-.container
-  .row
-  .club-profiles.module.parallax.parallax-profiles.services.row
-    .col-md-12
-      %h1.wow.fadeInUp{"data-wow-duration" => "1s"} MOST POPULAR DJ'S PROFILE
-      .col-md-6.col-sm-12.profile-box.wow.fadeIn{"data-wow-delay" => "0.5s", "data-wow-duration" => "2s"}
-        .col-md-6.col-sm-6.profile-box-left.flip-container.text-center
-          .flipper
-            #dj-1.front                 
-            .back.text-center
-              %ul.profile-social
-                %li.facebook
-                  %a.entypo-facebook{:href => "#"}
-                    %i.fa.fa-facebook.fa-2x
-                %li.twitter
-                  %a.entypo-twitter{:href => "#"}
-                    %i.fa.fa-twitter.fa-2x
-                %li.dribbble
-                  %a.entypo-dribbble{:href => "#"}
-                    %i.fa.fa-google-plus.fa-2x
-                %li.behance
-                  %a.entypo-behance{:href => "#"}
-                    %i.fa.fa-pinterest.fa-2x
-                %li.linked-in
-                  %a.entypo-linkedin{:href => "#"}
-                    %i.fa.fa-linkedin.fa-2x
-        .col-md-6.col-sm-6.profle-box-right.clearfix
-          %h2 DJ Zadda
-          %h3 Turnable master
-          %p
-            Nulla or narm mus vel ultricies. Quisque ve odio nibh. Fusce vel dignissim orem, ac malesuada massa. Manas malesuada.
-          .profile-info.text-center
-            .eq
-              %span.bar.bar-1
-              %span.bar.bar-2
-              %span.bar.bar-3
-            %p SINCE
-            %h3 2002
-          .profile-info.text-center
-            %img.img-responsive{:alt => "Night Club", :src => "images/event.png"}/
-            %p EVENT
-            %h3 1367
-          .profile-info.text-center
-            %img.img-responsive{:alt => "Night Club", :src => "images/latest.png"}/
-            %p LATEST
-            %h3 12:33
-      .col-md-6.col-sm-12.profile-box.wow.fadeIn{"data-wow-delay" => "1s", "data-wow-duration" => "2s"}
-        .col-md-6.col-sm-6.profile-box-left.flip-container.text-center
-          .flipper
-            #dj-2.front
-            .back.text-center
-              %ul.profile-social
-                %li.facebook
-                  %a.entypo-facebook{:href => "#"}
-                    %i.fa.fa-facebook.fa-2x
-                %li.twitter
-                  %a.entypo-twitter{:href => "#"}
-                    %i.fa.fa-twitter.fa-2x
-                %li.dribbble
-                  %a.entypo-dribbble{:href => "#"}
-                    %i.fa.fa-google-plus.fa-2x
-                %li.behance
-                  %a.entypo-behance{:href => "#"}
-                    %i.fa.fa-pinterest.fa-2x
-                %li.linked-in
-                  %a.entypo-linkedin{:href => "#"}
-                    %i.fa.fa-linkedin.fa-2x
-        .col-md-6.col-sm-6.profle-box-right.clearfix
-          %h2 DJ Robat
-          %h3 Turnable master
-          %p
-            Nulla or narm mus vel ultricies. Quisque ve odio nibh. Fusce vel dignissim orem, ac malesuada massa. Manas malesuada.
-          .profile-info.text-center
-            .eq
-              %span.bar.bar-1
-              %span.bar.bar-2
-              %span.bar.bar-3
-            %p SINCE
-            %h3 2008
-          .profile-info.text-center
-            %img.img-responsive{:alt => "Night Club", :src => "images/event.png"}/
-            %p EVENT
-            %h3 3598
-          .profile-info.text-center
-            %img.img-responsive{:alt => "Night Club", :src => "images/latest.png"}/
-            %p LATEST
-            %h3 10:33
-/ end club profiles

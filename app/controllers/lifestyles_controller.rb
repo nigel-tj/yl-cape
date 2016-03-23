@@ -4,7 +4,9 @@ class LifestylesController < ApplicationController
   def index
     @lifestyle = Lifestyle.all
   end
-
+  def lifestyle_admin_index
+    @lifestyle = Lifestyle.all
+  end
   def new
     @lifestyle = Lifestyle.new
   end
@@ -26,7 +28,7 @@ class LifestylesController < ApplicationController
   private
 
   def lifestyle_params
-    params.require(:lifestyle).permit(:link,:image,:intro,:title)
+    params.require(:lifestyle).permit(:link,:image,:intro,:title,:category)
   end
 
 end

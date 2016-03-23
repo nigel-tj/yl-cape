@@ -18,6 +18,11 @@
         = f.file_field :profile_picture
         %span.help-block Profile Picture.
     .form-group
+      = f.label :category, :class => "control-label col-sm-2"
+      .col-sm-10
+        = f.select "category", [["Select category","none"],["Model","model"], ["Label","label"], ["Management","management"]]
+
+    .form-group
       = f.label :email, :class => "control-label col-sm-2"
       .col-sm-10 
         = f.text_field :email, class: 'form-control', required: true

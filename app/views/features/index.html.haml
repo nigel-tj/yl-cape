@@ -1,9 +1,9 @@
 %link{:href => "/css/ticker.css", :rel => "stylesheet"}/
-%link{:href => "/css/Icomoon/style.css", :rel => "stylesheet", :type => "text/css"}/
-%link{:href => "/css/animated-masonry-gallery.css", :rel => "stylesheet", :type => "text/css"}/
-%script{:src => "/scripts/jquery-2.0.2.min.js", :type => "text/javascript"}
-%script{:src => "/scripts/jquery-ui-1.10.4.min.js", :type => "text/javascript"}
-%script{:src => "/scripts/jquery.isotope.min.js", :type => "text/javascript"}
+/%link{:href => "/css/Icomoon/style.css", :rel => "stylesheet", :type => "text/css"}/
+/%link{:href => "/css/animated-masonry-gallery.css", :rel => "stylesheet", :type => "text/css"}/
+/%script{:src => "/scripts/jquery-2.0.2.min.js", :type => "text/javascript"}
+/%script{:src => "/scripts/jquery-ui-1.10.4.min.js", :type => "text/javascript"}
+/%script{:src => "/scripts/jquery.isotope.min.js", :type => "text/javascript"}
 
 .container
   / start news tabs
@@ -31,25 +31,26 @@
                 %span.breaking_news
                   Breaking News 2 –
                   %a{:href => "#"} read more
-
-      .col-md-9
-        #gallery.row
-          #gallery-header
-            #gallery-header-center
-              #gallery-header-center-left
-                #gallery-header-center-left-title All
-              #gallery-header-center-right
-                #filter-all.gallery-header-center-right-links All
-                #filter-latest.gallery-header-center-right-links Latest
-                #filter-trending.gallery-header-center-right-links Trending
-          #gallery-content.services
-            #gallery-content-center
-              -for feature in @features
-                %a.servicebox.col-md-4.col-sm-6.all.latest{:href => "#{feature.link}"}
+    /
+      .col-sm-9
+        #gallery-header-center.clearfix          
+          #gallery-header-center-left.pull-left
+            #gallery-header-center-left-title All
+          #gallery-header-center-right.pull-right              
+            #filter-all.gallery-header-center-right-links All
+            #filter-latest.gallery-header-center-right-links Latest
+            #filter-trending.gallery-header-center-right-links Trending
+    .row
+      .col-sm-9#gallery-content
+        .row#gallery-content-center.services
+          -for feature in @features
+            .servicebox.all.latest.col-lg-4.col-xs-6
+              %a{:href => "#{feature.link}"}
+                .servicebox-image
                   %img.img-responsive{:alt => "#{feature.heading}", :src => "#{feature.image_url}"}
-                  .servicebox-inner.text-left
-                    %h2 #{feature.heading}
-                    %p #{feature.intro}
+                .servicebox-inner
+                  %h2 #{feature.heading}
+                  / %p #{feature.intro}
 
       / Adverts
       .col-sm-3
@@ -60,52 +61,4 @@
             %li
               %img.img-responsive{:alt => "image", :src => "http://www.redvillage.co.za/uploads/main_banner/image/16/COUSIN_JMF_do_it_like_boss_banner_redcup.jpg"}
   
-%script{:src => "/scripts/ticker.js"}
-:javascript
-    $(window).load(function() {
-            var size = 1;
-            var button = 1;
-            var button_class = "gallery-header-center-right-links-current";
-            var normal_size_class = "gallery-content-center-normal";
-            var full_size_class = "gallery-content-center-full";
-            var $container = $('#gallery-content-center');
-            $container.isotope({itemSelector : 'a'});
-            function check_button(){
-                $('.gallery-header-center-right-links').removeClass(button_class);
-                if(button==1){
-                    $("#filter-all").addClass(button_class);
-                    $("#gallery-header-center-left-title").html('All');
-                }
-                if(button==2){
-                    $("#filter-latest").addClass(button_class);
-                    $("#gallery-header-center-left-title").html('Latest');
-                }
-                if(button==3){
-                    $("#filter-trending").addClass(button_class);
-                    $("#gallery-header-center-left-title").html('Trending');
-                }	
-            }
-            
-            function check_size(){
-                $("#gallery-content-center").removeClass(normal_size_class).removeClass(full_size_class);
-                if(size==0){
-                    $("#gallery-content-center").addClass(normal_size_class); 
-                    $("#gallery-header-center-left-icon").html('<span class="iconb" data-icon="&#xe23a;"></span>');
-                }
-                if(size==1){
-                    $("#gallery-content-center").addClass(full_size_class); 
-                    $("#gallery-header-center-left-icon").html('<span class="iconb" data-icon="&#xe23b;"></span>');
-                }
-                $container.isotope({itemSelector : 'a'});
-            }
-            
-            
-            $("#filter-all").click(function() { $container.isotope({ filter: '.all' }); button = 1; check_button(); });
-            $("#filter-latest").click(function() { $container.isotope({ filter: '.latest' }); button = 2; check_button();  });
-            $("#filter-trending").click(function() {  $container.isotope({ filter: '.trending' }); button = 3; check_button(); });
-            $("#gallery-header-center-left-icon").click(function() { if(size==0){size=1;}else if(size==1){size=0;} check_size(); });
-
-            check_button();
-            check_size();
-            
-        });
+%script{:src => "/scripts/ticker.js", :type => "text/javascript"}
