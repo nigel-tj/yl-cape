@@ -60,7 +60,7 @@ Rails.application.routes.draw do
   # delete '/logout', to: 'sessions#destroy', as: :logout
 
   match '/gallery' => 'visitors#gallery', :via => :get
-  match '/music' => 'musics#index', :via => :get
+  match '/music' => 'musics#music', :via => :get
   match '/news' => 'features#index', :via => :get
   match '/social' => 'visitors#social', :via => :get
   match '/videos' => 'videos#index', :via => :get
@@ -88,7 +88,7 @@ Rails.application.routes.draw do
   match '/lifestyle_admin_index' => 'lifestyles#lifestyle_admin_index', :via => :get
   match '/lifestyle' => 'lifestyles#index', :via => :get
   match '/admin_album_index' => 'albums#admin_index', :via => :get
-  match '/admin_music_index' => 'musics#admin_index', :via => :get
+  match '/musics' => 'musics#admin_index', :via => :get
   match '/admin_artist_index' => 'artists#admin_index', :via => :get
   match '/new_album_upload' => 'albums#new', :via => :get
   match '/admins' => 'galleries#new', :via => :get
