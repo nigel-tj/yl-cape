@@ -27,27 +27,18 @@
                         %a.pretty-photo{:href => "artists/#{artist.id}?#{artist.name}"}
                           .photo-thumb
                             = image_tag artist.profile_picture_url(:thumb)
-                          .overlay
-                            %span.gallery-icon
-                            %i.fa.fa-play.fa-2x
 
                     - if(artist.category == "label")
                       .gallery-photo-item.mix.label.wow.fadeIn
                         %a.pretty-photo{:href => "artists/#{artist.id}?#{artist.name}"}
                           .photo-thumb
                             = image_tag artist.profile_picture_url(:thumb)
-                          .overlay
-                            %span.gallery-icon
-                            %i.fa.fa-play.fa-2x
 
                     - if(artist.category == "management")
                       .gallery-photo-item.mix.management.wow.fadeIn
                         %a.pretty-photo{:href => "artists/#{artist.id}?#{artist.name}"}
                           .photo-thumb
                             = image_tag artist.profile_picture_url(:thumb)
-                          .overlay
-                            %span.gallery-icon
-                            %i.fa.fa-play.fa-2x
                           
 / end gallery
 

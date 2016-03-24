@@ -28,8 +28,8 @@
                           .photo-thumb
                             = image_tag artist.profile_picture_url(:thumb)
                           .overlay
-                            %span.gallery-icon
-                            %i.fa.fa-play.fa-2x
+                            %span.gallery-icon.centered-axis-xy
+                            %i.fa.fa-plus.fa-2x
 
                     - if(artist.category == "label")
                       .gallery-photo-item.mix.label.wow.fadeIn
@@ -37,8 +37,8 @@
                           .photo-thumb
                             = image_tag artist.profile_picture_url(:thumb)
                           .overlay
-                            %span.gallery-icon
-                            %i.fa.fa-play.fa-2x
+                            %span.gallery-icon.centered-axis-xy
+                            %i.fa.fa-plus.fa-2x
 
                     - if(artist.category == "management")
                       .gallery-photo-item.mix.management.wow.fadeIn
@@ -46,8 +46,8 @@
                           .photo-thumb
                             = image_tag artist.profile_picture_url(:thumb)
                           .overlay
-                            %span.gallery-icon
-                            %i.fa.fa-play.fa-2x
+                            %span.gallery-icon.centered-axis-xy
+                            %i.fa.fa-plus.fa-2x
                           
 / end gallery
 

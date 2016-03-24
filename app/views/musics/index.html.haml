@@ -1,97 +1,57 @@
 .container
-  / start news tabs
-  #gallery
-    / banner
-    .row
-      .col-sm-12.banner
-        %img.img-responsive{:alt => "image", :src => "http://www.redvillage.co.za/uploads/main_banner/image/21/RCV_7STARS_scampD.jpg"}
-    / banner end
-
-    /news tabs
-    .row
-      .col-sm-9
-        .row
-          .col-sm-12
+  /news tabs
+  .row
+    .col-sm-9
+      .row
+        .col-sm-12
           .ticker-container.col-sm-2
             .ticker-caption
               %p Music
-        / start services
-        .row.front-news
-          .col-sm-12.services.text-center
-            .tabs.tabs-style-linebox.wow.fadeInUp{"data-wow-duration" => "2s"}
-              %nav
-                %ul.filters
-                  %li.hvr-sweep-to-top.active.filter{"data-filter" => ".hot100", :id => "#hot_100"}
-                    %span Hot 100
-                  %li.hvr-sweep-to-top.filter{"data-filter" => ".mixtapes"}
-                    %span Mixtapes
-                  %li.hvr-sweep-to-top.filter{"data-filter" => ".news"}
-                    %span News
-                  %li.hvr-sweep-to-top.filter{"data-filter" => ".videos"}
-                    %span Videos
-            .gallery-photo-grid
-              .gallery-photos
-                .gallery-photos-thumb
-                  - for track in @tracks
-                    -if(track.category == "hot100")
-                      .gallery-photo-item.mix.hot100.wow.fadeIn
-                        %a.pretty-photo{"rel" => "prettyPhoto[iframe]", :href => "#{track.track}"}
-                          .photo-thumb
-                            = image_tag track.image_url(:thumb)
-                          .overlay
-                            %span.gallery-icon
-                              %i.fa.fa-play.fa-2x
+              / start services
+      .row.front-news
+        .col-sm-12.services.text-center
+          .tabs.tabs-style-linebox.wow.fadeInUp{"data-wow-duration" => "2s"}
+            %nav
+              %ul.filters
+                %li.hvr-sweep-to-top.active.filter{"data-filter" => ".hot100", :id => "#hot_100"}
+                  %span Hot 100
+                %li.hvr-sweep-to-top.filter{"data-filter" => ".mixtapes"}
+                  %span Mixtapes
+                %li.hvr-sweep-to-top.filter{"data-filter" => ".news"}
+                  %span News
+                %li.hvr-sweep-to-top.filter{"data-filter" => ".videos"}
+                  %span Videos
+          .gallery-photo-grid
+            .gallery-photos
+              .gallery-photos-thumb
+                - for track in @tracks
+                  -if(track.category == "hot100")
+                    .gallery-photo-item.mix.hot100.wow.fadeIn
+                      %a.pretty-photo{"rel" => "prettyPhoto[iframe]", :href => "#{track.track}"}
+                        .photo-thumb
+                          = image_tag track.image_url(:thumb)
 
-                    -if(track.category == "mixtapes")
-                      .gallery-photo-item.mix.mixtapes.wow.fadeIn
-                        %a.pretty-photo{"rel" => "prettyPhoto[iframe]", :href => "#{track.track}"}
-                          .photo-thumb
-                            = image_tag track.image_url(:thumb)
-                          .overlay
-                            %span.gallery-icon
-                              %i.fa.fa-play.fa-2x
+                  -if(track.category == "mixtapes")
+                    .gallery-photo-item.mix.mixtapes.wow.fadeIn
+                      %a.pretty-photo{"rel" => "prettyPhoto[iframe]", :href => "#{track.track}"}
+                        .photo-thumb
+                          = image_tag track.image_url(:thumb)
 
-                    -if(track.category == "news")
-                      .gallery-photo-item.mix.news.wow.fadeIn
-                        %a.pretty-photo{"rel" => "prettyPhoto[iframe]", :href => "#{track.track}"}
-                          .photo-thumb
-                            = image_tag track.image_url(:thumb)
-                          .overlay
-                            %span.gallery-icon
-                              %i.fa.fa-play.fa-2x
+                  -if(track.category == "news")
+                    .gallery-photo-item.mix.news.wow.fadeIn
+                      %a.pretty-photo{"rel" => "prettyPhoto[iframe]", :href => "#{track.track}"}
+                        .photo-thumb
+                          = image_tag track.image_url(:thumb)
 
-                    -if(track.category == "videos")
-                      .gallery-photo-item.mix.vidoes.wow.fadeIn
-                        %a.pretty-photo{"rel" => "prettyPhoto[iframe]", :href => "#{track.track}"}
-                          .photo-thumb
-                            = image_tag track.image_url(:thumb)
-                          .overlay
-                            %span.gallery-icon
-                              %i.fa.fa-play.fa-2x
-  
-        / Adverts
-      .col-sm-3
-        .side-adverts
-          %ul.advert-image
-            %li
-              %img.img-responsive{:alt => "image", :src => "http://www.redvillage.co.za/uploads/main_banner/image/20/davincii_cropped.jpg"}
-            %li
-              %img.img-responsive{:alt => "image", :src => "http://www.redvillage.co.za/uploads/main_banner/image/16/COUSIN_JMF_do_it_like_boss_banner_redcup.jpg"}
-        / Adverts
-      .col-sm-3
-        .side-adverts
-          %ul.advert-image
-            %li
-              %img.img-responsive{:alt => "image", :src => "http://www.redvillage.co.za/uploads/main_banner/image/20/davincii_cropped.jpg"}
-            %li
-              %img.img-responsive{:alt => "image", :src => "http://www.redvillage.co.za/uploads/main_banner/image/16/COUSIN_JMF_do_it_like_boss_banner_redcup.jpg"}
-        / Adverts
-      .col-sm-3
-        .side-adverts
-          %ul.advert-image
-            %li
-              %img.img-responsive{:alt => "image", :src => "http://www.redvillage.co.za/uploads/main_banner/image/20/davincii_cropped.jpg"}
-            %li
-              %img.img-responsive{:alt => "image", :src => "http://www.redvillage.co.za/uploads/main_banner/image/16/COUSIN_JMF_do_it_like_boss_banner_redcup.jpg"}
+                  -if(track.category == "videos")
+                    .gallery-photo-item.mix.vidoes.wow.fadeIn
+                      %a.pretty-photo{"rel" => "prettyPhoto[iframe]", :href => "#{track.track}"}
+                        .photo-thumb
+                          = image_tag track.image_url(:thumb)
 
+/ end music
+:javascript
+  $(document).ready(function(){
+    document.getElementById('#vilage_picks').classList.add("active");
+  });
 

@@ -18,7 +18,7 @@ class ArtistsController < ApplicationController
     @artist = Artist.new(artist_params)
     if @artist.save
       flash[:notice] = "Successfully created artist."
-      redirect_to '/admin_artist_index'
+      render :action => 'admin_index'
     else
       render :action => 'new'
     end
