@@ -13,21 +13,6 @@
               %span.icon-bar
               %span.icon-bar
           #bs-example-navbar-collapse-1.collapse.navbar-collapse
-            %ul.nav.navbar-nav.pull-right
-              %li.nav-social-link
-                %audio{:src => "/uploads/music/track/22/darkness.mp3"}
-              %li.nav-social-link
-                %a{:href => "https://www.facebook.com/TheRedcupvillage", :target => "_blank"}
-                  %img.img-responsive{:alt => "Facebook", :src => "/images/facebook_circle.png"}
-              %li.nav-social-link
-                %a{:href => "https://twitter.com/Redcupvillage"}
-                  %img.img-responsive{:alt => "Twitter", :src => "/images/twitter_circle.png", :target => "_blank"}
-              %li.nav-social-link
-                %a{:href => "https://www.instagram.com/redcupvillage", :target => "_blank"}
-                  %img.img-responsive{:alt => "Instagram", :src => "/images/instagram_circle.png"}
-              %li.nav-social-link
-                %a{:href => "https://www.instagram.com/redcupvillage", :target => "_blank"}
-                  %img.img-responsive{:alt => "Youtube", :src => "/images/youtube_circle.png"}
             %ul.nav.navbar-nav.pull-left
               %li.navbar-left.hvr-underline-from-center.active
                 %a.scroll{:href => "/#banner"} HOME
@@ -62,6 +47,24 @@
                 %a.scroll{:href => "/#comingSoon"} STORE
               %li.hvr-underline-from-center
                 %a{:href => "/contact_us"} CONTACT US
+      .col-xs-12.nav-social
+        .row
+          .col-sm-6
+            %audio.pull-right{:src => "/uploads/music/track/22/darkness.mp3"}
+          .col-sm-6
+            %ul.nav.navbar-nav
+              %li.nav-social-link
+                %a{:href => "https://www.facebook.com/TheRedcupvillage", :target => "_blank"}
+                  %img.img-responsive{:alt => "Facebook", :src => "/images/facebook_circle.png"}
+              %li.nav-social-link
+                %a{:href => "https://twitter.com/Redcupvillage"}
+                  %img.img-responsive{:alt => "Twitter", :src => "/images/twitter_circle.png", :target => "_blank"}
+              %li.nav-social-link
+                %a{:href => "https://www.instagram.com/redcupvillage", :target => "_blank"}
+                  %img.img-responsive{:alt => "Instagram", :src => "/images/instagram_circle.png"}
+              %li.nav-social-link
+                %a{:href => "https://www.instagram.com/redcupvillage", :target => "_blank"}
+                  %img.img-responsive{:alt => "Youtube", :src => "/images/youtube_circle.png"}
 / end header
 - flash.each do |key, value|
   %div{:class => "alert alert-#{key} alert-dismissable"}

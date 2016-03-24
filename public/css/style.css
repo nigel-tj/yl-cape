@@ -428,12 +428,18 @@ border:0;
   right: 0;
 }
 
-.navbar-default {
+.navbar-default{
     background-color:#000;
     border:0;
     border-radius:0;
     box-shadow:none;
     margin:0 -15px;
+}
+
+.nav-social {
+    background-color:#333;
+    padding-top:15px;
+    padding-bottom:15px;
 }
 .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .active > a {
     background-image:none;
@@ -1811,3 +1817,6 @@ a.cube-div {
     padding: 5px 10px 5px 10px;
     border-radius: 27px;
 }
+
+.grid-item { width: 200px; }
+.grid-item--width2 { width: 400px; }

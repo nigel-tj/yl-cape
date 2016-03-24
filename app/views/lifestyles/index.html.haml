@@ -1,10 +1,4 @@
-%link{:href => "/css/ticker.css", :rel => "stylesheet"}/
-/%link{:href => "/css/Icomoon/style.css", :rel => "stylesheet", :type => "text/css"}/
-/%link{:href => "/css/animated-masonry-gallery.css", :rel => "stylesheet", :type => "text/css"}/
-/%script{:src => "/scripts/jquery-2.0.2.min.js", :type => "text/javascript"}
-/%script{:src => "/scripts/jquery-ui-1.10.4.min.js", :type => "text/javascript"}
-/%script{:src => "/scripts/jquery.isotope.min.js", :type => "text/javascript"}
-
+%script{:src => "/scripts/masonry.pkgd.min.js", :type => "text/javascript"}
 .container
   / start news tabs
   #gallery
@@ -27,45 +21,16 @@
                 %span Street Hustle
               %li.hvr-sweep-to-top.filter{"data-filter" => ".gadgets"}
                 %span Gadgets
-        .gallery-photo-grid
-          .gallery-photos
-            .gallery-photos-thumb
-              - for article in @lifestyle
-                -if(article.category == "fashion")
-                  .gallery-photo-item.mix.fashion.wow.fadeIn
-                    %a.pretty-photo{"rel" => "prettyPhoto[iframe]", :href => "#{article.image_url}"}
-                      .photo-thumb
-                        = image_tag article.image_url(:thumb)
-                      .overlay
-                        %span.gallery-icon
-                          %i.fa.fa-play.fa-2x
-
-                -if(article.category == "healthyLiving")
-                  .gallery-photo-item.mix.healthyLiving.wow.fadeIn
-                    %a.pretty-photo{"rel" => "prettyPhoto[iframe]", :href => "#{article.image_url}"}
-                      .photo-thumb
-                        = image_tag article.image_url(:thumb)
-                      .overlay
-                        %span.gallery-icon
-                          %i.fa.fa-play.fa-2x
-
-                -if(article.category == "streetHustle")
-                  .gallery-photo-item.mix.streetHustle.wow.fadeIn
-                    %a.pretty-photo{"rel" => "prettyPhoto[iframe]", :href => "#{article.image_url}"}
-                      .photo-thumb
-                        = image_tag article.image_url(:thumb)
-                      .overlay
-                        %span.gallery-icon
-                          %i.fa.fa-play.fa-2x
-
-                -if(article.category == "gadgets")
-                  .gallery-photo-item.mix.vidoes.wow.fadeIn
-                    %a.pretty-photo{"rel" => "prettyPhoto[iframe]", :href => "#{article.image_url}"}
-                      .photo-thumb
-                        = image_tag article.image_url(:thumb)
-                      .overlay
-                        %span.gallery-icon
-                          %i.fa.fa-play.fa-2x
+    .row
+      .col-sm-9#gallery-content
+        .grid
+          - for article in @lifestyle
+            .grid-item
+              .servicebox-image
+                %img.img-responsive{:alt => "#{article.title}", :src => "#{article.image_url}"}
+              %a{:href => "#{article.link}"}
+                .servicebox-inner
+                  %p #{article.title}
 
       / Adverts
       .col-sm-3
@@ -75,3 +40,9 @@
               %img.img-responsive{:alt => "image", :src => "http://www.redvillage.co.za/uploads/main_banner/image/20/davincii_cropped.jpg"}
             %li
               %img.img-responsive{:alt => "image", :src => "http://www.redvillage.co.za/uploads/main_banner/image/16/COUSIN_JMF_do_it_like_boss_banner_redcup.jpg"}
+:javascript
+  $('.grid').masonry({
+    // options...
+    itemSelector: '.grid-item',
+    columnWidth: 200
+  });
