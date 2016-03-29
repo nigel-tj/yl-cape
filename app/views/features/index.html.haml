@@ -44,9 +44,8 @@
               .servicebox-image
                 %img.img-responsive{:alt => "#{feature.heading}", :src => "#{feature.image_url}"}
               %a{:href => "#{feature.link}"}
-                .servicebox-inner
-                  %p #{feature.heading}
-                  / %p #{feature.intro}
+                %div#rcorners-bottom{ :style => "background: #000;" }
+                  %p #{feature.intro}
       / Adverts
       .col-sm-3
         .side-adverts

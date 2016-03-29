@@ -12,7 +12,7 @@
       .col-sm-12.services.text-center
         .tabs.tabs-style-linebox.wow.fadeInUp{"data-wow-duration" => "2s"}
           %nav
-            %ul.filters
+            %ul.content_filter
               %li.hvr-sweep-to-top.active.filter{"data-filter" => ".fashion", :id => "#hot_100"}
                 %span Fashion
               %li.hvr-sweep-to-top.filter{"data-filter" => ".healthyLiving"}
@@ -25,12 +25,37 @@
       .col-sm-9#gallery-content
         .grid
           - for article in @lifestyle
-            .grid-item
-              .servicebox-image
-                %img.img-responsive{:alt => "#{article.title}", :src => "#{article.image_url}"}
-              %a{:href => "#{article.link}"}
-                .servicebox-inner
-                  %p #{article.title}
+            - if(article.category == ".healthyLiving")
+              .grid-item.healthyLiving
+                .servicebox-image
+                  %img.img-responsive{:alt => "#{article.title}", :src => "#{article.image_url}"}
+                %a{:href => "#{article.link}"}
+                  %div#rcorners-bottom{ :style => "background: #000;" }
+                    %p #{article.intro}
+
+            - if(article.category == "fashion")
+              .grid-item.fashion
+                .servicebox-image
+                  %img.img-responsive{:alt => "#{article.title}", :src => "#{article.image_url}"}
+                %a{:href => "#{article.link}"}
+                  %div#rcorners-bottom{ :style => "background: #000;" }
+                    %p #{article.intro}
+
+            - if(article.category == "streetHustle")
+              .grid-item.streetHustle
+                .servicebox-image
+                  %img.img-responsive{:alt => "#{article.title}", :src => "#{article.image_url}"}
+                %a{:href => "#{article.link}"}
+                  %div#rcorners-bottom{ :style => "background: #000;" }
+                    %p #{article.intro}
+
+            - if(article.category == "gadgets")
+              .grid-item.gadgets
+                .servicebox-image
+                  %img.img-responsive{:alt => "#{article.title}", :src => "#{article.image_url}"}
+                %a{:href => "#{article.link}"}
+                  %div#rcorners-bottom{ :style => "background: #000;" }
+                    %p #{article.intro}
 
       / Adverts
       .col-sm-3

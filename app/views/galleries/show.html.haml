@@ -2,20 +2,10 @@
   .container
     .row
     #gallery.text-center
-      .container
-        .row.text-center
-          .tabs.tabs-style-linebox.wow.fadeInUp{"data-wow-duration" => "2s"}
-            %nav
-              %ul.filters
-                %li.hvr-sweep-to-top.active.filter{"data-filter" => "all", :id => "#all_tab"}
-                  %span All
-                %li.hvr-sweep-to-top.filter{"data-filter" => ".new"}
-                  %span Latest
-                %li.hvr-sweep-to-top.filter{"data-filter" => ".hallOfFame"}
-                  %span Hall Of Fame
       #services
         .container
           .row
+            %h2 #{@gallery.name}
           #gallery.text-center
             .container-fluid
               .row.gallery.text-center
