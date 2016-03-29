@@ -26,24 +26,24 @@
                 .servicebox-image
                   %a.pretty-photo{"rel" => "prettyPhoto[iframes]", :href => "galleries/#{gallery.id}"}
                     %img.img-responsive{ :src => "#{gallery.image_url(:thumb)}", :alt => "#{gallery.name}"}
-                  %div#rcorners-bottom{ :style => "background: #000;" }
-                    %p #{gallery.name}
+                    %div#rcorners-bottom{ :style => "background: #000;" }
+                      %p #{gallery.name}
 
             - if(gallery.category == "event")
               .grid-item.event
                 .servicebox-image
                   %a.pretty-photo{"rel" => "prettyPhoto[iframes]", :href => "galleries/#{gallery.id}"}
                     %img.img-responsive{ :src => "#{gallery.image_url(:thumb)}", :alt => "#{gallery.name}"}
-                  %div#rcorners-bottom{ :style => "background: #000;" }
-                    %p #{gallery.name}
+                    %div#rcorners-bottom{ :style => "background: #000;" }
+                      %p #{gallery.name}
 
             - if(gallery.category == "campain")
               .grid-item.campain
                 .servicebox-image
                   %a.pretty-photo{"rel" => "prettyPhoto[iframes]", :href => "galleries/#{gallery.id}"}
                     %img.img-responsive{ :src => "#{gallery.image_url(:thumb)}", :alt => "#{gallery.name}"}
-                  %div#rcorners-bottom{ :style => "background: #000;" }
-                    %p #{gallery.name}
+                    %div#rcorners-bottom{ :style => "background: #000;" }
+                      %p #{gallery.name}
 
 :javascript
   $(document).ready(function(){
