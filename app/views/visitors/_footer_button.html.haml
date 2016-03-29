@@ -42,6 +42,7 @@
 %script{:src => "/scripts/modernizr.custom.97074.js", :type => "text/javascript"}
 %script{:src => "/scripts/jquery.hoverdir.js", :type => "text/javascript"}
 %script{:src => "/scripts/script.js", :type => "text/javascript"}
+%script{:src => "/scripts/jquery.isotope.js", :type => "text/javascript"}
 
 / Go to www.addthis.com/dashboard to customize your tools
 %script{:src => "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-56cd78a5c163629c", :type => "text/javascript"}
@@ -100,4 +101,31 @@
        errorClass: 'error'
        });
        */
+  });
+  $(window).load(function(){
+    var $container = $('.grid');
+    $container.isotope({
+        filter: '*',
+        animationOptions: {
+            duration: 750,
+            easing: 'linear',
+            queue: false
+        }
+    });
+ 
+    $('.content_filter li').click(function(){
+        $('.portfolioFilter .current').removeClass('current');
+        $(this).addClass('current');
+ 
+        var selector = $(this).attr('data-filter');
+        $container.isotope({
+            filter: selector,
+            animationOptions: {
+                duration: 750,
+                easing: 'linear',
+                queue: false
+            }
+         });
+         return false;
+    }); 
   });
