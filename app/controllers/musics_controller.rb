@@ -1,6 +1,6 @@
 require 'soundcloud'
 class MusicsController < ApplicationController
-  before_action :authenticate_admin_user!, except: [:show]
+  before_action :authenticate_admin_user!, except: [:show, :music]
   layout "admin", only: [:new, :create, :update, :index]
 
   def index

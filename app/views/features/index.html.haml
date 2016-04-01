@@ -36,19 +36,18 @@
             #filter-all.gallery-header-center-right-links All
             #filter-latest.gallery-header-center-right-links Latest
             #filter-trending.gallery-header-center-right-links Trending
-    .row
+    .row.services
       .col-sm-9
-        .row
-          .services
-            .grid
-              -for feature in @features
-                .grid-item.col-sm-4.servicebox 
-                  .servicebox-image
-                    %img.img-responsive{:alt => "#{feature.heading}", :src => "#{feature.image_url}"}
-                  .servicebox-inner
-                    %p 
-                      %a{:href => "#{feature.link}"}
-                        #{feature.intro}
+        .row          
+          .grid
+            -for feature in @features
+              .grid-item.grid-sizer.col-sm-4.servicebox 
+                .servicebox-image
+                  %img.img-responsive{:alt => "#{feature.heading}", :src => "#{feature.image_url}"}
+                .servicebox-inner
+                  %p 
+                    %a{:href => "#{feature.link}"}
+                      #{feature.intro}
       / Adverts
       .col-sm-3
         .side-adverts
@@ -63,5 +62,7 @@
 :javascript
   $('.grid').masonry({
     // options...
-    itemSelector: '.grid-item'
+    itemSelector: '.grid-item',
+    columnWidth: '.grid-sizer',
+    percentPosition: true
   });
