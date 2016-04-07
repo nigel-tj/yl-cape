@@ -1,3 +1,6 @@
+%script{:src => "/scripts/masonry.pkgd.min.js", :type => "text/javascript"}
+%script{:src => "/scripts/isotope.pkgd.min.js", :type => "text/javascript"}
+%script{:src => "/scripts/isotope.init.js", :type => "text/javascript"}
 #services
   .container
     .row
@@ -17,36 +20,46 @@
                 %li.hvr-sweep-to-top.filter{"data-filter" => ".campain"}
                   %span Campaigns
 
-    .row
-      .col-sm-9#gallery-content
-        .grid
-          - for gallery in @galleries
-            - if(gallery.category == "featured_club")
-              .grid-item.featured_club
-                .servicebox-image
-                  %a.pretty-photo{"rel" => "prettyPhoto[iframes]", :href => "galleries/#{gallery.id}"}
-                    %img.img-responsive{ :src => "#{gallery.image_url(:thumb)}", :alt => "#{gallery.name}"}
-                    %div#rcorners-bottom{ :style => "background: #000;" }
-                      %p #{gallery.name}
+    .row.services
+      .col-sm-9
+        .row
+          .grid
+            - for gallery in @galleries
+              - if(gallery.category == "featured_club")
+                .grid-item.grid-sizer.col-sm-4.servicebox.featured_club
+                  .servicebox-image
+                    %a.pretty-photo{"rel" => "prettyPhoto[iframes]", :href => "galleries/#{gallery.id}"}
+                      %img.img-responsive{ :src => "#{gallery.image_url(:thumb)}", :alt => "#{gallery.name}"}
+                  .servicebox-inner
+                    %p
+                      #{gallery.name}
 
-            - if(gallery.category == "event")
-              .grid-item.event
-                .servicebox-image
-                  %a.pretty-photo{"rel" => "prettyPhoto[iframes]", :href => "galleries/#{gallery.id}"}
-                    %img.img-responsive{ :src => "#{gallery.image_url(:thumb)}", :alt => "#{gallery.name}"}
-                    %div#rcorners-bottom{ :style => "background: #000;" }
-                      %p #{gallery.name}
+              - if(gallery.category == "event")
+                .grid-item.grid-sizer.col-sm-4.servicebox.event
+                  .servicebox-image
+                    %a.pretty-photo{"rel" => "prettyPhoto[iframes]", :href => "galleries/#{gallery.id}"}
+                      %img.img-responsive{ :src => "#{gallery.image_url}", :alt => "#{gallery.name}"}
+                  .servicebox-inner
+                    %p
+                      #{gallery.name}
 
-            - if(gallery.category == "campain")
-              .grid-item.campain
-                .servicebox-image
-                  %a.pretty-photo{"rel" => "prettyPhoto[iframes]", :href => "galleries/#{gallery.id}"}
-                    %img.img-responsive{ :src => "#{gallery.image_url(:thumb)}", :alt => "#{gallery.name}"}
-                    %div#rcorners-bottom{ :style => "background: #000;" }
-                      %p #{gallery.name}
+              - if(gallery.category == "campain")
+                .grid-item.grid-sizer.col-sm-4.servicebox.campain
+                  .servicebox-image
+                    %a.pretty-photo{"rel" => "prettyPhoto[iframes]", :href => "galleries/#{gallery.id}"}
+                      %img.img-responsive{ :src => "#{gallery.image_url(:thumb)}", :alt => "#{gallery.name}"}
+                  .servicebox-inner
+                    %p
+                      #{gallery.name}
 
 :javascript
   $(document).ready(function(){
-    document.getElementById('#bio_div').style.display = 'none';
     document.getElementById('#all_tab').classList.add("active");
+    $('.grid').masonry({
+      // options...
+      itemSelector: '.grid-item',
+      columnWidth: '.grid-sizer',
+      percentPosition: true
+    });
+
   });

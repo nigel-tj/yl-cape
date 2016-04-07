@@ -1,4 +1,6 @@
 %script{:src => "/scripts/masonry.pkgd.min.js", :type => "text/javascript"}
+%script{:src => "/scripts/isotope.pkgd.min.js", :type => "text/javascript"}
+%script{:src => "/scripts/isotope.init.js", :type => "text/javascript"}
 .container
   / start news tabs
   #gallery
@@ -26,7 +28,7 @@
         .grid
           - for article in @lifestyle
             - if(article.category == ".healthyLiving")
-              .grid-item.healthyLiving
+              .grid-item.grid-sizer.col-sm-4.servicebox.healthyLiving
                 .servicebox-image
                   %img.img-responsive{:alt => "#{article.title}", :src => "#{article.image_url}"}
                 %a{:href => "#{article.link}"}
@@ -34,7 +36,7 @@
                     %p #{article.intro}
 
             - if(article.category == "fashion")
-              .grid-item.fashion
+              .grid-item.grid-sizer.col-sm-4.servicebox.fashion
                 .servicebox-image
                   %img.img-responsive{:alt => "#{article.title}", :src => "#{article.image_url}"}
                 %a{:href => "#{article.link}"}
@@ -42,7 +44,7 @@
                     %p #{article.intro}
 
             - if(article.category == "streetHustle")
-              .grid-item.streetHustle
+              .grid-item.grid-sizer.col-sm-4.servicebox.streetHustle
                 .servicebox-image
                   %img.img-responsive{:alt => "#{article.title}", :src => "#{article.image_url}"}
                 %a{:href => "#{article.link}"}
@@ -50,7 +52,7 @@
                     %p #{article.intro}
 
             - if(article.category == "gadgets")
-              .grid-item.gadgets
+              .grid-item.grid-sizer.col-sm-4.servicebox.gadgets
                 .servicebox-image
                   %img.img-responsive{:alt => "#{article.title}", :src => "#{article.image_url}"}
                 %a{:href => "#{article.link}"}
@@ -66,8 +68,13 @@
             %li
               %img.img-responsive{:alt => "image", :src => "http://www.redvillage.co.za/uploads/main_banner/image/16/COUSIN_JMF_do_it_like_boss_banner_redcup.jpg"}
 :javascript
-  $('.grid').masonry({
-    // options...
-    itemSelector: '.grid-item',
-    columnWidth: 200
+  $(document).ready(function(){
+    document.getElementById('#hot_100').classList.add("active");
+    $('.grid').masonry({
+      // options...
+      itemSelector: '.grid-item',
+      columnWidth: '.grid-sizer',
+      percentPosition: true
+    });
+
   });
