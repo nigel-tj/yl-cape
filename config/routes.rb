@@ -94,5 +94,5 @@ Rails.application.routes.draw do
   match '/admins' => 'galleries#new', :via => :get
 
   #root :to => "galleries#index"
-  root to: 'visitors#index' #'coming_soon#index'
+  root to: 'coming_soon#index' #'visitors#index' 
 end
