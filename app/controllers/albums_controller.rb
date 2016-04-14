@@ -1,9 +1,13 @@
 class AlbumsController < ApplicationController
-  before_action :authenticate_admin_user!, except: [:show]
-  #before_action :authenticate_admin!, except: [:show]
-  layout "admin", only: [:new, :create, :update, :admin_show,]
+  before_action :authenticate_admin_user!, except: [:index, :show]
+
+  layout "admin", only: [:new, :create, :update, :admin_show, :admin_index]
 
   def index
+    @albums = Album.all
+  end
+
+  def admin_index
     @albums = Album.all
   end
 
@@ -53,7 +57,7 @@ class AlbumsController < ApplicationController
 
   private
   def album_params
-    params.require(:album).permit(:name,:category,:cover,:download_flag)
+    params.require(:album).permit(:name,:cover, :artist_id)
   end
 
 end

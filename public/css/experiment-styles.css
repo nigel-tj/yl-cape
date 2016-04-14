@@ -1,0 +1,63 @@
+/* ==========================================================================
+   Tools
+   ========================================================================== */
+
+.clearfix:after,
+.clearfixItems li:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.clear {
+    clear: both;
+}
+
+.ir, .sprite {
+    text-indent: -9999px;
+    overflow: hidden; /* Stop focus outline issues */
+}
+
+
+
+legend {
+    position: absolute;
+    z-index: -1;
+    font-size: 0;
+    height: 0;
+    color: transparent;
+}
+
+.grid {
+    overflow: visible;
+}
+
+a {
+    color: #333;
+}
+
+a:visited {
+    font-weight: normal;
+}
+
+.strong a:visited,
+a.strong:visited {
+    font-weight: bold;
+}
+
+a:hover,
+a:focus,
+a:active {
+    color: #000;
+    text-decoration: underline;
+}
+
+.experiment .learn {
+    text-align: center;
+    background: #fff;
+    margin-bottom: 24px;
+    padding: 12px 0;
+    border-bottom: 1px solid #ccc;
+}

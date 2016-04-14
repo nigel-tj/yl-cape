@@ -28,9 +28,8 @@
             %p
               CopyRight &copy; 2015 Red Village
 
+%script{:src => "/scripts/jquery.js", :type => "text/javascript"}                       
 %script{:src => "/scripts/wow.min.js"}
--if controller.controller_name != "features"
-  %script{:src => "/scripts/jquery.js", :type => "text/javascript"}
 %script{:src => "/scripts/bootstrap.min.js", :type => "text/javascript"}
 %script{:src => "/scripts/jquery.smoothwheel.js", :type => "text/javascript"}
 %script{:defer => "defer", :src => "/flex/jquery.flexslider.js"}
@@ -39,60 +38,94 @@
 %script{:src => "/scripts/jquery.prettyPhoto.js", :type => "text/javascript"}
 %script{:src => "/scripts/jquery.bxslider.min.js", :type => "text/javascript"}
 %script{:src => "/scripts/jquery.mixitup.js", :type => "text/javascript"}
-
 %script{:src => "/scripts/jquery.plugin.js", :type => "text/javascript"}
-%script{:src => "/scripts/jquery.countdown.min.js", :type => "text/javascript"}
 %script{:src => "/scripts/modernizr.custom.97074.js", :type => "text/javascript"}
 %script{:src => "/scripts/jquery.hoverdir.js", :type => "text/javascript"}
 %script{:src => "/scripts/script.js", :type => "text/javascript"}
-%script{:src => "https://npmcdn.com/masonry-layout@4.0/dist/masonry.pkgd.min.js", :type => "text/javascript"}
+%script{:src => "/scripts/jquery.isotope.js", :type => "text/javascript"}
+
 / Go to www.addthis.com/dashboard to customize your tools
 %script{:src => "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-56cd78a5c163629c", :type => "text/javascript"}
-
+%script{:src => "/audiojs/audio.min.js"}
 :javascript
-  $(document).ready(function(){
-    $('#carousel').flexslider({
-      animation: "slide",
-      controlNav: false,
-      animationLoop: true,
-      slideshow: false,
-      itemWidth: 400,
-      itemMargin: 5,
-      asNavFor: '#slider'
-    });
+  audiojs.events.ready(function() {
+      var audios = document.getElementsByTagName('audio');
 
-    $('#trends_carousel').flexslider({
-      animation: "slide",
-      controlNav: false,
-      animationLoop: false,
-      slideshow: false,
-      itemWidth: 400,
-      itemMargin: 5,
-      asNavFor: '#slider'
-    });
+      var a1 = audiojs.create(audios[0], {
+          css: false,
+          createPlayer: {
+              markup: false,
+              playPauseClass: 'play-pauseZ',
+              scrubberClass: 'scrubberZ',
+              progressClass: 'progressZ',
+              loaderClass: 'loadedZ',
+              timeClass: 'timeZ',
+              durationClass: 'durationZ',
+              playedClass: 'playedZ',
+              errorMessageClass: 'error-messageZ',
+              playingClass: 'playingZ',
+              loadingClass: 'loadingZ',
+              errorClass: 'errorZ'
+          }
+      });
 
-    $('#video_carousel').flexslider({
-      animation: "slide",
-      controlNav: false,
-      animationLoop: false,
-      slideshow: false,
-      itemWidth: 380,
-      itemMargin: 1,
-      asNavFor: '#slider'
+      var a2 = audiojs.create(audios[1]);
+      /*
+       var a3 = audiojs.create(audios[2], {
+       createPlayer: {
+       markup: '\
+       <div class="play-pause"> \
+       <p class="play"></p> \
+       <p class="pause"></p> \
+       <p class="loading"></p> \
+       <p class="error"></p> \
+       </div> \
+       <div class="scrubber"> \
+       <div class="progress"></div> \
+       <div class="loaded"></div> \
+       </div> \
+       <div class="time"> \
+       <em class="played">00:00</em>/<strong class="duration">00:00</strong> \
+       </div> \
+       <div class="error-message"></div>',
+       playPauseClass: 'play-pause',
+       scrubberClass: 'scrubber',
+       progressClass: 'progress',
+       loaderClass: 'loaded',
+       timeClass: 'time',
+       durationClass: 'duration',
+       playedClass: 'played',
+       errorMessageClass: 'error-message',
+       playingClass: 'playing',
+       loadingClass: 'loading',
+       errorClass: 'error'
+       });
+       */
+  });
+  $(window).load(function(){
+    var $container = $('.grid');
+    $container.isotope({
+        filter: '*',
+        animationOptions: {
+            duration: 750,
+            easing: 'linear',
+            queue: false
+        }
     });
-
  
-    $('#slider').flexslider({
-      animation: "slide",
-      controlNav: false,
-      animationLoop: false,
-      slideshow: false,
-      sync: "#carousel"
-    });
-
-    $('.grid').masonry({
-      percentPosition: true,
-      columnWidth: '.grid-item',
-      itemSelector: '.grid-item'
-    });
+    $('.content_filter li').click(function(){
+        $('.portfolioFilter .current').removeClass('current');
+        $(this).addClass('current');
+ 
+        var selector = $(this).attr('data-filter');
+        $container.isotope({
+            filter: selector,
+            animationOptions: {
+                duration: 750,
+                easing: 'linear',
+                queue: false
+            }
+         });
+         return false;
+    }); 
   });

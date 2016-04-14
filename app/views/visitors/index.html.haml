@@ -1,5 +1,6 @@
+%link{:href => "/css/thumbnail-slider.css", :rel => "stylesheet"}/
 .container
-  .row
+  .row.club-profiles
     / start banner
     #slider.flexslider
       %ul.slides      
@@ -19,13 +20,13 @@
               / .caption #{banner.name}
               / .caption.link
               /  %a{:href => "#"} More here
-  / end banner
+    / end banner
 
-  .club-profiles.module.parallax.parallax-profiles.row
+  .row.module.parallax.parallax-profiles
     .col-md-12
-      .club-heading
-        %h1.wow.fadeInUp{"data-wow-duration" => "1s"} Redvillage TV
-      #player.player_left.col-sm-8
+      %h1.wow.fadeInUp{"data-wow-duration" => "1s"} Redvillage TV
+    .row
+      #player.col-sm-9
         :javascript
           // 2. This code loads the IFrame Player API code asynchronously.
           var tag = document.createElement('script');
@@ -69,7 +70,7 @@
           function playVideo(videoId) {          
             player.loadVideoById(videoId, 0, "medium");
           }
-      .col-md-12
+      .col-md-3
         #video_carousel.flexslider
           %ul.slides
             -for video in @videos
@@ -80,22 +81,26 @@
                       %img{:src => "https://img.youtube.com/vi/#{video.uid}/mqdefault.jpg"}
                       .desc
                         #{video.title}
-
-
-  / start hot box
+    / start hot box
   .club-profiles.module.parallax.parallax-profiles.services.row
     .col-md-12
       .club-heading
         %h1.wow.fadeInUp{"data-wow-duration" => "1s"} Hot Boxx &trade;
-
-    #cube.animate
-      #face1%div
-      #face2%div
-      #face3%div
-      #face4%div
-      #face5%div
-      #face6%div
-
+        %article.viewport
+          %section.cube
+            %div#face1
+              %a.cube-div{:href => "http://www.paulrhayes.com/2010-09/3d-css-cube-ii-touch-gestures-click-and-drag/", :target => "_top"}
+            %div#face2
+              %a.cube-div{:href => "http://www.paulrhayes.com/2010-09/3d-css-cube-ii-touch-gestures-click-and-drag/", :target => "_top"}
+            %div#face3
+              %a.cube-div{:href => "http://www.paulrhayes.com/2010-09/3d-css-cube-ii-touch-gestures-click-and-drag/", :target => "_top"}
+            %div#face4
+              %a.cube-div{:href => "http://www.paulrhayes.com/2009-07/animated-css3-cube-interface-using-3d-transforms/", :target => "_top"}
+            %div#face5
+              %a.cube-div{:href => "http://www.paulrhayes.com/2009-07/animated-css3-cube-interface-using-3d-transforms/", :target => "_top"}
+            %div#face6
+              %a.cube-div{:href => "http://www.paulrhayes.com/2009-07/animated-css3-cube-interface-using-3d-transforms/", :target => "_top"}
+ 
   / LightWidget WIDGET
   .club-profiles.module.parallax.parallax-profiles.services.row
     .col-md-4
@@ -117,10 +122,82 @@
       %script{:src => "//lightwidget.com/widgets/lightwidget.js"}
       %iframe#lightwidget_4b69af7296.lightwidget-widget{:allowtransparency => "true", :name => "lightwidget_4b69af7296", :scrolling => "no", :src => "//lightwidget.com/widgets/4b69af7296a85a5e86fd7378cb9a9cf1.html", :style => "width: 100%; border: 0; overflow: hidden;"}
 
+    .col-md-4
+      .club-heading
+        %h1.wow.fadeInUp{"data-wow-duration" => "1s"} ads
+      .side-adverts
+        %ul.advert-image
+          %li
+            %img.img-responsive{:alt => "image", :src => "http://www.redvillage.co.za/uploads/main_banner/image/20/davincii_cropped.jpg"}
+          %li
+            %img.img-responsive{:alt => "image", :src => "http://www.redvillage.co.za/uploads/main_banner/image/16/COUSIN_JMF_do_it_like_boss_banner_redcup.jpg"}
+          %li
+            %img.img-responsive{:alt => "image", :src => "http://www.redvillage.co.za/uploads/main_banner/image/20/davincii_cropped.jpg"}
+
+    .col-md-4
+      .club-heading
+        %h1.wow.fadeInUp{"data-wow-duration" => "1s"} ads
+      .side-adverts
+        %ul.advert-image
+          %li
+            %img.img-responsive{:alt => "image", :src => "http://www.redvillage.co.za/uploads/main_banner/image/20/davincii_cropped.jpg"}
+          %li
+            %img.img-responsive{:alt => "image", :src => "http://www.redvillage.co.za/uploads/main_banner/image/16/COUSIN_JMF_do_it_like_boss_banner_redcup.jpg"}
+          %li
+            %img.img-responsive{:alt => "image", :src => "http://www.redvillage.co.za/uploads/main_banner/image/20/davincii_cropped.jpg"}
+
+%link{:href => "/css/experiment-styles.css", :rel => "stylesheet"}/
+%link{:href => "/css/touch.css", :rel => "stylesheet"}/
+%script{:src => "/js/touch.js"}
+
+
 :javascript
-  $('#face1').css("background-image", "url(/images/CHIooMZW4AAvYBT.jpg)");
-  $('#face2').css("background-image", "url(/images/gallery-img1.jpg)");
-  $('#face3').css("background-image", "url(/images/gallery-img8.jpg)");
-  $('#face4').css("background-image", "url(/images/gallery-small-img-5.jpg)");
-  $('#face5').css("background-image", "url(/images/gallery-small-img-12.jpg)");
-  $('#face6').css("background-image", "url(/images/jj.png)");
+  $(document).ready(function(){
+
+    $('#face1').css("background-image", "url(/images/CHIooMZW4AAvYBT.jpg)");
+    $('#face2').css("background-image", "url(/images/gallery-img1.jpg)");
+    $('#face3').css("background-image", "url(/images/gallery-img8.jpg)");
+    $('#face4').css("background-image", "url(/images/gallery-small-img-5.jpg)");
+    $('#face5').css("background-image", "url(/images/gallery-small-img-12.jpg)");
+    $('#face6').css("background-image", "url(/images/jj.png)");
+
+    $('#carousel').flexslider({
+      animation: "slide",
+      controlNav: false,
+      animationLoop: true,
+      slideshow: false,
+      itemWidth: 400,
+      itemMargin: 5,
+      asNavFor: '#slider'
+    });
+
+    $('#trends_carousel').flexslider({
+      animation: "slide",
+      controlNav: false,
+      animationLoop: false,
+      slideshow: false,
+      itemWidth: 400,
+      itemMargin: 5,
+      asNavFor: '#slider'
+    });
+
+    $('#video_carousel').flexslider({
+      animation: "slide",
+      direction: "vertical",
+      controlNav: false,
+      animationLoop: false,
+      slideshow: false,
+      itemWidth: 380,
+      itemMargin: 1,
+      asNavFor: '#slider'
+    });
+
+ 
+    $('#slider').flexslider({
+      animation: "slide",
+      controlNav: false,
+      animationLoop: false,
+      slideshow: false,
+      sync: "#carousel"
+    });
+  })

@@ -1,16 +1,26 @@
 require 'soundcloud'
 class MusicsController < ApplicationController
-  before_action :authenticate_admin_user!, except: [:index, :show]
-  layout "admin", only: [:new, :create, :update, :admin_index]
+  before_action :authenticate_admin_user!, except: [:show]
+  layout "admin", only: [:new, :create, :update, :index]
 
   def index
     @tracks = Music.all
     @artists = Artist.all
   end
 
-  def admin_index
-    @tracks = Music.where(:artist_id => params[:artist_id]) 
+  def music
+    @tracks = Music.all
+    @artists = Artist.all
   end
+
+  def admin_index
+    @tracks = Music.all
+    @artists = Artist.all
+  end
+
+  #def admin_music_index
+  #  @tracks = Music.where(:artist_id => params[:artist_id]) 
+  #end
 
   def new
     @music = Music.new

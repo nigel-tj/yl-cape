@@ -1,0 +1,52 @@
+#services
+  .container
+    .row
+.container
+  %h1 New Lifestyle Article
+  = form_for @lifestyle, html: { class: "form-horizontal"} do |f|
+    = render 'shared/errors', object: @lifestyle
+    .form-group
+      = f.label :title, :class => "control-label col-sm-2"
+      .col-sm-10
+        = f.text_field :title, class: 'form-control', required: true
+    .form-group
+      = f.label :image, :class => "control-label col-sm-2"
+      .col-sm-10
+        = f.file_field :image, required: true
+        %span.help-block A link to article.
+    .form-group
+      = f.label :category, :class => "control-label col-sm-2"
+      .col-sm-10
+        = f.select "category", [["Select category","none"],["Fashion","fashion"], ["Healthy Living","healthyLiving"], ["Street Hustle","streetHustle"], ["Gadgets","gadgets"]]
+    .form-group
+      = f.label :intro, :class => "control-label col-sm-2"
+      .col-sm-10
+        = f.text_area :intro, class: 'form-control', required: true, id: 'word_count'
+        Total word count: 
+        %span#display_count 0 words. Words left: 
+        %span#word_left 20
+        %span.help-block Article Introduction NB maximum of 20 words.
+    .form-group
+      = f.label :link, :class => "control-label col-sm-2"
+      .col-sm-10
+        = f.text_field :link, class: 'form-control', required: true
+        %span.help-block A link to article.
+    .form-group
+      .col-sm-offset-2.col-sm-10
+        = f.submit class: 'btn btn-primary'
+
+%script{:src => "/scripts/jquery.js", :type => "text/javascript"}
+:javascript
+  $(document).ready(function() {
+    $("#word_count").on('keyup', function() {
+      var words = this.value.match(/\S+/g).length;
+        if (words > 20) {
+          var trimmed = $(this).val().split(/\s+/, 20).join(" ");
+          $(this).val(trimmed + " ");
+        }
+        else {
+            $('#display_count').text(words);
+            $('#word_left').text(20-words);
+        }
+    });
+  }); 

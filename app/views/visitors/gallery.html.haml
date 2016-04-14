@@ -7,38 +7,44 @@
         .row.text-center
           .tabs.tabs-style-linebox.wow.fadeInUp{"data-wow-duration" => "2s"}
             %nav
-              %ul.filters
-                %li.hvr-sweep-to-top.active.filter{"data-filter" => ".all", :id => "#all_tab"}
+              %ul.content_filter
+                %li.hvr-sweep-to-top.active.filter{"data-filter" => ".albums", :id => "#all_tab"}
                   %span Albums
-                %li.hvr-sweep-to-top.filter{"data-filter" => ".featured_clubs"}
+                %li.hvr-sweep-to-top.filter{"data-filter" => ".featured_club"}
                   %span Featured clubs
-                %li.hvr-sweep-to-top.filter{"data-filter" => ".events"}
+                %li.hvr-sweep-to-top.filter{"data-filter" => ".event"}
                   %span Events
-                %li.hvr-sweep-to-top.filter{"data-filter" => ".campains"}
+                %li.hvr-sweep-to-top.filter{"data-filter" => ".campain"}
                   %span Campaigns
-      .container-fluid
-        .row.gallery.text-center
-          .col-md-12.noPadding
-            .gallery-photo-grid
-              .gallery-photos
-                .gallery-photos-thumb
-                  - for gallery in @galleries
-                    - if(gallery.category == "new")
-                      .gallery-photo-item.mix.new.fadeIn
-                        %a.pretty-photo{"rel" => "prettyPhoto[iframes]", :href => "galleries/#{gallery.id}"}
-                          .photo-thumb
-                            = image_tag gallery.image_url(:thumb) if gallery.image?
-                          .overlay
-                            %span.gallery-icon
-                              %i.fa.fa-search-plus.fa-2x
-                    - if(gallery.category == "hallOfFame")
-                      .gallery-photo-item.mix.hallOfFame.fadeIn
-                        %a.pretty-photo{"rel" => "prettyPhoto[iframes]", :href =>  "galleries/#{gallery.id}"}
-                          .photo-thumb
-                            = image_tag gallery.image_url(:thumb) if gallery.image?
-                          .overlay
-                            %span.gallery-icon
-                              %i.fa.fa-search-plus.fa-2x
+
+    .row
+      .col-sm-9#gallery-content
+        .grid
+          - for gallery in @galleries
+            - if(gallery.category == "featured_club")
+              .grid-item.featured_club
+                .servicebox-image
+                  %a.pretty-photo{"rel" => "prettyPhoto[iframes]", :href => "galleries/#{gallery.id}"}
+                    %img.img-responsive{ :src => "#{gallery.image_url(:thumb)}", :alt => "#{gallery.name}"}
+                  %div#rcorners-bottom{ :style => "background: #000;" }
+                    %p #{gallery.name}
+
+            - if(gallery.category == "event")
+              .grid-item.event
+                .servicebox-image
+                  %a.pretty-photo{"rel" => "prettyPhoto[iframes]", :href => "galleries/#{gallery.id}"}
+                    %img.img-responsive{ :src => "#{gallery.image_url(:thumb)}", :alt => "#{gallery.name}"}
+                  %div#rcorners-bottom{ :style => "background: #000;" }
+                    %p #{gallery.name}
+
+            - if(gallery.category == "campain")
+              .grid-item.campain
+                .servicebox-image
+                  %a.pretty-photo{"rel" => "prettyPhoto[iframes]", :href => "galleries/#{gallery.id}"}
+                    %img.img-responsive{ :src => "#{gallery.image_url(:thumb)}", :alt => "#{gallery.name}"}
+                  %div#rcorners-bottom{ :style => "background: #000;" }
+                    %p #{gallery.name}
+
 :javascript
   $(document).ready(function(){
     document.getElementById('#bio_div').style.display = 'none';

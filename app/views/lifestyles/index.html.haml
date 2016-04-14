@@ -1,0 +1,73 @@
+%script{:src => "/scripts/masonry.pkgd.min.js", :type => "text/javascript"}
+.container
+  / start news tabs
+  #gallery
+    / banner
+    .row
+      .col-sm-12.banner
+        %img.img-responsive{:alt => "image", :src => "http://www.redvillage.co.za/uploads/main_banner/image/21/RCV_7STARS_scampD.jpg"}
+    / banner end
+    / start services
+    .row.front-news
+      .col-sm-12.services.text-center
+        .tabs.tabs-style-linebox.wow.fadeInUp{"data-wow-duration" => "2s"}
+          %nav
+            %ul.content_filter
+              %li.hvr-sweep-to-top.active.filter{"data-filter" => ".fashion", :id => "#hot_100"}
+                %span Fashion
+              %li.hvr-sweep-to-top.filter{"data-filter" => ".healthyLiving"}
+                %span Healthy living
+              %li.hvr-sweep-to-top.filter{"data-filter" => ".streetHustle"}
+                %span Street Hustle
+              %li.hvr-sweep-to-top.filter{"data-filter" => ".gadgets"}
+                %span Gadgets
+    .row
+      .col-sm-9#gallery-content
+        .grid
+          - for article in @lifestyle
+            - if(article.category == ".healthyLiving")
+              .grid-item.healthyLiving
+                .servicebox-image
+                  %img.img-responsive{:alt => "#{article.title}", :src => "#{article.image_url}"}
+                %a{:href => "#{article.link}"}
+                  %div#rcorners-bottom{ :style => "background: #000;" }
+                    %p #{article.intro}
+
+            - if(article.category == "fashion")
+              .grid-item.fashion
+                .servicebox-image
+                  %img.img-responsive{:alt => "#{article.title}", :src => "#{article.image_url}"}
+                %a{:href => "#{article.link}"}
+                  %div#rcorners-bottom{ :style => "background: #000;" }
+                    %p #{article.intro}
+
+            - if(article.category == "streetHustle")
+              .grid-item.streetHustle
+                .servicebox-image
+                  %img.img-responsive{:alt => "#{article.title}", :src => "#{article.image_url}"}
+                %a{:href => "#{article.link}"}
+                  %div#rcorners-bottom{ :style => "background: #000;" }
+                    %p #{article.intro}
+
+            - if(article.category == "gadgets")
+              .grid-item.gadgets
+                .servicebox-image
+                  %img.img-responsive{:alt => "#{article.title}", :src => "#{article.image_url}"}
+                %a{:href => "#{article.link}"}
+                  %div#rcorners-bottom{ :style => "background: #000;" }
+                    %p #{article.intro}
+
+      / Adverts
+      .col-sm-3
+        .side-adverts
+          %ul.advert-image
+            %li
+              %img.img-responsive{:alt => "image", :src => "http://www.redvillage.co.za/uploads/main_banner/image/20/davincii_cropped.jpg"}
+            %li
+              %img.img-responsive{:alt => "image", :src => "http://www.redvillage.co.za/uploads/main_banner/image/16/COUSIN_JMF_do_it_like_boss_banner_redcup.jpg"}
+:javascript
+  $('.grid').masonry({
+    // options...
+    itemSelector: '.grid-item',
+    columnWidth: 200
+  });

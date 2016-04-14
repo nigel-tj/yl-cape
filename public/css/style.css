@@ -1,69 +1,3 @@
-/*
-  Project Name : Night Club
-  Author Company : Ewebcraft
-  Project Date: 02 April, 2015
-  Author Website : http://www.ewebcraft.com
-  Author Email : ewebcraft@gmail.com
-*/
-
-/*------------------------------------------------------------------
-[generic Table of contents]
-
-* body
-  
-  + #loader
-  
-  + @font-face
-
-	+ #banner
-		- .banner-inner
-      - .owl-carousel
-			
-	+ header
-		- .logo
-		- nav
-			- .navbar-header
-			- .navbar-collapse
-			
-	+ .services
-		- .services-inner
-		
-	+ #gallery
-    - .tabs
-    - .container-fluid
-      -ul.gallery
-
-  + #club-form
-    - .club-form
-
-  + #events
-    - .event-inner
-      -ul.bxslider
-
-  + #club-profiles
-    - .profile-box
-      -.profile-box-left
-      -.profile-box-right
-
-  + #blogs
-    - .blog-slider
-      -ul.bxslider
-    - #myTabContent
-      - .tab-pane
-
-  + #reservation
-    - .reservation-form
-
-  + #map-canvas
-
-  + #footer
-    - .footer-info
-    - .social
-
-  + #copy-right
-  
-  -------------------------------------------------------------------*/
-
 *{padding:0; margin:0; }
 body{ overflow-x:hidden; font-family: 'Open Sans'; margin:15vh auto 0; }
 img{border:none;}
@@ -434,7 +368,7 @@ z-index:999;
 .navbar-nav {
     float: right;
 }
-.navbar li{
+.navbar li:not(.divider){
 	min-height: 45px;
 	margin-top: 30px;
 	-webkit-transition: all 0.3s ease;
@@ -443,15 +377,24 @@ z-index:999;
   transition: all 0.3s ease;
   -ms-transition: all 0.3s ease;	
 }
-.navbar-nav > li.active > a{
-	color:#ce1f2b !important;
-	background-color:transparent !important;
-}
-.navbar-nav > li:hover > a {
+
+.navbar-nav > li.active > a, .navbar-nav > li:hover > a, .navbar-nav > li:active > a.dropdown-toggle, .navbar-nav > li:hover > a.dropdown-toggle, .navbar-nav > li > ul.dropdown-menu > li:hover > a {
 	color:#ce1f2b !important;
 	background-color:transparent !important;	
 }
-.navbar-nav > li:hover, .navbar-nav > .active {
+
+.navbar-nav > li > ul.dropdown-menu{
+background-color:#000;
+border:0;
+}
+
+.navbar-nav > li > ul.dropdown-menu > li:not(.divider){
+    min-height: auto;
+    margin-top: 0;
+    padding:10px;
+
+}
+.navbar-nav > .active {
   display: inline-block;
   vertical-align: middle;
   -webkit-transform: translateZ(0);
@@ -463,6 +406,7 @@ z-index:999;
   position: relative;
   overflow: hidden;
 }
+
 .navbar-nav > li:before, .navbar-nav > .active:before {
   content: "";
   position: absolute;
@@ -484,18 +428,24 @@ z-index:999;
   right: 0;
 }
 
-.navbar-default {
+.navbar-default{
     background-color:#000;
     border:0;
     border-radius:0;
     box-shadow:none;
     margin:0 -15px;
 }
+
+.nav-social {
+    background-color:#333;
+    padding-top:15px;
+    padding-bottom:15px;
+}
 .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .active > a {
     background-image:none;
     box-shadow:none;
 }
-.navbar-nav > li > a {
+.navbar-nav > li > a, .navbar-nav > li > ul.dropdown-menu > li > a {
     padding-bottom:0 !important;
     padding-top:0 !important;
   	color:#fff !important;
@@ -585,11 +535,18 @@ z-index:999;
          }
 
 .services .servicebox{
-        border:10px solid #222;
+        border:2px solid black;
 	cursor: pointer;
-	padding:3%;
-	background-color:rgba(0,0,0,1);
+        padding-top: 2%;
+        padding-bottom: 2%;
+	background-color:#222;
 }
+
+.services .servicebox-image{
+    height:200px;
+    overflow-y:hidden;
+}
+
 .services .servicebox .servicebox-inner h2{
 	color:#fff;
 	font-family: 'Open Sans';
@@ -612,7 +569,7 @@ z-index:999;
 /*adverts*/
 .side-adverts{
     background-color:#222;
-    padding:40px 20px;
+    padding:5%;
     margin-top:15px;
 }
       
@@ -722,6 +679,7 @@ z-index:999;
 }
 #gallery {
   background-color:#000;
+    padding-bottom: 1%;
 }
 #gallery .gallery{
 	padding-top:30px;
@@ -1241,7 +1199,7 @@ div.module.parallax {
   background-size: cover;    
 }
 div.module.parallax-reservation {
-	background-image:url("../images/reservation-bg.jpg");
+	background-image:url("");
 }
 #reservation h1 {
 	text-align: center;
@@ -1343,19 +1301,19 @@ div.module.parallax-reservation {
 
 div.module.parallax-footer {
 	background-image:url("../images/footer-bg.jpg");
-	padding-top: 70px;
-	padding-bottom: 70px;
+	padding-top: 5%;
+	padding-bottom: 3%;
 }
 
 #footer{
-    margin-top:20px;
+    margin-top:0.5%;
 }
 
 #footer p.footer-text {
 	font-family: 'PT Sans';
-	font-size: 20px;
+	font-size: 1.25em;
 	color: #fff;
-	line-height: 35px;
+	line-height:2;
 	margin-top: 30px;
 }
 #footer p.footer-text a {
@@ -1820,4 +1778,146 @@ background-repeat:no-repeat;
   height:100%;
   background-color: #4FC1E9;
   text-align: center;
+}
+a.cube-div {
+    display: block;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+}
+.profile-header-container{
+    margin: 0 auto;
+    text-align: center;
+}
+
+.profile-header-img {
+    padding: 54px;
+}
+
+.profile-header-img > img.img-circle {
+    width: 120px;
+    height: 120px;
+}
+
+.profile-header {
+    margin-top: 43px;
+}
+
+/**
+ * Ranking component
+ */
+.rank-label-container {
+    margin-top: -19px;
+    /* z-index: 1000; */
+    text-align: center;
+}
+
+.label.label-default.rank-label {
+    background-color: rgb(206,31,43);
+    padding: 5px 10px 5px 10px;
+    border-radius: 27px;
+}
+
+/*
+Masonry
+*/
+.grid-item { width: 200px; }
+.grid-item--width2 { width: 400px; }
+
+.audiojsZ audio { position: absolute; left: -1px; }
+.audiojsZ { width: 460px; height: 36px; background: #f00; overflow: hidden; font-family: monospace; font-size: 12px;
+      -webkit-box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3); -moz-box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
+      -o-box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3); box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3); }
+.audiojsZ .play-pauseZ { width: 25px; height: 40px; padding: 4px 6px; margin: 0px; float: left; overflow: hidden; border-right: 1px solid #c00; }
+.audiojsZ p { display: none; width: 25px; height: 40px; margin: 0px; cursor: pointer; }
+.audiojsZ .playZ { display: block; }
+.audiojsZ .scrubberZ { position: relative; float: left; width: 280px; background: #fcc; height: 14px; margin: 10px; border-left: 0px; border-bottom: 0px; overflow: hidden; }
+.audiojsZ .progressZ { position: absolute; top: 0px; left: 0px; height: 14px; width: 0px; background: #600; z-index: 1; }
+.audiojsZ .loadedZ { position: absolute; top: 0px; left: 0px; height: 14px; width: 0px; background: #c00; }
+.audiojsZ .timeZ { float: left; height: 36px; line-height: 36px; margin: 0px 0px 0px 6px; padding: 0px 6px 0px 12px; border-left: 1px solid #c00; color: #600; text-shadow: 1px 1px 0px rgba(125, 0, 0, 0.5); }
+.audiojsZ .timeZ em { padding: 0px 2px 0px 0px; color: #fcc; font-style: normal; }
+.audiojsZ .timeZ strong { padding: 0px 0px 0px 2px; font-weight: normal; }
+.audiojsZ .error-messageZ { float: left; display: none; margin: 0px 10px; height: 36px; width: 400px; overflow: hidden; line-height: 36px; white-space: nowrap; color: #fff;
+			    text-overflow: ellipsis; -o-text-overflow: ellipsis; -icab-text-overflow: ellipsis; -khtml-text-overflow: ellipsis; -moz-text-overflow: ellipsis; -webkit-text-overflow: ellipsis; }
+.audiojsZ .error-messageZ a { color: #eee; text-decoration: none; padding-bottom: 1px; border-bottom: 1px solid #999; white-space: wrap; }
+
+.audiojsZ .playZ { background: url('../audiojs/player-graphics.gif') -2px -1px no-repeat; }
+.audiojsZ .loadingZ { background: url('../audiojs/player-graphics.gif') -2px -31px no-repeat; }
+.audiojsZ .errorZ { background: url('../audiojs/player-graphics.gif') -2px -61px no-repeat; }
+.audiojsZ .pauseZ { background: url('../audiojs/player-graphics.gif') -2px -91px no-repeat; }
+
+.playingZ .playZ, .playingZ .loadingZ, .playingZ .errorZ { display: none; }
+.playingZ .pauseZ { display: block; }
+
+.loadingZ .playZ, .loadingZ .pauseZ, .loadingZ .errorZ { display: none; }
+.loadingZ .loadingZ { display: block; }
+
+.errorZ .timeZ, .errorZ .playZ, .errorZ .pauseZ, .errorZ .scrubberZ, .errorZ .loadingZ { display: none; }
+.errorZ .errorZ { display: block; }
+.errorZ .play-pauseZ p { cursor: auto; }
+.errorZ .error-messageZ { display: block; }
+
+
+.centered-axis-xy {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+a {
+    color: #fff;
+    padding-bottom: 10px;
+}
+
+a:hover {
+    color: #ce1f2b;
+}
+
+hr {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: 0;
+    border-top: 2px solid #333;
+}
+
+#rcorners-bottom {
+    border-bottom: 1px solid #ce1f2b;
+    padding: 20px; 
+    height: auto;    
+}
+
+
+#rcorners-top {
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
+    border-top: 1px solid #ce1f2b;
+    border-left: 1px solid #ce1f2b;
+    border-right: 1px solid #ce1f2b; 
+    height: auto;    
+}
+
+.isotope-item {
+    z-index: 2;
+}
+.isotope-hidden.isotope-item {
+    pointer-events: none;
+    z-index: 1;
+}
+.isotope,
+.isotope .isotope-item {
+  /* change duration value to whatever you like */
+ 
+    -webkit-transition-duration: 0.8s;
+    -moz-transition-duration: 0.8s;
+    transition-duration: 0.8s;
+}
+.isotope {
+    -webkit-transition-property: height, width;
+    -moz-transition-property: height, width;
+    transition-property: height, width;
+}
+.isotope .isotope-item {
+    -webkit-transition-property: -webkit-transform, opacity;
+    -moz-transition-property: -moz-transform, opacity;
+    transition-property: transform, opacity;
 }

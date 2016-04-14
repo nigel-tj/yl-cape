@@ -4,7 +4,7 @@
     .row
       .col-xs-12
         %a.navbar-brand{:href => "/"}
-          %img.logo.img-responsive{:alt => "Night Club logo", :src => "/images/Red-Cup-Logo.gif"}
+          %img.logo.img-responsive{:alt => "Red Cup logo", :src => "/images/Red-Cup-Logo.gif"}
         %nav.navbar.navbar-default
           .navbar-header
             %button.navbar-toggle{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
@@ -26,49 +26,60 @@
                   %li
                     %a{:href => "#"} Services
                   %li
-                    %a{:href => "#"} Team
+                    %a{:href => "/team"} Team
                   %li.divider{:role => "separator"}
-                  %li.dropdown-header Contact us
+                  %li.dropdown-header 
                   %li
                     %a{:href => "#"} Advertise
                   %li
                     %a{:href => "#"} Partners
               %li.hvr-underline-from-center
+                %a.scroll{:href => "/gallery"} GALLERY
+              %li.hvr-underline-from-center
                 %a.scroll{:href => "/news"} NEWS
               %li.hvr-underline-from-center
-                %a.scroll{:href => "/#comingSoon"} MUSIC
+                %a.scroll{:href => "/music"} MUSIC
               %li.hvr-underline-from-center
-                %a.scroll{:href => "/#comingSoon"} LIFESTYLE
+                %a.scroll{:href => "/lifestyle"} LIFESTYLE
               %li.hvr-underline-from-center
-                %a.scroll{:href => "/#comingSoon"} ARTISTS
+                %a.scroll{:href => "/artists"} ARTISTS
               %li.hvr-underline-from-center
-                %a.scroll{:href => "/#comingSoon"} EVENTS
-              %li.navbar-left.hvr-underline-from-center
-                %a.scroll{:href => "/#comingSoon"} MEDIA
+                %a.scroll{:href => "/events"} EVENTS
               %li.hvr-underline-from-center
                 %a.scroll{:href => "/#comingSoon"} STORE
-              <!-- %li.hvr-underline-from-center -->
-              <!--   %a.scroll{:href => "/videos"} VIDEOS -->
-              <!-- %li.hvr-underline-from-center -->
-              <!--   %a.scroll{:href => "/team"} TEAM -->
-              <!-- %li.hvr-underline-from-center -->
-              <!--   %a.scroll{:href => "#ComingSoon"} CONTACT -->
-            %ul.nav.navbar-nav.pull-right
               %li.hvr-underline-from-center
-                %a{:href => "/users/sign_up"} JOIN US
-              %li.hvr-underline-from-center
-                %a{:href => "/users/sign_in"} Login
-              %li
-                %a{:href => "#"}
+                %a{:href => "/contact_us"} CONTACT US
+      .col-xs-12.nav-social
+        .row
+          .col-sm-4
+          .col-sm-4
+            .audiojsZ
+              %audio#audio_player{:preload => "auto", :src => "/uploads/music/track/1/Nasty_C_-_Juice_Back_Remix__ft._Davido___Cassper_Nyovest_.mp3"}
+              .play-pauseZ
+                %p.playZ
+                %p.pauseZ
+                %p.loadingZ
+                %p.errorZ
+              .scrubberZ
+                .progressZ
+                .loadedZ
+              .timeZ
+                %em.playedZ 00:00
+                %strong.durationZ 00:00
+              .error-messageZ
+          .col-sm-4
+            %ul.nav.navbar-nav
+              %li.nav-social-link
+                %a{:href => "https://www.facebook.com/TheRedcupvillage", :target => "_blank"}
                   %img.img-responsive{:alt => "Facebook", :src => "/images/facebook_circle.png"}
-              %li
-                %a{:href => "#"}
-                  %img.img-responsive{:alt => "Twitter", :src => "/images/twitter_circle.png"}
-              %li
-                %a{:href => "#"}
+              %li.nav-social-link
+                %a{:href => "https://twitter.com/Redcupvillage"}
+                  %img.img-responsive{:alt => "Twitter", :src => "/images/twitter_circle.png", :target => "_blank"}
+              %li.nav-social-link
+                %a{:href => "https://www.instagram.com/redcupvillage", :target => "_blank"}
                   %img.img-responsive{:alt => "Instagram", :src => "/images/instagram_circle.png"}
-              %li
-                %a{:href => "#"}
+              %li.nav-social-link
+                %a{:href => "https://www.instagram.com/redcupvillage", :target => "_blank"}
                   %img.img-responsive{:alt => "Youtube", :src => "/images/youtube_circle.png"}
 / end header
 - flash.each do |key, value|
