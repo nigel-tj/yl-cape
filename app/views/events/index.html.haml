@@ -1,12 +1,13 @@
 / Event of the month
-.container#events
-  .row.col-md-12
-    .event-inner.col-sm-12.text-center
-      %h1.wow.fadeInUp{"data-wow-duration" => "1s"} EVENTS OF THE MONTH
-      %ul.bxslider.one
-        %li
-          .event-box
-            .event-box-left.clearfix
+.container
+  #events
+    .row
+      .col-sm-12
+        %h1.wow.fadeInUp{"data-wow-duration" => "1s"} EVENTS OF THE MONTH      
+      %ul.event-inner.bxslider.one
+        %li.col-sm-6
+          .event-box.row.text-center
+            .event-box-left.col-sm-6.col-md-3
               %h2
                 29
                 %br/
@@ -18,44 +19,44 @@
                 CITY PLAZA,
                 = succeed "NEW" do
                   %br/
-            .event-box-right.clearfix
+            .event-box-right.col-sm-6.col-md-9
               %img.img-responsive{:alt => "Night Club Event", :src => "images/event-img1.jpg"}/
-            .event-box-bottom.text-left.clearfix
+            .event-box-bottom.clearfix
               %h2 Fire and ice dumparter party!
-        %li
-          .event-box
-            .event-box-left.clearfix
+        %li.col-sm-6
+          .event-box.row.text-center
+            .event-box-left.col-sm-6.col-md-3
               %h2
-                07
+                29
                 %br/
-                %span.month AUGUST
-              %h3 12:20 AM
+                %span.month APRIL
+              %h3 11:00 PM
               %p
                 %i.fa.fa-map-marker
                 %br/
                 CITY PLAZA,
                 = succeed "NEW" do
                   %br/
-            .event-box-right.clearfix
+            .event-box-right.col-sm-6.col-md-9
               %img.img-responsive{:alt => "Night Club Event", :src => "images/event-img2.jpg"}/
-            .event-box-bottom.text-left.clearfix
-              %h2 Proudly Present owner theme event
-        %li
-          .event-box
-            .event-box-left.clearfix
+            .event-box-bottom.clearfix
+              %h2 Fire and ice dumparter party!
+        %li.col-sm-6
+          .event-box.row.text-center
+            .event-box-left.col-sm-6.col-md-3
               %h2
-                21
+                29
                 %br/
-                %span.month October
-              %h3 03:10 AM
+                %span.month APRIL
+              %h3 11:00 PM
               %p
                 %i.fa.fa-map-marker
                 %br/
                 CITY PLAZA,
                 = succeed "NEW" do
                   %br/
-            .event-box-right.clearfix
+            .event-box-right.col-sm-6.col-md-9
               %img.img-responsive{:alt => "Night Club Event", :src => "images/event-img3.jpg"}/
-            .event-box-bottom.text-left.clearfix
-              %h2 Proudly Present owner theme event
-/ Event of the month
+            .event-box-bottom.clearfix
+              %h2 Fire and ice dumparter party!
+      / Event of the month

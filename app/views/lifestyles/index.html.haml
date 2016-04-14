@@ -23,7 +23,7 @@
                 %span Street Hustle
               %li.hvr-sweep-to-top.filter{"data-filter" => ".gadgets"}
                 %span Gadgets
-    .row
+    .row.services
       .col-sm-9#gallery-content
         .grid
           - for article in @lifestyle
@@ -32,7 +32,7 @@
                 .servicebox-image
                   %img.img-responsive{:alt => "#{article.title}", :src => "#{article.image_url}"}
                 %a{:href => "#{article.link}"}
-                  %div#rcorners-bottom{ :style => "background: #000;" }
+                  %div#rcorners-bottom
                     %p #{article.intro}
 
             - if(article.category == "fashion")
@@ -40,7 +40,7 @@
                 .servicebox-image
                   %img.img-responsive{:alt => "#{article.title}", :src => "#{article.image_url}"}
                 %a{:href => "#{article.link}"}
-                  %div#rcorners-bottom{ :style => "background: #000;" }
+                  %div#rcorners-bottom
                     %p #{article.intro}
 
             - if(article.category == "streetHustle")
@@ -48,7 +48,7 @@
                 .servicebox-image
                   %img.img-responsive{:alt => "#{article.title}", :src => "#{article.image_url}"}
                 %a{:href => "#{article.link}"}
-                  %div#rcorners-bottom{ :style => "background: #000;" }
+                  %div#rcorners-bottom
                     %p #{article.intro}
 
             - if(article.category == "gadgets")
@@ -56,7 +56,7 @@
                 .servicebox-image
                   %img.img-responsive{:alt => "#{article.title}", :src => "#{article.image_url}"}
                 %a{:href => "#{article.link}"}
-                  %div#rcorners-bottom{ :style => "background: #000;" }
+                  %div#rcorners-bottom
                     %p #{article.intro}
 
       / Adverts

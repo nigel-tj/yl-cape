@@ -37,17 +37,15 @@
             #filter-latest.gallery-header-center-right-links Latest
             #filter-trending.gallery-header-center-right-links Trending
     .row.services
-      .col-sm-9
-        .row          
-          .grid
-            -for feature in @features
-              .grid-item.grid-sizer.col-sm-4.servicebox 
-                .servicebox-image
-                  %img.img-responsive{:alt => "#{feature.heading}", :src => "#{feature.image_url}"}
-                .servicebox-inner
-                  %p 
-                    %a{:href => "#{feature.link}"}
-                      #{feature.intro}
+      .col-sm-9#gallery-content
+        .grid
+          -for feature in @features
+            .grid-item.grid-sizer.col-sm-4.servicebox 
+              .servicebox-image
+                %img.img-responsive{:alt => "#{feature.heading}", :src => "#{feature.image_url}"}
+              %a{:href => "#{feature.link}", :target => "_blank"}
+                %div#rcorners-bottom
+                  %p #{feature.intro}
       / Adverts
       .col-sm-3
         .side-adverts
