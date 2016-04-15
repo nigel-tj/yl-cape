@@ -27,25 +27,31 @@
                 %span.breaking_news
                   Breaking News 2 –
                   %a{:href => "#"} read more
-    /
-      .col-sm-9
-        #gallery-header-center.clearfix          
-          #gallery-header-center-left.pull-left
-            #gallery-header-center-left-title All
-          #gallery-header-center-right.pull-right              
-            #filter-all.gallery-header-center-right-links All
-            #filter-latest.gallery-header-center-right-links Latest
-            #filter-trending.gallery-header-center-right-links Trending
-    .row.services
-      .col-sm-9#gallery-content
-        .grid
-          -for feature in @features
-            .grid-item.grid-sizer.col-sm-4.servicebox 
-              .servicebox-image
-                %img.img-responsive{:alt => "#{feature.heading}", :src => "#{feature.image_url}"}
-              %a{:href => "#{feature.link}", :target => "_blank"}
-                %div#rcorners-bottom
-                  %p #{feature.intro}
+    .row
+      .col-md-9.services
+        .row
+          /
+            .col-sm-12
+              #gallery-header-center.clearfix          
+                #gallery-header-center-left.pull-left
+                  #gallery-header-center-left-title All
+                #gallery-header-center-right.pull-right              
+                  #filter-all.gallery-header-center-right-links All
+                  #filter-latest.gallery-header-center-right-links Latest
+                  #filter-trending.gallery-header-center-right-links Trending
+
+          .col-sm-12#gallery-content
+            .grid
+              -for feature in @features
+                .grid-item.grid-sizer.col-sm-4.servicebox 
+                  .servicebox-image
+                    %img.img-responsive{:alt => "#{feature.heading}", :src => "#{feature.image_url}"}
+                  .servicebox-inner
+                    %p 
+                      %i.fa.fa-fw.fa-calendar 
+                      #{feature.created_at}
+                      %br/
+                      %a{:href => "#{feature.link}", :target => "_blank"} #{feature.intro} 
       / Adverts
       .col-sm-3
         .side-adverts

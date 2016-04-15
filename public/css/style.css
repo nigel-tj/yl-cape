@@ -510,11 +510,9 @@ border:0;
          }
 
 .services .servicebox{
-        border:2px solid black;
 	cursor: pointer;
         padding-top: 2%;
         padding-bottom: 2%;
-	background-color:#222;
 }
 
 .services .servicebox-image{
@@ -534,16 +532,17 @@ border:0;
 	padding-top:10%;
         text-transform:uppercase;
 }
-.services .servicebox .servicebox-inner p, .services .servicebox .servicebox-inner p a{
+.services .servicebox .servicebox-inner p{
+        border-bottom:1px solid darkred;
 	color:#fff;
 	font-family: 'Open Sans';
 	font-size:1em;
-padding-top:2%;	
-	padding-bottom:0;
+	padding-top:5%;	
+	padding-bottom:5%;
 }
 
-.services .servicebox .servicebox-inner p a:hover{
-	color:red;
+.services .servicebox .servicebox-inner p a:hover, .services .servicebox .servicebox-inner p .fa{
+	color:#ce1f2b;
 }
 
 /*adverts*/
@@ -1286,7 +1285,7 @@ div.module.parallax-footer {
 }
 
 #footer{
-    margin-top:0.5%;
+    margin-top:2px;
 }
 
 #footer p.footer-text {
