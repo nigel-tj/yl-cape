@@ -51,22 +51,21 @@
                 %a{:href => "/contact_us"} CONTACT US
       .col-xs-12.nav-social
         .row
-          .col-sm-4
-          .col-sm-4
-            .audiojsZ
-              %audio#audio_player{:preload => "auto", :src => "/uploads/music/track/1/Nasty_C_-_Juice_Back_Remix__ft._Davido___Cassper_Nyovest_.mp3"}
-              .play-pauseZ
-                %p.playZ
-                %p.pauseZ
-                %p.loadingZ
-                %p.errorZ
-              .scrubberZ
-                .progressZ
-                .loadedZ
-              .timeZ
-                %em.playedZ 00:00
-                %strong.durationZ 00:00
-              .error-messageZ
+          .col-sm-8
+          -#   .audiojsZ
+          -#     %audio#audio_player{:preload => "auto", :src => "/uploads/music/track/1/Nasty_C_-_Juice_Back_Remix__ft._Davido___Cassper_Nyovest_.mp3"}
+          -#     .play-pauseZ
+          -#       %p.playZ
+          -#       %p.pauseZ
+          -#       %p.loadingZ
+          -#       %p.errorZ
+          -#     .scrubberZ
+          -#       .progressZ
+          -#       .loadedZ
+          -#     .timeZ
+          -#       %em.playedZ 00:00
+          -#       %strong.durationZ 00:00
+          -#     .error-messageZ
           .col-sm-4
             %ul.nav.navbar-nav
               %li.nav-social-link
