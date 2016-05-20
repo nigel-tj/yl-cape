@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160318131122) do
+ActiveRecord::Schema.define(version: 20160508003527) do
 
   create_table "admin_users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -70,10 +70,13 @@ ActiveRecord::Schema.define(version: 20160318131122) do
     t.datetime "updated_at",    null: false
   end
 
-  create_table "documents", force: :cascade do |t|
-    t.string   "file"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+  create_table "emails", force: :cascade do |t|
+    t.string   "from"
+    t.string   "to"
+    t.text     "subject"
+    t.string   "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "events", force: :cascade do |t|
@@ -89,8 +92,6 @@ ActiveRecord::Schema.define(version: 20160318131122) do
   end
 
   create_table "feature_banners", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.string   "name"
     t.text     "description"
     t.string   "image"
@@ -117,12 +118,32 @@ ActiveRecord::Schema.define(version: 20160318131122) do
     t.string   "image"
   end
 
+  create_table "gallery_banners", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "link"
+    t.string   "image"
+    t.boolean  "active"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
   create_table "images", force: :cascade do |t|
     t.integer  "gallery_id"
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image"
+  end
+
+  create_table "lifestyle_banners", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "link"
+    t.string   "image"
+    t.boolean  "active"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "lifestyles", force: :cascade do |t|
@@ -139,6 +160,16 @@ ActiveRecord::Schema.define(version: 20160318131122) do
     t.string "name"
     t.string "image"
     t.string "title"
+  end
+
+  create_table "music_banners", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "link"
+    t.string   "image"
+    t.boolean  "active"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "musics", force: :cascade do |t|
