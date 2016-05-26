@@ -11,7 +11,7 @@ class GalleriesController < ApplicationController
   end
 
   def admin_show
-    @gallery = Gallery.find(params[:id])
+    @gallery = Gallery.all
   end
 
   def new
@@ -22,7 +22,7 @@ class GalleriesController < ApplicationController
     @gallery = Gallery.new(gallery_params)
     if @gallery.save
       flash[:notice] = "Successfully created gallery."
-      render :action => 'admin_show'
+       redirect_to '/admin_show'
     else
       render :action => 'new'
     end

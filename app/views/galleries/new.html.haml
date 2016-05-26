@@ -3,7 +3,7 @@
     .row
 .container
   %h1 New Gallery
-  = form_for @gallery do |f|
+  = form_for @gallery, html: { class: "form-horizontal"} do |f|
     = render 'shared/errors', object: @gallery
     .form-group
       = f.label :name, :class => "control-label col-sm-2"
@@ -13,10 +13,12 @@
     .form-group
       = f.label :category, :class => "control-label col-sm-2"
       .col-sm-10
-        = f.select "category", [["Select category","none"],["Featured club","featured_club"], ["Albums","albums"], ["Campain","campain"], ["Event","event"]]
+        = f.select "category", [["Select category","none"],["Featured club","featured_club"], ["Albums","albums"], ["Campaign","campaign"], ["Event","event"]]
     .form-group
       = f.label :image, :class => "control-label col-sm-2"
       .col-sm-10
         = f.file_field :image, required: true
         %span.help-block Album Cover.
-    = f.submit class: 'btn btn-primary'
+    .form-group
+      .col-sm-offset-2.col-sm-10
+        = f.submit class: 'btn btn-primary'
