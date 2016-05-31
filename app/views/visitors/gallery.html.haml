@@ -4,53 +4,18 @@
 #services
   .container
     .row
-    / start gallery
-    #gallery.text-center
-      .container
-        .row.text-center
-          .tabs.tabs-style-linebox.wow.fadeInUp{"data-wow-duration" => "2s"}
-            %nav
-              %ul.content_filter
-                %li.hvr-sweep-to-top.active.filter{"data-filter" => ".albums", :id => "#all_tab"}
-                  %span Albums
-                %li.hvr-sweep-to-top.filter{"data-filter" => ".featured_club"}
-                  %span Featured clubs
-                %li.hvr-sweep-to-top.filter{"data-filter" => ".event"}
-                  %span Events
-                %li.hvr-sweep-to-top.filter{"data-filter" => ".campain"}
-                  %span Campaigns
-
       .row.services
         .col-sm-9
           .row
             .grid
               - for gallery in @galleries
-                - if(gallery.category == "featured_club")
-                  .grid-item.grid-sizer.col-sm-4.servicebox.featured_club
-                    .servicebox-image
-                      %a.pretty-photo{"rel" => "prettyPhoto[iframes]", :href => "galleries/#{gallery.id}"}
-                        %img.img-responsive{ :src => "#{gallery.image_url(:thumb)}", :alt => "#{gallery.name}"}
-                    .servicebox-inner
-                      %p
-                        #{gallery.name}
-
-                - if(gallery.category == "event")
-                  .grid-item.grid-sizer.col-sm-4.servicebox.event
-                    .servicebox-image
-                      %a.pretty-photo{"rel" => "prettyPhoto[iframes]", :href => "galleries/#{gallery.id}"}
-                        %img.img-responsive{ :src => "#{gallery.image_url}", :alt => "#{gallery.name}"}
-                    .servicebox-inner
-                      %p
-                        #{gallery.name}
-
-                - if(gallery.category == "campain")
-                  .grid-item.grid-sizer.col-sm-4.servicebox.campain
-                    .servicebox-image
-                      %a.pretty-photo{"rel" => "prettyPhoto[iframes]", :href => "galleries/#{gallery.id}"}
-                        %img.img-responsive{ :src => "#{gallery.image_url(:thumb)}", :alt => "#{gallery.name}"}
-                    .servicebox-inner
-                      %p
-                        #{gallery.name}
+                .grid-item.grid-sizer.col-sm-4.servicebox.featured_club
+                  .servicebox-image
+                    %a.pretty-photo{"rel" => "prettyPhoto[iframes]", :href => "galleries/#{gallery.id}"}
+                      %img.img-responsive{ :src => "#{gallery.image_url(:thumb)}", :alt => "#{gallery.name}"}
+                  .servicebox-inner
+                    %p
+                      #{gallery.name}
 
 :javascript
   $(document).ready(function(){

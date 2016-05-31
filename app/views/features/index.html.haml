@@ -43,10 +43,10 @@
           .col-sm-12#gallery-content
             .grid
               -for feature in @features
-                .grid-item.grid-sizer.col-sm-4.servicebox 
-                  .servicebox-image
+                .grid-item.grid-sizer.col-sm-12.servicebox 
+                  .servicebox-image.col-sm-4
                     %img.img-responsive{:alt => "#{feature.heading}", :src => "#{feature.image_url}"}
-                  .servicebox-inner
+                  .servicebox-inner.col-sm-8
                     %p 
                       %i.fa.fa-fw.fa-calendar 
                       #{feature.created_at.strftime("%d %b %Y")}

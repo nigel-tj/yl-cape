@@ -1,6 +1,6 @@
 require 'soundcloud'
 class MusicsController < ApplicationController
-  before_action :authenticate_admin_user!, except: [:show, :music]
+  before_action :authenticate_admin!, except: [:show, :music]
   layout "admin", only: [:new, :create, :update, :index]
 
   def index
@@ -24,7 +24,7 @@ class MusicsController < ApplicationController
 
   def new
     @music = Music.new
-    @artist_id = current_admin_user.id 
+    @artist_id = current_admin.id 
   end
 
   def create
