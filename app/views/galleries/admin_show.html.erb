@@ -3,8 +3,8 @@
     
     <h1> <%= @gallery.name %><h1>                
           <p>
-            <%= link_to "Add a Image", new_image_path(:gallery_id => @gallery) %> |
-            <%= link_to "Remove Gallery", @gallery, :confirm => 'Are you sure?', :method => :delete %> |
+            <%= link_to "Add a Images", new_image_path(:gallery_id => @gallery) %> |
+
             <%= link_to "View All Galleries", galleries_path %>
           </p>
         </div>

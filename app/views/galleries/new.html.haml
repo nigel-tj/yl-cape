@@ -11,10 +11,6 @@
         = f.text_field :name, class: 'form-control', required: true
         %span.help-block A link to the video on YouTube.
     .form-group
-      = f.label :category, :class => "control-label col-sm-2"
-      .col-sm-10
-        = f.select "category", [["Select category","none"],["Featured club","featured_club"], ["Albums","albums"], ["Campaign","campaign"], ["Event","event"]]
-    .form-group
       = f.label :image, :class => "control-label col-sm-2"
       .col-sm-10
         = f.file_field :image, required: true

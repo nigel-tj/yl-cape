@@ -47,6 +47,8 @@
                   .servicebox-image.col-sm-4
                     %img.img-responsive{:alt => "#{feature.heading}", :src => "#{feature.image_url}"}
                   .servicebox-inner.col-sm-8
+                    #{feature.heading}
+                  .servicebox-inner.col-sm-8
                     %p 
                       %i.fa.fa-fw.fa-calendar 
                       #{feature.created_at.strftime("%d %b %Y")}

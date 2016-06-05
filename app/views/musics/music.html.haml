@@ -32,41 +32,13 @@
               .gallery-photos
                 .gallery-photos-thumb
                   - for track in @tracks
-                    -if(track.category == "hot100")
-                      .gallery-photo-item.mix.hot100.wow.fadeIn
-                        %a{ :href => "#", :onclick => "playSong()"}
-                          .photo-thumb
-                            = image_tag track.image_url(:thumb)
-                          .overlay
-                            %span.gallery-icon.centered-axis-xy
-                              %i.fa.fa-play.fa-2x
-
-                    -if(track.category == "mixtapes")
-                      .gallery-photo-item.mix.mixtapes.wow.fadeIn
-                        %a.pretty-photo{"rel" => "prettyPhoto[iframe]", :href => "#{track.track}"}
-                          .photo-thumb
-                            = image_tag track.image_url(:thumb)
-                          .overlay
-                            %span.gallery-icon
-                              %i.fa.fa-play.fa-2x
-
-                    -if(track.category == "news")
-                      .gallery-photo-item.mix.news.wow.fadeIn
-                        %a.pretty-photo{"rel" => "prettyPhoto[iframe]", :href => "#{track.track}"}
-                          .photo-thumb
-                            = image_tag track.image_url(:thumb)
-                          .overlay
-                            %span.gallery-icon
-                              %i.fa.fa-play.fa-2x
-
-                    -if(track.category == "videos")
-                      .gallery-photo-item.mix.vidoes.wow.fadeIn
-                        %a.pretty-photo{"rel" => "prettyPhoto[iframe]", :href => "#{track.track}"}
-                          .photo-thumb
-                            = image_tag track.image_url(:thumb)
-                          .overlay
-                            %span.gallery-icon
-                              %i.fa.fa-play.fa-2x
+                    .gallery-photo-item.mix.hot100.wow.fadeIn
+                      %a{ :href => "#", :onclick => "playSong()"}
+                        .photo-thumb
+                          = image_tag track.image_url(:thumb)
+                        .overlay
+                          %span.gallery-icon.centered-axis-xy
+                            %i.fa.fa-play.fa-2x
   
         / Adverts
       .col-sm-3
