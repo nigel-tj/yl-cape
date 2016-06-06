@@ -1,0 +1,16 @@
+# Read about fixtures at
+# http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  artist_id: 1
+  cover: MyString
+  intro: MyString
+  thumb: MyString
+
+two:
+  title: MyString
+  artist_id: 1
+  cover: MyString
+  intro: MyString
+  thumb: MyString
