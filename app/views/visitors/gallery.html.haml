@@ -11,7 +11,7 @@
               - for gallery in @galleries
                 .grid-item.grid-sizer.col-sm-4.servicebox.featured_club
                   .servicebox-image
-                    %a.pretty-photo{"rel" => "prettyPhoto[iframes]", :href => "galleries/#{gallery.id}"}
+                    %a.pretty-photo{"rel" => "prettyPhoto[iframes]", :href => "/gallery/#{gallery.id}"}
                       %img.img-responsive{ :src => "#{gallery.image_url(:thumb)}", :alt => "#{gallery.name}"}
                   .servicebox-inner
                     %p

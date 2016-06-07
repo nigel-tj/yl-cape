@@ -1,4 +1,7 @@
 class ImagesController < ApplicationController
+  before_action :authenticate_admin!
+  layout "admin", only: [:new, :create, :update, :new, :edit, :destroy]
+
   def new
     @image = Image.new(:gallery_id => params[:gallery_id])
   end

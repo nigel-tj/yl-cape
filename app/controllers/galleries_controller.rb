@@ -1,6 +1,6 @@
 class GalleriesController < ApplicationController
-  before_action :authenticate_admin!, except: [:index,:show]
-  layout "admin", only: [:new, :create, :update, :admin_show]
+  before_action :authenticate_admin!, except:[:show_gallery]
+  layout "admin", only: [:new, :create, :update, :admin_show, :index, :show]
 
   def index
     @galleries = Gallery.all
@@ -14,6 +14,12 @@ class GalleriesController < ApplicationController
   def admin_show
     @photo_gallery = Image.where(:gallery_id => params[:id])
   end
+
+  def show_gallery
+    @gallery = Gallery.where(:gallery_id => params[:id])
+    @all_images = Image.where(:gallery_id => params[:id])
+  end
+
 
   def new
     @gallery = Gallery.new

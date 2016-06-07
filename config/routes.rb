@@ -34,6 +34,7 @@ Rails.application.routes.draw do
   get 'visitors/contact'
   get 'videos/test'
   get 'visitors/stage'
+  get 'visitors/show_gallery'
   
 
   resources :feature_banners
@@ -60,6 +61,7 @@ Rails.application.routes.draw do
   # delete '/logout', to: 'sessions#destroy', as: :logout
 
   match '/gallery' => 'visitors#gallery', :via => :get
+  match '/gallery/:id' => 'galleries#show_gallery', :via => :get
   match '/music' => 'musics#music', :via => :get
   match '/news' => 'features#index', :via => :get
   match '/social' => 'visitors#social', :via => :get

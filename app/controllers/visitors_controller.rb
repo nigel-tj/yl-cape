@@ -47,5 +47,4 @@ class VisitorsController < ApplicationController
       @galleries = Gallery.all
     end
 
-
 end
