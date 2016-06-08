@@ -12,7 +12,5 @@
         %span.help-block A link to the video on YouTube.
     .form-group
       = f.label :category, :class => "control-label col-sm-2"
-      .col-sm-10
-        = f.select "category", [["Select category","none"],["Bangers","bangers"], ["Village hits","villageHits"], ["Upcoming","upcoming"]]
       .col-sm-10 
         = f.submit class: 'btn btn-primary'

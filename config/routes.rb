@@ -75,7 +75,8 @@ Rails.application.routes.draw do
   match '/new_music_upload' => 'musics#new', :via => :get
   match '/new_gallery_upload' => 'galleries#new', :via => :get
   match '/admin_show' => 'galleries#admin_show', :via => :get
-  match '/new_video_upload' => 'videos#new', :via => :get 
+  match '/new_video_upload' => 'videos#new', :via => :get
+  match '/all_videos' => 'videos#all_videos', :via => :get 
   match '/new_store_upload' => 'stores#new', :via => :get
   match '/new_event_upload' => 'events#new', :via => :get
   match '/portfolio' => 'visitors#portfolio', :via => :get
