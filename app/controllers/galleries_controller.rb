@@ -16,8 +16,8 @@ class GalleriesController < ApplicationController
   end
 
   def show_gallery
-    @gallery = Gallery.where(:gallery_id => params[:id])
-    @all_images = Image.where(:gallery_id => params[:id])
+    @gallery = Gallery.find(params[:id])
+    #@all_images = Image.where(:gallery_id => params[:id])
   end
 
 
