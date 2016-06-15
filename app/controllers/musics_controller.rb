@@ -1,6 +1,6 @@
 require 'soundcloud'
 class MusicsController < ApplicationController
-  before_action :authenticate_admin!, except: [:show]
+  before_action :authenticate_admin!, except: [:show,:music]
   layout "admin", only: [:new, :create, :update, :admin_index, :index]
 
   def index
@@ -9,13 +9,13 @@ class MusicsController < ApplicationController
   end
 
   def music
-    @tracks = Music.all
+    @tracks = Track.all
     @artists = Artist.all
   end
 
   def admin_index
     #@tracks = Music.all
-    @tracks = Music.all
+    @tracks = Track.all
     @artists = Artist.all
   end
 
@@ -24,12 +24,12 @@ class MusicsController < ApplicationController
   #end
 
   def new
-    @music = Music.new
+    @music = Track.new
     @artist_id = current_admin.id 
   end
 
   def create
-    @music = Music.new(music_params)
+    @music = Track.new(music_params)
     if @music.save
       flash[:notice] = "Successfully uploaded track."
       render :action => '/admin_index'

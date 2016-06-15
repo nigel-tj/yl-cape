@@ -1,5 +1,5 @@
 class MainBannersController < ApplicationController
-  layout "admin", only: [:new, :create, :update, :edit]
+  layout "admin", only: [:new, :create, :update, :edit, :index]
 
   def index
     @banners = MainBanner.all 

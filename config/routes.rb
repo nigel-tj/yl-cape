@@ -45,7 +45,7 @@ Rails.application.routes.draw do
   resources :albums
   resources :users
   resources :stores
-  resources :musics
+  resources :tracks
   resources :main_banners
   resources :galleries
   resources :images
@@ -72,7 +72,7 @@ Rails.application.routes.draw do
   match '/new_artist_upload' => 'artists#new', :via => :get
   match '/new_feature_upload' => 'features#new', :via => :get
   match '/downloads' => 'artists#downloads', :via => :get
-  match '/new_music_upload' => 'musics#new', :via => :get
+  match '/new_music_upload' => 'tracks#new', :via => :get
   match '/new_gallery_upload' => 'galleries#new', :via => :get
   match '/admin_show' => 'galleries#admin_show', :via => :get
   match '/new_video_upload' => 'videos#new', :via => :get
@@ -95,6 +95,7 @@ Rails.application.routes.draw do
   match '/admin_index' => 'musics#admin_index', :via => :get
   match '/admin_artist_index' => 'artists#admin_index', :via => :get
   match '/new_album_upload' => 'albums#new', :via => :get
+  match '/lifestyle_admin_index' => 'lifestyles#lifestyle_admin_index', :via => :get
   match '/admins' => 'galleries#new', :via => :get
 
   #root :to => "galleries#index"
