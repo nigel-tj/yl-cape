@@ -1,7 +1,10 @@
 class EventsController < ApplicationController
   before_action :authenticate_admin!, except: [:index]
-  layout "admin", only: [:new, :create, :update]   
+  layout "admin", only: [:new, :create, :update,  :admin_all_events]   
   def index
+    @events = Event.all  
+  end
+  def admin_all_events
     @events = Event.all  
   end
   

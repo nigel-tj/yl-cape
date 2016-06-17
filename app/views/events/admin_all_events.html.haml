@@ -21,6 +21,6 @@
                   = succeed "NEW" do
                     %br/
               .event-box-right.col-sm-6.col-md-9
-                %img.img-responsive{:alt => "#{event.name}", :src => "#{event.image_url(:thumb)}"}/
+                %img.img-responsive{:alt => #{event.name}, :src => event.image_url(:thumb)}/
               .event-box-bottom.clearfix
                 %h2 #{event.name}

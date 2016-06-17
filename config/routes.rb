@@ -97,7 +97,7 @@ Rails.application.routes.draw do
   match '/new_album_upload' => 'albums#new', :via => :get
   match '/lifestyle_admin_index' => 'lifestyles#lifestyle_admin_index', :via => :get
   match '/admins' => 'galleries#new', :via => :get
-
+  match '/admin_all_events' => 'events#admin_all_events', :via => :get
   #root :to => "galleries#index"
   root to: 'visitors#index' 
 end
