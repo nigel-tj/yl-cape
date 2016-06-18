@@ -7,17 +7,17 @@
       .row.services
         .col-sm-12
           .row
+            %h1 All Videos
+            %p= link_to "New Video", new_video_path
             .grid
-              - if @videos.any?
-                - @videos.in_groups_of(1) do |group|
-                  - group.take(5).collect do |video|
-                    .grid-item.grid-sizer.col-sm-4.servicebox.featured_club
-                      .servicebox-image
-                        %a.vid-item.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "https://www.youtube.com/watch?v=#{video.uid}"}
-                          %img{:alt => "#{video.title}", :src => "https://img.youtube.com/vi/#{video.uid}/mqdefault.jpg"}
-                      .servicebox-inner
-                        %p
-                          #{video.title}
+              -for video in @videos
+                .grid-item.grid-sizer.col-sm-4.servicebox.featured_club
+                  .servicebox-image
+                    %a.vid-item.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "https://www.youtube.com/watch?v=#{video.uid}"}
+                      %img{:alt => "#{video.title}", :src => "https://img.youtube.com/vi/#{video.uid}/mqdefault.jpg"}
+                  .servicebox-inner
+                    %p
+                      #{video.title}
 
 
 

@@ -1,4 +1,5 @@
 class VideosController < ApplicationController
+  before_action :authenticate_admin!, except: [:index]
   layout "admin", only: [:new, :create, :update, :all_videos]
 
   def index

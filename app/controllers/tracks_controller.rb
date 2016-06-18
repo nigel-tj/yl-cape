@@ -1,13 +1,8 @@
 class TracksController < ApplicationController
-  before_action :authenticate_admin!, except: [:show,:track]
+  before_action :authenticate_admin!, except: [:show]
   layout "admin", only: [:new, :create, :update, :admin_index, :index]
   
   def index
-    @tracks = Track.all
-    @artists = Artist.all
-  end
-  
-  def track
     @tracks = Track.all
     @artists = Artist.all
   end

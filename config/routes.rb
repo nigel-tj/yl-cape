@@ -50,7 +50,7 @@ Rails.application.routes.draw do
   resources :galleries
   resources :images
   resources :features
-  resources :videos, only: [:index, :new, :create]
+  resources :videos
   resources :artists
   resources :events
   #resources :vip_tickets
@@ -62,7 +62,7 @@ Rails.application.routes.draw do
 
   match '/gallery' => 'visitors#gallery', :via => :get
   match '/gallery/:id' => 'galleries#show_gallery', :via => :get
-  match '/music' => 'musics#music', :via => :get
+  match '/music' => 'tracks#music', :via => :get
   match '/news' => 'features#index', :via => :get
   match '/social' => 'visitors#social', :via => :get
   match '/videos' => 'videos#index', :via => :get
