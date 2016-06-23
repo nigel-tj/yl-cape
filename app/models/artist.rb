@@ -1,6 +1,5 @@
 class Artist < ActiveRecord::Base
-  belongs_to :admin_user
-  has_many :musics
+  has_many :tracks
   mount_uploader :cover, ImageUploader
   mount_uploader :profile_picture, ImageUploader
 end

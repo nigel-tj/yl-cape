@@ -1,16 +1,21 @@
 class TracksController < ApplicationController
-  before_action :authenticate_admin!, except: [:show]
-  layout "admin", only: [:new, :create, :update, :admin_index, :index]
+  before_action :authenticate_admin!, except: [:show, :music]
+  layout "admin", only: [:new, :create, :update, :admin_all_music, :index]
   
   def index
     @tracks = Track.all
     @artists = Artist.all
   end
 
-  def admin_index
+  def music
+    @tracks = Track.all
+    #@artists = Artist.all
+  end
+
+  def admin_all_music
     #@tracks = Track.all
     @tracks = Track.all
-    @artists = Artist.all
+    #@artists = Artist.all
   end
 
   #def admin_track_index
@@ -26,7 +31,7 @@ class TracksController < ApplicationController
     @track = Track.new(track_params)
     if @track.save
       flash[:notice] = "Successfully uploaded track."
-      render :action => '/admin_index'
+      render :action => '/admin_all_music'
     else
       render :action => 'new'
     end
@@ -39,7 +44,7 @@ class TracksController < ApplicationController
 
   private
   def track_params
-    params.require(:track).permit(:track_title,:intro,:thumb,:track,:image,:artist_id,:category)
+    params.require(:track).permit(:track_title,:intro,:thumb,:track,:image,:category)
   end
 
 end
