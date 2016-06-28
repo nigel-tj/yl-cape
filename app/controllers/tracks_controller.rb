@@ -24,7 +24,7 @@ class TracksController < ApplicationController
 
   def new
     @track = Track.new
-    @artist_id = current_admin.id 
+    ##@artist_id = current_admin.id 
   end
 
   def create
@@ -44,7 +44,7 @@ class TracksController < ApplicationController
 
   private
   def track_params
-    params.require(:track).permit(:track_title,:intro,:thumb,:track,:image,:category)
+    params.require(:track).permit(:title,:intro,:thumb,:track,:image,:category)
   end
 
 end
