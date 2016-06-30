@@ -14,7 +14,7 @@ class TracksController < ApplicationController
 
   def admin_all_music
     #@tracks = Track.all
-    @tracks = Track.all
+    @songs = Track.all
     #@artists = Artist.all
   end
 
