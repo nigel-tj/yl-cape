@@ -46,7 +46,7 @@ class MainBannersController < ApplicationController
 
   private
   def main_banner_params
-    params.require(:main_banner).permit(:name,:title,:image)
+    params.require(:main_banner).permit(:name,:title,:image, :page)
   end
 
 end

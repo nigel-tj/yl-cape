@@ -20,6 +20,11 @@
         = f.text_field :title, class: 'form-control', required: true
         %span.help-block Text to show on banner.
     .form-group
+      = f.label :page, :class => "control-label col-sm-2"
+      .col-sm-10
+        = f.select "page", [["Select page to display banner","none"],["Home","home"], ["Videos","videos"],["Music","music"],["Events","events"],["Artists","artists"]]
+
+    .form-group
       .col-sm-offset-2.col-sm-10
         = f.submit class: 'btn btn-primary'
 
