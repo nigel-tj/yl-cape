@@ -18,11 +18,26 @@ class VideosController < ApplicationController
     @video = Video.new
   end
 
+  def destroy
+    @video = Video.find(params[:id])
+    @video.destroy
+    flash[:success] = 'Video deleted!'
+    redirect_to '/all_videos'
+  end
+
+  def edit
+    @video = Video.find(params[:id])
+  end
+
+  def show
+    @video = Video.find(params[:id])
+  end
+  
   def create
     @video = Video.new(video_params)
     if @video.save
       flash[:success] = 'Video added!'
-      render :action => '/all_videos'
+      redirect_to '/all_videos'
     else
       render :new
     end

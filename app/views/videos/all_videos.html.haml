@@ -18,6 +18,10 @@
                   .servicebox-inner
                     %p
                       #{video.title}
+                  .servicebox-inner
+                    %p
+                      = link_to "edit", edit_video_path(video) | 
+                      = button_to 'delete', video, confirm: 'Are you sure?', method: :delete
 
 
 
