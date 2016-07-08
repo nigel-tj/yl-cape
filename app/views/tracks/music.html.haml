@@ -9,38 +9,46 @@
       .col-sm-12.banner
         %img.img-responsive{:alt => "image", :src => "http://www.redvillage.co.za/uploads/main_banner/image/21/RCV_7STARS_scampD.jpg"}
     / banner end
-
-    /news tabs
+    / start services
     .row
-      .col-sm-9
+      .col-sm-9.services
         .row
           .col-sm-12
-          .ticker-container.col-sm-2
-            .ticker-caption
-              %p Music
-        / start services
-        .row.front-news
-        .col-sm-12.services.text-center
-          .tabs.tabs-style-linebox.wow.fadeInUp{"data-wow-duration" => "2s"}
-            %nav
-              %ul.filters
-                %li.hvr-sweep-to-top.active.filter{"data-filter" => ".hot100", :id => "#hot_100"}
-                  %span RCV Playlist 
-                %li.hvr-sweep-to-top.filter{"data-filter" => ".mixtapes"}
-                  %span Albums / Mixtapes
-            .grid              
+            .tabs.tabs-style-linebox.wow.fadeInUp{"data-wow-duration" => "2s"}
+              %nav.pull-right
+                %ul.content_filter
+                  %li.hvr-sweep-to-top.active.filter{"data-filter" => ".rcv_playlist", :id => "#rcv_playlist"}
+                    %span RCV Playlist
+                  %li.hvr-sweep-to-top.filter{"data-filter" => ".albums_mixtapes"}
+                    %span Albums / Mixtapes
+
+          .col-sm-12#gallery-content
+            .grid
               - for track in @tracks
-                .grid-item.grid-sizer.col-sm-4.servicebox.featured_club  
-                  .servicebox-image
-                    %a.vid-item.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "#", :onclick => "playSong()"}
-                      %img{:alt => "#{track.title}", :src => "#{track.image_url(:thumb)}"}
-                  .servicebox-inner
-                    %p
-                      #{track.title}
-                    .overlay
-                      %span.gallery-icon
-                        %i.fa.fa-play.fa-2x
-  
+                - if(track.category == "rcv_playlist")
+                  .grid-item.grid-sizer.col-sm-4.servicebox.rcv_playlist
+                    .servicebox-image
+                      %a.vid-item.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "#", :onclick => "playSong()"}
+                        %img{:alt => "#{track.title}", :src => "#{track.image_url(:thumb)}"}
+                    .servicebox-inner
+                      %p
+                        #{track.title}
+                      .overlay
+                        %span.gallery-icon
+                          %i.fa.fa-play.fa-2x
+
+                - if(track.category == "albums_mixtapes")
+                  .grid-item.grid-sizer.col-sm-4.servicebox.albums_mixtapes
+                    .servicebox-image
+                      %a.vid-item.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "#", :onclick => "playSong()"}
+                        %img{:alt => "#{track.title}", :src => "#{track.image_url(:thumb)}"}
+                    .servicebox-inner
+                      %p
+                        #{track.title}
+                      .overlay
+                        %span.gallery-icon
+                          %i.fa.fa-play.fa-2x
+
         / Adverts
       .col-sm-3
         .side-adverts
