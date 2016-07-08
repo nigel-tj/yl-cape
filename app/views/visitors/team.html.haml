@@ -1,189 +1,94 @@
-%title Space.js – The Gallery
+%link{:href => "/css/team.css", :rel => "stylesheet", :type => "text/css"}/
 %link{:href => "/css/main.css", :rel => "stylesheet", :type => "text/css"}/
-%link{:href => "/css/demo.css", :rel => "stylesheet", :type => "text/css"}/
+%header.masthead
+  .container
+    .row
+      .col-sm-6
+        %h1
+          %a{:href => "#", :title => "scroll down for your viewing pleasure"} Bootstrap 3 Layout Template
+        %p.lead Big Top Header and Fixed Sidebar
+      .col-sm-6
+        .pull-right.hidden-sm
+          %h1
+            %a{:href => "#"}
+              %i.glyphicon.glyphicon-user
+              %i.glyphicon.glyphicon-chevron-down
+/ Begin Navbar
+#nav
+  .navbar.navbar-default.navbar-static
+  .container
+    / .btn-navbar is used as the toggle for collapsed navbar content
+    %a.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse"}
+      %span.glyphicon.glyphicon-bar
+      %span.glyphicon.glyphicon-bar
+      %span.glyphicon.glyphicon-bar
+    .navbar-collapse.collapse
+      %ul.nav.navbar-nav
+        %li.active
+          %a{:href => "#"} Home
+        %li.divider
+        %li
+          %a{:href => "#"} Link
+        %li
+          %a{:href => "#"} Link
+      %ul.nav.pull-right.navbar-nav
+        %li
+          %form.navbar-form
+            %input.form-control{:placeholder => "Search", :type => "text"}/
+            %button.btn.btn-default{:type => "submit"}
+              %i.glyphicon.glyphicon-search
+        %li
+          %a{:href => "#"}
+            %i.glyphicon.glyphicon-flag
+            %span.badge 2
+  / /.navbar
+/ Begin Body
+.container
+  .row
+    .col-sm-3
+      %ul#sidebar.nav.nav-pills.nav-stacked
+        %li
+          %a{:href => "#"} Side
+        %li
+          %a{:href => "#"} Side
+        %li.divider
+        %li
+          %a{:href => "#"} Side
+        %li
+          %a{:href => "#"} Side
+    .col-sm-9
+      %h2 Content
+      = succeed "Sed" do
+        %img.img-circle.pull-right{:src => "//placehold.it/300x300/EEEEEE/EEEEEE"}/
+      %hr.col-sm-12/
+      %h2 Content
+      = succeed "Sed" do
+        %img.img-circle.pull-right{:src => "/assets/example/bg_dogcat.jpg", :style => "height:300px;width:300px;"}/
+      %hr.col-sm-12/
+      %h2 Content
+      = succeed "Sed" do
+        %img.img-circle.pull-right{:src => "/assets/example/bg_blueplane.jpg", :style => "height:300px;width:300px;"}/
+      %hr.col-sm-12/
+      %h2 Content
+      Content  here
+      %h2 Content
+      More content
+      %hr/
+      %h4
+        %a{:href => "http://bootply.com/69848"} Edit on Bootply
+      %hr/
+
 :javascript
-  function preload(arrayOfImages) {
-      $(arrayOfImages).each(function(){
-          $('<img/>')[0].src = this;
-          // Alternatively you could use:
-          // (new Image()).src = this;
-      });
-  }
-  setTimeout(function(){
-    preload([
-      'img/splash.png',
-      'img/browser.png',
-      'img/browser_tiled.png',
-      'img/paper.jpg',
-      'img/househill.jpg',
-      'img/balloon.jpg',
-      'img/flowers.jpg',
-      'img/paper.jpg',
-      'img/househill.jpg',
-      'img/umbrella.jpg',
-      'img/paper.jpg',
-      'img/spacejs.png'
-    ]);
-  }, 1000);
-.space-frame
-  %section.space-inner-frame
-    .bg{:style => "background-image:url(img/splash.jpg); padding:150px 200px;"}
-      %section
-        %p.nm.right{:style => "color:white;"} Demo 1
-        %h1.nm.large{:style => "color:white;"} The Gallery
-.space-frame{"data-enter" => "rotateInQuarterClockwise fadeIn", "data-exit" => "fadeOut scaleOut"}
-  %section.space-inner-frame
-    %p Not too long ago
-.space-frame{"data-enter" => "slideInBottom rotateInQuarterClockwise scaleIn", "data-exit" => "slideOutDown scaleOut rotateQuarterRight"}
-  %section.space-inner-frame
-    .paper.relative{:style => "width:300px; height:400px;"}
-      .center-center
-        %p.bold{:style => "color:rgba(0,0,0,0.5);"} This canvas.
-.space-frame{"data-enter" => "scaleIn", "data-exit" => "fadeOut"}
-  %section.space-inner-frame
-    %p.large
-      Was our
-      %br/
-      %b Medium
-.space-frame
-  %section.space-inner-frame
-    %p Our platform
-.space-frame
-  %section.space-inner-frame
-    %p We hung our work in bright spaces
-.space-frame
-  %section.space-inner-frame
-    %p For people to see our stories
-.space-frame
-  %section.space-inner-frame
-    %p
-      We called them
-      = succeed "." do
-        %span.modal galleries
-.space-frame
-  %section.space-inner-frame
-    %p
-      There we could design
-      = succeed "." do
-        %span.modal a path
-.space-frame
-  %section.space-inner-frame
-    %p.large.bold.modal A narrative.
-.space-frame{"data-duration" => "2", "data-enter" => "scaleIn", "data-exit" => "scaleOut fadeOut"}
-  %section.space-inner-frame
-    %p.nm.center
-      Now
-      = succeed "is" do
-        %i this
-      %b gallery
-    %img{:alt => "", :src => "img/browser.png", :width => "500px"}/
-.space-frame
-  %section.space-inner-frame
-    %p
-      Where we share our content
-      %b with the world.
-.space-frame{"data-duration" => "2", "data-enter" => "slideInTop scaleIn", "data-exit" => "rotate3dOut"}
-  %section.space-inner-frame
-    %img{:alt => "", :src => "img/browser_tiled.png", :width => "500px"}/
-    %p.nm.center
-      To make space,
-      %b we tile.
-.space-frame
-  %section.space-inner-frame
-    %p
-      This
-      = succeed "narrative." do
-        %span.modal removes
-.space-frame
-  %section.space-inner-frame
-    %p Not to mention It's been getting more and more
-.space-frame{"data-duration" => "1.2", "data-enter" => "rotate360 scaleIn", "data-exit" => "rotate3dOut slideOutRight"}
-  %section.space-inner-frame
-    .flat-shadow
-      %p.nm.huge.bold Flat
-.space-frame
-  %section.space-inner-frame
-    %p
-      Let's try
-      %span.modal something new.
-.space-frame{"data-enter" => "slideInLeft", "data-exit" => "slideOutLeft rotate3dOut rotateQuarterRight"}
-  %section.space-inner-frame
-    .wall-wrap
-      .left-wall
-        .painting
-          %img{:src => "img/paper.jpg"}/
-        %br/
-        .painting
-          %img{:src => "img/househill.jpg"}/
-      %section.center-center
-        %p.large
-          Because
-          = succeed "Our" do
-            %br/
-          = succeed "deserves" do
-            %br/
-          %b Space
-.space-frame{"data-enter" => "fadeIn", "data-exit" => "fadeOut"}
-  .background{:style => "background-image:url(img/flowers.jpg);"}
-  %section.space-inner-frame
-    %p.large.bold To flourish.
-.space-frame{"data-duration" => "2", "data-enter" => "slideInBottom", "data-exit" => "slideOutDown fadeOut"}
-  %section.space-inner-frame
-    %p.large.center To impact
-    .whole
-      .half
-        .painting
-          %img{:src => "img/paper.jpg"}/
-        .painting
-          %img{:src => "img/househill.jpg"}/
-      .half
-        .painting.nm
-          %img{:src => "img/umbrella.jpg"}/
-.space-frame{"data-enter" => "slideInRight", "data-exit" => "rotate3dOut"}
-  %section.space-inner-frame
-    .whole
-      .half
-        %p.right{:style => "padding-top:60px;"} To Touch
-      .half
-        .painting
-          %img{:src => "img/paper.jpg"}/
-.space-frame
-  %section.space-inner-frame
-    %p Welcome to the future.
-.space-frame{"data-enter" => "scaleIn", "data-exit" => "scaleOut fadeOut"}
-  %section.space-inner-frame
-    %img{:alt => "", :src => "img/spacejs.png", :width => "300px"}/
-.space-frame
-  %section.space-inner-frame
-    %section{:style => "width:100vw; height:100vh;"}
-      %section.absolute.narrow.mt-large{:style => "height:100px; bottom: 70px; left: 100px; z-index:100;"}
-        .third{:style => "text-align:right;"}
-          .portrait-frame.inline{:style => "background-image:url(img/astro_small.jpg);"}
-        .two-third
-          .mt{:style => "font-size:8px;"} Author.
-          .nm.small{:style => "margin-bottom:5px;"} Patrik Goethe
-          %div
-            %a.twitter-follow-button{"data-show-count" => "true", :href => "https://twitter.com/gopatrik"}
-          .nm{:style => "font-size:8px;"} PS. Not real astronaut.
-      %section.codrops-header.center-center{:style => "max-width:600px;"}
-        %h1 Space.js
-        %nav.codrops-demos.center
-          %a{:href => "/scripts/space.js"}
-            %b Home
-          %span.mr |
-          %a{:href => "demo1.html"}
-            %b> Demo 1 –
-            The Gallery
-          %a{:href => "demo2.html"}
-            %b> Demo 2:
-            Out of Space
-        %p.center
-          %a.twitter-share-button{"data-size" => "large", "data-text" => "Space.js – HTML-driven narrative parallax.", "data-url" => "http://www.slashie.org/space.js", "data-via" => "gopatrik", :href => "https://twitter.com/share"} Tweet
-          :javascript
-            !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
-          %a.github-button{"aria-label" => "Star gopatrik/space.js on GitHub", "data-count-api" => "/repos/gopatrik/space.js#stargazers_count", "data-count-aria-label" => "# stargazers on GitHub", "data-count-href" => "/gopatrik/space.js/stargazers", "data-style" => "mega", :href => "https://github.com/gopatrik/space.js"} Star
-          %script#github-bjs{:async => "", :defer => "defer", :src => "https://buttons.github.io/buttons.js"}
-.space-frame
-  %section.space-inner-frame
+  $('#nav').affix({
+    offset: {
+      top: $('header').height()
+    }
+  });
+
+  $('#sidebar').affix({
+    offset: {
+      top: 200
+    }
+  });
 %script{:src => "/scripts/jquery-2.0.2.min.js"}
 %script{:src => "/scripts/space.js"}
