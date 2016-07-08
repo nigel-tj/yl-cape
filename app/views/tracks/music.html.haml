@@ -28,17 +28,18 @@
                   %span RCV Playlist 
                 %li.hvr-sweep-to-top.filter{"data-filter" => ".mixtapes"}
                   %span Albums / Mixtapes
-            .gallery-photo-grid
-              .gallery-photos
-                .gallery-photos-thumb
-                  - for track in @tracks
-                    .gallery-photo-item.mix.hot100.wow.fadeIn
-                      %a{ :href => "#", :onclick => "playSong()"}
-                        .photo-thumb
-                          = image_tag track.image_url(:thumb)
-                        .overlay
-                          %span.gallery-icon.centered-axis-xy
-                            %i.fa.fa-play.fa-2x
+            .grid              
+              - for track in @tracks
+                .grid-item.grid-sizer.col-sm-4.servicebox.featured_club  
+                  .servicebox-image
+                    %a.vid-item.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "#", :onclick => "playSong()"}
+                      %img{:alt => "#{track.title}", :src => "#{track.image_url(:thumb)}"}
+                  .servicebox-inner
+                    %p
+                      #{track.title}
+                    .overlay
+                      %span.gallery-icon
+                        %i.fa.fa-play.fa-2x
   
         / Adverts
       .col-sm-3
