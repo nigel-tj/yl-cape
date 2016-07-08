@@ -27,7 +27,7 @@
           .col-sm-12#gallery-content
             .grid
               - for article in @lifestyle
-                - if(article.category == ".healthyLiving")
+                - if(article.category == "healthyLiving")
                   .grid-item.grid-sizer.col-sm-4.servicebox.healthyLiving
                     .servicebox-image
                       %img.img-responsive{:alt => "#{article.title}", :src => "#{article.image_url}"}
