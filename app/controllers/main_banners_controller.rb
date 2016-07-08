@@ -23,7 +23,7 @@ class MainBannersController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
     @banner = MainBanner.find(params[:id])
     @banner.destroy
     flash[:notice] = "Successfully deleted banner."

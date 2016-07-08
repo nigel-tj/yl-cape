@@ -32,4 +32,5 @@
                       #{banner.title}
                     %p
                       = link_to "edit", edit_main_banner_path(banner) | 
-                      #{link_to "remove", banner, :confirm => 'Are you sure?', :method => :delete}
+                      = button_to 'delete', banner, confirm: 'Are you sure?', method: :delete
+
