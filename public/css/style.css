@@ -656,7 +656,7 @@ border:0;
   -webkit-transform: scaleY(1);
   transform: scaleY(1);
 }
-#gallery, #events {
+#gallery, #events, #services {
   background-color:#000;
     padding-bottom: 1%;
 }

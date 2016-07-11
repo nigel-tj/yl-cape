@@ -444,9 +444,9 @@ color:red;
 @media (max-width: 360px)
 {
     #video_carousel .flex-direction-nav .flex-prev{
-        left: -40px;
+        top: -40px;
     }
     #video_carousel .flex-direction-nav .flex-next{
-        right: -40px;
+        bottom: -40px;
     }
 }

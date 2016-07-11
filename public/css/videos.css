@@ -103,6 +103,18 @@
         }
 }
 
+    #video_carousel .flex-direction-nav .flex-prev{
+        top: -50px;
+    }
+    #video_carousel .flex-direction-nav .flex-next{
+        bottom: -50px;
+    }
+
+#video_carousel .flex-direction-nav a{
+    top: 90%;
+left: 40%;
+transform: rotate(90deg);
+}
 #video_carousel.flexslider .slides > li{
 float:none !important;
 }
