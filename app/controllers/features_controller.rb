@@ -3,12 +3,11 @@ class FeaturesController < ApplicationController
   layout "admin", only: [:new, :create, :update, :admin_index]   
   
   def index
-    @features = Feature.all
-    @banners = FeatureBanner.all
+    @features = Feature.order('created_at DESC')
   end
   
   def admin_index
-    @features = Feature.all
+    @features = Feature.order('created_at DESC')
   end
   
   def new

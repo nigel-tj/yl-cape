@@ -2,10 +2,10 @@ class LifestylesController < ApplicationController
   before_action :authenticate_admin!, except: [:index,:show]
   layout "admin", only: [:new, :create, :update, :admin_index, :lifestyle_admin_index]   
   def index
-    @lifestyle = Lifestyle.all
+    @lifestyle = Lifestyle.order('created_at DESC')
   end
   def lifestyle_admin_index
-    @lifestyle = Lifestyle.all
+    @lifestyle = Lifestyle.order('created_at DESC')
   end
   def new
     @lifestyle = Lifestyle.new

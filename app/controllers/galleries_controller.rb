@@ -3,7 +3,7 @@ class GalleriesController < ApplicationController
   layout "admin", only: [:new, :create, :update, :admin_show, :index, :show]
 
   def index
-    @galleries = Gallery.all
+    @galleries = Gallery.order('created_at DESC')
   end
 
   def show
