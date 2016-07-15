@@ -1,6 +1,6 @@
 class TracksController < ApplicationController
   before_action :authenticate_admin!, except: [:show, :music]
-  layout "admin", only: [:new, :create, :update, :admin_all_music, :index]
+  layout "admin", only: [:new, :create, :update, :admin_all_music, :index, :edit]
   
   def index
     @tracks = Track.order('created_at DESC')
@@ -39,6 +39,20 @@ class TracksController < ApplicationController
 
   def show
     @track = Track.find(params[:id])
+  end
+
+  def edit
+    @track = Track.find(params[:id])
+  end
+
+  def update
+    @track = Track.find(params[:id])
+    if @track.update_attributes(track_params)
+      flash[:notice] = "Successfully updated track."
+      redirect_to '/tracks'
+    else
+      render :action => 'edit'
+    end
   end
 
 

@@ -1,0 +1,27 @@
+.container
+  %h1 Upload New Track
+  = form_for @track, html: { class: "form-horizontal"} do |f|
+    = render 'shared/errors', object: @track
+    .form-group
+      = f.label :title, :class => "control-label col-sm-2"
+      .col-sm-10
+        = f.text_field :title, class: 'form-control', required: true
+        %span.help-block Track name .
+    .form-group
+      = f.label :category, :class => "control-label col-sm-2"
+      .col-sm-10
+        = f.select "category", [["Select category","none"],["RCV Playlist","rcv_playlist"], ["Albums / Mixtapes","albums_mixtapes"]]
+    .form-group
+      = f.label :image, :class => "control-label col-sm-2"
+      .col-sm-10
+        = f.file_field :image, required: true
+        %span.help-block Track Cover.
+    .form-group
+      = f.label :track, :class => "control-label col-sm-2"
+      .col-sm-10
+        = f.file_field :track, required: true
+        %span.help-block Music Track .
+    .form-group
+      .col-sm-offset-2.col-sm-10
+        = f.submit class: 'btn btn-primary'
+
