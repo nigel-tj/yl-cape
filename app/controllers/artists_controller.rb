@@ -10,7 +10,7 @@ class ArtistsController < ApplicationController
     #render :layout => 'admin'
   end
 
-  def admin_index
+  def admin_artist_index
     @artists = Artist.all 
   end
 
@@ -18,7 +18,7 @@ class ArtistsController < ApplicationController
     @artist = Artist.new(artist_params)
     if @artist.save
       flash[:notice] = "Successfully created artist."
-      render :action => 'admin_index'
+      redirect_to 'admin_artist_index'
     else
       render :action => 'new'
     end

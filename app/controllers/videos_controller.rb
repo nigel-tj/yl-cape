@@ -3,11 +3,11 @@ class VideosController < ApplicationController
   layout "admin", only: [:new, :create, :update, :all_videos]
 
   def index
-    @videos = Video.all
+    @videos = Video.order('created_at DESC')
   end
 
   def all_videos
-    @videos = Video.all
+    @videos = Video.order('created_at DESC')
   end
 
   def test

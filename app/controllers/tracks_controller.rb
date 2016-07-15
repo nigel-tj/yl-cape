@@ -3,18 +3,18 @@ class TracksController < ApplicationController
   layout "admin", only: [:new, :create, :update, :admin_all_music, :index]
   
   def index
-    @tracks = Track.all
-    @artists = Artist.all
+    @tracks = Track.order('created_at DESC')
+    @artists = Artist.order('created_at DESC')
   end
 
   def music
-    @tracks = Track.all
+    @tracks = Track.order('created_at DESC')
     #@artists = Artist.all
   end
 
   def admin_all_music
     #@tracks = Track.all
-    @songs = Track.all
+    @songs = Track.order('created_at DESC')
     #@artists = Artist.all
   end
 
