@@ -1,5 +1,5 @@
 class ArtistsController < ApplicationController
-  layout "admin", only: [:new, :create, :update, :admin_index]
+  layout "admin", only: [:new, :create, :update, :admin_artist_index]
 
   def index
     @artists = Artist.all 

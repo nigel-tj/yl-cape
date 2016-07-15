@@ -1,13 +1,13 @@
 class AlbumsController < ApplicationController
   before_action :authenticate_admin_user!, except: [:index, :show]
 
-  layout "admin", only: [:new, :create, :update, :admin_show, :admin_index]
+  layout "admin", only: [:new, :create, :update, :admin_show, :admin_album_index]
 
   def index
     @albums = Album.all
   end
 
-  def admin_index
+  def admin_album_index
     @albums = Album.all
   end
 
