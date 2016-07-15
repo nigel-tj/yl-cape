@@ -1,5 +1,5 @@
 class AlbumsController < ApplicationController
-  before_action :authenticate_admin_user!, except: [:index, :show]
+  before_action :authenticate_admin!, except: [:index, :show]
 
   layout "admin", only: [:new, :create, :update, :admin_show, :admin_album_index]
 
