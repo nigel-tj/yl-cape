@@ -99,6 +99,7 @@ Rails.application.routes.draw do
   match '/lifestyle_admin_index' => 'lifestyles#lifestyle_admin_index', :via => :get
   match '/admins' => 'galleries#new', :via => :get
   match '/admin_all_events' => 'events#admin_all_events', :via => :get
-  #root :to => "galleries#index"
-  root to: 'coming_soon#index' 
+
+  #root to: 'coming_soon#index'
+  root :to => "visitors#index"
 end
