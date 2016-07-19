@@ -91,7 +91,8 @@ Rails.application.routes.draw do
   match '/new_lifestyle_upload' => 'lifestyles#new', :via => :get
   match '/lifestyle_admin_index' => 'lifestyles#lifestyle_admin_index', :via => :get
   match '/lifestyle' => 'lifestyles#index', :via => :get
-  match '/admin_album_index' => 'albums#admin_index', :via => :get
+  match '/admin_album_index' => 'albums#admin_album_index', :via => :get
+  match '/admin_show_album' => 'albums#admin_show_album', :via => :get
   match '/admin_all_music' => 'tracks#admin_all_music', :via => :get
   match '/admin_artist_index' => 'artists#admin_artist_index', :via => :get
   match '/new_album_upload' => 'albums#new', :via => :get

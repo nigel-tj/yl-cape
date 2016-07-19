@@ -4,18 +4,18 @@
       = @album.name
       %h1
     %p
-      = link_to "Add songs", new_music_path(:album_id => @album)
+      = link_to "Add tracks", new_track_path(:album_id => @album)
       |
       #{link_to "Delete album", @album, :confirm => 'Are you sure?', :method => :delete} 
       |
-      #{link_to "View All Albums", albums_path}
+      #{link_to "View All Albums/Mixtapes", albums_path}
   #musics
-    - for song in @album.musics
+    - for song in @album.tracks
       .col-md-4{:style => "height:300px"}
         = image_tag song.image_url(:thumb) if song.image?
         .name= song.name
         .actions
-          = link_to "edit", edit_music_path(song)
+          = link_to "edit", edit_album_path(song)
           |
           \#{link_to "remove", song, :confirm => 'Are you sure?', :method => :delete}
     .clear

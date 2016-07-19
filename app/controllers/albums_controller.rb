@@ -12,11 +12,11 @@ class AlbumsController < ApplicationController
   end
 
   def show
-    @album = Album.find(params[:id])
+    @album = Track.where(:album_id => params[:id])
   end
 
-  def admin_show
-    @album = Album.find(params[:id])
+  def admin_show_album
+    @album = Track.where(:album_id => params[:id])
   end
 
   def new
@@ -27,7 +27,7 @@ class AlbumsController < ApplicationController
     @album = Album.new(album_params)
     if @album.save
       flash[:notice] = "Successfully created album."
-      render :action => 'admin_show'
+      render :action => '/admin_show_album'
     else
       render :action => 'new'
     end
@@ -57,7 +57,7 @@ class AlbumsController < ApplicationController
 
   private
   def album_params
-    params.require(:album).permit(:name,:cover, :artist_id)
+    params.require(:album).permit(:name,:cover, :artist_name, :artist_id)
   end
 
 end
