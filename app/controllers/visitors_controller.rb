@@ -3,7 +3,7 @@ class VisitorsController < ApplicationController
   #before_action :authenticate_user! #, except: [:index,:show, :vidoes, :social, :news, :portfolio,:gallery]
   layout "team_layout", only: [:team]
   def index
-    @banners = MainBanner.all
+    @banners = MainBanner.where(:page => "home")
     @trends  = Feature.all
     @videos = Video.order('created_at DESC')
     # twiiter
