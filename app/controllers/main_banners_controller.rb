@@ -2,7 +2,7 @@ class MainBannersController < ApplicationController
   layout "admin", only: [:new, :create, :update, :edit, :index]
 
   def index
-    @banners = MainBanner.order('created_at DESC') 
+    @banners = MainBanner.all
   end
   
   def new
