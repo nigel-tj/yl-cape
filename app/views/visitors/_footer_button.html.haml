@@ -28,76 +28,62 @@
             %p
               CopyRight &copy; 2015 Red Village
 
-%script{:src => "/scripts/jquery.js", :type => "text/javascript"}
-%script{:src => "/scripts/wow.min.js"}
-%script{:src => "/scripts/bootstrap.min.js", :type => "text/javascript"}
-%script{:src => "/scripts/jquery.smoothwheel.js", :type => "text/javascript"}
-%script{:defer => "defer", :src => "/flex/jquery.flexslider.js"}
-%script{:src => "/scripts/respond.js", :type => "text/javascript"}
-%script{:src => "/scripts/jquery-migrate.min.js", :type => "text/javascript"}
-%script{:src => "/scripts/jquery.bxslider.min.js", :type => "text/javascript"}
-%script{:src => "/scripts/jquery.mixitup.js", :type => "text/javascript"}
-%script{:src => "/scripts/jquery.plugin.js", :type => "text/javascript"}
-%script{:src => "/scripts/modernizr.custom.97074.js", :type => "text/javascript"}
-%script{:src => "/scripts/jquery.hoverdir.js", :type => "text/javascript"}
-%script{:src => "/scripts/script.js", :type => "text/javascript"}
 
-
-/ Go to www.addthis.com/dashboard to customize your tools
+<!-- / Go to www.addthis.com/dashboard to customize your tools -->
 <!-- %script{:src => "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-56cd78a5c163629c", :type => "text/javascript"} -->
-%script{:src => "/audiojs/audio.min.js"}
-:javascript
-  audiojs.events.ready(function() {
-      var audios = document.getElementsByTagName('audio');
+<!-- %script{:src => "/audiojs/audio.min.js"} -->
+<!-- :javascript -->
+<!--   audiojs.events.ready(function() { -->
+<!--       var audios = document.getElementsByTagName('audio'); -->
 
-      var a1 = audiojs.create(audios[0], {
-          css: false,
-          createPlayer: {
-              markup: false,
-              playPauseClass: 'play-pauseZ',
-              scrubberClass: 'scrubberZ',
-              progressClass: 'progressZ',
-              loaderClass: 'loadedZ',
-              timeClass: 'timeZ',
-              durationClass: 'durationZ',
-              playedClass: 'playedZ',
-              errorMessageClass: 'error-messageZ',
-              playingClass: 'playingZ',
-              loadingClass: 'loadingZ',
-              errorClass: 'errorZ'
-          }
-      });
+<!--       var a1 = audiojs.create(audios[0], { -->
+<!--           css: false, -->
+<!--           createPlayer: { -->
+<!--               markup: false, -->
+<!--               playPauseClass: 'play-pauseZ', -->
+<!--               scrubberClass: 'scrubberZ', -->
+<!--               progressClass: 'progressZ', -->
+<!--               loaderClass: 'loadedZ', -->
+<!--               timeClass: 'timeZ', -->
+<!--               durationClass: 'durationZ', -->
+<!--               playedClass: 'playedZ', -->
+<!--               errorMessageClass: 'error-messageZ', -->
+<!--               playingClass: 'playingZ', -->
+<!--               loadingClass: 'loadingZ', -->
+<!--               errorClass: 'errorZ' -->
+<!--           } -->
+<!--       }); -->
 
-      var a2 = audiojs.create(audios[1]);
-      /*
-       var a3 = audiojs.create(audios[2], {
-       createPlayer: {
-       markup: '\
-       <div class="play-pause"> \
-       <p class="play"></p> \
-       <p class="pause"></p> \
-       <p class="loading"></p> \
-       <p class="error"></p> \
-       </div> \
-       <div class="scrubber"> \
-       <div class="progress"></div> \
-       <div class="loaded"></div> \
-       </div> \
-       <div class="time"> \
-       <em class="played">00:00</em>/<strong class="duration">00:00</strong> \
-       </div> \
-       <div class="error-message"></div>',
-       playPauseClass: 'play-pause',
-       scrubberClass: 'scrubber',
-       progressClass: 'progress',
-       loaderClass: 'loaded',
-       timeClass: 'time',
-       durationClass: 'duration',
-       playedClass: 'played',
-       errorMessageClass: 'error-message',
-       playingClass: 'playing',
-       loadingClass: 'loading',
-       errorClass: 'error'
-       });
-       */
-  });
+<!--       var a2 = audiojs.create(audios[1]); -->
+<!--       /* -->
+<!--        var a3 = audiojs.create(audios[2], { -->
+<!--        createPlayer: { -->
+<!--        markup: '\ -->
+<!--        <div class="play-pause"> \ -->
+<!--        <p class="play"></p> \ -->
+<!--        <p class="pause"></p> \ -->
+<!--        <p class="loading"></p> \ -->
+<!--        <p class="error"></p> \ -->
+<!--        </div> \ -->
+<!--        <div class="scrubber"> \ -->
+<!--        <div class="progress"></div> \ -->
+<!--        <div class="loaded"></div> \ -->
+<!--        </div> \ -->
+<!--        <div class="time"> \ -->
+<!--        <em class="played">00:00</em>/<strong class="duration">00:00</strong> \ -->
+<!--        </div> \ -->
+<!--        <div class="error-message"></div>', -->
+<!--        playPauseClass: 'play-pause', -->
+<!--        scrubberClass: 'scrubber', -->
+<!--        progressClass: 'progress', -->
+<!--        loaderClass: 'loaded', -->
+<!--        timeClass: 'time', -->
+<!--        durationClass: 'duration', -->
+<!--        playedClass: 'played', -->
+<!--        errorMessageClass: 'error-message', -->
+<!--        playingClass: 'playing', -->
+<!--        loadingClass: 'loading', -->
+<!--        errorClass: 'error' -->
+<!--        }); -->
+<!--        */ -->
+<!--   }); -->
