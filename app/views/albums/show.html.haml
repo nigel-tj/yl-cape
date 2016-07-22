@@ -23,11 +23,11 @@
                   .gallery-photo-grid
                     .gallery-photos
                       .gallery-photos-thumb
-                        - for song in @album.musics
+                        - for track in @album.tracks
                           .gallery-photo-item.mix.new.fadeIn
                             %a.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => album.cover_url}
                               .photo-thumb
-                                = image_tag song.image_url(:thumb) if song.image?
+                                = image_tag track.image_url(:thumb) if track.image?
                               .overlay
                                 %span.gallery-icon
                                   %i.fa.fa-search-plus.fa-2x
