@@ -17,9 +17,11 @@
             .tabs.tabs-style-linebox.wow.fadeInUp{"data-wow-duration" => "2s"}
               %nav.pull-right
                 %ul.content_filter
-                  %li.hvr-sweep-to-top.active.filter{"data-filter" => ".fashion", :id => "#hot_100"}
+                  %li.hvr-sweep-to-top.active.filter{"data-filter" => ".fashion", :id => "#fashion"}
                     %span Fashion
-                  %li.hvr-sweep-to-top.filter{"data-filter" => ".streetHustle"}
+                  %li.hvr-sweep-to-top.filter{"data-filter" => ".gadgets"}
+                    %span Healthy Living
+                  %li.hvr-sweep-to-top.filter{"data-filter" => ".healthyLiving"}
                     %span Street Hustle
                   %li.hvr-sweep-to-top.filter{"data-filter" => ".gadgets"}
                     %span Gadgets
@@ -28,36 +30,60 @@
             .grid
               - for article in @lifestyle
                 - if(article.category == "healthyLiving")
-                  .grid-item.grid-sizer.col-sm-4.servicebox.healthyLiving
-                    .servicebox-image
+                  .grid-item.grid-sizer.col-sm-12.servicebox.healthyLiving
+                    .servicebox-image.col-sm-4
                       %img.img-responsive{:alt => "#{article.title}", :src => "#{article.image_url}"}
-                    .servicebox-inner
+                    .servicebox-inner.col-sm-8
                       %p
                         %a{:href => "#{article.link}"} #{article.intro}
+                    .servicebox-inner.col-sm-8
+                      %p 
+                        %i.fa.fa-fw.fa-calendar 
+                        #{article.created_at.strftime("%d %b %Y")}
+                        %br/
+                        %a{:href => "#{article.link}", :target => "_blank"} #{article.intro} 
 
                 - if(article.category == "fashion")
-                  .grid-item.grid-sizer.col-sm-4.servicebox.fashion
-                    .servicebox-image
+                  .grid-item.grid-sizer.col-sm-12.servicebox.fashion
+                    .servicebox-image.col-sm-4
                       %img.img-responsive{:alt => "#{article.title}", :src => "#{article.image_url}"}
-                    .servicebox-inner
+                    .servicebox-inner.col-sm-8
                       %p
                         %a{:href => "#{article.link}"} #{article.intro}
+                    .servicebox-inner.col-sm-8
+                      %p 
+                        %i.fa.fa-fw.fa-calendar 
+                        #{article.created_at.strftime("%d %b %Y")}
+                        %br/
+                        %a{:href => "#{article.link}", :target => "_blank"} #{article.intro} 
 
                 - if(article.category == "streetHustle")
-                  .grid-item.grid-sizer.col-sm-4.servicebox.streetHustle
-                    .servicebox-image
+                  .grid-item.grid-sizer.col-sm-12.servicebox.streetHustle
+                    .servicebox-image.col-sm-4
                       %img.img-responsive{:alt => "#{article.title}", :src => "#{article.image_url}"}
-                    .servicebox-inner
+                    .servicebox-inner.col-sm-8
                       %p
                         %a{:href => "#{article.link}"} #{article.intro}
+                    .servicebox-inner.col-sm-8
+                      %p 
+                        %i.fa.fa-fw.fa-calendar 
+                        #{article.created_at.strftime("%d %b %Y")}
+                        %br/
+                        %a{:href => "#{article.link}", :target => "_blank"} #{article.intro} 
 
                 - if(article.category == "gadgets")
-                  .grid-item.grid-sizer.col-sm-4.servicebox.gadgets
-                    .servicebox-image
+                  .grid-item.grid-sizer.col-sm-12.servicebox.gadgets
+                    .servicebox-image.col-sm-4
                       %img.img-responsive{:alt => "#{article.title}", :src => "#{article.image_url}"}
-                    .servicebox-inner
+                    .servicebox-inner.col-sm-8
                       %p
                         %a{:href => "#{article.link}"} #{article.intro}
+                    .servicebox-inner.col-sm-8
+                      %p 
+                        %i.fa.fa-fw.fa-calendar 
+                        #{article.created_at.strftime("%d %b %Y")}
+                        %br/
+                        %a{:href => "#{article.link}", :target => "_blank"} #{article.intro} 
 
       / Adverts
       .col-sm-3
@@ -70,7 +96,7 @@
 
 :javascript
   $(document).ready(function(){
-    document.getElementById('#hot_100').classList.add("active");
+    document.getElementById('#fashion').classList.add("active");
     $('.grid').masonry({
       // options...
       itemSelector: '.grid-item',
