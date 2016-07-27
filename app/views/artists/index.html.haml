@@ -1,39 +1,56 @@
+%script{:src => "/scripts/masonry.pkgd.min.js", :type => "text/javascript"}
+%script{:src => "/scripts/isotope.pkgd.min.js", :type => "text/javascript"}
 %script{:src => "/scripts/isotope.init.js", :type => "text/javascript"}
 .container
-  #services
+  / start news tabs
+  #gallery
+    / banner
     .row
-      .container-fluid
-        .row.gallery.text-center
-          .col-md-12.noPadding
-            .gallery-photo-grid
-              .gallery-photos
-                .gallery-photos-thumb
-                  -for artist in @artists  
-                    - if(artist.category == "model")
-                      .gallery-photo-item.mix.model.wow.fadeIn
-                        %a.pretty-photo{:href => "artists/#{artist.id}?#{artist.name}"}
-                          .photo-thumb
-                            = image_tag artist.profile_picture_url(:thumb)
-                          .overlay
-                            %span.gallery-icon.centered-axis-xy
-                            %i.fa.fa-plus.fa-2x
+      .col-sm-12.banner
+        %img.img-responsive{:alt => "image", :src => "http://www.redvillage.co.za/uploads/main_banner/image/21/RCV_7STARS_scampD.jpg"}
+    / banner end
+    / start services
+    .row
+      .col-sm-9.services
+        .row
+          .col-sm-12#gallery-content
+            .grid
+              - for artist in @artists
+                .grid-item.grid-sizer.col-sm-4.servicebox.rcv_playlist
+                  .servicebox-image
+                    %a.vid-item.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "artists/#{artist.id}?#{artist.name}"}
+                      %img{:alt => "#{artist.name}", :src => "#{artist.profile_picture_url(:thumb)}"}
+                  .servicebox-inner
+                    %p
+                      #{artist.name}
 
-                    - if(artist.category == "label")
-                      .gallery-photo-item.mix.label.wow.fadeIn
-                        %a.pretty-photo{:href => "artists/#{artist.id}?#{artist.name}"}
-                          .photo-thumb
-                            = image_tag artist.profile_picture_url(:thumb)
-                          .overlay
-                            %span.gallery-icon.centered-axis-xy
-                            %i.fa.fa-plus.fa-2x
 
-                    - if(artist.category == "management")
-                      .gallery-photo-item.mix.management.wow.fadeIn
-                        %a.pretty-photo{:href => "artists/#{artist.id}?#{artist.name}"}
-                          .photo-thumb
-                            = image_tag artist.profile_picture_url(:thumb)
-                          .overlay
-                            %span.gallery-icon.centered-axis-xy
-                            %i.fa.fa-plus.fa-2x
-                          
-/ end gallery
+        / Adverts
+      .col-sm-3
+        .side-adverts
+          %ul.advert-image
+            %li
+              %img.img-responsive{:alt => "image", :src => "http://www.redvillage.co.za/uploads/main_banner/image/20/davincii_cropped.jpg"}
+            %li
+              %img.img-responsive{:alt => "image", :src => "http://www.redvillage.co.za/uploads/main_banner/image/16/COUSIN_JMF_do_it_like_boss_banner_redcup.jpg"}
+        / Adverts
+      .col-sm-3
+        .side-adverts
+          %ul.advert-image
+            %li
+              %img.img-responsive{:alt => "image", :src => "http://www.redvillage.co.za/uploads/main_banner/image/20/davincii_cropped.jpg"}
+            %li
+              %img.img-responsive{:alt => "image", :src => "http://www.redvillage.co.za/uploads/main_banner/image/16/COUSIN_JMF_do_it_like_boss_banner_redcup.jpg"}
+        / Adverts
+      .col-sm-3
+        .side-adverts
+          %ul.advert-image
+            %li
+              %img.img-responsive{:alt => "image", :src => "http://www.redvillage.co.za/uploads/main_banner/image/20/davincii_cropped.jpg"}
+            %li
+              %img.img-responsive{:alt => "image", :src => "http://www.redvillage.co.za/uploads/main_banner/image/16/COUSIN_JMF_do_it_like_boss_banner_redcup.jpg"}
+
+:javascript
+  function playSong() {
+    document.getElementById("audio_player").src = "https://raw.githubusercontent.com/kolber/audiojs/master/mp3/bensound-dubstep.mp3";
+  }
