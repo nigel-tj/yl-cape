@@ -1,46 +1,27 @@
+%script{:src => "/scripts/masonry.pkgd.min.js", :type => "text/javascript"}
+%script{:src => "/scripts/isotope.pkgd.min.js", :type => "text/javascript"}
+%script{:src => "/scripts/isotope.init.js", :type => "text/javascript"}
 #services
   .container
     .row
-    / start gallery
-    #gallery.text-center
-      .container
-        .row.text-center
-          .tabs.tabs-style-linebox.wow.fadeInUp{"data-wow-duration" => "2s"}
-            %nav
-              %ul.filters
-                %li.hvr-sweep-to-top.active.filter{"data-filter" => ".models"}
-                  %span Models
-                %li.hvr-sweep-to-top.filter{"data-filter" => ".label"}
-                  %span Labels
-                %li.hvr-sweep-to-top.filter{"data-filter" => ".management"}
-                  %span Management  
+      .row.services
+        .col-sm-12
+          .row
+            %h1 All Artists
+            %p= link_to "New Artist", new_artist_path
+            .grid
+              -for artist in @artists
+                .grid-item.grid-sizer.col-sm-4.servicebox.featured_club
+                  .servicebox-image
+                    %a.vid-item.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "artists/#{artist.id}?#{artist.name}"}
+                      %img{:alt => "#{artist.name}", :src => "#{artist.profile_picture_url}"}
+                  .servicebox-inner
+                    %p
+                      #{artist.name}
+                  .servicebox-inner
+                    %p
+                      = link_to "edit", edit_artist_path(artist) | 
+                      = button_to 'delete', artist, confirm: 'Are you sure?', method: :delete
 
-      .container-fluid
-        .row.gallery.text-center
-          .col-md-12.noPadding
-            .gallery-photo-grid
-              .gallery-photos
-                .gallery-photos-thumb
-                  -for artist in @artists  
-                    - if(artist.category == "model")
-                      .gallery-photo-item.mix.model.wow.fadeIn
-                        %a.pretty-photo{:href => "artists/#{artist.id}?#{artist.name}"}
-                          .photo-thumb
-                            = image_tag artist.profile_picture_url(:thumb)
 
-                    - if(artist.category == "label")
-                      .gallery-photo-item.mix.label.wow.fadeIn
-                        %a.pretty-photo{:href => "artists/#{artist.id}?#{artist.name}"}
-                          .photo-thumb
-                            = image_tag artist.profile_picture_url(:thumb)
-
-                    - if(artist.category == "management")
-                      .gallery-photo-item.mix.management.wow.fadeIn
-                        %a.pretty-photo{:href => "artists/#{artist.id}?#{artist.name}"}
-                          .photo-thumb
-                            = image_tag artist.profile_picture_url(:thumb)
-                          
-/ end gallery
-
-:javascript
 

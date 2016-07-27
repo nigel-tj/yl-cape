@@ -1,5 +1,5 @@
 class ArtistsController < ApplicationController
-  layout "admin", only: [:new, :create, :update, :admin_artist_index]
+  layout "admin", only: [:new, :create, :update, :admin_artist_index, :edit]
 
   def index
     @artists = Artist.all 
@@ -22,6 +22,10 @@ class ArtistsController < ApplicationController
     else
       render :action => 'new'
     end
+  end
+
+  def edit
+    @artist = Artist.find(params[:id])
   end
 
   def update
