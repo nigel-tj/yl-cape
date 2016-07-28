@@ -1,5 +1,5 @@
 .container
-  %h1 Upload New Track
+  %h1 #{@page_heading}
   = form_for @track, html: { class: "form-horizontal"} do |f|
     = render 'shared/errors', object: @track
     .form-group
@@ -17,11 +17,12 @@
       = f.label :category, :class => "control-label col-sm-2"
       .col-sm-10
         = f.select "category", [["Select category","none"],["RCV Playlist","rcv_playlist"], ["Albums / Mixtapes","albums_mixtapes"]]
-    .form-group
-      = f.label :image, :class => "control-label col-sm-2"
-      .col-sm-10
-        = f.file_field :image, required: true
-        %span.help-block Track Cover.
+    -if(@number_of_tracks == "single")
+      .form-group
+        = f.label :image, :class => "control-label col-sm-2"
+        .col-sm-10
+          = f.file_field :image, required: true
+          %span.help-block Track Cover.
     .form-group
       = f.label :track, :class => "control-label col-sm-2"
       .col-sm-10

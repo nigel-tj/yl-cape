@@ -23,7 +23,16 @@ class TracksController < ApplicationController
   #end
 
   def new
-    @track = Track.new
+    if(params.has_key?(:album_id))
+      @number_of_tracks = "multiple"
+      @page_heading = "Add tracks to album"
+      @track = Track.new(:album_id => params[:album_id])
+    else
+      @number_of_tracks = "single"
+      @page_heading = "Add new track"
+      @track = Track.new
+    end
+    
     ##@artist_id = current_admin.id 
   end
 
