@@ -35,27 +35,24 @@
                       %img.img-responsive{:alt => "#{article.title}", :src => "#{article.image_url}"}
                     .servicebox-inner.col-sm-8
                       %p
+                        #{article.title}
+                        %br/
                         %a{:href => "#{article.link}"} #{article.intro}
-                    .servicebox-inner.col-sm-8
-                      %p 
+                        %br/
                         %i.fa.fa-fw.fa-calendar 
                         #{article.created_at.strftime("%d %b %Y")}
-                        %br/
-                        %a{:href => "#{article.link}", :target => "_blank"} #{article.intro} 
-
                 - if(article.category == "fashion")
                   .grid-item.grid-sizer.col-sm-12.servicebox.fashion
                     .servicebox-image.col-sm-4
                       %img.img-responsive{:alt => "#{article.title}", :src => "#{article.image_url}"}
                     .servicebox-inner.col-sm-8
                       %p
-                        %a{:href => "#{article.link}"} #{article.intro}
-                    .servicebox-inner.col-sm-8
-                      %p 
-                        %i.fa.fa-fw.fa-calendar 
-                        #{article.created_at.strftime("%d %b %Y")}
+                        #{article.title}
                         %br/
-                        %a{:href => "#{article.link}", :target => "_blank"} #{article.intro} 
+                        %a{:href => "#{article.link}"} #{article.intro}
+                        %br/
+                        %i.fa.fa-fw.fa-calendar 
+                        #{article.created_at.strftime("%d %b %Y")}                        
 
                 - if(article.category == "streetHustle")
                   .grid-item.grid-sizer.col-sm-12.servicebox.streetHustle
@@ -63,13 +60,12 @@
                       %img.img-responsive{:alt => "#{article.title}", :src => "#{article.image_url}"}
                     .servicebox-inner.col-sm-8
                       %p
+                        #{article.title}
+                        %br/
                         %a{:href => "#{article.link}"} #{article.intro}
-                    .servicebox-inner.col-sm-8
-                      %p 
+                        %br/
                         %i.fa.fa-fw.fa-calendar 
                         #{article.created_at.strftime("%d %b %Y")}
-                        %br/
-                        %a{:href => "#{article.link}", :target => "_blank"} #{article.intro} 
 
                 - if(article.category == "gadgets")
                   .grid-item.grid-sizer.col-sm-12.servicebox.gadgets
@@ -77,13 +73,13 @@
                       %img.img-responsive{:alt => "#{article.title}", :src => "#{article.image_url}"}
                     .servicebox-inner.col-sm-8
                       %p
+                        #{article.title}
+                        %br/
                         %a{:href => "#{article.link}"} #{article.intro}
-                    .servicebox-inner.col-sm-8
-                      %p 
+                        %br/
                         %i.fa.fa-fw.fa-calendar 
                         #{article.created_at.strftime("%d %b %Y")}
-                        %br/
-                        %a{:href => "#{article.link}", :target => "_blank"} #{article.intro} 
+
 
       / Adverts
       .col-sm-3
