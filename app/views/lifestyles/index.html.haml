@@ -37,10 +37,11 @@
                       %p
                         #{article.title}
                         %br/
-                        %a{:href => "#{article.link}"} #{article.intro}
-                        %br/
                         %i.fa.fa-fw.fa-calendar 
                         #{article.created_at.strftime("%d %b %Y")}
+                        %br/
+                        %a{:href => "#{article.link}"} #{article.intro}
+
                 - if(article.category == "fashion")
                   .grid-item.grid-sizer.col-sm-12.servicebox.fashion
                     .servicebox-image.col-sm-4
@@ -49,10 +50,10 @@
                       %p
                         #{article.title}
                         %br/
-                        %a{:href => "#{article.link}"} #{article.intro}
-                        %br/
                         %i.fa.fa-fw.fa-calendar 
-                        #{article.created_at.strftime("%d %b %Y")}                        
+                        #{article.created_at.strftime("%d %b %Y")}
+                        %br/
+                        %a{:href => "#{article.link}"} #{article.intro}
 
                 - if(article.category == "streetHustle")
                   .grid-item.grid-sizer.col-sm-12.servicebox.streetHustle
@@ -62,10 +63,11 @@
                       %p
                         #{article.title}
                         %br/
-                        %a{:href => "#{article.link}"} #{article.intro}
-                        %br/
                         %i.fa.fa-fw.fa-calendar 
                         #{article.created_at.strftime("%d %b %Y")}
+
+                        %br/
+                        %a{:href => "#{article.link}"} #{article.intro}
 
                 - if(article.category == "gadgets")
                   .grid-item.grid-sizer.col-sm-12.servicebox.gadgets
@@ -75,10 +77,10 @@
                       %p
                         #{article.title}
                         %br/
-                        %a{:href => "#{article.link}"} #{article.intro}
-                        %br/
                         %i.fa.fa-fw.fa-calendar 
                         #{article.created_at.strftime("%d %b %Y")}
+                        %br/
+                        %a{:href => "#{article.link}"} #{article.intro}
 
 
       / Adverts
