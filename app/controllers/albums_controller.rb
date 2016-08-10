@@ -1,7 +1,7 @@
 class AlbumsController < ApplicationController
   before_action :authenticate_admin!, except: [:index, :show]
 
-  layout "admin", only: [:new, :create, :update, :admin_show, :admin_album_index]
+  layout "admin", only: [:new, :create, :update, :admin_show_album, :admin_album_index]
 
   def index
     @albums = Album.all
@@ -12,11 +12,13 @@ class AlbumsController < ApplicationController
   end
 
   def show
-    @album = Track.where(:album_id => params[:id])
+    @album = Album.find(params[:id])
+    @album.tracks = Track.where(:album_id => params[:id])    
   end
 
   def admin_show_album
-    @album = Track.where(:album_id => params[:id])
+    @album = Album.find(params[:id])
+    @album.tracks = Track.where(:album_id => params[:id])
   end
 
   def new

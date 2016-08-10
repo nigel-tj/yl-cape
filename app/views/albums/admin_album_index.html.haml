@@ -7,6 +7,6 @@
         .col-md-4{:style => "height:250px"}
           = image_tag album.cover_url(:thumb) if album.cover?
           %p
-            = link_to album.name, album
+            = link_to album.name, "admin_show_album/#{album.id}"
             %br/
             Tracks: #{album.tracks.size}
