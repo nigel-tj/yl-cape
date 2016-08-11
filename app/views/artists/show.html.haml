@@ -1,7 +1,3 @@
-#services
-  .container
-    .row
-/ download
 #reservation.module.parallax.parallax-reservation
   .container
     .row
@@ -37,13 +33,9 @@
         %nav
           %ul.filters
             %li.hvr-sweep-to-top.active.filter{"data-filter" => ".allDownloads", :id => "#all_downloads_tab"}
-              - if(@artist.category == "model" || @artist.category == "management")
-                %span Portfolio
-              - elsif(@artist.category == "label")
-                %span All Track
+              %span All Track
             %li.hvr-sweep-to-top.filter{"data-filter" => ".bio"}
               %span Bio 
-  .container-fluid
     .row.gallery.text-center
       .col-md-12.noPadding
         .gallery-photo-grid
@@ -75,7 +67,7 @@
 
 :javascript
   $(document).ready(function(){
-    document.getElementById('#bio_div').style.display = 'none';
+
     document.getElementById('#all_downloads_tab').classList.add("active");
   });
   $('body').css('background-image','url(#{@artist.cover_url})');

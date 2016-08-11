@@ -9,7 +9,7 @@ class TracksController < ApplicationController
 
   def music
     @tracks = Track.order('created_at DESC')
-    #@artists = Artist.all
+    @albums = Album.order('created_at DESC')
   end
 
   def admin_all_music

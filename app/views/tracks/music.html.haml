@@ -19,7 +19,7 @@
                 %ul.content_filter
                   %li.hvr-sweep-to-top.active.filter{"data-filter" => ".rcv_playlist", :id => "#rcv_playlist"}
                     %span RCV Playlist
-                  %li.hvr-sweep-to-top.filter{"data-filter" => ".albums_mixtapes"}
+                  %li.hvr-sweep-to-top.filter{"data-filter" => ".albums_mixtapes", :id => "#albums"}
                     %span Albums / Mixtapes
 
           .col-sm-12#gallery-content
@@ -37,17 +37,17 @@
                         %span.gallery-icon
                           %i.fa.fa-play.fa-2x
 
-                - if(track.category == "albums_mixtapes")
-                  .grid-item.grid-sizer.col-sm-4.servicebox.albums_mixtapes
-                    .servicebox-image
-                      %a.vid-item.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "#", :onclick => "playSong()"}
-                        %img{:alt => "#{track.title}", :src => "#{track.image_url(:thumb)}"}
-                    .servicebox-inner
-                      %p
-                        #{track.title}
-                      .overlay
-                        %span.gallery-icon
-                          %i.fa.fa-play.fa-2x
+              -for album in @albums 
+                .grid-item.grid-sizer.col-sm-4.servicebox.albums_mixtapes
+                  .servicebox-image
+                    %a.vid-item.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "#", :onclick => "playSong()"}
+                      %img{:alt => "#{track.title}", :src => "#{track.image_url(:thumb)}"}
+                  .servicebox-inner
+                    %p
+                      #{track.title}
+                    .overlay
+                      %span.gallery-icon
+                        %i.fa.fa-play.fa-2x
 
         / Adverts
       .col-sm-3
@@ -78,3 +78,10 @@
   function playSong() {
     document.getElementById("audio_player").src = "https://raw.githubusercontent.com/kolber/audiojs/master/mp3/bensound-dubstep.mp3";
   }
+
+  $(document).ready(function(){    
+    document.getElementById('#rcv_playlist').classList.add("active");
+    $("#rcv_playlist").click();
+  })
+    
+}
