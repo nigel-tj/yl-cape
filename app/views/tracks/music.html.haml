@@ -33,9 +33,6 @@
                     .servicebox-inner
                       %p
                         #{track.title}
-                      .overlay
-                        %span.gallery-icon
-                          %i.fa.fa-play.fa-2x
 
               -for album in @albums 
                 .grid-item.grid-sizer.col-sm-4.servicebox.albums_mixtapes
@@ -45,9 +42,6 @@
                   .servicebox-inner
                     %p
                       #{track.title}
-                    .overlay
-                      %span.gallery-icon
-                        %i.fa.fa-play.fa-2x
 
         / Adverts
       .col-sm-3
@@ -81,7 +75,13 @@
 
   $(document).ready(function(){    
     document.getElementById('#rcv_playlist').classList.add("active");
-    $("#rcv_playlist").click();
+    $('.grid').masonry({
+      // options...
+      itemSelector: '.grid-item',
+      columnWidth: '.grid-sizer',
+      percentPosition: true
+    });
+
   })
     
 }

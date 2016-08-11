@@ -1906,7 +1906,7 @@ hr {
     background-color: #ce1f2b;
     border-color: #ce1f2b;
 }
-.servicebox-inner .overlay{
+.overlay{
     background-color: rgba(206, 31, 43, 0.7);
     margin: 0 auto;
     margin-top: -65%;
