@@ -9,12 +9,11 @@ class TracksController < ApplicationController
 
   def music
     @tracks = Track.order('created_at DESC')
-    @albums = Album.order('created_at DESC')
+    #@artists = Artist.all
   end
 
-  def admin_all_music
-    #@tracks = Track.all
-    @songs = Track.order('created_at DESC')
+  def admin_all_music    
+    @tracks = Track.order('created_at DESC')
     #@artists = Artist.all
   end
 
@@ -37,12 +36,28 @@ class TracksController < ApplicationController
   end
 
   def create
-    @track = Track.new(track_params)
-    if @track.save
-      flash[:notice] = "Successfully uploaded track."
-      render :action => '/admin_all_music'
+    if(params[:track].include? "album_id")
+      
+      @tracks = params[:track][:tracks]
+      @album_id = params[:track][:album_id]
+      @title = params[:track][:title]
+      @artist_name = params[:track][:artist_name]
+      @tracks.each do |track|
+        @track =Track.new
+        @track.album_id = @album_id
+        @track.title = @title
+        @track.artist_name = @artist_name
+        @track.save
+      end
+      redirect_to '/admin_album_index'
     else
-      render :action => 'new'
+      @track = Track.new(track_params)
+      if @track.save
+        flash[:notice] = "Successfully uploaded track."
+        redirect_to '/admin_all_music'
+      else
+        render :action => 'new'
+      end
     end
   end
 
@@ -67,7 +82,7 @@ class TracksController < ApplicationController
 
   private
   def track_params
-    params.require(:track).permit(:title,:intro,:thumb,:track,:image,:category)
+    params.require(:track).permit(:title,:intro,:thumb,:track,:image,:category,:album_id, :artist_name, :tracks)
   end
 
 end

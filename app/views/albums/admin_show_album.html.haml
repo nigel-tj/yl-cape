@@ -13,7 +13,7 @@
     - for song in @album.tracks
       .col-md-4{:style => "height:300px"}
         = image_tag song.image_url(:thumb) if song.image?
-        .name= song.name
+        .name= song.title
         .actions
           = link_to "edit", edit_album_path(song)
           |
