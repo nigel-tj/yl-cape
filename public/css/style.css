@@ -700,12 +700,12 @@ margin-bottom:0;
   transition: all 0.3s ease 0s;
 }
 .gallery-photo-item .overlay{
- 	 position: absolute;
-   background-color: transparent;
-   background-color: rgba(206, 31, 43, 0.7);
-   width: 100%;
-   height: 100%;
-   overflow: hidden;
+    position: absolute;
+    background-color: transparent;
+    background-color: rgba(206, 31, 43, 0.7);
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 } 
 .gallery-photo-item:hover .photo-thumb img {
 	-webkit-transform:scale(1.3); 
@@ -1906,3 +1906,11 @@ hr {
     background-color: #ce1f2b;
     border-color: #ce1f2b;
 }
+.servicebox-inner .overlay{
+    background-color: rgba(206, 31, 43, 0.7);
+    margin: 0 auto;
+    margin-top: -65%;
+    text-align:center;
+    position: relative;
+    width:40%;
+} 
