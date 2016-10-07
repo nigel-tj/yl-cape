@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+
+  mount Spree::Core::Engine, :at => '/mall'
   get 'lifestyles/index'
   get 'lifestyles/new'
   get 'lifestyles/create'
@@ -100,6 +102,7 @@ Rails.application.routes.draw do
   match '/admins' => 'galleries#new', :via => :get
   match '/admin_all_events' => 'events#admin_all_events', :via => :get
   match '/admin_show_album/:id' => 'albums#admin_show_album', :via => :get
+  match '/mall' => 'spree/home#index', :via => :get
   #root to: 'coming_soon#index'
   root :to => "visitors#index"
 end
