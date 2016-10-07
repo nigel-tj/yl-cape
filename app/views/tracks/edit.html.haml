@@ -5,21 +5,24 @@
     .form-group
       = f.label :title, :class => "control-label col-sm-2"
       .col-sm-10
-        = f.text_field :title, class: 'form-control', required: true
+        = f.text_field :title, :value => @track.title, class: 'form-control', required: true
         %span.help-block Track name .
     .form-group
       = f.label :category, :class => "control-label col-sm-2"
       .col-sm-10
-        = f.select "category", [["Select category","none"],["RCV Playlist","rcv_playlist"], ["Albums / Mixtapes","albums_mixtapes"]]
+        = f.select "category", [["Select category","none"],["RCV Playlist","rcv_playlist"], ["Albums / Mixtapes","albums_mixtapes"]] ,:value => @track.category
     .form-group
       = f.label :image, :class => "control-label col-sm-2"
       .col-sm-10
-        = f.file_field :image, required: true
+        = image_tag(@track.image_url) if @track.image?
+        = f.file_field :image, value: @track.image, required: true
+        = f.hidden_field :image_cache
         %span.help-block Track Cover.
     .form-group
       = f.label :track, :class => "control-label col-sm-2"
       .col-sm-10
-        = f.file_field :track, required: true
+        = @track.title if @track.track?
+        = f.file_field :track, required: true if @track.track?
         %span.help-block Music Track .
     .form-group
       .col-sm-offset-2.col-sm-10

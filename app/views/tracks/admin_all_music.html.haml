@@ -1,31 +1,27 @@
-.container
-  /news tabs
-  .row
-    .col-sm-9
-      .row
+%script{:src => "/scripts/masonry.pkgd.min.js", :type => "text/javascript"}
+%script{:src => "/scripts/isotope.pkgd.min.js", :type => "text/javascript"}
+%script{:src => "/scripts/isotope.init.js", :type => "text/javascript"}
+#services
+  .container
+    .row
+      .row.services
         .col-sm-12
-          .ticker-container.col-sm-2
-            .ticker-caption
-              %p Music
-              / start services
-      .row.front-news
-        .col-sm-12.services.text-center
-          .tabs.tabs-style-linebox.wow.fadeInUp{"data-wow-duration" => "2s"}
-            %nav
-              %ul.filters
-                %li.hvr-sweep-to-top.active.filter{"data-filter" => ".hot100", :id => "#hot_100"}
-                  %span RCV Playlist 
-                %li.hvr-sweep-to-top.filter{"data-filter" => ".mixtapes"}
-                  %span Albums / Mixtapes
-          .gallery-photo-grid
-            .gallery-photos
-              .gallery-photos-thumb
-                - for track in @tracks
-                  .gallery-photo-item.mix.hot100.wow.fadeIn
-                    %a.pretty-photo{"rel" => "prettyPhoto[iframe]", :href => "#{track.track}"}
-                      .photo-thumb
-                        = image_tag track.image_url(:thumb)
-
+          .row
+            %h1 All Tracks
+            %p= link_to "New Track", new_track_path
+            .grid
+              -for track in @tracks
+                .grid-item.grid-sizer.col-sm-4.servicebox.featured_club
+                  .servicebox-image
+                    %a.vid-item.pretty-photo{"data-gal" => "prettyPhoto[gallery-photo-thumb]", :href => "#{track.track}"}
+                      %img{:alt => "#{track.title}", :src => "#{track.image_url(:thumb)}"}
+                  .servicebox-inner
+                    %p
+                      #{track.title}
+                  .servicebox-inner
+                    %p
+                      = link_to "edit", edit_track_path(track) | 
+                      = button_to 'delete', track, confirm: 'Are you sure?', method: :delete
 
 / end music
 :javascript
