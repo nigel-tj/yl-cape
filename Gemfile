@@ -1,21 +1,21 @@
 source 'https://rubygems.org'
-gem 'rails', '4.2.1'
+gem 'rails', '4.2.9'
 
-gem 'sass-rails', '~> 5.0'
-gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.1.0'
+gem 'sass-rails'
+gem 'uglifier'
+gem 'coffee-rails'
 gem 'jquery-rails'
 
-gem 'jbuilder', '~> 2.0'
-gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'jbuilder'
+gem 'sdoc'
 group :development, :test do
   gem 'sqlite3'
   gem 'byebug'
-  gem 'web-console', '~> 2.0'
+  gem 'web-console'
   gem 'spring'
 end
 gem 'thin'
-gem 'slim-rails'
+
 gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 gem 'simple_form'
@@ -25,7 +25,7 @@ gem 'pundit'
 gem "erb2haml", :group => :development
 gem 'soundcloud'
 gem 'instagram'
-gem "koala", "~> 2.0"
+gem "koala"
 gem 'rqrcode_png'  
 gem 'omniauth-facebook'
 group :development do
@@ -43,7 +43,7 @@ group :development do
   gem 'rails_best_practices'
   gem 'rails_apps_pages'
 end
-gem 'haml-rails'
+
 gem 'twitter'
 gem 'minitest-rails'
 group :test do
@@ -55,12 +55,15 @@ group :production do
   gem 'rails_12factor'
 end
 
-gem 'yt', '~> 0.13.7'
+gem 'yt'
 gem 'autoprefixer-rails'
 gem 'rails-observers'
 gem 'omniauth-google-oauth2'
-gem 'active_type', '0.3.1'
+
 #gem 'rails-gallery'
 gem 'carrierwave'
 gem "rmagick"
 gem 'kaminari'
+gem 'spree', '~> 3.1.12'
+gem 'spree_auth_devise', '~> 3.3'
+gem 'spree_gateway', '~> 3.3'
