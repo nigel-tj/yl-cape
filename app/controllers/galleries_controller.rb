@@ -20,6 +20,10 @@ class GalleriesController < ApplicationController
     #@all_images = Image.where(:gallery_id => params[:id])
   end
 
+  def gallery
+    @galleries = Gallery.all
+    @videos = Video.all
+  end
 
   def new
     @gallery = Gallery.new

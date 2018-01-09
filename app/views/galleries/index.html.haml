@@ -1,13 +1,33 @@
-.container
-  #gallery
+%script{:src => "/scripts/masonry.pkgd.min.js", :type => "text/javascript"}
+%script{:src => "/scripts/isotope.pkgd.min.js", :type => "text/javascript"}
+%script{:src => "/scripts/isotope.init.js", :type => "text/javascript"}
+#services
+  .container
     .row
-      .col-md-12
-        %h1 Galleries
-        %p= link_to "New Gallery", new_gallery_path
-        - for gallery in @galleries
-          .col-md-4{:style => "height:250px"}
-            = image_tag gallery.image_url(:thumb) if gallery.image?
-            %p
-              = link_to gallery.name, gallery
-              %br/
-              Images: #{gallery.images.size}
+.container
+  %h1 Galleries
+  #services
+    .row
+      .row.services
+        .col-sm-9
+          .row
+            .grid
+              - for gallery in @galleries
+                .grid-item.grid-sizer.col-sm-4.servicebox.featured_club
+                  .servicebox-image
+                    %a.pretty-photo{"rel" => "prettyPhoto[iframes]", :href => "/gallery/#{gallery.id}"}
+                      %img.img-responsive{ :src => "#{gallery.image_url(:thumb)}", :alt => "#{gallery.name}"}
+                  .servicebox-inner
+                    %p
+                      #{gallery.name}
+
+:javascript
+  $(document).ready(function(){
+    $('.grid').masonry({
+      // options...
+      itemSelector: '.grid-item',
+      columnWidth: '.grid-sizer',
+      percentPosition: true
+    });
+
+  });

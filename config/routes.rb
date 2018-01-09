@@ -62,14 +62,14 @@ Rails.application.routes.draw do
   resources :videos
   resources :artists
   resources :events
-  #resources :vip_tickets
+  resources :visitors
   #resources :standard_tickets
   
   
   # get '/auth/:provider/callback', to: 'sessions#create'
   # delete '/logout', to: 'sessions#destroy', as: :logout
-
-  match '/gallery' => 'visitors#gallery', :via => :get
+  match '/about_us' => 'visitors#about_us', :via => :get
+  match '/gallery' => 'galleries#gallery', :via => :get
   match '/gallery/:id' => 'galleries#show_gallery', :via => :get
   match '/music' => 'tracks#music', :via => :get
   match '/news' => 'features#index', :via => :get
